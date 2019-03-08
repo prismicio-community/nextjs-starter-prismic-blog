@@ -9,6 +9,12 @@ app
   .then(() => {
     const server = express();
 
+    server.get('/blog/:uid', (req, res) => {
+      const nextJsPage = '/post';
+      const queryParams = { uid: req.params.uid };
+      app.render(req, res, nextJsPage, queryParams);
+    });
+
     server.get('*', (req, res) => handle(req, res));
 
     server.listen(3000, err => {

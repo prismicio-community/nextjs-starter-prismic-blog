@@ -1,0 +1,103 @@
+{
+  "Blog Post" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "UID",
+        "placeholder" : "unique-identifier-for-blog-post-url"
+      }
+    },
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "Blog Post Title..."
+      }
+    },
+    "date" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "Date"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : {
+          "image_with_caption" : [ {
+            "name" : "emphasized",
+            "display" : "Emphasized"
+          }, {
+            "name" : "image-full-width",
+            "display" : "Full"
+          } ]
+        },
+        "choices" : {
+          "text" : {
+            "type" : "Slice",
+            "fieldset" : "Text",
+            "description" : "A rich text section",
+            "icon" : "text_fields",
+            "non-repeat" : {
+              "text" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, preformatted, heading2, heading3, strong, em, hyperlink, embed, list-item, o-list-item",
+                  "label" : "Text",
+                  "placeholder" : "Post text..."
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "quote" : {
+            "type" : "Slice",
+            "fieldset" : "Quote",
+            "description" : "A quote section",
+            "icon" : "format_quote",
+            "non-repeat" : {
+              "quote" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "label" : "Quote",
+                  "placeholder" : "Post Quote..."
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "image_with_caption" : {
+            "type" : "Slice",
+            "fieldset" : "Image with Caption",
+            "description" : "An image with an optional caption",
+            "icon" : "image",
+            "non-repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : {
+                    "width" : 1200
+                  },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              },
+              "caption" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Caption",
+                  "placeholder" : "Image Caption..."
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  }
+}

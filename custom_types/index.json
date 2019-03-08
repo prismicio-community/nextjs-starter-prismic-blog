@@ -1,0 +1,14 @@
+ [
+  {
+    "id": "blog_home",
+    "name": "Blog Home",
+    "repeatable": false,
+    "value": "blog_home.json"
+  },
+  {
+    "id": "post",
+    "name": "Post",
+    "repeatable": true,
+    "value": "post.json"
+  }
+]

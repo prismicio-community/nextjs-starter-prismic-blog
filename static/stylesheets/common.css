@@ -1,0 +1,68 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: #FFF7C7; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #FFF7C7; /* Gecko Browsers */
+}
+
+/*
+ * Globals
+ */
+body {
+  padding: 3rem 0 0 0;
+  color: #353535;
+  line-height: 1.5;
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+}
+a {
+  color: #353535;
+  text-decoration: none;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 23px;
+}
+.blog-main h1, .blog-main .h1,
+.blog-main h2, .blog-main .h2,
+.blog-main h3, .blog-main .h3,
+.blog-main h4, .blog-main .h4,
+.blog-main h5, .blog-main .h5,
+.blog-main h6, .blog-main .h6 {
+  color: #353535;
+  text-align: left;
+}
+h1, h2,h3,h4,h5,h6 {
+  font-family: 'Lato', sans-serif;
+}
+h1 {
+  margin-bottom: 1rem;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
+}
+h2 {
+  margin-bottom: 1rem;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 40px;
+}
+h3 {
+  margin-bottom: 1rem;
+  font-size: 22px;
+  font-weight: 900;
+}
+p {
+  margin-bottom: 2rem;
+}
+pre, ul {
+  margin-bottom: 20px;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
