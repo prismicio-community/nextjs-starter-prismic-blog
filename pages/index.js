@@ -3,6 +3,7 @@ import { getBlogPostsAPI, getBlogHomeAPI } from '../api';
 import { RichText, Date } from 'prismic-reactjs';
 import { linkResolver } from '../components/prismic';
 import DefaultLayout from '../layouts';
+import Head from 'next/head';
 
 export default class extends React.Component {
   constructor(props) {
@@ -91,7 +92,7 @@ export default class extends React.Component {
       <React.Fragment>
       <div className="blog-main">
         {this.props.posts.map((post, index) => (
-          <div className="blog-post" key={post.id}>
+          <div className="blog-post" key={post.id} data-wio-id={post.id}>
             <Link
               as={linkResolver(post)}
               href={`/post?uid=${post.uid}`}
@@ -137,6 +138,11 @@ export default class extends React.Component {
   render() {
     return(
       <DefaultLayout>
+        <Head>
+          <title key="title">
+            {RichText.asText(this.props.doc.headline)}
+          </title>
+        </Head>
         {this.renderHead()}
         {this.renderPosts()}
       </DefaultLayout>

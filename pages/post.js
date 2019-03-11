@@ -112,6 +112,14 @@ export default class Post extends Component {
             font-style: italic;
             font-size: 24px;
           }
+          .post-part li {
+            list-style-type: initial;
+            margin-left: 1em;
+          }
+          .wio-link {
+            float: right;
+          }
+
 
 
         `}</style>

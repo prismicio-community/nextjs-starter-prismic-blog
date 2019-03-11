@@ -2,7 +2,9 @@
 const DefaultLayout = ({ children }) => (
   <div>
     <head>
+      <meta charSet="utf-8"/>
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+      <link rel="shortcut icon" href="/static/favicon.png" />
     </head>
     <main>{children}</main>
     <footer><p>
@@ -151,7 +153,7 @@ const DefaultLayout = ({ children }) => (
       }
     `}</style>
     <style jsx global>{`
-      
+
       /* Media Queries */
       @media (max-width: 767px) {
         .home, .blog-main, .container, footer {
