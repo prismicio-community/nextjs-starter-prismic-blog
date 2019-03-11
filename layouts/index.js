@@ -1,11 +1,17 @@
+import { PRISMIC_API_URL } from '../prismic-config';
+import Head from 'next/head';
 
 const DefaultLayout = ({ children }) => (
   <div>
-    <head>
+    <Head>
       <meta charSet="utf-8"/>
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
-      <link rel="shortcut icon" href="/static/favicon.png" />
-    </head>
+      <link rel="icon" href="/static/favicon.png" type="image/png" />
+      <script dangerouslySetInnerHTML={{ __html: `
+        window.prismic = { endpoint: "${PRISMIC_API_URL}" }
+      `}} />
+      <script src="//static.cdn.prismic.io/prismic.min.js" />
+    </Head>
     <main>{children}</main>
     <footer><p>
       Proudly published with &nbsp;<a href="https://prismic.io" target="_blank" rel="noopener noreferrer">Prismic</a>

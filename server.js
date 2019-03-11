@@ -4,6 +4,9 @@ const next = require('next');
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const Prismic = require('prismic-javascript');
+const linkResolver = require('./components/prismic.js');
+
 app
   .prepare()
   .then(() => {
@@ -13,6 +16,16 @@ app
       const nextJsPage = '/post';
       const queryParams = { uid: req.params.uid };
       app.render(req, res, nextJsPage, queryParams);
+    });
+
+    server.get('/preview', (req, res) => {
+      const { token } = req.query.token;
+
+      Prismic.getApi('https://bambi-blog.prismic.io/api/v2', {req: req})
+        .then((api) => api.previewSession(token, linkResolver, '/'))
+        .then((url) => {
+          res.redirect(302, url);
+        });
     });
 
     server.get('*', (req, res) => handle(req, res));

@@ -5,7 +5,7 @@ import { PRISMIC_API_URL } from '../prismic-config';
 
 const getBlogPostsAPI = async params => {
   try {
-    const API = await Prismic.api(PRISMIC_API_URL);
+    const API = await Prismic.getApi(PRISMIC_API_URL);
     const response = await API.query(
       Prismic.Predicates.at('document.type', 'post'),
       {
@@ -21,7 +21,7 @@ const getBlogPostsAPI = async params => {
 
 const getBlogPostAPI = async uid => {
   try {
-    const API = await Prismic.api(PRISMIC_API_URL);
+    const API = await Prismic.getApi(PRISMIC_API_URL);
     const response = await API.getByUID('post', uid);
     return response;
   } catch (error) {
@@ -32,7 +32,7 @@ const getBlogPostAPI = async uid => {
 
 const getBlogHomeAPI = async () => {
   try {
-    const API = await Prismic.api(PRISMIC_API_URL);
+    const API = await Prismic.getApi(PRISMIC_API_URL);
     const response = await API.getSingle('blog_home');
     return response;
   } catch (error) {
