@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import { getBlogPostAPI } from '../api';
 import linkResolver from '../components/prismic';
+import { Text, Quote, ImageCaption } from '../components/slices';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
 
@@ -14,25 +15,106 @@ export default class Post extends Component {
     };
   }
 
+  renderSliceZone(sliceZone) {
+    return sliceZone.map((slice, index) => {
+      switch (slice.slice_type) {
+        case ("image_with_caption"):
+          return <ImageCaption slice={slice} key={'slice-' + index} />
+        case ("quote"):
+          return <Quote slice={slice} key={'slice-' + index}/>
+        case ("text"):
+          return <Text slice={slice} key={'slice-' + index} prismicCtx={this.props.prismicCtx}/>
+        default:
+          return null;
+      }
+    })
+  }
+
   render() {
     const post = this.props.post.data;
+    let titled = post.title.length !== 0;
     return (
       <DefaultLayout>
         <Head>
           <title key="title">
-            {post.title[0].text}
+            {titled ? RichText.asText(post.title) : 'Untitled'}
           </title>
         </Head>
-        <div className="outer-container">
-          <div className="back">
-            <a href="/">back to list</a>
+        <div className="main">
+          <div className="outer-container">
+            <div className="back">
+              <a href="/">back to list</a>
+            </div>
+            <h1 data-wio-id={this.props.post.id}>
+              {titled ? RichText.asText(post.title) : 'Untitled'}
+            </h1>
           </div>
-          {/*Edit button goes here*/}
+          {this.renderSliceZone(post.body)}
         </div>
-        {/*Render the slice zone here*/}
-        <article>
-          <h1>{RichText.render(post.title)}</h1>
-        </article>
+        <style jsx global>{`
+          .outer-container {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+          }
+          .back {
+            color: #9A9A9A;
+            display: block;
+            max-width: 700px;
+            margin: 0 auto 2em auto;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+          }
+          .back:before {
+            content: '←';
+            display: inline-block;
+            position: relative;
+            margin-right: 8px;
+          }
+          .back a {
+            color: #9A9A9A;
+          }
+          .back a:hover {
+            text-decoration: underline;
+          }
+          .container {
+            max-width:700px;
+            margin: auto;
+          }
+
+          .post-part.single a, .blog-main.single a {
+            text-decoration: none;
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 75%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 75%);
+            background-repeat: repeat-x;
+            background-size: 2px 2px;
+            background-position: 0 23px;
+          }
+
+          .post-part.single img, .blog-main.single img {
+            width: 100%;
+            height: auto;
+          }
+          .post-part.single .image-full-width + .image-label, .blog-main.single .image-full-width + .image-label {
+            width: 100%;
+          }
+          .post-part.single .image-label {
+            display: block;
+            text-align: center;
+            font-style: italic;
+            font-size: 14px;
+            color: #949494;
+          }
+          .image-label .block-quotation, .post-part.single .block-quotation {
+            margin-bottom: 2rem;
+            display: inline-block;
+            font-style: italic;
+            font-size: 24px;
+          }
+
+
+        `}</style>
       </DefaultLayout>
     );
   }
