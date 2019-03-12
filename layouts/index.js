@@ -1,4 +1,4 @@
-import { PRISMIC_API_URL } from '../prismic-config';
+import { apiEndpoint } from '../prismic-config';
 import Head from 'next/head';
 
 const DefaultLayout = ({ children }) => (
@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }) => (
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
       <link rel="icon" href="/static/favicon.png" type="image/png" />
       <script dangerouslySetInnerHTML={{ __html: `
-        window.prismic = { endpoint: "${PRISMIC_API_URL}" }
+        window.prismic = { endpoint: "${apiEndpoint}" }
       `}} />
       <script src="//static.cdn.prismic.io/prismic.min.js" />
     </Head>

@@ -1,11 +1,11 @@
 import Prismic from 'prismic-javascript';
-import { PRISMIC_API_URL } from '../prismic-config';
+import { apiEndpoint } from '../prismic-config';
 
-/*REVIEW this is probably super inefficient and making multitudes of API calls*/
+/*REVIEW Could combine BlogPosts and BlogHome for a single API call when rendering home page*/
 
 const getBlogPostsAPI = async params => {
   try {
-    const API = await Prismic.getApi(PRISMIC_API_URL);
+    const API = await Prismic.getApi(apiEndpoint);
     const response = await API.query(
       Prismic.Predicates.at('document.type', 'post'),
       {
@@ -21,7 +21,7 @@ const getBlogPostsAPI = async params => {
 
 const getBlogPostAPI = async (uid, req) => {
   try {
-    const API = await Prismic.getApi(PRISMIC_API_URL, {req});
+    const API = await Prismic.getApi(apiEndpoint, {req});
     const response = await API.getByUID('post', uid);
     return response;
   } catch (error) {
@@ -32,7 +32,7 @@ const getBlogPostAPI = async (uid, req) => {
 
 const getBlogHomeAPI = async () => {
   try {
-    const API = await Prismic.getApi(PRISMIC_API_URL);
+    const API = await Prismic.getApi(apiEndpoint);
     const response = await API.getSingle('blog_home');
     return response;
   } catch (error) {

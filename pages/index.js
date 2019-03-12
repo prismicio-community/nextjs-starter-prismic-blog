@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getBlogPostsAPI, getBlogHomeAPI } from '../api';
 import { RichText, Date } from 'prismic-reactjs';
-import { linkResolver } from '../components/prismic';
+import { linkResolver } from '../prismic-config';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
 
@@ -129,6 +129,9 @@ export default class extends React.Component {
           color: #9A9A9A;
           font-family: 'Lato', sans-serif;
           margin-bottom: 8px;
+        }
+        .wio-link {
+          float: right;
         }
       `}</style>
       </React.Fragment>

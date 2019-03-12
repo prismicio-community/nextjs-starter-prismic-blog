@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import { getBlogPostAPI } from '../api';
-import linkResolver from '../components/prismic';
+import { linkResolver } from '../prismic-config';
 import { Text, Quote, ImageCaption } from '../components/slices';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
@@ -10,7 +10,7 @@ import NotFound from '../components/NotFound';
 export default class Post extends Component {
   static async getInitialProps(context) {
     const { uid } = context.query;
-    const { req } = context.req;
+    const req = context.req;
     const response = await getBlogPostAPI(uid, req);
     return {
       post: response
@@ -128,9 +128,6 @@ export default class Post extends Component {
             .wio-link {
               float: right;
             }
-
-
-
           `}</style>
         </DefaultLayout>
       );

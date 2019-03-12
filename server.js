@@ -5,7 +5,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const Prismic = require('prismic-javascript');
-const linkResolver = require('./components/prismic.js');
+const { apiEndpoint, linkResolver } = require('./prismic-config.js');
 
 app
   .prepare()
@@ -19,10 +19,9 @@ app
     });
 
     server.get('/preview', (req, res) => {
-      const { token } = req.query.token;
-      console.log(token);
+      const token = req.query.token;
 
-      Prismic.getApi('https://bambi-blog.prismic.io/api/v2', {req: req})
+      Prismic.getApi(apiEndpoint, {req: req})
         .then((api) => api.previewSession(token, linkResolver, '/'))
         .then((url) => {
           res.redirect(302, url);
