@@ -10,7 +10,8 @@ import NotFound from '../components/NotFound';
 export default class Post extends Component {
   static async getInitialProps(context) {
     const { uid } = context.query;
-    const response = await getBlogPostAPI(uid);
+    const { req } = context.req;
+    const response = await getBlogPostAPI(uid, req);
     return {
       post: response
     };

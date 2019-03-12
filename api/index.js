@@ -19,9 +19,9 @@ const getBlogPostsAPI = async params => {
   }
 };
 
-const getBlogPostAPI = async uid => {
+const getBlogPostAPI = async (uid, req) => {
   try {
-    const API = await Prismic.getApi(PRISMIC_API_URL);
+    const API = await Prismic.getApi(PRISMIC_API_URL, {req});
     const response = await API.getByUID('post', uid);
     return response;
   } catch (error) {

@@ -20,6 +20,7 @@ app
 
     server.get('/preview', (req, res) => {
       const { token } = req.query.token;
+      console.log(token);
 
       Prismic.getApi('https://bambi-blog.prismic.io/api/v2', {req: req})
         .then((api) => api.previewSession(token, linkResolver, '/'))
