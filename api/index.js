@@ -1,8 +1,6 @@
 import Prismic from 'prismic-javascript';
 import { apiEndpoint } from '../prismic-config';
 
-/*REVIEW Could combine BlogPosts and BlogHome for a single API call when rendering home page*/
-
 const getBlogPostsAPI = async params => {
   try {
     const API = await Prismic.getApi(apiEndpoint);

@@ -1,5 +1,5 @@
 import React from 'react';
-import {RichText} from 'prismic-reactjs';
+import { RichText } from 'prismic-reactjs';
 
 export default class Quote extends React.Component {
   render() {

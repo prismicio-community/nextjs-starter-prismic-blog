@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import { getBlogPostAPI } from '../api';
-import { linkResolver } from '../prismic-config';
 import { Text, Quote, ImageCaption } from '../components/slices';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
@@ -23,9 +22,9 @@ export default class Post extends Component {
         case ("image_with_caption"):
           return <ImageCaption slice={slice} key={'slice-' + index} />
         case ("quote"):
-          return <Quote slice={slice} key={'slice-' + index}/>
+          return <Quote slice={slice} key={'slice-' + index} />
         case ("text"):
-          return <Text slice={slice} key={'slice-' + index} prismicCtx={this.props.prismicCtx}/>
+          return <Text slice={slice} key={'slice-' + index} />
         default:
           return null;
       }

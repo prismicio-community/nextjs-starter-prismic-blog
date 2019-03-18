@@ -1,5 +1,5 @@
 import React from 'react';
-import {RichText} from 'prismic-reactjs';
+import { RichText } from 'prismic-reactjs';
 
 export default class ImageCaption extends React.Component {
   state = {
@@ -13,7 +13,7 @@ export default class ImageCaption extends React.Component {
       <div className="post-part single container">
         <div className="block-img">
           <img src={this.state.imageUrl} alt={this.state.imageAlt} />
-          { RichText.asText(this.state.caption) !== ""
+          {RichText.asText(this.state.caption) !== ""
             ? <p><span className="image-label">
               {RichText.asText(this.state.caption)}
               </span></p>
@@ -29,7 +29,7 @@ export default class ImageCaption extends React.Component {
       <div className="post-part single container">
         <div className="block-img emphasized">
           <img src={this.state.imageUrl} alt={this.state.imageAlt} />
-          { RichText.asText(this.state.caption) !== ""
+          {RichText.asText(this.state.caption) !== ""
             ? <p><span className="image-label">
               {RichText.asText(this.state.caption)}
               </span></p>
@@ -45,7 +45,7 @@ export default class ImageCaption extends React.Component {
       <div className="blog-header single"
       style={{backgroundImage: 'url('+ this.state.imageUrl +')'}}>
         <div className="wrapper">
-          { RichText.asText(this.state.caption) !== ""
+          {RichText.asText(this.state.caption) !== ""
             ? <h1>{RichText.asText(this.state.caption)}</h1>
             : null
           }
