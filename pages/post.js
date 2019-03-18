@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
-import { getBlogPostAPI } from '../api';
 import { Text, Quote, ImageCaption } from '../components/slices';
+import Prismic from 'prismic-javascript';
+import { apiEndpoint } from '../prismic-config';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
 import NotFound from '../components/NotFound';
@@ -10,10 +11,20 @@ export default class Post extends Component {
   static async getInitialProps(context) {
     const { uid } = context.query;
     const req = context.req;
-    const response = await getBlogPostAPI(uid, req);
+    const document = await this.getBlogPost(uid, req);
     return {
-      post: response
+      post: document
     };
+  }
+
+  static async getBlogPost(uid, req) {
+    try {
+      const API = await Prismic.getApi(apiEndpoint, {req});
+      return await API.getByUID('post', uid);
+    } catch (error) {
+      console.error(error);
+      return error;
+    }
   }
 
   renderSliceZone(sliceZone) {

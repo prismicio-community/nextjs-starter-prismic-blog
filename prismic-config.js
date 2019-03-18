@@ -1,5 +1,5 @@
 module.exports = {
-  apiEndpoint: 'https://react-blog-demo.prismic.io/api/v2',
+  apiEndpoint: 'https://bambi-blog.prismic.io/api/v2',
   
   linkResolver: function(doc) {
     if (doc.type === 'post') {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { getBlogPostsAPI, getBlogHomeAPI } from '../api';
+import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
-import { linkResolver } from '../prismic-config';
+import { linkResolver, apiEndpoint } from '../prismic-config';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
 
@@ -14,13 +14,30 @@ export default class extends React.Component {
     }
   }
 
-  static async getInitialProps() {
-    const response = await getBlogPostsAPI();
-    const home = await getBlogHomeAPI();
+  static async getInitialProps(context) {
+    const req = context.req;
+    const home = await this.getBlogHome(req);
     return {
-      doc: home.data,
-      posts: response.results
+      doc: home.document,
+      posts: home.response.results
     };
+  }
+
+  static async getBlogHome(req) {
+    try {
+      const API = await Prismic.getApi(apiEndpoint, {req});
+      const document = await API.getSingle('blog_home');
+      const response = await API.query(
+        Prismic.Predicates.at('document.type', 'post'),
+        {
+          orderings: '[my.post.date desc]',
+        }
+      );
+      return { document, response };
+    } catch (error) {
+      console.error(error);
+      return error;
+    }
   }
 
   firstParagraph(post) {
@@ -52,10 +69,10 @@ export default class extends React.Component {
     return(
       <React.Fragment>
       <div className="home">
-        <div className="blog-avatar" style={{backgroundImage: 'url(' + doc.image.url +')'}}>
+        <div className="blog-avatar" style={{backgroundImage: 'url(' + doc.data.image.url +')'}}>
         </div>
-        <h1 className="blog-title">{RichText.asText(doc.headline)}</h1>
-        <p className="blog-description">{RichText.asText(doc.description)}</p>
+        <h1 className="blog-title">{RichText.asText(doc.data.headline)}</h1>
+        <p className="blog-description">{RichText.asText(doc.data.description)}</p>
       </div>
       <style jsx>{`
         .home {
@@ -143,7 +160,7 @@ export default class extends React.Component {
       <DefaultLayout>
         <Head>
           <title key="title">
-            {RichText.asText(this.props.doc.headline)}
+            {RichText.asText(this.props.doc.data.headline)}
           </title>
         </Head>
         {this.renderHead()}
