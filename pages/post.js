@@ -181,6 +181,9 @@ export default class Post extends Component {
               list-style-type: initial;
               margin-left: 1em;
             }
+            .post-part ol li {
+              list-style-type: decimal;
+            }
             .wio-link {
               float: right;
             }
