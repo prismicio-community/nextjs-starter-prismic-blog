@@ -17,7 +17,7 @@ export default class ImageCaption extends React.Component {
             ? <p><span className="image-label">
               {RichText.asText(this.state.caption)}
               </span></p>
-            : null
+            : <p></p>
           }
         </div>
       </div>

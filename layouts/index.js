@@ -13,13 +13,15 @@ const DefaultLayout = ({ children }) => (
       <script src="//static.cdn.prismic.io/prismic.min.js" />
     </Head>
     <main>{children}</main>
-    <footer><p>
-      Proudly published with &nbsp;<a href="https://prismic.io" target="_blank" rel="noopener noreferrer">Prismic</a>
-      <br/>
-      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
-        <img className="footer-logo" src="/static/images/logo-prismic.svg" alt="Gray Prismic logo"/>
-      </a>
-    </p></footer>
+    <footer>
+      <p>
+        Proudly published with &nbsp;<a href="https://prismic.io" target="_blank" rel="noopener noreferrer">Prismic</a>
+        <br/>
+        <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
+          <img className="footer-logo" src="/static/images/logo-prismic.svg" alt="Gray Prismic logo"/>
+        </a>
+      </p>
+    </footer>
     <style jsx global>{`
       html, body, div, span, applet, object, iframe,
       h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -197,12 +199,7 @@ const DefaultLayout = ({ children }) => (
 
       @media screen and (min-width: 768px) {
         /* Blog post images */
-        .post-part.single .block-quotation ,  .blog-main.single .block-quotation {
-          width: 130%;
-          margin: 0 -15% 2rem -15%;
-          font-size: 30px;
-          padding: 0;
-        }
+        
         .block-img.emphasized {
           width: 130%;
           margin: 0 -15% 2rem -15%;
@@ -212,6 +209,14 @@ const DefaultLayout = ({ children }) => (
         }
         .blog-post-meta {
           font-size: 16px;
+        }
+      }
+      @media screen and (min-width: 920px) {
+        .post-part.single .block-quotation ,  .blog-main.single .block-quotation {
+          width: 130%;
+          margin: 0 -15% 2rem -15%;
+          font-size: 30px;
+          padding: 0;
         }
       }
 

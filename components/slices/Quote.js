@@ -5,9 +5,9 @@ export default class Quote extends React.Component {
   render() {
     return (
       <div className="post-part single container">
-        <span className="block-quotation">
+        <blockquote className="block-quotation">
           {RichText.asText(this.props.slice.primary.quote)}
-        </span>
+        </blockquote>
         <style jsx>{`
           .block-quotation {
             margin-bottom: 2rem;
