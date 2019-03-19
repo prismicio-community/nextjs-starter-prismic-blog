@@ -23,6 +23,14 @@ export default class Quote extends React.Component {
             border-left: solid #B4B4B4 4px;
             padding-left: 10px;
           }
+          @media screen and (min-width: 920px) {
+            .post-part.single .block-quotation ,  .blog-main.single .block-quotation {
+              width: 130%;
+              margin: 0 -15% 2rem -15%;
+              font-size: 30px;
+              padding: 0;
+            }
+          }
         `}</style>
       </div>
     );

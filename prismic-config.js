@@ -1,5 +1,5 @@
 module.exports = {
-  apiEndpoint: 'https://bambi-blog.prismic.io/api/v2',
+  apiEndpoint: 'https://your-repo-name.prismic.io/api/v2',
 
   //accessToken: '########',
   

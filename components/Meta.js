@@ -4,10 +4,11 @@ import { apiEndpoint } from '../prismic-config';
 export default () => (
   <React.Fragment>
     <Head>
-      <meta charSet="utf-8"/>
+      <meta charSet="utf-8" />
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
       <link rel="icon" href="/static/favicon.png" type="image/png" />
-      <script dangerouslySetInnerHTML={{ __html: `
+      <script dangerouslySetInnerHTML={{
+        __html: `
         window.prismic = { endpoint: "${apiEndpoint}" }
       `}} />
       <script src="//static.cdn.prismic.io/prismic.min.js" />
@@ -57,7 +58,7 @@ export default () => (
         border-spacing: 0;
       }
     `}</style>
-    <style jsx global>{`
+      <style jsx global>{`
       * {
         -webkit-font-smoothing: antialiased;
       }
@@ -127,7 +128,7 @@ export default () => (
         font-style: italic;
       }
     `}</style>
-    <style jsx global>{`
+      <style jsx global>{`
 
       /* Media Queries */
       @media (max-width: 767px) {
@@ -178,14 +179,7 @@ export default () => (
           font-size: 16px;
         }
       }
-      @media screen and (min-width: 920px) {
-        .post-part.single .block-quotation ,  .blog-main.single .block-quotation {
-          width: 130%;
-          margin: 0 -15% 2rem -15%;
-          font-size: 30px;
-          padding: 0;
-        }
-      }
+      
 
       /* vh vw fallback for ios7 */
       @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
