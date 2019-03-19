@@ -162,17 +162,43 @@ export default class extends React.Component {
   }
 
   render() {
-    return(
-      <DefaultLayout>
-        <Head>
-          {/* Website title defined from the Prismic data */}
-          <title key="title">
-            {RichText.asText(this.props.doc.data.headline)}
-          </title>
-        </Head>
-        {this.renderHead()}
-        {this.renderPosts()}
-      </DefaultLayout>
-    );
+    if(this.props.doc){
+      return(
+        <DefaultLayout>
+          <Head>
+            {/* Website title defined from the Prismic data */}
+            <title key="title">
+              {RichText.asText(this.props.doc.data.headline)}
+            </title>
+          </Head>
+          {this.renderHead()}
+          {this.renderPosts()}
+        </DefaultLayout>
+      );
+    }else{
+      // Message when repository has not been setup yet
+      return(
+        <DefaultLayout>
+          <div className="setup-repo">
+            <h1>Good job!</h1>
+            <h2>You're halfway done with setting up your Prismic website</h2>
+            <h4>Just visit your <a href={`${apiEndpoint.slice(0,-6)}documents/`}>Prismic dashboard</a> and add some Content to show</h4>
+          </div>
+          <style jsx>{`
+            .setup-repo {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              height: 50vw;
+              align-items: center;
+            }
+            a {
+              color: purple;
+              font-weight: 700;
+            }
+          `}</style>
+        </DefaultLayout>
+      );
+    }
   }
 }
