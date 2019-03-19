@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
-import { linkResolver, apiEndpoint } from '../prismic-config';
+import { linkResolver, apiEndpoint, accessToken } from '../prismic-config';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
 
@@ -16,8 +16,10 @@ export default class extends React.Component {
 
   static async getInitialProps(context) {
     const req = context.req;
+    // Get the required data for rendering the homepage
     const home = await this.getBlogHome(req);
     return {
+      // State variables that hold the two different queried data. doc for homepage info, posts for the blog posts
       doc: home.document,
       posts: home.response.results
     };
@@ -25,8 +27,10 @@ export default class extends React.Component {
 
   static async getBlogHome(req) {
     try {
-      const API = await Prismic.getApi(apiEndpoint, {req});
+      const API = await Prismic.getApi(apiEndpoint, { req, accessToken });
+      // Use the function to get a single document for home
       const document = await API.getSingle('blog_home');
+      // Make a query to get the blog posts organized in descending chronological order
       const response = await API.query(
         Prismic.Predicates.at('document.type', 'post'),
         {
@@ -74,6 +78,7 @@ export default class extends React.Component {
         <h1 className="blog-title">{RichText.asText(doc.data.headline)}</h1>
         <p className="blog-description">{RichText.asText(doc.data.description)}</p>
       </div>
+      {/* Styling for the homepage header segment */}
       <style jsx>{`
         .home {
           text-align: center;
@@ -108,8 +113,9 @@ export default class extends React.Component {
     return(
       <React.Fragment>
       <div className="blog-main">
-        {this.props.posts.map((post, index) => (
+        {this.props.posts.map((post) => (
           <div className="blog-post" key={post.id} data-wio-id={post.id}>
+            {/* Use Nextjs Link component for internal links */}
             <Link
               as={linkResolver(post)}
               href={`/post?uid=${post.uid}`}
@@ -159,6 +165,7 @@ export default class extends React.Component {
     return(
       <DefaultLayout>
         <Head>
+          {/* Website title defined from the Prismic data */}
           <title key="title">
             {RichText.asText(this.props.doc.data.headline)}
           </title>

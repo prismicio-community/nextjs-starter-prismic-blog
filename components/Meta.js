@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { apiEndpoint } from '../prismic-config';
 
 export default () => (
-  <div>
+  <React.Fragment>
     <Head>
       <meta charSet="utf-8"/>
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
@@ -225,5 +225,5 @@ export default () => (
       }
     `}</style>
     </Head>
-  </div>
+  </React.Fragment>
 )

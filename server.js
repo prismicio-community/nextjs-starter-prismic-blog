@@ -28,6 +28,10 @@ app
         });
     });
 
+    server.get('/blog', (res) => {
+      res.redirect(302, '/');
+    });
+
     server.get('*', (req, res) => handle(req, res));
 
     server.listen(3000, err => {

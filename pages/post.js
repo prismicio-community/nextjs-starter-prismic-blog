@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import { Text, Quote, ImageCaption } from '../components/slices';
 import Prismic from 'prismic-javascript';
-import { apiEndpoint } from '../prismic-config';
+import { apiEndpoint, accessToken } from '../prismic-config';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
+import Link from 'next/link';
 import Error from './_error';
 
 export default class Post extends Component {
@@ -19,7 +20,7 @@ export default class Post extends Component {
 
   static async getBlogPost(uid, req) {
     try {
-      const API = await Prismic.getApi(apiEndpoint, {req});
+      const API = await Prismic.getApi(apiEndpoint, { req, accessToken });
       return await API.getByUID('post', uid);
     } catch (error) {
       console.error(error);
@@ -45,28 +46,32 @@ export default class Post extends Component {
   render() {
     if (!this.props.post) {
       return(
+        // Call the standard error page if the document was not found
         <Error statusCode='404' />
       );
     } else {
-      const post = this.props.post.data;
-      let titled = post.title.length !== 0;
+      const post = this.props.post;
+      let titled = RichText.asText(post.data.title).length !== 0;
       return (
+        // Does this call too?
         <DefaultLayout>
           <Head>
             <title key="title">
-              {titled ? RichText.asText(post.title) : 'Untitled'}
+              {titled ? RichText.asText(post.data.title) : 'Untitled'}
             </title>
           </Head>
           <div className="main">
             <div className="outer-container">
               <div className="back">
-                <a href="/">back to list</a>
+                <Link href="/">
+                  <a>back to list</a>
+                </Link>
               </div>
-              <h1 data-wio-id={this.props.post.id}>
-                {titled ? RichText.asText(post.title) : 'Untitled'}
+              <h1 data-wio-id={post.id}>
+                {titled ? RichText.asText(post.data.title) : 'Untitled'}
               </h1>
             </div>
-            {this.renderSliceZone(post.body)}
+            {this.renderSliceZone(post.data.body)}
           </div>
           <style jsx global>{`
             .outer-container {

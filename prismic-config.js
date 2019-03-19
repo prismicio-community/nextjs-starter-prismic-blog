@@ -1,5 +1,7 @@
 module.exports = {
-  apiEndpoint: 'https://sample-blog-v2.prismic.io/api/v2',
+  apiEndpoint: 'https://bambi-blog.prismic.io/api/v2',
+
+  //accessToken: '########',
   
   linkResolver: function(doc) {
     if (doc.type === 'post') {
