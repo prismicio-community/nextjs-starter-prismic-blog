@@ -5,7 +5,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const Prismic = require('prismic-javascript');
-const { apiEndpoint, linkResolver } = require('./prismic-config.js');
+const { apiEndpoint, linkResolver } = require('./prismic-configuration');
 
 app
   .prepare()

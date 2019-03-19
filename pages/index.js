@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
-import { linkResolver, apiEndpoint, accessToken } from '../prismic-config';
+import { linkResolver, apiEndpoint, accessToken } from '../prismic-configuration';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
 
