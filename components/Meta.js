@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { apiEndpoint } from '../prismic-config';
+import { apiEndpoint } from '../prismic-configuration';
 
 export default () => (
   <React.Fragment>

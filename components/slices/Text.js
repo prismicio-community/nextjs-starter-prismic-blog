@@ -1,6 +1,6 @@
 import React from 'react';
 import { RichText } from 'prismic-reactjs';
-import { linkResolver } from '../../prismic-config';
+import { linkResolver } from '../../prismic-configuration';
 
 export default class Text extends React.Component {
   render() {

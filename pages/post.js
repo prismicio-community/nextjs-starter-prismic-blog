@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { RichText } from 'prismic-reactjs';
 import { Text, Quote, ImageCaption } from '../components/slices';
 import Prismic from 'prismic-javascript';
-import { apiEndpoint, accessToken } from '../prismic-config';
+import { apiEndpoint, accessToken } from '../prismic-configuration';
 import DefaultLayout from '../layouts';
 import Head from 'next/head';
 import Link from 'next/link';
