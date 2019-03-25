@@ -10,10 +10,10 @@
   "dependencies": {
     "express": "^4.16.4",
     "next": "^8.0.3",
-    "prismic-javascript": "^2.0.1",
+    "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^0.3.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "devDependencies": {},
   "scripts": {

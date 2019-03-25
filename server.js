@@ -12,12 +12,6 @@ app
   .then(() => {
     const server = express();
 
-    server.get('/blog/:uid', (req, res) => {
-      const nextJsPage = '/post';
-      const queryParams = { uid: req.params.uid };
-      app.render(req, res, nextJsPage, queryParams);
-    });
-
     server.get('/preview', (req, res) => {
       const token = req.query.token;
 
@@ -28,6 +22,12 @@ app
         });
     });
 
+    server.get('/blog/:uid', (req, res) => {
+      const nextJsPage = '/post';
+      const queryParams = { uid: req.params.uid };
+      app.render(req, res, nextJsPage, queryParams);
+    });
+    
     server.get('/blog', (res) => {
       res.redirect(302, '/');
     });

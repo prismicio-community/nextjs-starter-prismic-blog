@@ -12,8 +12,8 @@ export default () => (
         window.prismic = { endpoint: "${apiEndpoint}" }
       `}} />
       <script src="//static.cdn.prismic.io/prismic.min.js" />
-
-      <style jsx global>{`
+    </Head>
+    <style jsx global>{`
       html, body, div, span, applet, object, iframe,
       h1, h2, h3, h4, h5, h6, p, blockquote, pre,
       a, abbr, acronym, address, big, cite, code,
@@ -218,6 +218,5 @@ export default () => (
         }
       }
     `}</style>
-    </Head>
   </React.Fragment>
 )
