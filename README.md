@@ -10,12 +10,17 @@ This project is an implementation of the Prismic blog site demo using Next.js. B
 ### Runs the app in the development mode
 Build and open your browser to http://localhost:3000.
 ```
-> $ npm run dev
+> $ npm run local
 ```
 
 ### Builds the app for production using Next.js
 ```
 > $ npm run build
+```
+
+### Deploy to Now 2.0 serverless mode
+```
+> $ now
 ```
 
 ### Get started with Prismic
