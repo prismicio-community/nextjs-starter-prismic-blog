@@ -18,11 +18,6 @@ Build and open your browser to http://localhost:3000.
 > $ npm run build
 ```
 
-### Deploy to Now 2.0 serverless mode
-```
-> $ now
-```
-
 ### Get started with Prismic
 
 You can find out how to get started with Prismic from [our React documentation](https://prismic.io/docs/reactjs/getting-started/getting-started-from-scratch).
