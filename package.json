@@ -20,6 +20,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "now-build": "next build",
     "local": "node server.js"
   },
   "repository": {
