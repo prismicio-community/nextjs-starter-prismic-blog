@@ -1,5 +1,3 @@
-import Text from './Text';
-import Quote from './Quote';
-import ImageCaption from './ImageCaption';
-
-export { Text, Quote, ImageCaption }
+export { default as Text } from './Text';
+export { default as Quote } from './Quote';
+export { default as ImageCaption } from './ImageCaption';

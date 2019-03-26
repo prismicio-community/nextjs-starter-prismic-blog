@@ -1,5 +1,5 @@
 import React from 'react'
-import DefaultLayout from '../layouts'
+import DefaultLayout from 'layouts'
 import Head from 'next/head'
 
 class Error extends React.Component {
