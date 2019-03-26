@@ -1,8 +1,9 @@
+import { Fragment } from 'react'
 import Head from 'next/head'
-import { apiEndpoint } from '../prismic-configuration';
+import { apiEndpoint } from 'prismic-configuration';
 
 export default () => (
-  <React.Fragment>
+  <Fragment>
     <Head>
       <meta charSet="utf-8" />
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
@@ -218,5 +219,5 @@ export default () => (
         }
       }
     `}</style>
-  </React.Fragment>
+  </Fragment>
 )

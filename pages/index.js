@@ -1,19 +1,11 @@
 import Link from 'next/link';
 import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
-import { linkResolver, apiEndpoint, accessToken } from '../prismic-configuration';
-import DefaultLayout from '../layouts';
+import { linkResolver, apiEndpoint, accessToken } from 'prismic-configuration';
+import DefaultLayout from 'layouts';
 import Head from 'next/head';
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      doc: {},
-      posts: []
-    }
-  }
-
   static async getInitialProps(context) {
     const req = context.req;
     // Get the required data for rendering the homepage

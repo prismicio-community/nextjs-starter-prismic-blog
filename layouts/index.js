@@ -1,5 +1,5 @@
-import Meta from '../components/Meta'
-import Footer from '../components/Footer'
+import Meta from 'components/Meta'
+import Footer from 'components/Footer'
 
 const DefaultLayout = ({ children }) => (
   <div>
