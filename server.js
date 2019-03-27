@@ -28,7 +28,7 @@ app
       app.render(req, res, nextJsPage, queryParams);
     });
     
-    server.get('/blog', (res) => {
+    server.get('/blog', (req, res) => {
       res.redirect(302, '/');
     });
 

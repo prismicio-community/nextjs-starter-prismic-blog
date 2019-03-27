@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { RichText } from 'prismic-reactjs';
 
 import { imagePropType } from 'utils/propTypes';
