@@ -4,7 +4,7 @@
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "routes": [
     { "src": "/preview(.*)", "dest": "/preview.js" },
-    { "src": "/blog/(?<uid>[^/]+)$", "dest": "/post?uid=$uid" },
-    { "src": "/blog/", "dest": "/" }
+    { "src": "/blog", "status": 302, "headers": { "Location": "/index.js" } },
+    { "src": "/blog/(?<uid>[^/]+)$", "dest": "/post?uid=$uid" }
   ]
 }
