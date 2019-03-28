@@ -8,7 +8,7 @@ This project is an implementation of the Prismic blog site demo using Next.js. B
 > $ npm install
 ```
 ### Runs the app in the development mode
-Build and open your browser to http://localhost:3000.
+Build and open your browser to http://localhost:3000. This method uses node to run `server.js` and provides the custom routing required for previews and loading pages directly. _This will be unnecesary once `now dev` is in production. However, if the focus is not on serverless, then node is still going to be a requirement, so no harm in keeping this around for now_
 ```
 > $ npm run local
 ```
@@ -19,9 +19,17 @@ Build and open your browser to http://localhost:3000.
 ```
 
 ### Deploy to Now 2.0 serverless mode
+[Install Now](https://zeit.co/download) and register in the Now platform for deploying your site using serverless features. The required routing and setup files are already included in the project. Just run the `now` command in your project folder.
 ```
 > $ now
 ```
+
+### Run serverless mode locally
+_This is still in development_ As of version 14.3.0-canary.21 of `now-cli` you can use the `now dev` command to run the project in your local machine. You can use this to set up and test your routing in `now.json` without having to deploy to Now for every small change.
+```
+> $ now dev
+```
+Do a hard refresh (Command + Shift + R in OSX) in your browser after making any changes to trigger a local rebuild.
 
 ### Get started with Prismic
 
