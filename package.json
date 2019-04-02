@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "next": "^8.0.3",
+    "now": "^15.0.0",
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^0.3.2",
     "react": "^16.8.5",
@@ -16,9 +17,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "node server.js",
+    "dev": "now dev",
     "build": "next build",
-    "now-build": "next build"
+    "now-build": "next build",
+    "deply": "now"
   },
   "repository": {
     "type": "git",

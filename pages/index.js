@@ -112,6 +112,7 @@ export default class extends React.Component {
               as={linkResolver(post)}
               href={`/post?uid=${post.uid}`}
               passHref
+              prefetch
             >
               <a>{RichText.render(post.data.title, linkResolver)}</a>
             </Link>

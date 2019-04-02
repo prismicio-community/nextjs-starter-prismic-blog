@@ -21,26 +21,32 @@ You can use our [Prismic-CLI](https://github.com/prismicio/prismic-cli) tool to 
 > $ npm run build
 ```
 
-### Installing the Now canary release
-The official [https://zeit.co/guides/updating-now-cli](recommendation) is to install Now Desktop and check the Canary Releases option. This is will automatically update your now-cli package so it's always up to date.
-If you just wish to get started from terminal, specify the canary branch when installing the package.
+### Installing Now globally
+The official [recommendation](https://zeit.co/guides/updating-now-cli) is to install Now Desktop and check the Canary Releases option. This is will automatically update your now-cli package so it's always up to date. You can also install the package using NPM if you're not concerned about updates.
 ```
-> $ npm install -g now@canary
+> $ npm install -g now
 ```
 
 
 ### Deploy to Now 2.0 serverless mode
-[Install Now](https://zeit.co/download) and register in the Now platform for deploying your site using serverless features. The required routing and setup files are already included in the project. Just run the `now` command in your project folder.
+[Signup for Now](https://zeit.co/now) for deploying your site using serverless features. The required routing and setup files are already included in the project. Just run the `now` command in your project folder if you have installed it, or try the included package.
 ```
 > $ now
 ```
+or
+```
+> $ npm run deploy
+```
 
 ### Run serverless mode locally
-_This is still in development_ As of version 14.3.0-canary.21 of `now-cli` you can use the `now dev` command to run the project in your local machine. You can use this to set up and test your routing in `now.json` without having to deploy to Now for every small change.
+As of version 15.0.0 of `now` you can use the `now dev` command to run the project in your local machine. You can use this to set up and test your routing in `now.json` without having to deploy to Now for every small change.
 ```
 > $ now dev
 ```
-Do a hard refresh (Command + Shift + R in OSX) in your browser after making any changes to trigger a local rebuild.
+or 
+```
+> $ npm run dev
+```
 
 ### Get started with Prismic
 

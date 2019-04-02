@@ -62,7 +62,7 @@ export default class Post extends Component {
           <div className="main">
             <div className="outer-container">
               <div className="back">
-                <Link href="/">
+                <Link href="/" prefetch>
                   <a>back to list</a>
                 </Link>
               </div>
