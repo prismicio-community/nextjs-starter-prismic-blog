@@ -14,6 +14,7 @@ export default class Post extends Component {
     const { uid } = context.query;
     const req = context.req;
     const document = await this.getBlogPost(uid, req);
+    if (process.browser) window.prismic.setupEditButton();
     return {
       post: document
     };

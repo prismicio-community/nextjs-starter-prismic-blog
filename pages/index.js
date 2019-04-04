@@ -11,6 +11,7 @@ export default class extends Component {
     const req = context.req;
     // Get the required data for rendering the homepage
     const home = await this.getBlogHome(req);
+    if (process.browser) window.prismic.setupEditButton();
     return {
       // State variables that hold the two different queried data. doc for homepage info, posts for the blog posts
       doc: home.document,
