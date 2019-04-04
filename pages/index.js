@@ -1,11 +1,12 @@
-import Link from 'next/link';
+import { Component, Fragment } from 'react';
 import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
-import { linkResolver, apiEndpoint, accessToken } from 'prismic-configuration';
+import { default as NextLink } from 'next/link';
+import { linkResolver, apiEndpoint, accessToken, hrefResolver } from 'prismic-configuration';
 import DefaultLayout from 'layouts';
 import Head from 'next/head';
 
-export default class extends React.Component {
+export default class extends Component {
   static async getInitialProps(context) {
     const req = context.req;
     // Get the required data for rendering the homepage
@@ -63,7 +64,7 @@ export default class extends React.Component {
   renderHead() {
     const doc = this.props.doc;
     return(
-      <React.Fragment>
+      <Fragment>
       <div className="home">
         <div className="blog-avatar" style={{backgroundImage: 'url(' + doc.data.image.url +')'}}>
         </div>
@@ -97,25 +98,25 @@ export default class extends React.Component {
           border-bottom: 1px solid #DADADA;
         }
       `}</style>
-      </React.Fragment>
+      </Fragment>
     );
   }
 
   renderPosts() {
     return(
-      <React.Fragment>
+      <Fragment>
       <div className="blog-main">
         {this.props.posts.map((post) => (
           <div className="blog-post" key={post.id} data-wio-id={post.id}>
             {/* Use Nextjs Link component for internal links */}
-            <Link
+            <NextLink
               as={linkResolver(post)}
-              href={`/post?uid=${post.uid}`}
+              href={hrefResolver(post)}
               passHref
               prefetch
             >
               <a>{RichText.render(post.data.title, linkResolver)}</a>
-            </Link>
+            </NextLink>
             <p className="blog-post-meta">
               <time className="created-at">
                 {/* Format the date to M d, Y */}
@@ -149,8 +150,18 @@ export default class extends React.Component {
         .wio-link {
           float: right;
         }
+        @media (max-width: 767px) { 
+          .blog-post-meta, .blog-post-meta {
+            font-size: 16px;
+          }
+        }
+        @media screen and (min-width: 768px) {
+          .blog-post-meta {
+            font-size: 16px;
+          }
+        }
       `}</style>
-      </React.Fragment>
+      </Fragment>
     );
   }
 

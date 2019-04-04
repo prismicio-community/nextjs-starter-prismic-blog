@@ -16,17 +16,27 @@ You can use our [Prismic-CLI](https://github.com/prismicio/prismic-cli) tool to 
 > $ npm install
 ```
 
-### Builds the app for production using Next.js
-```
-> $ npm run build
-```
-
 ### Installing Now globally
 The official [recommendation](https://zeit.co/guides/updating-now-cli) is to install Now Desktop and check the Canary Releases option. This is will automatically update your now-cli package so it's always up to date. You can also install the package using NPM if you're not concerned about updates.
 ```
 > $ npm install -g now
 ```
 
+### Run serverless mode locally
+As of version 15.0.0 of `now` you can use the `now dev` command to run the project in your local machine in serverless mode. You can use this to set up and test your routing in `now.json` without having to deploy to Now for every small change. Development server will be running in `http://localhost:3000/`
+```
+> $ now dev
+```
+or 
+```
+> $ npm run now-dev
+```
+
+### Alternative local development mode
+If you find required rebuild process with `now dev` slows down your development workflow, you can run the included Express server file which will handle the same custom routing needs. Keep in mind that the routes defined here are different from the ones defined in `now.json`, always check your routes with `now dev` before deploying live to production. Development server will be running in `http://localhost:3000/` 
+```
+> $ npm run dev
+```
 
 ### Deploy to Now 2.0 serverless mode
 [Signup for Now](https://zeit.co/now) for deploying your site using serverless features. The required routing and setup files are already included in the project. Just run the `now` command in your project folder if you have installed it, or try the included package.
@@ -38,15 +48,6 @@ or
 > $ npm run deploy
 ```
 
-### Run serverless mode locally
-As of version 15.0.0 of `now` you can use the `now dev` command to run the project in your local machine. You can use this to set up and test your routing in `now.json` without having to deploy to Now for every small change.
-```
-> $ now dev
-```
-or 
-```
-> $ npm run dev
-```
 
 ### Get started with Prismic
 

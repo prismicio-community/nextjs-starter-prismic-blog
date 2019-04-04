@@ -6,6 +6,7 @@ import { imagePropType } from 'utils/propTypes';
 import {
   shape,
   string,
+  array,
 } from 'prop-types';
 
 const DefaultComp = (props) => (
@@ -33,6 +34,14 @@ const EmphasizedComp = (props) => (
         : null
       }
     </div>
+    <style jsx>{`
+    @media screen and (min-width:768px) {
+      .block-img.emphasized {
+        width: 130%;
+        margin: 0 -15% 2rem -15%;
+      }
+    }
+    `}</style>
   </div>
 );
 
@@ -49,7 +58,7 @@ const FullWidthComp = (props) => (
     </div>
     <style jsx>{`
       .blog-header {
-        height: 85px;
+        height: 400px;
         position: relative;
         font-family: 'Lato', sans-serif;
         font-weight: 400;
@@ -57,6 +66,28 @@ const FullWidthComp = (props) => (
         background-size: cover;
         color: white;
         margin-bottom: 3rem;
+      }
+      .blog-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .blog-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: -moz-linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
+        background: -webkit-linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
+        background: -o-linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
+        background: -ms-linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0, 0, 0, 0.2) 100%);
       }
       .blog-header .wrapper {
         text-align: center;
@@ -67,33 +98,36 @@ const FullWidthComp = (props) => (
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
       }
-      .blog-header .meta {
-        opacity: 0.7;
+      img {
+        width: 100%;
+        height: auto;
       }
-      .blog-header.single, .blog-header.home {
-        height: 100vh;
+      .block-img {
+        margin-bottom: 24px;
       }
-      .blog-header.single::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.2);
+      .image-label {
+        display: block;
+        text-align: center;
+        font-style: italic;
+        font-size: 14px;
+        color: #949494;
       }
-      .blog-header.single::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
-        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
-        background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
-        background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0.2) 100%);
-        background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.05) 80%, rgba(0,0,0,0.1) 90%, rgba(0, 0, 0, 0.2) 100%);
+      /* Media Queries */
+      @media (max-width: 767px) {
+        .blog-header {
+          padding: 5px;
+          height: 240px;
+        }
+        .blog-header .wrapper {
+          width: 80%;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        /* Blog post images */
+        .block-img.emphasized {
+          width: 130%;
+          margin: 0 -15% 2rem -15%;
+        }
       }
     `}</style>
   </Fragment>
@@ -116,8 +150,10 @@ const ImageCaption = ({ slice }) => {
 
 ImageCaption.propTypes = {
   slice: shape({
-    caption: string,
-    image: imagePropType.isRequired,
+    primary: shape({
+      caption: array,
+      image: imagePropType.isRequired,
+    })
   }).isRequired
 }
 
