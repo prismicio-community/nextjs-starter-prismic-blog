@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import Prismic from 'prismic-javascript';
 import { RichText, Date } from 'prismic-reactjs';
 import { default as NextLink } from 'next/link';
@@ -116,7 +116,7 @@ export default class extends Component {
               passHref
               prefetch
             >
-              <a>{RichText.render(post.data.title, linkResolver)}</a>
+              <a><h2>{RichText.asText(post.data.title)}</h2></a>
             </NextLink>
             <p className="blog-post-meta">
               <time className="created-at">

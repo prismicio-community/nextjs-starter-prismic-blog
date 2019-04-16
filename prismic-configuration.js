@@ -21,7 +21,7 @@ module.exports = {
   // Additional helper function for Next/Link components
   hrefResolver: function(doc) {
     if (doc.type === 'post') {
-      return `post?uid=${doc.uid}`;
+      return `/post?uid=${doc.uid}`;
     }
     return '/'
   }
