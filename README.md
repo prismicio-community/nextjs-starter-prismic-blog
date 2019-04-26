@@ -1,14 +1,14 @@
 [![Dependency Status](https://david-dm.org/raulg/nextjs-blog.svg)](https://david-dm.org/raulg/nextjs-blog)
 
 # Prismic Next.js Blog Site Example
-This project is an implementation of the Prismic blog site demo using Next.js. Built up from the starter project, it's meant to provide you with an idea of how to build your own sites using the Prismic features. Read our user guide if you need guidance on how to use this repository.
+This project is an implementation of the Prismic blog site demo using Next.js. Built up from the starter project, it's meant to provide you with an idea of how to build your own sites using the Prismic features. Read our [user guide](https://user-guides.prismic.io/examples/next-js-samples/sample-blog-with-api-based-cms-in-nextjs) if you need guidance on how to use this repository.
 
-### Getting started quickly with Prismic Themes
+## Getting started quickly with Prismic Themes
 You can use our [Prismic-CLI](https://github.com/prismicio/prismic-cli) tool to quickly install this project in your machine, as well as setting up a Prismic repository with the required Custom Types. Just follow the instructions in your terminal to get started!
 
 ```
 > $ npm install -g prismic-cli
-> $ prismic theme https://github.com/raulg/nextjs-blog/archive/master.zip
+> $ prismic theme https://github.com/prismicio/nextjs-blog
 ```
 
 ### Install dependencies
@@ -38,7 +38,7 @@ If you find required rebuild process with `now dev` slows down your development 
 > $ npm run dev
 ```
 
-### Deploy to Now 2.0 serverless mode
+## Deploy to Now 2.0 serverless mode
 [Signup for Now](https://zeit.co/now) for deploying your site using serverless features. The required routing and setup files are already included in the project. Just run the `now` command in your project folder if you have installed it, or try the included package.
 ```
 > $ now
@@ -49,11 +49,11 @@ or
 ```
 
 
-### Get started with Prismic
+## Get started with Prismic
 
 You can find out how to get started with Prismic from [our React documentation](https://prismic.io/docs/reactjs/getting-started/getting-started-from-scratch).
 
-### License
+## License
 
 This software is licensed under the Apache 2 license, quoted below.
 
