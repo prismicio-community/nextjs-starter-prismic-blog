@@ -1,9 +1,9 @@
-import React from 'react';
-import { RichText } from 'prismic-reactjs';
+import React from 'react'
+import { RichText } from 'prismic-reactjs'
 
 const Quote = ({ slice }) => (
-  <div className="post-part single container">
-    <blockquote className="block-quotation">
+  <div className='post-part single container'>
+    <blockquote className='block-quotation'>
       {RichText.asText(slice.primary.quote)}
     </blockquote>
     <style jsx>{`
@@ -31,6 +31,6 @@ const Quote = ({ slice }) => (
       }
     `}</style>
   </div>
-);
+)
 
-export default Quote;
+export default Quote

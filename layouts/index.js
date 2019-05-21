@@ -7,6 +7,6 @@ const DefaultLayout = ({ children }) => (
     <main>{children}</main>
     <Footer />
   </div>
-);
+)
 
-export default DefaultLayout;
+export default DefaultLayout
