@@ -35,7 +35,7 @@ or
 ### Alternative local development mode
 If your workflow favors working with Node, you can run the included Express server file which will handle the same custom routing needs. Keep in mind that the routes defined here are different from the ones defined in `now.json`, make sure to replicate and check your routing before deploying to production on Now. Development server will be running in `http://localhost:3000/` 
 ```
-> $ npm run nodev
+> $ npm run node-dev
 ```
 
 ## Deploy to Now 2.0 serverless mode

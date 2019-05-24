@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev": "now dev",
-    "nodev": "nodemon server.js",
+    "node-dev": "nodemon server.js",
     "now-build": "next build",
     "deploy": "now"
   },
