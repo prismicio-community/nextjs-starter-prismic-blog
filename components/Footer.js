@@ -1,15 +1,15 @@
 import React from 'react'
 
 const Footer = () => (
-<footer>
-  <p>
-    Proudly published with &nbsp;<a href="https://prismic.io" target="_blank" rel="noopener noreferrer">Prismic</a>
-    <br/>
-    <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
-      <img className="footer-logo" src="/static/images/logo-prismic.svg" alt="Gray Prismic logo"/>
-    </a>
-  </p>
-  <style jsx>{`
+  <footer>
+    <p>
+    Proudly published with &nbsp;<a href='https://prismic.io' target='_blank' rel='noopener noreferrer'>Prismic</a>
+      <br />
+      <a href='https://prismic.io' target='_blank' rel='noopener noreferrer'>
+        <img className='footer-logo' src='/static/images/logo-prismic.svg' alt='Gray Prismic logo' />
+      </a>
+    </p>
+    <style jsx>{`
     footer {
       max-width: 700px;
       margin: 0 auto;
@@ -32,7 +32,7 @@ const Footer = () => (
       margin-top: 10px;
     }
   `}</style>
-</footer>
-);
+  </footer>
+)
 
-export default Footer;
+export default Footer

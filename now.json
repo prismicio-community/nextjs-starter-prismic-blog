@@ -3,7 +3,7 @@
   "name": "prismic-nextjs-blog",
   "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "routes": [
-    { "src": "/preview\\?(?<query>.*)", "dest": "/preview?query=$query" },
+    { "src": "/preview", "dest": "/preview" },
     { "src": "/blog/?", "status": 302, "headers": { "Location": "/" } },
     { "src": "/blog/(?<uid>[^/]+)$", "dest": "/post?uid=$uid" }
   ]

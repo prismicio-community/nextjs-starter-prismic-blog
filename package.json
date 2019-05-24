@@ -8,26 +8,26 @@
     "email": "raul.gonzalez@prismic.io"
   },
   "dependencies": {
-    "next": "^8.0.4",
+    "next": "^8.1.0",
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^0.3.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "express": "^4.16.4",
-    "nodemon": "^1.18.10",
-    "now": "^15.0.1"
+    "express": "^4.17.0",
+    "nodemon": "^1.19.0",
+    "now": "^15.3.0"
   },
   "scripts": {
-    "dev": "nodemon server.js",
-    "now-dev": "now dev",
+    "dev": "now dev",
+    "node-dev": "nodemon server.js",
     "now-build": "next build",
     "deploy": "now"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/raulg/nextjs-blog.git"
+    "url": "https://github.com/prismicio/nextjs-blog.git"
   },
   "license": "Apache-2.0"
 }
