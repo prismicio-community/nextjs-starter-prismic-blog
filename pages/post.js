@@ -1,36 +1,15 @@
-import React, { Component } from 'react'
-import Prismic from 'prismic-javascript'
+import React from 'react'
 import { RichText } from 'prismic-reactjs'
 import { Text, Quote, ImageCaption } from 'components/slices'
-import { apiEndpoint, accessToken } from 'prismic-configuration'
+import { Client } from 'prismic-configuration'
 import { postStyle } from 'styles'
 import DefaultLayout from 'layouts'
 import Head from 'next/head'
 import { default as NextLink } from 'next/link'
 import Error from './_error'
 
-export default class Post extends Component {
-  static async getInitialProps (context) {
-    const { uid } = context.query
-    const req = context.req
-    const document = await this.getBlogPost(uid, req)
-    if (process.browser) window.prismic.setupEditButton()
-    return {
-      post: document
-    }
-  }
-
-  static async getBlogPost (uid, req) {
-    try {
-      const API = await Prismic.getApi(apiEndpoint, { req, accessToken })
-      return await API.getByUID('post', uid)
-    } catch (error) {
-      console.error(error)
-      return error
-    }
-  }
-
-  renderSliceZone (sliceZone) {
+const Post = (props) => {
+  const renderSliceZone = (sliceZone) => {
     return sliceZone.map((slice, index) => {
       switch (slice.slice_type) {
         case ('image_with_caption'):
@@ -45,38 +24,56 @@ export default class Post extends Component {
     })
   }
 
-  render () {
-    if (!this.props.post) {
-      return (
-        // Call the standard error page if the document was not found
-        <Error statusCode='404' />
-      )
-    } else {
-      const post = this.props.post
-      let titled = RichText.asText(post.data.title).length !== 0
-      return (
-        <DefaultLayout>
-          <Head>
-            <title key='title'>
-              {titled ? RichText.asText(post.data.title) : 'Untitled'}
-            </title>
-          </Head>
-          <div className='main'>
-            <div className='outer-container'>
-              <div className='back'>
-                <NextLink href='/' prefetch>
-                  <a>back to list</a>
-                </NextLink>
-              </div>
-              <h1 data-wio-id={post.id}>
-                {titled ? RichText.asText(post.data.title) : 'Untitled'}
-              </h1>
+  if (!props.post) {
+    return (
+      // Call the standard error page if the document was not found
+      <Error statusCode='404' />
+    )
+  } else {
+    const post = props.post
+    let titled = RichText.asText(post.data.title).length !== 0
+    return (
+      <DefaultLayout>
+        <Head>
+          <title key='title'>
+            {titled ? RichText.asText(post.data.title) : 'Untitled'}
+          </title>
+        </Head>
+        <div className='main'>
+          <div className='outer-container'>
+            <div className='back'>
+              <NextLink href='/' prefetch>
+                <a>back to list</a>
+              </NextLink>
             </div>
-            {this.renderSliceZone(post.data.body)}
+            <h1 data-wio-id={post.id}>
+              {titled ? RichText.asText(post.data.title) : 'Untitled'}
+            </h1>
           </div>
-          <style jsx global>{postStyle}</style>
-        </DefaultLayout>
-      )
-    }
+          {renderSliceZone(post.data.body)}
+        </div>
+        <style jsx global>{postStyle}</style>
+      </DefaultLayout>
+    )
   }
 }
+
+Post.getInitialProps = async function ({ req, query }) {
+  const { uid } = query
+  const document = await this.getBlogPost(uid, req)
+  if (process.browser) window.prismic.setupEditButton()
+  return {
+    post: document
+  }
+}
+
+Post.getBlogPost = async function (uid, req) {
+  try {
+    return await Client(req).getByUID('post', uid)
+  } catch (error) {
+    console.error(error)
+    return error
+  }
+}
+
+export default Post

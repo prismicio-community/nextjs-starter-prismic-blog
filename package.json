@@ -1,6 +1,6 @@
 {
   "name": "nextjs-blog",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Sample blog built with Next.js using Prismic headless CMS",
   "private": true,
   "author": {
@@ -10,14 +10,14 @@
   "dependencies": {
     "next": "^8.1.0",
     "prismic-javascript": "^2.0.3",
-    "prismic-reactjs": "^0.3.2",
+    "prismic-reactjs": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "express": "^4.17.0",
-    "nodemon": "^1.19.0",
-    "now": "^15.3.0"
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
+    "now": "^15.5.0"
   },
   "scripts": {
     "dev": "now dev",
