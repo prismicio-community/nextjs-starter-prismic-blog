@@ -1,5 +1,4 @@
 import Prismic from 'prismic-javascript'
-import Link from 'next/link'
 
 // -- Prismic API endpoint
 // Determines which repository to query and fetch data from
@@ -28,18 +27,16 @@ export const hrefResolver = (doc) => {
   return '/'
 }
 
+// -- Client method to query Prismic
+// Avoids reinitializing an API connection for every query, handling instead with a Client object
 let frontClient
 
 export const Client = (req = null) => {
-  if (!req && frontClient) return frontClient // prevent generate new instance for client side since we don't need the refreshed request object.
+  if (!req && frontClient) return frontClient // Prevents generating new instances for client side since we don't need the refreshed request object.
   else {
+    // Reinitializes Client only if there's a req object present, which is used for Previews
     const options = Object.assign({}, req ? { req } : {}, accessToken ? { accessToken: accessToken } : {})
+    // Connects to the given repository to facilitate data queries
     return Prismic.client(apiEndpoint, options)
   }
 }
-
-export const customLink = (type, element, content, children, index) => (
-  <Link key={element.data.id} href={hrefResolver(element.data)} as={linkResolver(element.data)}>
-    <a>{content}</a>
-  </Link>
-)

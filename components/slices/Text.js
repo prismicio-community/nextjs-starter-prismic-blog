@@ -1,10 +1,14 @@
 import React from 'react'
 import { RichText } from 'prismic-reactjs'
-import { linkResolver, customLink } from 'prismic-configuration'
+import { linkResolver } from 'prismic-configuration'
+import { htmlSerializer } from 'utils/htmlSerializer'
 
 const Text = ({ slice }) => (
   <div className='post-part single container'>
-    <RichText render={slice.primary.text} linkResolver={linkResolver} serializeHyperlink={customLink} />
+    <RichText render={slice.primary.text}
+      linkResolver={linkResolver}
+      htmlSerializer={htmlSerializer}
+    />
   </div>
 )
 
