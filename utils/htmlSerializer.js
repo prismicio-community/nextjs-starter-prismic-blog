@@ -1,5 +1,5 @@
 import React from 'react'
-import { RichText } from 'prismic-reactjs'
+import { Elements } from 'prismic-reactjs'
 import { linkResolver, hrefResolver } from 'prismic-configuration'
 import Router from 'next/router'
 
@@ -10,8 +10,6 @@ const onClickHandler = function (href, as) {
     Router.push(href, as)
   }
 }
-
-const Elements = RichText.Elements
 
 const propsWithUniqueKey = function (props, key) {
   return Object.assign(props || {}, { key })

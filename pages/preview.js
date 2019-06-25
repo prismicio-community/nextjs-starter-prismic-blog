@@ -1,21 +1,23 @@
 import React from 'react'
-import Prismic from 'prismic-javascript'
-import { apiEndpoint, linkResolver } from 'prismic-configuration'
+import Router from 'next/router'
+import { Client, linkResolver } from 'prismic-configuration'
 
-export default class Preview extends React.Component {
-  static async getInitialProps (context) {
-    const token = context.query.token
-    const { req, res } = context
+const Preview = () => (
+  <div>Preview</div>
+)
 
-    const API = await Prismic.getApi(apiEndpoint, { req })
-    const url = await API.previewSession(token, linkResolver, '/')
+Preview.getInitialProps = async function (context) {
+  const token = context.query.token
+  const { res, req } = context
 
+  const url = await Client(req).previewSession(token, linkResolver, '/')
+  if (res) {
     res.writeHead(302, { Location: url })
     res.end()
-    return {}
+  } else {
+    Router.push(url)
   }
-
-  render () {
-    return <div>Preview</div>
-  }
+  return {}
 }
+
+export default Preview

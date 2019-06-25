@@ -1,44 +1,13 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import Prismic from 'prismic-javascript'
 import { RichText, Date } from 'prismic-reactjs'
 import { default as NextLink } from 'next/link'
-import { linkResolver, apiEndpoint, accessToken, hrefResolver } from 'prismic-configuration'
+import { Client, apiEndpoint, hrefResolver, linkResolver } from 'prismic-configuration'
 import DefaultLayout from 'layouts'
 import Head from 'next/head'
 
-export default class extends Component {
-  static async getInitialProps (context) {
-    const req = context.req
-    // Get the required data for rendering the homepage
-    const home = await this.getBlogHome(req)
-    if (process.browser) window.prismic.setupEditButton()
-    return {
-      // State variables that hold the two different queried data. doc for homepage info, posts for the blog posts
-      doc: home.document,
-      posts: home.response.results
-    }
-  }
-
-  static async getBlogHome (req) {
-    try {
-      const API = await Prismic.getApi(apiEndpoint, { req, accessToken })
-      // Use the function to get a single document for home
-      const document = await API.getSingle('blog_home')
-      // Make a query to get the blog posts organized in descending chronological order
-      const response = await API.query(
-        Prismic.Predicates.at('document.type', 'post'),
-        {
-          orderings: '[my.post.date desc]'
-        }
-      )
-      return { document, response }
-    } catch (error) {
-      console.error(error)
-      return error
-    }
-  }
-
-  firstParagraph (post) {
+const Home = (props) => {
+  const firstParagraph = (post) => {
     // Find the first text slice of post's body
     let firstTextSlice = post.data.body.find(slice => slice.slice_type === 'text')
     if (firstTextSlice != null) {
@@ -62,8 +31,8 @@ export default class extends Component {
     }
   }
 
-  renderHead () {
-    const doc = this.props.doc
+  const renderHead = () => {
+    const doc = props.doc
     return (
       <Fragment>
         <div className='home'>
@@ -102,107 +71,133 @@ export default class extends Component {
     )
   }
 
-  renderPosts () {
+  const renderPosts = () => (
+    <Fragment>
+      <div className='blog-main'>
+        {props.posts.map((post) => (
+          <div className='blog-post' key={post.id} data-wio-id={post.id}>
+            {/* Use Nextjs Link component for internal links */}
+            <NextLink
+              as={linkResolver(post)}
+              href={hrefResolver(post)}
+              passHref
+              prefetch
+            >
+              <a><h2>{RichText.asText(post.data.title) ? RichText.asText(post.data.title) : 'Untitled'}</h2></a>
+            </NextLink>
+            <p className='blog-post-meta'>
+              <time className='created-at'>
+                {/* Format the date to M d, Y */}
+                {new Intl.DateTimeFormat('en-US', {
+                  month: 'short',
+                  day: '2-digit',
+                  year: 'numeric'
+                }).format(Date(post.data.date))}
+              </time>
+            </p>
+            {firstParagraph(post)}
+          </div>
+        ))}
+      </div>
+      <style jsx>{`
+      .blog-main {
+        max-width: 700px;
+        margin: auto;
+      }
+      .blog-post {
+        margin-bottom: 3rem;
+      }
+      .blog-post h2 {
+        margin: 0;
+      }
+      .blog-post-meta {
+        color: #9A9A9A;
+        font-family: 'Lato', sans-serif;
+        margin-bottom: 8px;
+      }
+      .wio-link {
+        float: right;
+      }
+      @media (max-width: 767px) { 
+        .blog-post-meta, .blog-post-meta {
+          font-size: 16px;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .blog-post-meta {
+          font-size: 16px;
+        }
+      }
+    `}</style>
+    </Fragment>
+  )
+
+  if (props.doc) {
     return (
-      <Fragment>
-        <div className='blog-main'>
-          {this.props.posts.map((post) => (
-            <div className='blog-post' key={post.id} data-wio-id={post.id}>
-              {/* Use Nextjs Link component for internal links */}
-              <NextLink
-                as={linkResolver(post)}
-                href={hrefResolver(post)}
-                passHref
-                prefetch
-              >
-                <a><h2>{RichText.asText(post.data.title)}</h2></a>
-              </NextLink>
-              <p className='blog-post-meta'>
-                <time className='created-at'>
-                  {/* Format the date to M d, Y */}
-                  {new Intl.DateTimeFormat('en-US', {
-                    month: 'short',
-                    day: '2-digit',
-                    year: 'numeric'
-                  }).format(Date(post.data.date))}
-                </time>
-              </p>
-              {this.firstParagraph(post)}
-            </div>
-          ))}
+      <DefaultLayout>
+        <Head>
+          {/* Website title defined from the Prismic data */}
+          <title key='title'>
+            {RichText.asText(props.doc.data.headline)}
+          </title>
+        </Head>
+        {renderHead()}
+        {renderPosts()}
+      </DefaultLayout>
+    )
+  } else {
+    // Message when repository has not been setup yet
+    return (
+      <DefaultLayout>
+        <div className='setup-repo'>
+          <h1>Good job!</h1>
+          <h2>You're halfway done with setting up your Prismic website</h2>
+          <h4>Just visit your <a href={`${apiEndpoint.slice(0, -6)}documents/`}>Prismic dashboard</a> and add some Content to show</h4>
         </div>
         <style jsx>{`
-        .blog-main {
-          max-width: 700px;
-          margin: auto;
-        }
-        .blog-post {
-          margin-bottom: 3rem;
-        }
-        .blog-post h2 {
-          margin: 0;
-        }
-        .blog-post-meta {
-          color: #9A9A9A;
-          font-family: 'Lato', sans-serif;
-          margin-bottom: 8px;
-        }
-        .wio-link {
-          float: right;
-        }
-        @media (max-width: 767px) { 
-          .blog-post-meta, .blog-post-meta {
-            font-size: 16px;
+          .setup-repo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50vw;
+            align-items: center;
           }
-        }
-        @media screen and (min-width: 768px) {
-          .blog-post-meta {
-            font-size: 16px;
+          a {
+            color: purple;
+            font-weight: 700;
           }
-        }
-      `}</style>
-      </Fragment>
+        `}</style>
+      </DefaultLayout>
     )
   }
+}
 
-  render () {
-    if (this.props.doc) {
-      return (
-        <DefaultLayout>
-          <Head>
-            {/* Website title defined from the Prismic data */}
-            <title key='title'>
-              {RichText.asText(this.props.doc.data.headline)}
-            </title>
-          </Head>
-          {this.renderHead()}
-          {this.renderPosts()}
-        </DefaultLayout>
-      )
-    } else {
-      // Message when repository has not been setup yet
-      return (
-        <DefaultLayout>
-          <div className='setup-repo'>
-            <h1>Good job!</h1>
-            <h2>You're halfway done with setting up your Prismic website</h2>
-            <h4>Just visit your <a href={`${apiEndpoint.slice(0, -6)}documents/`}>Prismic dashboard</a> and add some Content to show</h4>
-          </div>
-          <style jsx>{`
-            .setup-repo {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              height: 50vw;
-              align-items: center;
-            }
-            a {
-              color: purple;
-              font-weight: 700;
-            }
-          `}</style>
-        </DefaultLayout>
-      )
-    }
+Home.getInitialProps = async function ({ req }) {
+  const home = await Home.getBlogHome(req)
+  if (process.browser) window.prismic.setupEditButton()
+  return {
+    // State variables that hold the two different queried data. doc for homepage info, posts for the blog posts
+    doc: home.document,
+    posts: home.response.results
   }
 }
+
+Home.getBlogHome = async function (req) {
+  try {
+    // Use the function to get a single document for home
+    const document = await Client(req).getSingle('blog_home')
+    // Make a query to get the blog posts organized in descending chronological order
+    const response = await Client(req).query(
+      Prismic.Predicates.at('document.type', 'post'),
+      {
+        orderings: '[my.post.date desc]'
+      }
+    )
+    return { document, response }
+  } catch (error) {
+    console.error(error)
+    return error
+  }
+}
+
+export default Home
