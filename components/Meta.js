@@ -8,7 +8,7 @@ export default () => (
     <Head>
       <meta charSet='utf-8' />
       <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' />
-      <link rel='icon' href='/static/favicon.png' type='image/png' />
+      <link rel='icon' href='/favicon.png' type='image/png' />
       <script dangerouslySetInnerHTML={{
         __html: `
         window.prismic = { endpoint: "${apiEndpoint}" }

@@ -80,8 +80,6 @@ const Home = (props) => {
             <NextLink
               as={linkResolver(post)}
               href={hrefResolver(post)}
-              passHref
-              prefetch
             >
               <a><h2>{RichText.asText(post.data.title) ? RichText.asText(post.data.title) : 'Untitled'}</h2></a>
             </NextLink>

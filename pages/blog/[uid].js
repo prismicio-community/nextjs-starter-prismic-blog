@@ -6,7 +6,7 @@ import { postStyle } from 'styles'
 import DefaultLayout from 'layouts'
 import Head from 'next/head'
 import { default as NextLink } from 'next/link'
-import Error from './_error'
+import Error from '../_error'
 
 const Post = (props) => {
   const renderSliceZone = (sliceZone) => {
@@ -42,7 +42,7 @@ const Post = (props) => {
         <div className='main'>
           <div className='outer-container'>
             <div className='back'>
-              <NextLink href='/' prefetch>
+              <NextLink href='/'>
                 <a>back to list</a>
               </NextLink>
             </div>
