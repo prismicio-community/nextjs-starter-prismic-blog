@@ -46,7 +46,7 @@ const Post = (props) => {
                 <a>back to list</a>
               </NextLink>
             </div>
-            <h1 data-wio-id={post.id}>
+            <h1>
               {titled ? RichText.asText(post.data.title) : 'Untitled'}
             </h1>
           </div>
@@ -61,7 +61,6 @@ const Post = (props) => {
 Post.getInitialProps = async function ({ req, query }) {
   const { uid } = query
   const document = await this.getBlogPost(uid, req)
-  if (process.browser) window.prismic.setupEditButton()
   return {
     post: document
   }

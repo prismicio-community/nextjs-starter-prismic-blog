@@ -75,7 +75,7 @@ const Home = (props) => {
     <Fragment>
       <div className='blog-main'>
         {props.posts.map((post) => (
-          <div className='blog-post' key={post.id} data-wio-id={post.id}>
+          <div className='blog-post' key={post.id}>
             {/* Use Nextjs Link component for internal links */}
             <NextLink
               as={linkResolver(post)}
@@ -172,7 +172,6 @@ const Home = (props) => {
 
 Home.getInitialProps = async function ({ req }) {
   const home = await Home.getBlogHome(req)
-  if (process.browser) window.prismic.setupEditButton()
   return {
     // State variables that hold the two different queried data. doc for homepage info, posts for the blog posts
     doc: home.document,
