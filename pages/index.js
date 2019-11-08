@@ -5,6 +5,7 @@ import { default as NextLink } from 'next/link'
 import { Client, apiEndpoint, hrefResolver, linkResolver } from 'prismic-configuration'
 import DefaultLayout from 'layouts'
 import Head from 'next/head'
+import { headerStyles, postListStyles, setupRepoStyles } from 'styles'
 
 const Home = (props) => {
   const firstParagraph = (post) => {
@@ -41,32 +42,7 @@ const Home = (props) => {
           <p className='blog-description'>{RichText.asText(doc.data.description)}</p>
         </div>
         {/* Styling for the homepage header segment */}
-        <style jsx>{`
-        .home {
-          text-align: center;
-          max-width: 700px;
-          margin: auto;
-        }
-
-        .blog-avatar {
-          height: 140px;
-          width: 140px;
-          border-radius: 50%;
-          background-position: center;
-          background-size: cover;
-          margin: 1em auto;
-        }
-
-        .blog-description {
-          font-size: 18px;
-          color: #9A9A9A;
-          line-height: 30px;
-          margin-bottom: 3rem;
-          padding-bottom: 3rem;
-          font-family: 'Lato', sans-serif;
-          border-bottom: 1px solid #DADADA;
-        }
-      `}</style>
+        <style jsx global>{headerStyles}</style>
       </Fragment>
     )
   }
@@ -97,36 +73,7 @@ const Home = (props) => {
           </div>
         ))}
       </div>
-      <style jsx>{`
-      .blog-main {
-        max-width: 700px;
-        margin: auto;
-      }
-      .blog-post {
-        margin-bottom: 3rem;
-      }
-      .blog-post h2 {
-        margin: 0;
-      }
-      .blog-post-meta {
-        color: #9A9A9A;
-        font-family: 'Lato', sans-serif;
-        margin-bottom: 8px;
-      }
-      .wio-link {
-        float: right;
-      }
-      @media (max-width: 767px) { 
-        .blog-post-meta, .blog-post-meta {
-          font-size: 16px;
-        }
-      }
-      @media screen and (min-width: 768px) {
-        .blog-post-meta {
-          font-size: 16px;
-        }
-      }
-    `}</style>
+      <style jsx global>{postListStyles}</style>
     </Fragment>
   )
 
@@ -152,19 +99,7 @@ const Home = (props) => {
           <h2>You're halfway done with setting up your Prismic website</h2>
           <h4>Just visit your <a href={`${apiEndpoint.slice(0, -6)}documents/`}>Prismic dashboard</a> and add some Content to show</h4>
         </div>
-        <style jsx>{`
-          .setup-repo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 50vw;
-            align-items: center;
-          }
-          a {
-            color: purple;
-            font-weight: 700;
-          }
-        `}</style>
+        <style jsx global>{setupRepoStyles}</style>
       </DefaultLayout>
     )
   }
@@ -175,7 +110,7 @@ Home.getInitialProps = async function ({ req }) {
   return {
     // State variables that hold the two different queried data. doc for homepage info, posts for the blog posts
     doc: home.document,
-    posts: home.response.results
+    posts: home.response ? home.response.results : []
   }
 }
 

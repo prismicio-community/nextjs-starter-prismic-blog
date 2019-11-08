@@ -2,7 +2,7 @@ import React from 'react'
 import { RichText } from 'prismic-reactjs'
 import { Text, Quote, ImageCaption } from 'components/slices'
 import { Client } from 'prismic-configuration'
-import { postStyle } from 'styles'
+import { postStyles } from 'styles'
 import DefaultLayout from 'layouts'
 import Head from 'next/head'
 import { default as NextLink } from 'next/link'
@@ -52,7 +52,7 @@ const Post = (props) => {
           </div>
           {renderSliceZone(post.data.body)}
         </div>
-        <style jsx global>{postStyle}</style>
+        <style jsx global>{postStyles}</style>
       </DefaultLayout>
     )
   }

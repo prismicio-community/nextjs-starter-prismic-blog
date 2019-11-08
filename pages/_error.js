@@ -1,6 +1,8 @@
 import React from 'react'
-import DefaultLayout from 'layouts'
 import Head from 'next/head'
+
+import DefaultLayout from 'layouts'
+import { errorStyles } from 'styles'
 
 const Error = (props) => (
   <DefaultLayout>
@@ -11,15 +13,7 @@ const Error = (props) => (
         : 'Client-side error'}</h1>
       <h2>{props.statusCode === '404' ? 'Document not found' : 'Please contact developer'}</h2>
       <p><a href='/'>Return to homepage</a></p>
-      <style jsx>{`
-        .not-found {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          height: 42vw;
-          align-items: center;
-        }
-      `}</style>
+      <style jsx global>{errorStyles}</style>
     </div>
   </DefaultLayout>
 )
