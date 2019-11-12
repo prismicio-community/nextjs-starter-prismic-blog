@@ -42,6 +42,14 @@ export const imageCaptionStyles = css.global`
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.blog-header .image-label {
+  margin-bottom: 1rem;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
+  font-style: normal;
+  color: #ffffff;
+}
 img {
   width: 100%;
   height: auto;
@@ -56,8 +64,13 @@ img {
   font-size: 14px;
   color: #949494;
 }
+
 /* Media Queries */
 @media (max-width: 767px) {
+  .blog-header .image-label {
+    font-size: 36px;
+    line-height: 45px;
+  }
   .blog-header {
     padding: 5px;
     height: 240px;

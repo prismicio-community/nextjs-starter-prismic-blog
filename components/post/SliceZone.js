@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Quote, ImageCaption } from './slices'
+import { Text, Quote, ImageWithCaption } from './slices'
 
 /**
  * Post slice zone component
@@ -8,7 +8,7 @@ const SliceZone = ({ sliceZone }) => (
   sliceZone.map((slice, index) => {
     switch (slice.slice_type) {
       case ('image_with_caption'):
-        return <ImageCaption slice={slice} key={`slice-${index}`} />
+        return <ImageWithCaption slice={slice} key={`slice-${index}`} />
       case ('quote'):
         return <Quote slice={slice} key={`slice-${index}`} />
       case ('text'):
