@@ -1,6 +1,9 @@
 import Meta from 'components/Meta'
 import Footer from 'components/Footer'
 
+/**
+ * Default layout component
+ */
 const DefaultLayout = ({ children }) => (
   <div>
     <Meta />
