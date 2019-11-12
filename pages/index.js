@@ -1,131 +1,55 @@
-import React, { Fragment } from 'react'
-import Prismic from 'prismic-javascript'
-import { RichText, Date } from 'prismic-reactjs'
-import { default as NextLink } from 'next/link'
-import { Client, apiEndpoint, hrefResolver, linkResolver } from 'prismic-configuration'
-import DefaultLayout from 'layouts'
+import React from 'react'
 import Head from 'next/head'
-import { headerStyles, postListStyles, setupRepoStyles } from 'styles'
+import Prismic from 'prismic-javascript'
+import { RichText } from 'prismic-reactjs'
 
-const Home = (props) => {
-  const firstParagraph = (post) => {
-    // Find the first text slice of post's body
-    let firstTextSlice = post.data.body.find(slice => slice.slice_type === 'text')
-    if (firstTextSlice != null) {
-      // Set the character limit for the text we'll show in the homepage
-      const textLimit = 300
-      let text = RichText.asText(firstTextSlice.primary.text)
-      let limitedText = text.substring(0, textLimit)
+// Project components & functions
+import DefaultLayout from 'layouts'
+import { Header, PostList, SetupRepo } from 'components/home'
+import { Client } from 'prismic-configuration'
 
-      if (text.length > textLimit) {
-        // Cut only up to the last word and attach '...' for readability
-        return (
-          <p>{limitedText.substring(0, limitedText.lastIndexOf(' ')) + '...'}</p>
-        )
-      } else {
-        // If it's shorter than the limit, just show it normally
-        return <p>{text}</p>
-      }
-    } else {
-      // If there are no slices of type 'text', return nothing
-      return null
-    }
-  }
-
-  const renderHead = () => {
-    const doc = props.doc
-    return (
-      <Fragment>
-        <div className='home'>
-          <div className='blog-avatar' style={{ backgroundImage: 'url(' + doc.data.image.url + ')' }} />
-          <h1 className='blog-title'>{RichText.asText(doc.data.headline)}</h1>
-          <p className='blog-description'>{RichText.asText(doc.data.description)}</p>
-        </div>
-        {/* Styling for the homepage header segment */}
-        <style jsx global>{headerStyles}</style>
-      </Fragment>
-    )
-  }
-
-  const renderPosts = () => (
-    <Fragment>
-      <div className='blog-main'>
-        {props.posts.map((post) => (
-          <div className='blog-post' key={post.id}>
-            {/* Use Nextjs Link component for internal links */}
-            <NextLink
-              as={linkResolver(post)}
-              href={hrefResolver(post)}
-            >
-              <a><h2>{RichText.asText(post.data.title) ? RichText.asText(post.data.title) : 'Untitled'}</h2></a>
-            </NextLink>
-            <p className='blog-post-meta'>
-              <time className='created-at'>
-                {/* Format the date to M d, Y */}
-                {new Intl.DateTimeFormat('en-US', {
-                  month: 'short',
-                  day: '2-digit',
-                  year: 'numeric'
-                }).format(Date(post.data.date))}
-              </time>
-            </p>
-            {firstParagraph(post)}
-          </div>
-        ))}
-      </div>
-      <style jsx global>{postListStyles}</style>
-    </Fragment>
-  )
-
-  if (props.doc) {
+/**
+ * Homepage component
+ */
+const Home = ({ doc, posts }) => {
+  if (doc) {
     return (
       <DefaultLayout>
         <Head>
-          {/* Website title defined from the Prismic data */}
-          <title key='title'>
-            {RichText.asText(props.doc.data.headline)}
-          </title>
+          <title>{RichText.asText(doc.data.headline)}</title>
         </Head>
-        {renderHead()}
-        {renderPosts()}
-      </DefaultLayout>
-    )
-  } else {
-    // Message when repository has not been setup yet
-    return (
-      <DefaultLayout>
-        <div className='setup-repo'>
-          <h1>Good job!</h1>
-          <h2>You're halfway done with setting up your Prismic website</h2>
-          <h4>Just visit your <a href={`${apiEndpoint.slice(0, -6)}documents/`}>Prismic dashboard</a> and add some Content to show</h4>
-        </div>
-        <style jsx global>{setupRepoStyles}</style>
+        <Header
+          image={doc.data.image}
+          headline={doc.data.headline}
+          description={doc.data.description}
+        />
+        <PostList posts={posts} />
       </DefaultLayout>
     )
   }
+
+  // Message when repository has not been setup yet
+  return <SetupRepo />
 }
 
+/**
+ * Query the homepage document and blog posts from Prismic when the page is loaded
+ */
 Home.getInitialProps = async function ({ req }) {
-  const home = await Home.getBlogHome(req)
-  return {
-    // State variables that hold the two different queried data. doc for homepage info, posts for the blog posts
-    doc: home.document,
-    posts: home.response ? home.response.results : []
-  }
-}
-
-Home.getBlogHome = async function (req) {
   try {
-    // Use the function to get a single document for home
-    const document = await Client(req).getSingle('blog_home')
-    // Make a query to get the blog posts organized in descending chronological order
-    const response = await Client(req).query(
+    // Retrieve the homepage document
+    const doc = await Client(req).getSingle('blog_home')
+
+    // Retrieve the blog posts organized in descending chronological order
+    const posts = await Client(req).query(
       Prismic.Predicates.at('document.type', 'post'),
-      {
-        orderings: '[my.post.date desc]'
-      }
+      { orderings: '[my.post.date desc]' }
     )
-    return { document, response }
+  
+    return {
+      doc,
+      posts: posts ? posts.results : []
+    }
   } catch (error) {
     console.error(error)
     return error
