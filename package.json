@@ -1,6 +1,6 @@
 {
   "name": "nextjs-blog",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Sample blog built with Next.js using Prismic headless CMS",
   "private": true,
   "author": {
