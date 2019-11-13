@@ -6,7 +6,7 @@ import { RichText } from 'prismic-reactjs'
 // Project components & functions
 import DefaultLayout from 'layouts'
 import { Header, PostList, SetupRepo } from 'components/home'
-import { Client } from 'prismic-configuration'
+import { Client } from 'utils/prismicHelpers'
 
 /**
  * Homepage component

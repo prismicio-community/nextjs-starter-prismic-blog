@@ -8,7 +8,7 @@ import { BackButton, SliceZone } from 'components/post'
 import Error from '../_error'
 
 // Project functions & styles
-import { Client } from 'prismic-configuration'
+import { Client } from 'utils/prismicHelpers'
 import { postStyles } from 'styles'
 
 /**

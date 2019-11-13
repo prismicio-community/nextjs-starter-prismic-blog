@@ -1,5 +1,3 @@
-import Prismic from 'prismic-javascript'
-
 // -- Prismic API endpoint
 // Determines which repository to query and fetch data from
 // Configure your site's access point here
@@ -10,8 +8,7 @@ export const apiEndpoint = 'https://your-repo-name.cdn.prismic.io/api/v2'
 export const accessToken = ''
 
 // -- Link resolution rules
-// Manages links to internal Prismic documents
-// Modify as your project grows to handle any new routes you've made
+// Manages the url links to internal Prismic documents
 export const linkResolver = (doc) => {
   if (doc.type === 'post') {
     return `/blog/${doc.uid}`
@@ -25,18 +22,4 @@ export const hrefResolver = (doc) => {
     return '/blog/[uid]'
   }
   return '/'
-}
-
-// -- Client method to query Prismic
-// Avoids reinitializing an API connection for every query, handling instead with a Client object
-let frontClient
-
-export const Client = (req = null) => {
-  if (!req && frontClient) return frontClient // Prevents generating new instances for client side since we don't need the refreshed request object.
-  else {
-    // Reinitializes Client only if there's a req object present, which is used for Previews
-    const options = Object.assign({}, req ? { req } : {}, accessToken ? { accessToken: accessToken } : {})
-    // Connects to the given repository to facilitate data queries
-    return Prismic.client(apiEndpoint, options)
-  }
 }

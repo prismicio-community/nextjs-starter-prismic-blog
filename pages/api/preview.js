@@ -1,4 +1,5 @@
-import { linkResolver, Client } from 'prismic-configuration'
+import { linkResolver } from 'prismic-configuration'
+import { Client } from 'utils/prismicHelpers'
 
 export const Preview = async (req, res) => {
   const token = req.query.token;
