@@ -1,5 +1,5 @@
-import Meta from 'components/Meta'
-import Footer from 'components/Footer'
+import Meta from "components/Meta";
+import Footer from "components/Footer";
 
 /**
  * Default layout component
@@ -10,6 +10,6 @@ const DefaultLayout = ({ children }) => (
     <main>{children}</main>
     <Footer />
   </div>
-)
+);
 
-export default DefaultLayout
+export default DefaultLayout;

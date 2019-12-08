@@ -1,15 +1,18 @@
-import React from 'react'
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
-import DefaultLayout from 'layouts'
-import { errorStyles } from 'styles'
+import DefaultLayout from "layouts";
+import { errorStyles } from "styles";
 
 /**
  * Error page component
  */
 const Error = ({ statusCode }) => {
-  const errorHeading = statusCode ? `${statusCode} Error` : 'Client-side error'
-  const errorMessage = statusCode === '404' ? 'Document not found' : 'Please contact your development team'
+  const errorHeading = statusCode ? `${statusCode} Error` : "Client-side error";
+  const errorMessage =
+    statusCode === "404"
+      ? "Document not found"
+      : "Please contact your development team";
 
   return (
     <DefaultLayout>
@@ -22,15 +25,17 @@ const Error = ({ statusCode }) => {
         <p>
           <a href="/">Return to homepage</a>
         </p>
-        <style jsx global>{errorStyles}</style>
+        <style jsx global>
+          {errorStyles}
+        </style>
       </div>
     </DefaultLayout>
-  )
-}
+  );
+};
 
 Error.getInitialProps = ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : null
-  return { statusCode }
-}
+  const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+  return { statusCode };
+};
 
-export default Error
+export default Error;
