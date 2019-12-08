@@ -1,4 +1,4 @@
-import css from 'styled-jsx/css'
+import css from "styled-jsx/css";
 
 export const postListStyles = css.global`
   .blog-main {
@@ -15,13 +15,14 @@ export const postListStyles = css.global`
   }
 
   .blog-post-meta {
-    color: #9A9A9A;
-    font-family: 'Lato', sans-serif;
+    color: #9a9a9a;
+    font-family: "Lato", sans-serif;
     margin-bottom: 8px;
   }
 
-  @media (max-width: 767px) { 
-    .blog-post-meta, .blog-post-meta {
+  @media (max-width: 767px) {
+    .blog-post-meta,
+    .blog-post-meta {
       font-size: 16px;
     }
   }
@@ -31,4 +32,4 @@ export const postListStyles = css.global`
       font-size: 16px;
     }
   }
-`
+`;

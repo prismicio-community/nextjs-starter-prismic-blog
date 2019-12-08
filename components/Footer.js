@@ -23,7 +23,7 @@ const Footer = () => (
       >
         <img
           className="footer-logo"
-          src="/images/logo-prismic.svg"
+          src="/public/images/logo-prismic.svg"
           alt="Gray Prismic logo"
         />
       </a>
