@@ -13,7 +13,7 @@ export const linkResolver = (doc) => {
   if (doc.type === 'post') {
     return `/blog/${doc.uid}`
   }
-  return '/'
+  return doc
 }
 
 // Additional helper function for Next/Link components
@@ -21,5 +21,5 @@ export const hrefResolver = (doc) => {
   if (doc.type === 'post') {
     return '/blog/[uid]'
   }
-  return '/'
+  return doc
 }

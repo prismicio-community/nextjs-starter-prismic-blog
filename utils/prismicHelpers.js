@@ -11,10 +11,10 @@ import {
 export const customLink = (type, element, content, children, index) => (
   <Link
     key={index}
-    href={hrefResolver(element.data)}
-    as={linkResolver(element.data)}
+    href={hrefResolver(element.data.url)}
+    as={linkResolver(element.data.url)}
   >
-    <a>{content}</a>
+    <a target={element.data.target}>{content}</a>
   </Link>
 )
 
