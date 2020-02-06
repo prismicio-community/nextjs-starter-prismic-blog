@@ -1,11 +1,11 @@
-import Prismic from "prismic-javascript";
-import Link from "next/link";
+import Prismic from 'prismic-javascript'
+import Link from 'next/link'
 import {
   apiEndpoint,
   accessToken,
   linkResolver,
   hrefResolver
-} from "prismic-configuration";
+} from 'prismic-configuration'
 
 // Helper function to convert Prismic Rich Text links to Next/Link components
 export const customLink = (type, element, content, children, index) => (
@@ -16,21 +16,20 @@ export const customLink = (type, element, content, children, index) => (
   >
     <a>{content}</a>
   </Link>
-);
+)
 
 // Client method to query documents from the Prismic repo
-let frontClient;
-export const Client = (req = null) => {
-  if (!req && frontClient) return frontClient;
-  // prevents generating a new instance for client side since we don't need the refreshed request object.
-  else {
-    const options = Object.assign(
-      {},
-      req ? { req } : {},
-      accessToken ? { accessToken: accessToken } : {}
-    );
-    return Prismic.client(apiEndpoint, options);
-  }
-};
+export const Client = (req = null) => (
+  Prismic.client(apiEndpoint, createClientOptions(req, accessToken))
+)
 
-export default Client;
+const createClientOptions = (req = null, prismicAccessToken = null) => {
+  const reqOption = req ? { req } : {}
+  const accessTokenOption = prismicAccessToken ? { accessToken: prismicAccessToken } : {}
+  return {
+    ...reqOption,
+    ...accessTokenOption,
+  }
+}
+
+export default Client
