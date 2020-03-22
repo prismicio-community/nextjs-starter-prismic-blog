@@ -35,25 +35,27 @@ const Home = ({ doc, posts }) => {
 /**
  * Query the homepage document and blog posts from Prismic when the page is loaded
  */
-Home.getInitialProps = async function({ req }) {
-  try {
+export async function getServerSideProps(context) {
+  // try {
     // Retrieve the homepage document
-    const doc = await Client(req).getSingle("blog_home");
+    const doc = await Client(context.req).getSingle("blog_home");
 
     // Retrieve the blog posts organized in descending chronological order
-    const posts = await Client(req).query(
+    const posts = await Client(context.req).query(
       Prismic.Predicates.at("document.type", "post"),
       { orderings: "[my.post.date desc]" }
     );
 
+    throw new Error("TESTING ERROR");
+
+    // will be passed to the page component as props
     return {
-      doc,
-      posts: posts ? posts.results : []
+      props: { doc, posts: posts ? posts.results : [] }
     };
-  } catch (error) {
-    console.error(error);
-    return error;
-  }
-};
+  // } catch (error) {
+  //   console.error(error);
+  //   return error;
+  // }
+}
 
 export default Home;

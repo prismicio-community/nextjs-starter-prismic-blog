@@ -33,9 +33,9 @@ const Error = ({ statusCode }) => {
   );
 };
 
-Error.getInitialProps = ({ res, err }) => {
+export async function getServerSideProps({ res, err }) {
   const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-  return { statusCode };
-};
+  return { props: { statusCode } };
+}
 
 export default Error;

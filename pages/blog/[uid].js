@@ -45,18 +45,17 @@ const Post = ({ post }) => {
 /**
  * Query the post document from Prismic when the page is loaded
  */
-Post.getInitialProps = async function({ req, query }) {
+export async function getServerSideProps(context) {
   try {
-    const { uid } = query;
-    const document = await Client(req).getByUID("post", uid);
-
+    const { uid } = context.params;
+    const document = await Client(context.req).getByUID("post", uid);
     return {
-      post: document
+      props: { post: document || null }
     };
   } catch (error) {
     console.error(error);
     return error;
   }
-};
+}
 
 export default Post;
