@@ -46,8 +46,6 @@ export async function getServerSideProps(context) {
       { orderings: "[my.post.date desc]" }
     );
 
-    throw new Error("TESTING ERROR");
-
     // will be passed to the page component as props
     return {
       props: { doc, posts: posts ? posts.results : [] }
