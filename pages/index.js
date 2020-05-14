@@ -32,28 +32,27 @@ const Home = ({ doc, posts }) => {
   return <SetupRepo />;
 };
 
-/**
- * Query the homepage document and blog posts from Prismic when the page is loaded
- */
-Home.getInitialProps = async function({ req }) {
-  try {
-    // Retrieve the homepage document
-    const doc = await Client(req).getSingle("blog_home");
+export async function getStaticProps({ preview = null, previewData = {} }) {
 
-    // Retrieve the blog posts organized in descending chronological order
-    const posts = await Client(req).query(
-      Prismic.Predicates.at("document.type", "post"),
-      { orderings: "[my.post.date desc]" }
-    );
+  const { ref } = previewData
 
-    return {
+  const client = Client()
+  const doc = await client.getSingle("blog_home", ref ? { ref } : null);
+
+  const posts = await client.query(
+    Prismic.Predicates.at("document.type", "post"), {
+      orderings: "[my.post.date desc]",
+      ...(ref ? { ref } : null)
+    },
+  );
+
+  return {
+    props: {
       doc,
-      posts: posts ? posts.results : []
-    };
-  } catch (error) {
-    console.error(error);
-    return error;
+      posts: posts ? posts.results : [],
+      preview
+    }
   }
-};
+}
 
 export default Home;

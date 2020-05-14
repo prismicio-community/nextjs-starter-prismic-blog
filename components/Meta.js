@@ -7,7 +7,8 @@ import { reset, globals } from 'styles'
  * Meta data component
  */
 const Meta = () => {
-  const repoNameArray = /([^\/]+)\.cdn.prismic\.io\/api/.exec(apiEndpoint)
+  const repoNameArray = /([^\/]+)\.prismic\.io\/api/.exec(apiEndpoint)
+  
   const repoName = repoNameArray[1]
 
   return (
