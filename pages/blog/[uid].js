@@ -2,6 +2,8 @@ import React from "react";
 import Head from "next/head";
 import { RichText } from "prismic-reactjs";
 
+import { queryRepeatableDocuments } from 'utils/queries'
+
 // Project components
 import DefaultLayout from "layouts";
 import { BackButton, SliceZone } from "components/post";
@@ -16,8 +18,8 @@ import { postStyles } from "styles";
  */
 const Post = ({ post }) => {
   if (post) {
-    const titled = RichText.asText(post.data.title).length !== 0;
-    const title = titled ? RichText.asText(post.data.title) : "Untitled";
+    const hasTitle = RichText.asText(post.data.title).length !== 0;
+    const title = hasTitle ? RichText.asText(post.data.title) : "Untitled";
 
     return (
       <DefaultLayout>
@@ -42,21 +44,23 @@ const Post = ({ post }) => {
   return <Error statusCode="404" />;
 };
 
-/**
- * Query the post document from Prismic when the page is loaded
- */
-Post.getInitialProps = async function({ req, query }) {
-  try {
-    const { uid } = query;
-    const document = await Client(req).getByUID("post", uid);
-
-    return {
-      post: document
-    };
-  } catch (error) {
-    console.error(error);
-    return error;
+export async function getStaticProps({ params, preview = null, previewData = {} }) {
+  const { ref } = previewData
+  const post = await Client().getByUID("post", params.uid, ref ? { ref } : null)
+  return {
+    props: {
+      preview,
+      post
+    }
   }
-};
+}
+
+export async function getStaticPaths() {
+  const documents = await queryRepeatableDocuments((doc) => doc.type === 'post')
+  return {
+    paths: documents.map(doc => `/blog/${doc.uid}`),
+    fallback: true,
+  }
+}
 
 export default Post;
