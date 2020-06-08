@@ -7,7 +7,6 @@ import { queryRepeatableDocuments } from 'utils/queries'
 // Project components
 import DefaultLayout from "layouts";
 import { BackButton, SliceZone } from "components/post";
-import Error from "../_error";
 
 // Project functions & styles
 import { Client } from "utils/prismicHelpers";
@@ -40,8 +39,7 @@ const Post = ({ post }) => {
     );
   }
 
-  // Call the standard error page if the document was not found
-  return <Error statusCode="404" />;
+  return null;
 };
 
 export async function getStaticProps({ params, preview = null, previewData = {} }) {
