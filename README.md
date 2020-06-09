@@ -8,7 +8,7 @@ You can use our [Prismic-CLI](https://github.com/prismicio/prismic-cli) tool to 
 
 ```
 npm install -g prismic-cli
-prismic theme https://github.com/prismicio/nextjs-blog
+prismic theme --theme-url https://github.com/prismicio/nextjs-blog
 ```
 
 👆Make sure you update the Prismic endpoint in `prismic-configuration.js`. Especially if you're not fan of soccer.
