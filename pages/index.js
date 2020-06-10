@@ -12,7 +12,7 @@ import { Client } from "utils/prismicHelpers";
  * Homepage component
  */
 const Home = ({ doc, posts }) => {
-  if (doc) {
+  if (doc && doc.data) {
     return (
       <DefaultLayout>
         <Head>
@@ -37,14 +37,15 @@ export async function getStaticProps({ preview = null, previewData = {} }) {
   const { ref } = previewData
 
   const client = Client()
-  const doc = await client.getSingle("blog_home", ref ? { ref } : null);
+
+  const doc = await client.getSingle("blog_home", ref ? { ref } : null) || {}
 
   const posts = await client.query(
     Prismic.Predicates.at("document.type", "post"), {
       orderings: "[my.post.date desc]",
       ...(ref ? { ref } : null)
     },
-  );
+  )
 
   return {
     props: {

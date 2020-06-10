@@ -7,7 +7,6 @@ import { queryRepeatableDocuments } from 'utils/queries'
 // Project components
 import DefaultLayout from "layouts";
 import { BackButton, SliceZone } from "components/post";
-import Error from "../_error";
 
 // Project functions & styles
 import { Client } from "utils/prismicHelpers";
@@ -17,7 +16,7 @@ import { postStyles } from "styles";
  * Post page component
  */
 const Post = ({ post }) => {
-  if (post) {
+  if (post && post.data) {
     const hasTitle = RichText.asText(post.data.title).length !== 0;
     const title = hasTitle ? RichText.asText(post.data.title) : "Untitled";
 
@@ -40,13 +39,12 @@ const Post = ({ post }) => {
     );
   }
 
-  // Call the standard error page if the document was not found
-  return <Error statusCode="404" />;
+  return null;
 };
 
 export async function getStaticProps({ params, preview = null, previewData = {} }) {
   const { ref } = previewData
-  const post = await Client().getByUID("post", params.uid, ref ? { ref } : null)
+  const post = await Client().getByUID("post", params.uid, ref ? { ref } : null) || {}
   return {
     props: {
       preview,
