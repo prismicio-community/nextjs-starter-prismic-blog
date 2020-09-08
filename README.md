@@ -1,54 +1,37 @@
-[![Dependency Status](https://david-dm.org/prismicio/nextjs-blog.svg)](https://david-dm.org/prismicio/nextjs-blog)
-
 # Prismic Next.js Blog Site Example
-This project is an implementation of the Prismic blog site demo using Next.js. Built up from the starter project, it's meant to provide you with an idea of how to build your own sites using the Prismic features. Read our [user guide](https://user-guides.prismic.io/examples/next-js-samples/sample-blog-with-api-based-cms-in-nextjs) if you need guidance on how to use this repository.
+> [Next.js](https://nextjs.org/) example blog project with content managed in [Prismic](https://prismic.io)
 
-## Getting started quickly with Prismic Themes
-You can use our [Prismic-CLI](https://github.com/prismicio/prismic-cli) tool to quickly install this project in your machine, as well as setting up a Prismic repository with the required Custom Types. Just follow the instructions in your terminal to get started!
+## Check out our article for a step by step guide to getting this project up and running
+> [Prismic project guide](https://user-guides.prismic.io/en/articles/2882569-sample-blog-with-api-based-cms-in-next-js)
 
+
+## Install the prismic-cli
 ```
 npm install -g prismic-cli
+```
+
+## Run the theme command
+This will create a new Prismic content repository, setup the custom types, and install the project code
+```
 prismic theme --theme-url https://github.com/prismicio/nextjs-blog
-```
 
-👆Make sure you update the Prismic endpoint in `prismic-configuration.js`. Especially if you're not fan of soccer.
-
-### Install dependencies
 ```
-npm install
-```
-
-### Installing Now globally
-The official [recommendation](https://zeit.co/guides/updating-now-cli) is to install Now Desktop and check the Canary Releases option. This is will automatically update your now-cli package so it's always up to date. You can also install the package using NPM if you're not concerned about updates.
-```
-npm install -g now
-```
-
-### Run serverless mode locally
-As of version 15.0.0 of `now` you can use the `now dev` command to run the project in your local machine in serverless mode. You can use this to set up and test your routing in `now.json` without having to deploy to Now for every small change. Development server will be running in `http://localhost:3000/`
-```
-now dev
-```
-or 
+## Run the project
 ```
 npm run dev
 ```
+Then you can access it at [http://localhost:3000](http://localhost:3000).
 
-## Deploy to Now 2.0 serverless mode
-[Signup for Now](https://zeit.co/now) for deploying your site using serverless features. The required routing and setup files are already included in the project. Just run the `now` command in your project folder if you have installed it, or try the included package.
-```
-now
-```
-or
-```
-npm run deploy
-```
 
-## Get started with Prismic
+## Deploys made easy with Vercel
+[Sign up to Vercel](https://vercel.com/login) and follow the [deployment documentation](https://vercel.com/docs/platform/deployments) to quickly deploy your project.
 
-You can find out how to get started with Prismic from [our React documentation](https://prismic.io/docs/reactjs/getting-started/prismic-nextjs).
 
-## License
+### Learn more about using Prismic with Nextjs
+
+[Prismic + Next.js documentation](https://prismic.io/docs/reactjs/getting-started/prismic-nextjs).
+
+### License
 
 This software is licensed under the Apache 2 license, quoted below.
 
