@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Prismic from "prismic-javascript";
+import Prismic from '@prismicio/client'
 import { RichText } from "prismic-reactjs";
 
 // Project components & functions
