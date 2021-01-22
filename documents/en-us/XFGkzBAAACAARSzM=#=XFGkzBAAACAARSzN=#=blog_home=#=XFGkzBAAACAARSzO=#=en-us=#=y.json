@@ -1,0 +1,41 @@
+{
+  "headline": [
+    {
+      "type": "heading1",
+      "content": { "text": "John Doe Journal", "spans": [] }
+    }
+  ],
+  "description": [
+    {
+      "type": "heading2",
+      "content": { "text": "Product designer @prismic.io 🇫🇷", "spans": [] }
+    }
+  ],
+  "headline_TYPE": "StructuredText",
+  "headline_POSITION": 0,
+  "description_TYPE": "StructuredText",
+  "description_POSITION": 1,
+  "image_TYPE": "Image",
+  "image_POSITION": 2,
+  "slugs_INTERNAL": ["john-doe-journal"],
+  "image": {
+    "origin": {
+      "id": "XFGVghAAACAAROkk",
+      "url": "https://prismic-io.s3.amazonaws.com/react-blog-demo%2F691648d2-9ed3-4deb-90d6-5a9705341586_554d95ad6f26328ba9cd274560a493aad98fc6dd_photo-1422568374078-27d3842ba676.jpeg",
+      "width": 627,
+      "height": 587
+    },
+    "alt": null,
+    "credits": null,
+    "width": 140,
+    "height": 140,
+    "edit": {
+      "zoom": 0.23850085178875638,
+      "crop": { "x": -5, "y": 0 },
+      "background": "#fff"
+    },
+    "thumbnails": {},
+    "url": "https://prismic-io.s3.amazonaws.com/react-blog-demo/f5f3b73a4b954234c7d3008f7ee15e616e23ce82_554d95ad6f26328ba9cd274560a493aad98fc6dd_photo-1422568374078-27d3842ba676.jpeg"
+  },
+  "uids_INTERNAL": []
+}

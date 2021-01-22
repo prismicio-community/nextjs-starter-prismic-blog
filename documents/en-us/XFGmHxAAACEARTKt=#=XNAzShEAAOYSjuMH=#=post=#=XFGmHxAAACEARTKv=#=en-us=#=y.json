@@ -1,0 +1,163 @@
+{
+  "uid": "computer-forensics-finding-out-what-the-bad-guys-did",
+  "title": [
+    {
+      "type": "heading1",
+      "content": {
+        "text": "Computer Forensics Finding Out What The Bad Guys Did With Their Computers",
+        "spans": []
+      }
+    }
+  ],
+  "date": "2016-02-17",
+  "uid_TYPE": "UID",
+  "uid_POSITION": 0,
+  "title_TYPE": "StructuredText",
+  "title_POSITION": 1,
+  "date_TYPE": "Date",
+  "date_POSITION": 2,
+  "body_TYPE": "Slices",
+  "body_POSITION": 3,
+  "body.text_TYPE": "Slice",
+  "body.text_POSITION": 4,
+  "body.text.non-repeat.text_TYPE": "StructuredText",
+  "body.text.non-repeat.text_POSITION": 5,
+  "body.quote_TYPE": "Slice",
+  "body.quote_POSITION": 6,
+  "body.quote.non-repeat.quote_TYPE": "StructuredText",
+  "body.quote.non-repeat.quote_POSITION": 7,
+  "body.image_with_caption_TYPE": "Slice",
+  "body.image_with_caption_POSITION": 8,
+  "body.image_with_caption.non-repeat.image_TYPE": "Image",
+  "body.image_with_caption.non-repeat.image_POSITION": 9,
+  "body.image_with_caption.non-repeat.caption_TYPE": "StructuredText",
+  "body.image_with_caption.non-repeat.caption_POSITION": 10,
+  "slugs_INTERNAL": [
+    "computer-forensics-finding-out-what-the-bad-guys-did-with-their-computers"
+  ],
+  "body": [
+    {
+      "key": "text$ecfae9d1-e6ed-4110-99ca-816079972e47",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "text": [
+            {
+              "type": "heading2",
+              "content": {
+                "text": "If you buy an Iphone, you’ve probably already worked out how much fun it is to use it to watch movies-it has that nice big screen, and the sound quality is surprisingly good too.",
+                "spans": [{ "start": 0, "end": 178, "type": "strong" }]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "If you own an Iphone, you’ve probably already worked out how much fun it is to use it to watch movies-it has that nice big screen, and the sound quality is surprisingly good too. Now imagine if you knew how to download Iphone movies without having to pay. 🚀🚀🚀",
+                "spans": [
+                  { "start": 46, "end": 65, "type": "strong" },
+                  { "start": 88, "end": 113, "type": "strong" },
+                  { "start": 88, "end": 113, "type": "em" },
+                  { "start": 179, "end": 202, "type": "em" }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "key": "quote$6081e5fd-0b75-422f-8b99-8acb85aafb2d",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "quote": [
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "As you may imagine, downloading Iphone movies for free can be very difficult unless you know exactly how to do it – not only that but you can get yourself into some serious trouble if you download from the wrong place.",
+                "spans": []
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "key": "image_with_caption$b9757ffb-82f7-40ca-a594-688b5b68c2a4",
+      "label": "image-full-width",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "image": {
+            "origin": {
+              "id": "XFGVlBAAAB8AROl4",
+              "url": "https://prismic-io.s3.amazonaws.com/react-blog-demo%2F055d2496-6557-4f7a-97e7-026aee8fb834_b129508ad51c1bb240b3b48689c764a3a94d4482_photo-1455612810508-8faae6db6455.jpeg",
+              "width": 640,
+              "height": 312
+            },
+            "width": 1200,
+            "height": 585,
+            "edit": {
+              "background": "#fff",
+              "zoom": 1.875,
+              "crop": { "x": 0, "y": 0 }
+            },
+            "credits": null,
+            "alt": null,
+            "thumbnails": {},
+            "url": "https://prismic-io.s3.amazonaws.com/prismic-blog-demo/2b63aed6428618c184e48f37e0c226db83ca24d3_b129508ad51c1bb240b3b48689c764a3a94d4482_photo-1455612810508-8faae6db6455.jpeg"
+          }
+        }
+      }
+    },
+    {
+      "key": "text$3c2d029b-4fdb-49ec-8716-4bca96420fee",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "text": [
+            {
+              "type": "list-item",
+              "content": {
+                "text": "Take the time to find a site you can trust. Hopefully your downloading relationship with this website will be a long and fruitful one, so it makes good sense to pick a site you can live with. A good way to find a reputable site is to ask around, or maybe search on the internet for some reviews or customer points of view.",
+                "spans": []
+              }
+            },
+            { "type": "paragraph", "content": { "text": "", "spans": [] } },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "Always keep in mind that many websites will be falling over themselves trying to get you to visit them. What’s more, many of them won’t be too subtle about it, so you’ll be faced with a million popups in some cases, and in most cases it can prove very difficult to negotiate your way out of there. Generally speaking, you are usually better off just steering clear of sites with lots of popups like that.",
+                "spans": []
+              }
+            },
+            { "type": "paragraph", "content": { "text": "", "spans": [] } },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "Forget about using the torrent sites, P2P sites or whatever they are called these days. There have been numerous famous sites like this over the years, with several being taken to court etc. The simple fact is that downloading from sites like this is completely against the law in most places. If you do insist on getting your free downloads from somewhere like this, please be sure to check all applicable laws for your area, as people really do go to jail for things like this. Is it worth jail to get the new Matt Damon?",
+                "spans": []
+              }
+            },
+            { "type": "paragraph", "content": { "text": "", "spans": [] } },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "The last tip for downloading Iphone movies is to get ready to pay. There are a few new sites around these days that will give you access to huge download databases, and totally free downloads, but not before you pay their admin fee. This fee usually gives you totally free downloads, and sometimes it lasts for your whole life too, so it’s pretty good value. As with anything, there are good and bad sites like this, so it’s definitely worhwhile for you to look around before you take the plunge.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "These tips can really help you build up quite a sizeable Iphone movie collection, but only if you are smart. Don’t break the law, and make sure your computer is secure- happy downloading!",
+                "spans": []
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "uids_INTERNAL": ["computer-forensics-finding-out-what-the-bad-guys-did"]
+}

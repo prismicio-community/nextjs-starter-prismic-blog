@@ -1,6 +1,5 @@
 {
   "name": "nextjs-blog",
-  "version": "1.0.0",
   "description": "Sample blog built with Next.js using Prismic headless CMS",
   "author": "Prismic",
   "dependencies": {
@@ -17,7 +16,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/prismicio/nextjs-blog.git"
-  },
-  "license": "Apache-2.0"
+    "url": "https://github.com/prismicio/nextjs-blog"
+  }
 }
