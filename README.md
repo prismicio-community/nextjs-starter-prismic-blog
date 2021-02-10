@@ -1,4 +1,4 @@
-# Prismic NextJS Example Blog
+# Prismic & NextJS Example Blog
 > [NextJS](https://nextjs.org/) example blog project with content managed in [Prismic](https://prismic.io)
 
 ## Check out the dedicated article to get this project up and running
