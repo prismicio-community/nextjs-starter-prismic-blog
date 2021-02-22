@@ -1,0 +1,171 @@
+{
+  "date": "2016-02-16",
+  "title": [
+    {
+      "type": "heading1",
+      "content": { "text": "Space The Final Frontier", "spans": [] }
+    }
+  ],
+  "uid": "space-the-final-frontier",
+  "uid_TYPE": "UID",
+  "uid_POSITION": 0,
+  "title_TYPE": "StructuredText",
+  "title_POSITION": 1,
+  "date_TYPE": "Date",
+  "date_POSITION": 2,
+  "body_TYPE": "Slices",
+  "body_POSITION": 3,
+  "body.text_TYPE": "Slice",
+  "body.text_POSITION": 4,
+  "body.text.non-repeat.text_TYPE": "StructuredText",
+  "body.text.non-repeat.text_POSITION": 5,
+  "body.quote_TYPE": "Slice",
+  "body.quote_POSITION": 6,
+  "body.quote.non-repeat.quote_TYPE": "StructuredText",
+  "body.quote.non-repeat.quote_POSITION": 7,
+  "body.image_with_caption_TYPE": "Slice",
+  "body.image_with_caption_POSITION": 8,
+  "body.image_with_caption.non-repeat.image_TYPE": "Image",
+  "body.image_with_caption.non-repeat.image_POSITION": 9,
+  "body.image_with_caption.non-repeat.caption_TYPE": "StructuredText",
+  "body.image_with_caption.non-repeat.caption_POSITION": 10,
+  "slugs_INTERNAL": ["space-the-final-frontier"],
+  "body": [
+    {
+      "key": "text$2c9f1869-dec9-4f0f-82c9-e8e88ab34f06",
+      "value": {
+        "non-repeat": {
+          "text": [
+            {
+              "type": "heading2",
+              "content": {
+                "text": "Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars yeah.",
+                "spans": [{ "start": 0, "end": 149, "type": "strong" }]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science. But you and I both know that there is still another big step after buying a telescope before you really know how to use it.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "So it is critically important that you get just the right telescope for where you are and what your star gazing preferences are. To start with, let’s discuss the three major kinds of telescopes and then lay down some “Telescope 101″ concepts to increase your chances that you will buy the right thing.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "The three primary types of telescopes that the amateur astronomer might buy are the Refractor, the Reflector and the Schmidt Cassegrain telescope. The first two are named for the kind of lens that is used. It is pretty easy to see that the lens is the heart of the telescope so the kind that you will use will determine the success of your use of that telescope.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "The refractor lens is the simplest because it uses a convex lens to focus the light on the eyepiece. So the lens bends outwards for this purpose. The refractor telescope’s strength is in viewing planets. The reflector’s strength is in seeing more distant objects and the lens is concave or bends in.",
+                "spans": []
+              }
+            }
+          ]
+        },
+        "repeat": [{}]
+      }
+    },
+    {
+      "key": "quote$db81569c-546d-482d-8ec5-81430dc83369",
+      "value": {
+        "non-repeat": {
+          "quote": [
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "It uses mirrors to focus the image that you eventually see. The final type, the Schmidt Cassegrain telescope is the most complex and accomplishes the goals of both but it uses an involved system of mirrors to capture the image you want to see.",
+                "spans": []
+              }
+            }
+          ]
+        },
+        "repeat": [{}]
+      }
+    },
+    {
+      "key": "image_with_caption$4994c131-9301-4dae-ae5d-1c999ea7f490",
+      "label": "emphasized",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "image": {
+            "origin": {
+              "id": "XFGVghAAAB8AROkl",
+              "url": "https://prismic-io.s3.amazonaws.com/react-blog-demo%2F0a02fe1b-9333-419f-989b-c6d32b65d56f_669dfce5197548b4601bd6c4f930196526888da6_photo-1451186859696-371d9477be93.jpeg",
+              "width": 640,
+              "height": 425
+            },
+            "alt": null,
+            "credits": null,
+            "width": 1200,
+            "height": 797,
+            "edit": {
+              "zoom": 1.8752941176470588,
+              "crop": { "x": 0, "y": 0 },
+              "background": "#fff"
+            },
+            "thumbnails": {},
+            "url": "https://prismic-io.s3.amazonaws.com/react-blog-demo/20530d58fb8cc90a7f913c91e9090c5731fca199_669dfce5197548b4601bd6c4f930196526888da6_photo-1451186859696-371d9477be93.jpeg"
+          }
+        }
+      }
+    },
+    {
+      "key": "text$5ddc7284-dfdf-479b-b68d-08992ecf12b5",
+      "value": {
+        "non-repeat": {
+          "text": [
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "So to select just the right kind of telescope, your objectives in using the telescope are important. To really understand the strengths and weaknesses not only of the lenses and telescope design but also in how the telescope performs in various star gazing situations, it is best to do some homework up front and get exposure to the different kinds. So before you make your first purchase…",
+                "spans": []
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "Above all, establish a relationship with a reputable telescope shop that employs people who know their stuff. If you buy your telescope at a Wal-Mart or department store, the odds you will get the right thing are remote.",
+                "spans": []
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "Pick the brains of the experts. If you are not already active in an astronomy society or club, the sales people at the telescope store will be able to guide you to the active societies in your area. Once you have connections with people who have bought telescopes, you can get advice about what works and what to avoid that is more valid than anything you will get from a web article or a salesperson at Wal-Mart.",
+                "spans": []
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "Try before you buy. This is another advantage of going on some field trips with the astronomy club. You can set aside some quality hours with people who know telescopes and have their rigs set up to examine their equipment, learn the key technical aspects, and try them out before you sink money in your own set up.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "There are other considerations to factor into your final purchase decision. How mobile must your telescope be? The tripod or other accessory decisions will change significantly with a telescope that will live on your deck versus one that you plan to take to many remote locations. Along those lines, how difficult is the set up and break down? How complex is the telescope and will you have trouble with maintenance? Network to get the answers to these and other questions. If you do your homework like this, you will find just the right telescope for this next big step in the evolution of your passion for astronomy.",
+                "spans": []
+              }
+            }
+          ]
+        },
+        "repeat": [{}]
+      }
+    }
+  ],
+  "uids_INTERNAL": []
+}

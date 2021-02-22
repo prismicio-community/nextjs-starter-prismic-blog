@@ -1,0 +1,122 @@
+{
+  "uid": "peace-on-earth-a-wonderful-wish-but-no-way",
+  "title": [
+    {
+      "type": "heading1",
+      "content": {
+        "text": "Peace On Earth A Wonderful Wish But No Way",
+        "spans": []
+      }
+    }
+  ],
+  "date": "2016-02-18",
+  "uid_TYPE": "UID",
+  "uid_POSITION": 0,
+  "title_TYPE": "StructuredText",
+  "title_POSITION": 1,
+  "date_TYPE": "Date",
+  "date_POSITION": 2,
+  "body_TYPE": "Slices",
+  "body_POSITION": 3,
+  "body.text_TYPE": "Slice",
+  "body.text_POSITION": 4,
+  "body.text.non-repeat.text_TYPE": "StructuredText",
+  "body.text.non-repeat.text_POSITION": 5,
+  "body.quote_TYPE": "Slice",
+  "body.quote_POSITION": 6,
+  "body.quote.non-repeat.quote_TYPE": "StructuredText",
+  "body.quote.non-repeat.quote_POSITION": 7,
+  "body.image_with_caption_TYPE": "Slice",
+  "body.image_with_caption_POSITION": 8,
+  "body.image_with_caption.non-repeat.image_TYPE": "Image",
+  "body.image_with_caption.non-repeat.image_POSITION": 9,
+  "body.image_with_caption.non-repeat.caption_TYPE": "StructuredText",
+  "body.image_with_caption.non-repeat.caption_POSITION": 10,
+  "slugs_INTERNAL": ["peace-on-earth-a-wonderful-wish-but-no-way"],
+  "body": [
+    {
+      "key": "text$90d78a27-1f0a-4b33-b9ad-a131e9a446a9",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "text": [
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "The preservation of human life is the ultimate value, a pillar of ethics and the foundation of all morality. This held true in most cultures and societies throughout history.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "On first impression, the last sentence sounds patently wrong. We all know about human collectives that regarded human lives as dispensable, that murdered and tortured, that cleansed and annihilated whole populations in recurrent genocides. Surely, these defy the aforementioned statement?",
+                "spans": []
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "key": "image_with_caption$265e20b6-4815-4c66-bb22-83843640b072",
+      "label": "emphasized",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "image": {
+            "origin": {
+              "id": "XFGVghAAAB8AROkj",
+              "url": "https://prismic-io.s3.amazonaws.com/react-blog-demo%2Fb236f540-a5ab-40bb-b8f6-05e0e0948ed3_335e1e3b89c8b586923dd29abe3d3d6d8625137a_photo-1431887773042-803ed52bed26.jpeg",
+              "width": 640,
+              "height": 480
+            },
+            "width": 1200,
+            "height": 900,
+            "edit": {
+              "background": "#fff",
+              "zoom": 1.875,
+              "crop": { "x": 0, "y": 0 }
+            },
+            "credits": null,
+            "alt": null,
+            "thumbnails": {},
+            "url": "https://prismic-io.s3.amazonaws.com/react-blog-demo/fe83be6bd76f1d6f085978ccd3d97a00c5aa70ee_335e1e3b89c8b586923dd29abe3d3d6d8625137a_photo-1431887773042-803ed52bed26.jpeg"
+          }
+        }
+      }
+    },
+    {
+      "key": "text$b794fc7f-4e99-438e-b0d0-7c2ed44b439a",
+      "value": {
+        "repeat": [{}],
+        "non-repeat": {
+          "text": [
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Liberal philosophies claim that human life was treated as a prime value throughout the ages. Authoritarian regimes do not contest the over-riding importance of this value. Life is sacred, valuable, to be cherished and preserved. But, in totalitarian societies, it can be deferred, subsumed, subjected to higher goals, quantized, and, therefore, applied with differential rigor in the following circumstances: 1.. Quantitative – when a lesser evil prevents a greater one. Sacrificing the lives of the few to save the lives of the many is a principle enshrined and embedded in activities such as war and medicinal care. All cultures, no matter how steeped (or rooted) in liberal lore accept it. They all send soldiers to die to save the more numerous civilian population. Medical doctors sacrifice lives daily, to save others.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "It is boils down to a quantitative assessment (“the numerical ratio between those saved and those sacrificed”), and to questions of quality (“are there privileged lives whose saving or preservation is worth the sacrifice of others’ lives?”) and of evaluation (no one can safely predict the results of such moral dilemmas – will lives be saved as the result of the sacrifice?). 2.. Temporal – when sacrificing life (voluntarily or not) in the present secures a better life for others in the future. These future lives need not be more numerous than the lives sacrificed. A life in the future immediately acquires the connotation of youth in need of protection. It is the old sacrificed for the sake of the new, a trade off between those who already had their share of life – and those who hadn’t. It is the bloody equivalent of a savings plan: one defers present consumption to the future.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "The mirror image of this temporal argument belongs to the third group (see next), the qualitative one. It prefers to sacrifice a life in the present so that another life, also in the present, will continue to exist in the future. Abortion is an instance of this approach: the life of the child is sacrificed to secure the future well-being of the mother. In Judaism, it is forbidden to kill a female bird. Better to kill its off-spring. The mother has the potential to compensate for this loss of life by bringing giving birth to other chicks. 3.. Qualitative – This is an especially vicious variant because it purports to endow subjective notions and views with “scientific” objectivity. People are judged to belong to different qualitative groups (classified by race, skin color, birth, gender, age, wealth, or other arbitrary parameters). The result of this immoral taxonomy is that the lives of the “lesser” brands of humans are considered less “weighty” and worthy than the lives of the upper grades of humanity. The former are therefore sacrificed to benefit the latter. The Jews in Nazi occupied Europe, the black slaves in America, the aborigines in Australia are three examples of such pernicious thinking. 4.. Utilitarian – When the sacrifice of one life brings another person material or other benefits. This is the thinking (and action) which characterizes psychopaths and sociopathic criminals, for instance. For them, life is a tradable commodity and it can be exchanged against inanimate goods and services. Money and drugs are bartered for life.\n",
+                "spans": []
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "uids_INTERNAL": ["peace-on-earth-a-wonderful-wish-but-no-way"]
+}
