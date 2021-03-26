@@ -91,6 +91,9 @@ export const imageCaptionStyles = css.global`
   }
   .block-img {
     margin-bottom: 24px;
+    position: relative;
+    width: 100%;
+    height: 400px;
   }
   .image-label {
     display: block;
@@ -113,15 +116,12 @@ export const imageCaptionStyles = css.global`
     .blog-header .wrapper {
       width: 80%;
     }
-  }
-  @media screen and (min-width: 768px) {
-    /* Blog post images */
-    .block-img.emphasized {
-      width: 130%;
-      margin: 0 -15% 2rem -15%;
+    .block-img {
+      height: 300px;
     }
   }
   @media screen and (min-width: 768px) {
+    /* Blog post images */
     .block-img.emphasized {
       width: 130%;
       margin: 0 -15% 2rem -15%;

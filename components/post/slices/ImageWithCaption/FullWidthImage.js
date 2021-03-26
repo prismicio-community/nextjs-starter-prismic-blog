@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from "next/image";
 import Caption from './Caption'
 
 /**
@@ -6,13 +7,14 @@ import Caption from './Caption'
  */
 const FullWidthImage = ({ slice }) => {
   const imageUrl = slice.primary.image.url
+  const imageAlt = slice.primary.image.imageAlt
   const caption = slice.primary.caption
 
   return (
     <div
       className="blog-header single"
-      style={{ backgroundImage: `url(${imageUrl})` }}
     >
+      <Image src={imageUrl} alt={imageAlt} layout="fill" objectFit="cover" />
       <div className="wrapper">
         <Caption caption={caption} />
       </div>
