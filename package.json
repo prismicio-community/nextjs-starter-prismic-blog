@@ -4,8 +4,9 @@
   "author": "Prismic",
   "dependencies": {
     "@prismicio/client": "^4.0.0",
-    "next": "^9.1.4",
-    "prismic-reactjs": "^1.1.2",
+    "js-cookie": "^3.0.1",
+    "next": "^11.1.2",
+    "prismic-reactjs": "^1.3.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
