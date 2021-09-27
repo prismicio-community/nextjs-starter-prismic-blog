@@ -10,14 +10,16 @@ import { BackButton, SliceZone } from "components/post";
 import { Client } from "utils/prismicHelpers";
 import { queryRepeatableDocuments } from 'utils/queries'
 import useUpdatePreviewRef from 'utils/useUpdatePreviewRef'
+// import useUpdateToolbarDocs from 'utils/useUpdateToolbarDocs'
 import { postStyles } from "styles";
 
 /**
  * Post page component
  */
-const Post = ({ post, preview }) => {
+const Post = ({ post, previewRef }) => {
 
-  useUpdatePreviewRef(preview, post.id)
+  useUpdatePreviewRef(previewRef, post.id)
+  // useUpdateToolbarDocs(articleToolbarDocs(post.uid, previewRef), [post])
 
   if (post && post.data) {
     const hasTitle = RichText.asText(post.data.title).length !== 0;
@@ -50,9 +52,7 @@ export async function getStaticProps({ params, previewData }) {
   const post = await Client().getByUID("post", params.uid, ref ? { ref } : null) || {}
   return {
     props: {
-      preview: {
-        activeRef: ref,
-      }, 
+      previewRef: ref,
       post
     }
   }

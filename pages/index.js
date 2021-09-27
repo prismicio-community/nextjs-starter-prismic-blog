@@ -12,9 +12,9 @@ import useUpdatePreviewRef from 'utils/useUpdatePreviewRef'
 /**
  * Homepage component
  */
-const Home = ({ doc, posts, preview }) => {
+const Home = ({ doc, posts, previewRef }) => {
 
-  useUpdatePreviewRef(preview, doc.id)
+  useUpdatePreviewRef(previewRef, doc.id)
 
   if (doc && doc.data) {
     return (
@@ -53,9 +53,7 @@ export async function getStaticProps({ previewData }) {
     props: {
       doc,
       posts: posts ? posts.results : [],
-      preview: {
-        activeRef: ref,
-      }
+      previewRef: ref,
     }
   }
 }
