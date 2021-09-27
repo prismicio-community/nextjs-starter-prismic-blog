@@ -10,7 +10,6 @@ import { BackButton, SliceZone } from "components/post";
 import { Client } from "utils/prismicHelpers";
 import { queryRepeatableDocuments } from 'utils/queries'
 import useUpdatePreviewRef from 'utils/useUpdatePreviewRef'
-// import useUpdateToolbarDocs from 'utils/useUpdateToolbarDocs'
 import { postStyles } from "styles";
 
 /**
@@ -19,7 +18,6 @@ import { postStyles } from "styles";
 const Post = ({ post, previewRef }) => {
 
   useUpdatePreviewRef(previewRef, post.id)
-  // useUpdateToolbarDocs(articleToolbarDocs(post.uid, previewRef), [post])
 
   if (post && post.data) {
     const hasTitle = RichText.asText(post.data.title).length !== 0;

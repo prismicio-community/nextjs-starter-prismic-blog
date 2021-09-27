@@ -18,7 +18,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" href="/favicon.png" type="image/png" />
-          <script src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
+          <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
         </Head>
         <style jsx global>{ reset }</style>
         <style jsx global>{ globals }</style>
