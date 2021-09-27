@@ -8,8 +8,8 @@ import { BackButton, SliceZone } from "components/post";
 
 // Project functions & styles
 import { Client } from "utils/prismicHelpers";
-import { queryRepeatableDocuments } from 'utils/queries'
-import useUpdatePreviewRef from 'utils/useUpdatePreviewRef'
+import { queryRepeatableDocuments } from 'utils/queries';
+import useUpdatePreviewRef from 'utils/useUpdatePreviewRef';
 import { postStyles } from "styles";
 
 /**

@@ -7,7 +7,7 @@ import { RichText } from "prismic-reactjs";
 import { Client } from "utils/prismicHelpers";
 import DefaultLayout from "layouts";
 import { Header, PostList, SetupRepo } from "components/home";
-import useUpdatePreviewRef from 'utils/useUpdatePreviewRef'
+import useUpdatePreviewRef from 'utils/useUpdatePreviewRef';
 
 /**
  * Homepage component
