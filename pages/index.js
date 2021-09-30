@@ -39,13 +39,14 @@ const Home = ({ doc, posts, previewRef }) => {
 export async function getStaticProps({ previewData }) {
 
   const ref = previewData ? previewData.ref : null
+  const options = ref ? { ref } : null
 
-  const doc = await Client().getSingle("blog_home", ref ? { ref } : null) || {}
+  const doc = await Client().getSingle("blog_home", options) || {}
 
   const posts = await Client().query(
     Prismic.Predicates.at("document.type", "post"), {
       orderings: "[my.post.date desc]",
-      ...(ref ? { ref } : null)
+      ...(options)
     },
   )
 

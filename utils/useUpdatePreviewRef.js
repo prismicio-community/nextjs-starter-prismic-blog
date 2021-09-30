@@ -3,8 +3,7 @@ import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
 import { repoName } from 'prismic-configuration'
 
-function useGetExitPreviewRoute() {
-  const router = useRouter()
+function getExitPreviewRoute(router) {
   const defaultPreviewExitUrl = '/api/exit-preview'
   const linkUrl = router.asPath ? `${defaultPreviewExitUrl}?currentUrl=${router.asPath}` : defaultPreviewExitUrl
   return linkUrl
@@ -12,7 +11,7 @@ function useGetExitPreviewRoute() {
 
 export default function useUpdatePreview(previewRef, documentId) {
   const router = useRouter()
-  const previewExitRoute = useGetExitPreviewRoute()
+  const previewExitRoute = getExitPreviewRoute(router)
   useEffect(() => {
     const rawPreviewCookie = Cookies.get('io.prismic.preview')
     const previewCookie = rawPreviewCookie ? JSON.parse(rawPreviewCookie) : null
