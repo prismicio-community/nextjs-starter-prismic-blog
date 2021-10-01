@@ -12,20 +12,20 @@ import useUpdatePreviewRef from 'utils/useUpdatePreviewRef';
 /**
  * Homepage component
  */
-const Home = ({ doc, posts, previewRef }) => {
+const Home = ({ blogHome, posts, previewRef }) => {
 
-  useUpdatePreviewRef(previewRef, doc.id)
+  useUpdatePreviewRef(previewRef, blogHome.id)
 
-  if (doc && doc.data) {
+  if (blogHome && blogHome.data) {
     return (
       <DefaultLayout>
         <Head>
-          <title>{RichText.asText(doc.data.headline)}</title>
+          <title>{RichText.asText(blogHome.data.headline)}</title>
         </Head>
         <Header
-          image={doc.data.image}
-          headline={doc.data.headline}
-          description={doc.data.description}
+          image={blogHome.data.image}
+          headline={blogHome.data.headline}
+          description={blogHome.data.description}
         />
         <PostList posts={posts} />
       </DefaultLayout>
