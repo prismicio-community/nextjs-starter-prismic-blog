@@ -38,23 +38,20 @@ const Home = ({ doc, posts, previewRef }) => {
 
 export async function getStaticProps({ previewData }) {
 
-  const ref = previewData ? previewData.ref : null
-  const options = ref ? { ref } : null
+  const previewRef = previewData ? previewData.ref : null
+  const options = previewRef ? { ref: previewRef } : null
 
   const doc = await Client().getSingle("blog_home", options) || {}
 
-  const posts = await Client().query(
-    Prismic.Predicates.at("document.type", "post"), {
-      orderings: "[my.post.date desc]",
-      ...(options)
-    },
-  )
+  const queryOptions = { orderings: "[my.post.date desc]", ...(options)}
+
+  const posts = await Client().query(Prismic.Predicates.at("document.type", "post"), queryOptions)
 
   return {
     props: {
       doc,
       posts: posts ? posts.results : [],
-      previewRef: ref,
+      previewRef,
     }
   }
 }

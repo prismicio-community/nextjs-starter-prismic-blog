@@ -46,13 +46,13 @@ const Post = ({ post, previewRef }) => {
 };
 
 export async function getStaticProps({ params, previewData }) {
-  const ref = previewData ? previewData.ref : null
-  const options = ref ? { ref } : null
+  const previewRef = previewData ? previewData.ref : null
+  const options = previewRef ? { ref: previewRef } : null
 
   const post = await Client().getByUID("post", params.uid, options) || {}
   return {
     props: {
-      previewRef: ref,
+      previewRef,
       post
     }
   }
