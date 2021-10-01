@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Caption from './Caption'
 
 /**
@@ -12,7 +13,7 @@ const DefaultImage = ({ slice }) => {
   return (
     <div className="post-part single container">
       <div className={`block-img ${slice.slice_label}`}>
-        <img src={imageUrl} alt={imageAlt} />
+        <Image src={imageUrl} alt={imageAlt} layout="fill" objectFit="cover"/>
         <Caption caption={caption} />
       </div>
     </div>

@@ -1,5 +1,4 @@
-// import App from 'next/app'
-import { reset, globals } from 'styles'
+import { reset, globals } from 'styles/general'
 
 function MyApp({ Component, pageProps }) {
   return (

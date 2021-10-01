@@ -4,24 +4,28 @@ import Prismic from '@prismicio/client'
 import { RichText } from "prismic-reactjs";
 
 // Project components & functions
+import { Client } from "utils/prismicHelpers";
 import DefaultLayout from "layouts";
 import { Header, PostList, SetupRepo } from "components/home";
-import { Client } from "utils/prismicHelpers";
+import useUpdatePreviewRef from 'utils/useUpdatePreviewRef';
 
 /**
  * Homepage component
  */
-const Home = ({ doc, posts }) => {
-  if (doc && doc.data) {
+const Home = ({ blogHome, posts, previewRef }) => {
+
+  useUpdatePreviewRef(previewRef, blogHome.id)
+
+  if (blogHome && blogHome.data) {
     return (
       <DefaultLayout>
         <Head>
-          <title>{RichText.asText(doc.data.headline)}</title>
+          <title>{RichText.asText(blogHome.data.headline)}</title>
         </Head>
         <Header
-          image={doc.data.image}
-          headline={doc.data.headline}
-          description={doc.data.description}
+          image={blogHome.data.image}
+          headline={blogHome.data.headline}
+          description={blogHome.data.description}
         />
         <PostList posts={posts} />
       </DefaultLayout>
@@ -32,26 +36,21 @@ const Home = ({ doc, posts }) => {
   return <SetupRepo />;
 };
 
-export async function getStaticProps({ preview = null, previewData = {} }) {
+export async function getStaticProps({ previewData }) {
 
-  const { ref } = previewData
+  const previewRef = previewData ? previewData.ref : null
+  const refOption = previewRef ? { ref: previewRef } : null
 
-  const client = Client()
+  const blogHome = await Client().getSingle("blog_home", refOption) || {}
 
-  const doc = await client.getSingle("blog_home", ref ? { ref } : null) || {}
-
-  const posts = await client.query(
-    Prismic.Predicates.at("document.type", "post"), {
-      orderings: "[my.post.date desc]",
-      ...(ref ? { ref } : null)
-    },
-  )
+  const postsQueryOptions = { orderings: "[my.post.date desc]", ...(refOption)}
+  const posts = await Client().query(Prismic.Predicates.at("document.type", "post"), postsQueryOptions)
 
   return {
     props: {
-      doc,
+      blogHome,
       posts: posts ? posts.results : [],
-      preview
+      previewRef,
     }
   }
 }
