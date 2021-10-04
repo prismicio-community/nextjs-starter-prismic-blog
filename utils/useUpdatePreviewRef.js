@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
-import { repoName } from 'prismic-configuration'
+import { repoName } from 'prismicConfiguration'
 
 function getExitPreviewRoute(router) {
   const defaultPreviewExitUrl = '/api/exit-preview'

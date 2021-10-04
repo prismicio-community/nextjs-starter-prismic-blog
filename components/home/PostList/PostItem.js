@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs'
 
 import PostDate from './PostDate'
 import FirstParagraph from './FirstParagraph'
-import { hrefResolver, linkResolver } from 'prismic-configuration'
+import { hrefResolver, linkResolver } from 'prismicConfiguration'
 
 /**
  * Post list item component

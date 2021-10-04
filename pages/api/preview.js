@@ -1,4 +1,4 @@
-import { linkResolver } from "prismic-configuration";
+import { linkResolver } from "prismicConfiguration";
 import { Client } from "utils/prismicHelpers";
 
 export default async (req, res) => {
