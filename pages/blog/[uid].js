@@ -24,7 +24,7 @@ const Post = ({ post, previewRef }) => {
     return <Loader />
   }
 
-  if (!post) {
+  if (!post.id) {
     return <Custom404 />
   }
 

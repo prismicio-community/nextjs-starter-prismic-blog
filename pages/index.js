@@ -41,7 +41,7 @@ export async function getStaticProps({ previewData }) {
   const previewRef = previewData ? previewData.ref : null
   const refOption = previewRef ? { ref: previewRef } : null
 
-  const blogHome = await Client().getSingle("blog_home", refOption) || {}
+  const blogHome = await Client().getSingle("blog_home", refOption) || null
 
   const postsQueryOptions = { orderings: "[my.post.date desc]", ...(refOption)}
   const posts = await Client().query(Prismic.Predicates.at("document.type", "post"), postsQueryOptions)
