@@ -1,5 +1,5 @@
 // -- Prismic Repo Name
-export const repoName = 'blog-tester-phil'
+export const repoName = 'your-repo-name'
 
 // -- Prismic API endpoint
 // Determines which repository to query and fetch data from
@@ -34,10 +34,6 @@ export const Router = {
     {
       "type":"post",
       "path":"/blog/:uid"
-    },
-    {
-      "type":"home_page",
-      "path":"/"
     },
   ],
   href: (type) => {
