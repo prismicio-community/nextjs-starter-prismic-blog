@@ -26,3 +26,22 @@ export const hrefResolver = (doc) => {
   }
   return '/'
 }
+
+// -- Route Resolver rules
+// Manages the url links to internal Prismic documents two levels deep (optionals)
+export const Router = {
+  routes: [
+    {
+      "type":"post",
+      "path":"/blog/:uid"
+    },
+    {
+      "type":"home_page",
+      "path":"/"
+    },
+  ],
+  href: (type) => {
+    const route = Router.routes.find(r => r.type === type);
+    return route && route.href;
+  }
+};
