@@ -1,4 +1,4 @@
-import { reset, globals } from 'styles/general'
+import { reset, globals } from '../styles/general';
 
 function MyApp({ Component, pageProps }) {
   return (

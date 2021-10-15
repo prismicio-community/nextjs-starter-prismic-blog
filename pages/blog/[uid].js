@@ -4,16 +4,16 @@ import { useRouter } from "next/router";
 import { RichText } from "prismic-reactjs";
 
 // Project components
-import DefaultLayout from "layouts";
-import { BackButton, SliceZone } from "components/post";
-import Loader from "components/Loader";
-import Custom404 from 'pages/404'
+import DefaultLayout from "../../layouts";
+import { BackButton, SliceZone } from "../../components/post";
+import Loader from "../../components/Loader";
+import Custom404 from '../404';
 
 // Project functions & styles
-import { Client } from "utils/prismicHelpers";
-import { queryRepeatableDocuments } from 'utils/queries';
-import useUpdatePreviewRef from 'utils/useUpdatePreviewRef';
-import { postStyles } from "styles";
+import { Client } from "../../utils/prismicHelpers";
+import { queryRepeatableDocuments } from '../../utils/queries';
+import useUpdatePreviewRef from '../../utils/useUpdatePreviewRef';
+import { postStyles } from "../../styles";
 
 /**
  * Post page component

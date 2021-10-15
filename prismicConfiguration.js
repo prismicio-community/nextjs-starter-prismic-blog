@@ -19,14 +19,6 @@ export const linkResolver = (doc) => {
   return '/'
 }
 
-// Additional helper function for Next/Link components
-export const hrefResolver = (doc) => {
-  if (doc.type === 'post') {
-    return '/blog/[uid]'
-  }
-  return '/'
-}
-
 // -- Route Resolver rules
 // Manages the url links to internal Prismic documents two levels deep (optionals)
 export const Router = {
@@ -35,9 +27,5 @@ export const Router = {
       "type":"post",
       "path":"/blog/:uid"
     },
-  ],
-  href: (type) => {
-    const route = Router.routes.find(r => r.type === type);
-    return route && route.href;
-  }
+  ]
 };

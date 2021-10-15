@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Head from "next/head"
-import DefaultLayout from "layouts"
-import { fourohfourStyles } from "styles";
+import DefaultLayout from "../layouts"
+import { fourohfourStyles } from "../styles";
 
 export default function Custom404() {
   return <>
