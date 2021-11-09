@@ -38,7 +38,7 @@ export default function useUpdatePreview(previewRef, documentId) {
           return router.push(previewExitRoute)
         }
       } else if (rawPreviewCookie && previewCookieRef) {
-        return router.push(`/api/preview?token=previewCookieRef&documentId=${documentId}`)
+        return router.push(`/api/preview?token=${previewCookieRef}&documentId=${documentId}`)
       }
       return undefined
     }

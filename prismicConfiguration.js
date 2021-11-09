@@ -21,7 +21,7 @@ export const linkResolver = (doc) => {
 
 // -- Route Resolver rules
 // Manages the url links to internal Prismic documents two levels deep (optionals)
-export const Router = {
+export const router = {
   routes: [
     {
       "type":"post",
