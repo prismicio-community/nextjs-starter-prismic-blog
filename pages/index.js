@@ -4,10 +4,10 @@ import Prismic from '@prismicio/client'
 import { RichText } from "prismic-reactjs";
 
 // Project components & functions
-import { Client } from "utils/prismicHelpers";
-import DefaultLayout from "layouts";
-import { Header, PostList, SetupRepo } from "components/home";
-import useUpdatePreviewRef from 'utils/useUpdatePreviewRef';
+import { Client } from "../utils/prismicHelpers";
+import DefaultLayout from "../layouts";
+import { Header, PostList, SetupRepo } from "../components/home";
+import useUpdatePreviewRef from '../utils/useUpdatePreviewRef';
 
 /**
  * Homepage component
@@ -41,7 +41,7 @@ export async function getStaticProps({ previewData }) {
   const previewRef = previewData ? previewData.ref : null
   const refOption = previewRef ? { ref: previewRef } : null
 
-  const blogHome = await Client().getSingle("blog_home", refOption) || {}
+  const blogHome = await Client().getSingle("blog_home", refOption) || null
 
   const postsQueryOptions = { orderings: "[my.post.date desc]", ...(refOption)}
   const posts = await Client().query(Prismic.Predicates.at("document.type", "post"), postsQueryOptions)

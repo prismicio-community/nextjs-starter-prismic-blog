@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs'
 
 import PostDate from './PostDate'
 import FirstParagraph from './FirstParagraph'
-import { hrefResolver, linkResolver } from 'prismicConfiguration'
+import { linkResolver } from 'prismicConfiguration'
 
 /**
  * Post list item component
@@ -15,8 +15,7 @@ const PostItem = ({ post }) => {
   return (
     <div className="blog-post">
       <NextLink
-        as={linkResolver(post)}
-        href={hrefResolver(post)}
+        href={linkResolver(post)}
       >
         <a>
           <h2>{title}</h2>
