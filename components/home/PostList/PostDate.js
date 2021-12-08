@@ -1,5 +1,5 @@
 import React from 'react'
-import { Date } from 'prismic-reactjs'
+import { asDate } from '@prismicio/helpers'
 
 /**
  * Post list item date component
@@ -11,7 +11,7 @@ const PostDate = ({ date }) => {
     day: '2-digit',
     year: 'numeric'
   }
-  const displayDate = new Intl.DateTimeFormat('en-US', dateFormat).format(Date(date))
+  const displayDate = new Intl.DateTimeFormat('en-US', dateFormat).format(asDate(date))
 
   return (
     <p className="blog-post-meta">

@@ -1,26 +1,20 @@
 import React from 'react'
-import { default as NextLink } from 'next/link'
-import { RichText } from 'prismic-reactjs'
-
+import { PrismicLink, PrismicText } from '@prismicio/react'
 import PostDate from './PostDate'
 import FirstParagraph from './FirstParagraph'
-import { linkResolver } from 'prismicConfiguration'
 
 /**
  * Post list item component
  */
 const PostItem = ({ post }) => {
-  const title = RichText.asText(post.data.title) ? RichText.asText(post.data.title) : 'Untitled'
   
   return (
     <div className="blog-post">
-      <NextLink
-        href={linkResolver(post)}
-      >
-        <a>
-          <h2>{title}</h2>
-        </a>
-      </NextLink>
+      <PrismicLink href={post.url}>
+        <h2>
+          <PrismicText field={post.data.title} />
+        </h2>
+      </PrismicLink>
 
       <PostDate date={post.data.date} />
       

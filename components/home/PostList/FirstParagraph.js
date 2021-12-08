@@ -1,5 +1,5 @@
 import React from 'react'
-import { RichText } from 'prismic-reactjs'
+import { asText } from '@prismicio/helpers'
 
 /**
  * Component that returns the first paragraph of a post
@@ -9,7 +9,7 @@ const FirstParagraph = ({ sliceZone, textLimit = 300 }) => {
   const firstTextSlice = sliceZone.find(slice => slice.slice_type === 'text')
 
   if (firstTextSlice) {
-    const text = RichText.asText(firstTextSlice.primary.text)
+    const text = asText(firstTextSlice.primary.text)
     let limitedText = text.substring(0, textLimit)
 
     if (text.length > textLimit) {

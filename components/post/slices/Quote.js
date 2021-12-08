@@ -1,5 +1,5 @@
 import React from 'react'
-import { RichText } from 'prismic-reactjs'
+import { PrismicText } from '@prismicio/react'
 import { quoteStyles } from 'styles'
 
 /**
@@ -8,7 +8,7 @@ import { quoteStyles } from 'styles'
 const Quote = ({ slice }) => (
   <div className="post-part single container">
     <blockquote className="block-quotation">
-      {RichText.asText(slice.primary.quote)}
+      <PrismicText field={slice.primary.quote} />
     </blockquote>
     <style jsx global>{quoteStyles}</style>
   </div>

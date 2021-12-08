@@ -3,10 +3,12 @@
   "description": "Sample blog built with Next.js using Prismic headless CMS",
   "author": "Prismic",
   "dependencies": {
-    "@prismicio/client": "^4.0.0",
+    "@prismicio/client": "^5.1.0",
+    "@prismicio/helpers": "^2.0.0-beta.5",
+    "@prismicio/react": "^2.0.0-beta.7",
     "js-cookie": "^3.0.1",
-    "next": "^11.1.2",
-    "prismic-reactjs": "^1.3.4",
+    "next": "^12.0.4",
+    "next-slicezone": "^0.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

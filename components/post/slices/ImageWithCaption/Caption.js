@@ -1,15 +1,15 @@
 import React from 'react'
-import { RichText } from 'prismic-reactjs'
+import { PrismicText } from '@prismicio/react'
 
 /**
  * Image caption component
  */
 const Caption = ({ caption }) => {
-  if (RichText.asText(caption) !== '') {
+  if (<PrismicText field={caption} /> !== '') {
     return (
       <p>
         <span className='image-label'>
-          {RichText.asText(caption)}
+          <PrismicText field={caption} />
         </span>
       </p>
     )

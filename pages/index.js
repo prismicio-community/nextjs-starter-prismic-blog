@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import Prismic from '@prismicio/client'
-import { RichText } from "prismic-reactjs";
+import Prismic from '@prismicio/client';
+import { asText } from '@prismicio/helpers';
 
 // Project components & functions
 import { Client } from "../utils/prismicHelpers";
@@ -20,7 +20,7 @@ const Home = ({ blogHome, posts, previewRef }) => {
     return (
       <DefaultLayout>
         <Head>
-          <title>{RichText.asText(blogHome.data.headline)}</title>
+          <title>{asText(blogHome.data.headline)}</title>
         </Head>
         <Header
           image={blogHome.data.image}

@@ -1,11 +1,13 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { RichText } from "prismic-reactjs";
+import { asText } from '@prismicio/helpers';
+import SliceZone from 'next-slicezone';
 
 // Project components
 import DefaultLayout from "../../layouts";
-import { BackButton, SliceZone } from "../../components/post";
+import { BackButton } from "../../components/post";
+import * as Slices from '../../components/post/slices';
 import Loader from "../../components/Loader";
 import Custom404 from '../404';
 
@@ -31,8 +33,8 @@ const Post = ({ post, previewRef }) => {
   useUpdatePreviewRef(previewRef, post.id)
 
   if (post && post.data) {
-    const hasTitle = RichText.asText(post.data.title).length !== 0;
-    const title = hasTitle ? RichText.asText(post.data.title) : "Untitled";
+    const hasTitle = asText(post.data.title).length !== 0;
+    const title = hasTitle ? asText(post.data.title) : "Untitled";
 
     return (
       <DefaultLayout>
@@ -44,7 +46,10 @@ const Post = ({ post, previewRef }) => {
             <BackButton />
             <h1>{title}</h1>
           </div>
-          <SliceZone sliceZone={post.data.body} />
+          <SliceZone 
+            slices={post.data.body}
+            resolver={({ sliceName }) => Slices[sliceName]} 
+          />
         </div>
         <style jsx global>
           {postStyles}
