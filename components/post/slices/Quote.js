@@ -5,7 +5,7 @@ import { quoteStyles } from 'styles'
 /**
  * Quote slice component
  */
-const Quote = ({ slice }) => (
+export const Quote = ({ slice }) => (
   <div className="post-part single container">
     <blockquote className="block-quotation">
       <PrismicText field={slice.primary.quote} />
@@ -13,5 +13,3 @@ const Quote = ({ slice }) => (
     <style jsx global>{quoteStyles}</style>
   </div>
 )
-
-export default Quote

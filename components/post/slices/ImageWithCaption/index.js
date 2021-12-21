@@ -6,7 +6,7 @@ import { imageCaptionStyles } from 'styles'
 /**
  * Image caption slice component
  */
-const ImageCaption = ({ slice }) => {
+export const ImageWithCaption = ({ slice }) => {
 
   const imageComponent =
     slice.slice_label === 'image-full-width' ? 
@@ -20,5 +20,3 @@ const ImageCaption = ({ slice }) => {
     </Fragment>
   )
 }
-
-export default ImageCaption

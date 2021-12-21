@@ -5,7 +5,7 @@ import Caption from './Caption'
 /**
  * Full width image component
  */
-const FullWidthImage = ({ slice }) => {
+ export const FullWidthImage = ({ slice }) => {
   const imageUrl = slice.primary.image.url
   const imageAlt = slice.primary.image.imageAlt
   const caption = slice.primary.caption
@@ -21,5 +21,3 @@ const FullWidthImage = ({ slice }) => {
     </div>
   )
 }
-
-export default FullWidthImage

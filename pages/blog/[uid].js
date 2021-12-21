@@ -2,12 +2,12 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { asText } from '@prismicio/helpers';
-import SliceZone from 'next-slicezone';
+import { SliceZone } from '@prismicio/react'
 
 // Project components
 import DefaultLayout from "../../layouts";
 import { BackButton } from "../../components/post";
-import * as Slices from '../../components/post/slices';
+import components from '../../components/post/slices';
 import Loader from "../../components/Loader";
 import Custom404 from '../404';
 
@@ -48,7 +48,7 @@ const Post = ({ post, previewRef }) => {
           </div>
           <SliceZone 
             slices={post.data.body}
-            resolver={({ sliceName }) => Slices[sliceName]} 
+            components={components} 
           />
         </div>
         <style jsx global>

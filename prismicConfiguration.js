@@ -1,5 +1,5 @@
 // -- Prismic Repo Name
-export const repoName = 'your-repo-name'
+export const repoName = 'blog-tester-phil'
 
 // -- Prismic API endpoint
 // Determines which repository to query and fetch data from

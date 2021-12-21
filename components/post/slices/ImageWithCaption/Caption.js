@@ -4,7 +4,7 @@ import { PrismicText } from '@prismicio/react'
 /**
  * Image caption component
  */
-const Caption = ({ caption }) => {
+export const Caption = ({ caption }) => {
   if (<PrismicText field={caption} /> !== '') {
     return (
       <p>
@@ -17,5 +17,3 @@ const Caption = ({ caption }) => {
 
   return null
 }
-
-export default Caption
