@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import DefaultImage from './DefaultImage'
-import FullWidthImage from './FullWidthImage'
+import { DefaultImage } from './DefaultImage'
+import { FullWidthImage } from './FullWidthImage'
 import { imageCaptionStyles } from 'styles'
 
 /**

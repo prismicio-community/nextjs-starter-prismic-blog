@@ -7,7 +7,7 @@ import { SliceZone } from '@prismicio/react'
 // Project components
 import DefaultLayout from "../../layouts";
 import { BackButton } from "../../components/post";
-import components from '../../components/post/slices';
+import { components } from '../../components/post/slices';
 import Loader from "../../components/Loader";
 import Custom404 from '../404';
 
