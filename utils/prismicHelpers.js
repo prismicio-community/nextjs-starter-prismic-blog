@@ -1,7 +1,8 @@
-import Prismic from '@prismicio/client'
+import * as prismic from "@prismicio/client";
+import { enableAutoPreviews } from '@prismicio/next';
 import Link from 'next/link'
 import {
-  apiEndpoint,
+  repoName,
   accessToken,
   linkResolver,
   routeResolver
@@ -20,7 +21,7 @@ export const customLink = (type, element, content, children, index) => (
 // -- @prismicio/client initialisation
 // Initialises the Prismic Client that's used for querying the API and passes it any query options.
 export const Client = (req = null) => (
-  Prismic.client(apiEndpoint, createClientOptions(req, accessToken, routeResolver))
+  prismic.createClient(repoName, createClientOptions(req, accessToken, routeResolver))
 );
 
 // Options to be passed to the Client

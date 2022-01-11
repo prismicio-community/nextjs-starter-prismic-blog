@@ -3,8 +3,9 @@
   "description": "Sample blog built with Next.js using Prismic headless CMS",
   "author": "Prismic",
   "dependencies": {
-    "@prismicio/client": "^5.1.0",
+    "@prismicio/client": "^6.0.0",
     "@prismicio/helpers": "^2.0.0-beta.5",
+    "@prismicio/next": "^0.0.1",
     "@prismicio/react": "^2.0.0-beta.7",
     "js-cookie": "^3.0.1",
     "next": "^12.0.4",

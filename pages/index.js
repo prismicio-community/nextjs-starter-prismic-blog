@@ -1,20 +1,16 @@
 import React from "react";
 import Head from "next/head";
-import Prismic from '@prismicio/client';
 import { asText } from '@prismicio/helpers';
 
 // Project components & functions
 import { Client } from "../utils/prismicHelpers";
 import DefaultLayout from "../layouts";
 import { Header, PostList, SetupRepo } from "../components/home";
-import useUpdatePreviewRef from '../utils/useUpdatePreviewRef';
 
 /**
  * Homepage component
  */
-const Home = ({ blogHome, posts, previewRef }) => {
-
-  useUpdatePreviewRef(previewRef, blogHome.id)
+const Home = ({ blogHome, posts }) => {
 
   if (blogHome && blogHome.data) {
     return (
@@ -36,21 +32,22 @@ const Home = ({ blogHome, posts, previewRef }) => {
   return <SetupRepo />;
 };
 
-export async function getStaticProps({ previewData }) {
+export async function getStaticProps() {
 
-  const previewRef = previewData ? previewData.ref : null
-  const refOption = previewRef ? { ref: previewRef } : null
+  const blogHome = await Client().getSingle("blog_home") || null
 
-  const blogHome = await Client().getSingle("blog_home", refOption) || null
-
-  const postsQueryOptions = { orderings: "[my.post.date desc]", ...(refOption)}
-  const posts = await Client().query(Prismic.Predicates.at("document.type", "post"), postsQueryOptions)
+  const posts = await Client().getByType("post",
+   { orderings: 
+    {
+      field: 'my.post.date',
+      direction: 'desc'
+    }
+  })
 
   return {
     props: {
       blogHome,
       posts: posts ? posts.results : [],
-      previewRef,
     }
   }
 }

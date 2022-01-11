@@ -10,7 +10,7 @@ const PostItem = ({ post }) => {
   
   return (
     <div className="blog-post">
-      <PrismicLink href={post.url}>
+      <PrismicLink document={post}>
         <h2>
           <PrismicText field={post.data.title} />
         </h2>
