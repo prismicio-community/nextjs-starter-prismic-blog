@@ -18,6 +18,18 @@ export const customLink = (type, element, content, children, index) => (
   </Link>
 )
 
+export const createPrismicClient = (config) => {
+  const client = prismic.createClient(repoName);
+
+  enableAutoPreviews({
+    client,
+    context: config.context,
+    req: config.req,
+  });
+
+  return client;
+};
+
 // -- @prismicio/client initialisation
 // Initialises the Prismic Client that's used for querying the API and passes it any query options.
 export const Client = (req = null) => (

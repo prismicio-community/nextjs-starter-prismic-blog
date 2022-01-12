@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { asText } from '@prismicio/helpers';
 import { SliceZone } from '@prismicio/react'
 
