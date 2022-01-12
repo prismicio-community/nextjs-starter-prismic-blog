@@ -47,9 +47,11 @@ const Post = ({ post }) => {
   return null;
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps(context) {
 
-  const post = await Client().getByUID("post", params.uid) || {}
+  const client = Client({context})
+
+  const post = await client.getByUID("post", context.params.uid) || {}
   return {
     props: {
       post

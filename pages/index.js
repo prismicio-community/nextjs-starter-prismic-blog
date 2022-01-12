@@ -32,11 +32,11 @@ const Home = ({ blogHome, posts }) => {
   return <SetupRepo />;
 };
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
 
-  const blogHome = await Client().getSingle("blog_home") || null
+  const blogHome = await Client({context}).getSingle("blog_home") || null
 
-  const posts = await Client().getByType("post",
+  const posts = await Client({context}).getByType("post",
    { orderings: 
     {
       field: 'my.post.date',
