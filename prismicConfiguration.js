@@ -1,7 +1,5 @@
-import * as prismic from "@prismicio/client";
-
 // -- Prismic Repo Name
-export const repoName = prismic.getEndpoint("blog-tester-phil");
+export const repoName = 'blog-tester-phil'
 
 // -- Access Token if the repository is not public
 // Generate a token in your dashboard and configure it here if your repository is private
