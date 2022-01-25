@@ -88,6 +88,7 @@ export const imageCaptionStyles = css.global`
   img {
     width: 100%;
     height: auto;
+    position: inherit;
   }
   .block-img {
     margin-bottom: 24px;
@@ -122,7 +123,7 @@ export const imageCaptionStyles = css.global`
   }
   @media screen and (min-width: 768px) {
     /* Blog post images */
-    .block-img.emphasized {
+    .block-img.default-slice {
       width: 130%;
       margin: 0 -15% 2rem -15%;
     }

@@ -1,6 +1,4 @@
-import Document from 'next/document'
-import { Html, Head, Main, NextScript } from 'next/document'
-import { repoName } from '../prismicConfiguration'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -18,7 +16,6 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" href="/favicon.png" type="image/png" />
-          <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
         </Head>
         <body>
           <Main />

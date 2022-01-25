@@ -6,7 +6,7 @@ import { SliceZone } from '@prismicio/react'
 // Project components
 import DefaultLayout from "../../layouts";
 import { BackButton } from "../../components/post";
-import { components } from '../../components/post/slices';
+import { components } from '../../slices';
 
 // Project functions & styles
 import { Client } from "../../utils/prismicHelpers";
@@ -33,7 +33,7 @@ const Post = ({ post }) => {
             <h1>{title}</h1>
           </div>
           <SliceZone 
-            slices={post.data.body}
+            slices={post.data.slices}
             components={components} 
           />
         </div>

@@ -34,7 +34,7 @@ const Home = ({ blogHome, posts }) => {
 
 export async function getStaticProps(context) {
 
-  const blogHome = await Client({context}).getSingle("blog_home") || null
+  const blogHome = await Client({context}).getSingle("blog-home") || null
 
   const posts = await Client({context}).getByType("post",
    { orderings: 

@@ -12,10 +12,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "slicemachine": "start-slicemachine"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/prismicio/nextjs-blog"
+  },
+  "devDependencies": {
+    "@prismicio/slice-simulator-react": "^0.1.1",
+    "slice-machine-ui": "^0.2.0"
   }
 }

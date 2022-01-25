@@ -19,7 +19,7 @@ const PostItem = ({ post }) => {
       <PostDate date={post.data.date} />
       
       <FirstParagraph
-        sliceZone={post.data.body}
+        sliceZone={post.data.slices}
         textLimit={300}
       />
     </div>

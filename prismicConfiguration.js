@@ -1,5 +1,5 @@
 // -- Prismic Repo Name
-export const repoName = 'blog-tester-phil'
+export const repoName = 'nextjs-sm-blog'
 
 // -- Access Token if the repository is not public
 // Generate a token in your dashboard and configure it here if your repository is private
