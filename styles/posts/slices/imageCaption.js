@@ -90,7 +90,7 @@ export const imageCaptionStyles = css.global`
     height: auto;
     position: inherit;
   }
-  .block-img {
+  .block-img  > div {
     margin-bottom: 24px;
     position: relative;
     width: 100%;
@@ -98,6 +98,7 @@ export const imageCaptionStyles = css.global`
   }
   .image-label {
     display: block;
+    margin-bottom: 20px;
     text-align: center;
     font-style: italic;
     font-size: 14px;
@@ -117,7 +118,7 @@ export const imageCaptionStyles = css.global`
     .blog-header .wrapper {
       width: 80%;
     }
-    .block-img {
+    .block-img > div {
       height: 300px;
     }
   }

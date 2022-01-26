@@ -15,20 +15,18 @@ export const ImageWithCaption = ({ slice }) => {
     <div className="post-part single">
       <div className={`block-img ${slice.variation}`}>
         {slice.variation === 'fullWidthImage' ? (
-          <div className="container">
-            <Image src={imageUrl} alt={imageAlt} layout="fill" objectPosition="top" objectFit="cover"/>
+          <div>
+            <Image src={imageUrl} alt={imageAlt} layout="fill" objectFit="cover"/>
           </div>
         ) : 
-          <Image src={imageUrl} alt={imageAlt} layout="fill" objectFit="cover"/>
+          <div className="container">
+            <Image src={imageUrl} alt={imageAlt} layout="fill" objectPosition="center" objectFit="cover"/>
+          </div>
         }
         {<PrismicText field={caption} /> !== '' ? (
-          <div className="wrapper">
-            <p>
-              <span className='image-label'>
-                <PrismicText field={caption} />
-              </span>
-            </p>
-          </div>
+          <span className='image-label'>
+            <PrismicText field={caption} />
+          </span>
         ) : null}
       </div>
       <style jsx global>{imageCaptionStyles}</style>
