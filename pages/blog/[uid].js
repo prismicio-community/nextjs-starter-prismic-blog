@@ -9,8 +9,7 @@ import { BackButton } from "../../components/post";
 import { components } from '../../slices';
 
 // Project functions & styles
-import { Client } from "../../utils/prismicHelpers";
-import { queryRepeatableDocuments } from '../../utils/queries';
+import { Client } from "../../prismicConfiguration";
 import { postStyles } from "../../styles";
 
 /**
@@ -60,7 +59,8 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const documents = await queryRepeatableDocuments((doc) => doc.type === 'post')
+
+  const documents = await Client().getAllByType('post')
   return {
     paths: documents.map(doc => `/blog/${doc.uid}`),
     fallback: true,

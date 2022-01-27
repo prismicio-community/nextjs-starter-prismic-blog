@@ -3,7 +3,7 @@ import Head from "next/head";
 import { asText } from '@prismicio/helpers';
 
 // Project components & functions
-import { Client } from "../utils/prismicHelpers";
+import { Client } from "../prismicConfiguration";
 import DefaultLayout from "../layouts";
 import { Header, PostList, SetupRepo } from "../components/home";
 

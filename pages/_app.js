@@ -5,7 +5,7 @@ import { PrismicProvider } from '@prismicio/react'
 import { PrismicPreview } from '@prismicio/next';
 
 // Update the path to your Link Resolver
-import { repoName,linkResolver } from './../prismicConfiguration';
+import { repositoryName,linkResolver } from './../prismicConfiguration';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
       <style jsx global>
         {globals}
       </style>
-      <PrismicPreview repositoryName={repoName}>
+      <PrismicPreview repositoryName={repositoryName}>
         <PrismicProvider
         linkResolver={linkResolver}
         internalLinkComponent={({ href, children, ...props }) => (

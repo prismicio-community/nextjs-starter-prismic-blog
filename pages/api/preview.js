@@ -1,5 +1,4 @@
-import { linkResolver } from "../../prismicConfiguration";
-import { Client } from "../../utils/prismicHelpers";
+import { Client, linkResolver } from "../../prismicConfiguration";
 import { setPreviewData, redirectToPreviewURL } from '@prismicio/next';
 
 export default async (req, res) => {
