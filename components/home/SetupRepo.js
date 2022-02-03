@@ -1,6 +1,6 @@
 import React from 'react'
 import DefaultLayout from 'layouts'
-import { apiEndpoint } from 'prismicConfiguration'
+import { apiEndpoint } from 'prismicio'
 import { setupRepoStyles } from 'styles'
 
 /**

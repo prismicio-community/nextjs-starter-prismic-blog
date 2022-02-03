@@ -9,7 +9,7 @@ import { BackButton } from "../../components/post";
 import { components } from '../../slices';
 
 // Project functions & styles
-import { Client } from "../../prismicConfiguration";
+import { createClient } from "../../prismicio";
 import { postStyles } from "../../styles";
 
 /**
@@ -48,9 +48,7 @@ const Post = ({ post }) => {
 
 export async function getStaticProps(context) {
 
-  const client = Client({context})
-
-  const post = await client.getByUID("post", context.params.uid) || {}
+  const post = await createClient({context}).getByUID("post", context.params.uid) || {}
   return {
     props: {
       post
@@ -60,7 +58,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
 
-  const documents = await Client().getAllByType('post')
+  const documents = await createClient().getAllByType('post')
   return {
     paths: documents.map(doc => `/blog/${doc.uid}`),
     fallback: true,

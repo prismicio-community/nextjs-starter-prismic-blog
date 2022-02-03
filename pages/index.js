@@ -3,7 +3,7 @@ import Head from "next/head";
 import { asText } from '@prismicio/helpers';
 
 // Project components & functions
-import { Client } from "../prismicConfiguration";
+import { createClient } from "../prismicio";
 import DefaultLayout from "../layouts";
 import { Header, PostList, SetupRepo } from "../components/home";
 
@@ -34,9 +34,9 @@ const Home = ({ blogHome, posts }) => {
 
 export async function getStaticProps(context) {
 
-  const blogHome = await Client({context}).getSingle("blog-home") || null
+  const blogHome = await createClient({context}).getSingle("blog-home") || null
 
-  const posts = await Client({context}).getByType("post",
+  const posts = await createClient({context}).getByType("post",
    { orderings: 
     {
       field: 'my.post.date',
