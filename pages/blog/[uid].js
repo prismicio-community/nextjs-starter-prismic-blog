@@ -14,6 +14,10 @@ import { BackButton } from "../../components/BackButton";
  * Page for a blog post.
  */
 const BlogPostPage = ({ post }) => {
+  if (!post) {
+    return null;
+  }
+
   const title = prismicH.asText(post.data.title) || "Untitled";
 
   return (
