@@ -16,4 +16,3 @@ const SliceSimulatorPage = () => {
 };
 
 export default SliceSimulatorPage;
-

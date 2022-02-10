@@ -6,4 +6,3 @@ module.exports = {
     domains: ["images.prismic.io"],
   },
 };
-

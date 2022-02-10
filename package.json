@@ -13,7 +13,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@prismicio/slice-simulator-react": "^0.1.1",
+    "prettier": "^2.5.1",
     "slice-machine-ui": "^0.2.0"
   }
 }

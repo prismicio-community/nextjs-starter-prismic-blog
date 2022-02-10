@@ -90,7 +90,7 @@ export const imageCaptionStyles = css.global`
     height: auto;
     position: inherit;
   }
-  .block-img  > div {
+  .block-img > div {
     margin-bottom: 24px;
     position: relative;
     width: 100%;

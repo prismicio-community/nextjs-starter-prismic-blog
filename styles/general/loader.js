@@ -15,8 +15,9 @@ export const loaderStyles = css.global`
     width: 64px;
     height: 64px;
   }
-  .ldsRipple:before, .ldsRipple:after {
-    content: '';
+  .ldsRipple:before,
+  .ldsRipple:after {
+    content: "";
     position: absolute;
     border: 4px solid #333;
     opacity: 1;
