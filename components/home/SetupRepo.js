@@ -1,24 +1,27 @@
-import React from 'react'
-import DefaultLayout from 'layouts'
-import { apiEndpoint } from 'prismicio'
-import { setupRepoStyles } from 'styles'
+import { DefaultLayout } from "../../layouts";
+import { repositoryName } from "../../prismicio";
+import { setupRepoStyles } from "styles";
 
 /**
- * Setup repo component
+ * A setup message displayed when the Prismic repository does not contain blog
+ * posts.
  */
-const SetupRepo = () => {
-  const repoUrl = `${apiEndpoint.replace('.cdn','').slice(0, -6)}documents/`
+export const SetupRepo = () => {
+  const repositoryURL = `https://${repositoryName}.prismic.io/`;
 
   return (
     <DefaultLayout>
-      <div className='setup-repo'>
+      <div className="setup-repo">
         <h1>Good job!</h1>
         <h2>You're halfway done with setting up your Prismic website</h2>
-        <h4>Just visit your <a href={repoUrl}>Prismic dashboard</a> and add some content there</h4>
+        <h4>
+          Just visit your <a href={repositoryURL}>Prismic dashboard</a> and add
+          some content there
+        </h4>
       </div>
-      <style jsx global>{setupRepoStyles}</style>
+      <style jsx global>
+        {setupRepoStyles}
+      </style>
     </DefaultLayout>
-  )
-}
-
-export default SetupRepo
+  );
+};

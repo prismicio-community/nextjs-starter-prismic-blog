@@ -1,13 +1,13 @@
-import Footer from "components/Footer";
+import { Footer } from "../components/Footer";
 
 /**
- * Default layout component
+ * The default layout for all pages.
  */
-const DefaultLayout = ({ children }) => (
-  <div>
-    <main>{children}</main>
-    <Footer />
-  </div>
-);
-
-export default DefaultLayout;
+export const DefaultLayout = ({ children }) => {
+  return (
+    <div>
+      <main>{children}</main>
+      <Footer />
+    </div>
+  );
+};

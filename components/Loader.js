@@ -1,16 +1,15 @@
-import React from 'react'
-import { loaderStyles } from 'styles'
+import { loaderStyles } from "styles";
 
 /**
- * Site loader component
+ * A loading indicator.
  */
- const Loader = () => (
-  <div className="loader">
-    <div className="ldsRipple"/>
-    <style jsx global>
-      {loaderStyles}
-    </style>
-  </div>
-)
-
-export default Loader
+export const Loader = () => {
+  return (
+    <div className="loader">
+      <div className="ldsRipple" />
+      <style jsx global>
+        {loaderStyles}
+      </style>
+    </div>
+  );
+};

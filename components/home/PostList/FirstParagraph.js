@@ -1,27 +1,28 @@
-import React from 'react'
-import { asText } from '@prismicio/helpers'
+import * as prismicH from "@prismicio/helpers";
 
 /**
- * Component that returns the first paragraph of a post
+ * Renders the first paragraph of a blog post.
  */
-const FirstParagraph = ({ sliceZone, textLimit = 300 }) => {
+export const FirstParagraph = ({ slices, characterLimit = 300 }) => {
   // Find the first text slice of post's body
-  const firstTextSlice = sliceZone.find(slice => slice.slice_type === 'text')
+  const firstTextSlice = slices.find((slice) => slice.slice_type === "text");
 
   if (firstTextSlice) {
-    const text = asText(firstTextSlice.primary.text)
-    let limitedText = text.substring(0, textLimit)
+    const text = prismicH.asText(firstTextSlice.primary.text);
 
-    if (text.length > textLimit) {
+    let limitedText = text.substring(0, characterLimit);
+
+    if (text.length > characterLimit) {
       // Cut only up to the last word and attach '...' for readability
-      limitedText = `${limitedText.substring(0, limitedText.lastIndexOf(' '))}...`
+      limitedText = `${limitedText.substring(
+        0,
+        limitedText.lastIndexOf(" ")
+      )}…`;
     }
-    
-    return <p>{limitedText}</p>
+
+    return <p>{limitedText}</p>;
   }
 
-  // If there are no slices of type 'text', return nothing
-  return null
-}
-
-export default FirstParagraph
+  // If there are no Slices of type 'text', render anything.
+  return null;
+};

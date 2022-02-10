@@ -1,13 +1,14 @@
-import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import { PrismicRichText } from "@prismicio/react";
 
 /**
- * Text slice component
+ * Component for the Text Slice.
  */
-export const Text = ({ slice }) => (
-  <div className="post-part single container">
-    <PrismicRichText
-      field={slice.primary.text}
-    />
-  </div>
-)
+const Text = ({ slice }) => {
+  return (
+    <div className="post-part single container">
+      <PrismicRichText field={slice.primary.text} />
+    </div>
+  );
+};
+
+export default Text;

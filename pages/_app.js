@@ -1,11 +1,10 @@
-import { reset, globals } from '../styles/general';
-import * as React from 'react';
-import Link from 'next/link';
-import { PrismicProvider } from '@prismicio/react';
-import { PrismicPreview } from '@prismicio/next';
-import { repositoryName,linkResolver } from './../prismicio';
+import Link from "next/link";
+import { PrismicProvider } from "@prismicio/react";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName, linkResolver } from "../prismicio";
+import { reset, globals } from "../styles/general";
 
-function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <>
       <style jsx global>
@@ -14,20 +13,19 @@ function MyApp({ Component, pageProps }) {
       <style jsx global>
         {globals}
       </style>
-      <PrismicPreview repositoryName={repositoryName}>
-        <PrismicProvider
-          linkResolver={linkResolver}
-          internalLinkComponent={({ href, children, ...props }) => (
-            <Link href={href}>
-              <a {...props}>{children}</a>
-            </Link>
-          )}
-        >
-          <Component {...pageProps} />
-        </PrismicProvider>
-      </PrismicPreview>
+      <PrismicProvider
+        linkResolver={linkResolver}
+        internalLinkComponent={({ href, ...props }) => (
+          <Link href={href}>
+            <a {...props} />
+          </Link>
+        )}
+      >
+        <Component {...pageProps} />
+        <PrismicPreview repositoryName={repositoryName} />
+      </PrismicProvider>
     </>
-  )
-}
+  );
+};
 
-export default MyApp
+export default App;
