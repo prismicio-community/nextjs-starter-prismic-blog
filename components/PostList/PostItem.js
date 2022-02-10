@@ -1,4 +1,5 @@
 import { PrismicLink, PrismicText } from "@prismicio/react";
+import * as prismicH from "@prismicio/helpers";
 import css from "styled-jsx/css";
 
 import { PostDate } from "./PostDate";

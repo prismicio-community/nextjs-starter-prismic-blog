@@ -6,7 +6,7 @@ import { createClient } from "../prismicio";
 
 import { Layout } from "../components/Layout";
 import { HomeHeader } from "../components/HomeHeader";
-import { PostList } from "../components/home/PostList";
+import { PostList } from "../components/PostList";
 import { SetupRepo } from "../components/SetupRepo";
 
 /**
