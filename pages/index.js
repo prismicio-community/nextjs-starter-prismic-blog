@@ -3,10 +3,11 @@ import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
-import { DefaultLayout } from "../layouts";
-import { Header } from "../components/home/Header";
+
+import { Layout } from "../components/Layout";
+import { HomeHeader } from "../components/HomeHeader";
 import { PostList } from "../components/home/PostList";
-import { SetupRepo } from "../components/home/SetupRepo";
+import { SetupRepo } from "../components/SetupRepo";
 
 /**
  * Homepage component
@@ -18,17 +19,17 @@ const Home = ({ blogHome, posts }) => {
   }
 
   return (
-    <DefaultLayout>
+    <Layout>
       <Head>
         <title>{prismicH.asText(blogHome.data.headline)}</title>
       </Head>
-      <Header
+      <HomeHeader
         image={blogHome.data.image}
         headline={blogHome.data.headline}
         description={blogHome.data.description}
       />
       <PostList posts={posts} />
-    </DefaultLayout>
+    </Layout>
   );
 };
 

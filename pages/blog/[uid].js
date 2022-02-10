@@ -5,9 +5,10 @@ import * as prismicH from "@prismicio/helpers";
 import css from "styled-jsx/css";
 
 import { createClient, linkResolver } from "../../prismicio";
-import { DefaultLayout } from "../../layouts";
-import { BackButton } from "../../components/BackButton";
 import { components } from "../../slices/components";
+
+import { Layout } from "../../components/Layout";
+import { BackButton } from "../../components/BackButton";
 
 /**
  * Page for a blog post.
@@ -16,7 +17,7 @@ const BlogPostPage = ({ post }) => {
   const title = prismicH.asText(post.data.title) || "Untitled";
 
   return (
-    <DefaultLayout>
+    <Layout>
       <Head>
         <title>{title}</title>
       </Head>
@@ -30,7 +31,7 @@ const BlogPostPage = ({ post }) => {
       <style jsx global>
         {styles}
       </style>
-    </DefaultLayout>
+    </Layout>
   );
 };
 

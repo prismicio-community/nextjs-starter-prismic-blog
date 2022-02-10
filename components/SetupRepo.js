@@ -1,7 +1,8 @@
+import { PrismicLink } from "@prismicio/react";
 import css from "styled-jsx/css";
 
-import { DefaultLayout } from "../../layouts";
-import { repositoryName } from "../../prismicio";
+import { repositoryName } from "../prismicio";
+import { Layout } from "./Layout";
 
 /**
  * A setup message displayed when the Prismic repository does not contain blog
@@ -11,17 +12,18 @@ export const SetupRepo = () => {
   const repositoryURL = `https://${repositoryName}.prismic.io/`;
 
   return (
-    <DefaultLayout>
+    <Layout>
       <div className="setup-repo">
         <h1>Good job!</h1>
         <h2>You're halfway done with setting up your Prismic website</h2>
         <h4>
-          Just visit your <a href={repositoryURL}>Prismic dashboard</a> and add
-          some content there
+          Just visit your{" "}
+          <PrismicLink href={repositoryURL}>Prismic dashboard</PrismicLink> and
+          add some content there
         </h4>
+        <style jsx>{styles}</style>
       </div>
-      <style jsx>{styles}</style>
-    </DefaultLayout>
+    </Layout>
   );
 };
 

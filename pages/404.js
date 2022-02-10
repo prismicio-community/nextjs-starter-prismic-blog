@@ -2,11 +2,11 @@ import Head from "next/head";
 import { PrismicLink } from "@prismicio/react";
 import css from "styled-jsx/css";
 
-import { DefaultLayout } from "../layouts";
+import { Layout } from "../components/Layout";
 
 const NotFoundPage = () => {
   return (
-    <DefaultLayout>
+    <Layout>
       <Head>
         <title>404 - Page Not Found</title>
       </Head>
@@ -15,7 +15,7 @@ const NotFoundPage = () => {
         <PrismicLink href="/">Go back home</PrismicLink>
       </div>
       <style jsx>{styles}</style>
-    </DefaultLayout>
+    </Layout>
   );
 };
 

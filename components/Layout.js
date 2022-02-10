@@ -3,7 +3,7 @@ import { Footer } from "../components/Footer";
 /**
  * The default layout for all pages.
  */
-export const DefaultLayout = ({ children }) => {
+export const Layout = ({ children }) => {
   return (
     <div>
       <main>{children}</main>

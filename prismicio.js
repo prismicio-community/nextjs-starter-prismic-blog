@@ -1,12 +1,12 @@
 import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 
-import smConfig from "./sm.json";
+import sliceMachineConfig from "./sm.json";
 
 /**
  * The project's Prismic Rest API V2 endpoint.
  */
-const endpoint = smConfig.apiEndpoint;
+const endpoint = sliceMachineConfig.apiEndpoint;
 
 /**
  * The project's Prismic repository name.
@@ -41,5 +41,3 @@ export const createClient = (config) => {
 
   return client;
 };
-
-export default createClient;

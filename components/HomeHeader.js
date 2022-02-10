@@ -4,7 +4,7 @@ import css from "styled-jsx/css";
 /**
  * The site's global header.
  */
-export const Header = ({ image, headline, description }) => {
+export const HomeHeader = ({ image, headline, description }) => {
   return (
     <header className="home">
       <div
