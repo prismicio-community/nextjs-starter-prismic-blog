@@ -4,9 +4,9 @@ import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
 // Project components
-import DefaultLayout from "../../layouts";
-import { BackButton } from "../../components/post";
-import { components } from "../../slices";
+import { DefaultLayout } from "../../layouts";
+import { BackButton } from "../../components/BackButton";
+import { components } from "../../slices/components";
 
 // Project functions & styles
 import { createClient, linkResolver } from "../../prismicio";
@@ -37,7 +37,7 @@ const BlogPostPage = ({ post }) => {
   );
 };
 
-export const getStaticProps = (context) => {
+export const getStaticProps = async (context) => {
   const client = createClient({ context });
 
   const post = await client.getByUID("post", context.params.uid);
@@ -49,7 +49,7 @@ export const getStaticProps = (context) => {
   };
 };
 
-export const getStaticPaths = () => {
+export const getStaticPaths = async () => {
   const client = createClient();
 
   const documents = await client.getAllByType("post");

@@ -4,7 +4,7 @@ import { headerStyles } from "styles";
 /**
  * The site's global header.
  */
-const Header = ({ image, headline, description }) => {
+export const Header = ({ image, headline, description }) => {
   return (
     <header className="home">
       <div
@@ -23,5 +23,3 @@ const Header = ({ image, headline, description }) => {
     </header>
   );
 };
-
-export default Header;
