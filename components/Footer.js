@@ -8,9 +8,11 @@ export const Footer = () => (
   <footer className="container">
     <p>
       Proudly published with &nbsp;
-      <PrismicLink href="https://prismic.io">Prismic</PrismicLink>
+      <PrismicLink href="https://prismic.io" target="_blank">
+        Prismic
+      </PrismicLink>
       <br />
-      <PrismicLink href="https://prismic.io">
+      <PrismicLink href="https://prismic.io" target="_blank">
         <img
           className="footer-logo"
           src="/images/logo-prismic.svg"
