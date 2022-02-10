@@ -1,5 +1,6 @@
+import css from "styled-jsx/css";
+
 import { PostItem } from "./PostItem";
-import { postListStyles } from "styles";
 
 /**
  * Post list component
@@ -10,9 +11,14 @@ export const PostList = ({ posts }) => {
       {posts.map((post) => (
         <PostItem post={post} key={post.id} />
       ))}
-      <style jsx global>
-        {postListStyles}
-      </style>
+      <style jsx>{styles}</style>
     </div>
   );
 };
+
+const styles = css`
+  .blog-main {
+    max-width: 700px;
+    margin: auto;
+  }
+`;

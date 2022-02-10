@@ -1,6 +1,7 @@
+import css from "styled-jsx/css";
+
 import { DefaultLayout } from "../../layouts";
 import { repositoryName } from "../../prismicio";
-import { setupRepoStyles } from "styles";
 
 /**
  * A setup message displayed when the Prismic repository does not contain blog
@@ -19,9 +20,22 @@ export const SetupRepo = () => {
           some content there
         </h4>
       </div>
-      <style jsx global>
-        {setupRepoStyles}
-      </style>
+      <style jsx>{styles}</style>
     </DefaultLayout>
   );
 };
+
+const styles = css`
+  .setup-repo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vw;
+    align-items: center;
+  }
+
+  a {
+    color: purple;
+    font-weight: 700;
+  }
+`;

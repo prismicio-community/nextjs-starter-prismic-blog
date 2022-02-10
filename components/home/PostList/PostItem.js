@@ -1,4 +1,5 @@
 import { PrismicLink, PrismicText } from "@prismicio/react";
+import css from "styled-jsx/css";
 
 import { PostDate } from "./PostDate";
 import { FirstParagraph } from "./FirstParagraph";
@@ -19,6 +20,17 @@ export const PostItem = ({ post }) => {
       <PostDate date={post.data.date} />
 
       <FirstParagraph slices={post.data.slices} />
+      <style jsx>{styles}</style>
     </div>
   );
 };
+
+const styles = css`
+  .blog-post {
+    margin-bottom: 3rem;
+  }
+
+  .blog-post h2 {
+    margin: 0;
+  }
+`;
