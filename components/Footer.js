@@ -8,45 +8,48 @@ export const Footer = () => (
   <footer className="container">
     <p>
       Proudly published with &nbsp;
-      <PrismicLink href="https://prismic.io" target="_blank">
+      <PrismicLink
+        href="https://prismic.io"
+        target="_blank"
+        className={linkStyles.className}
+      >
         Prismic
       </PrismicLink>
-      <br />
-      <PrismicLink href="https://prismic.io" target="_blank">
-        <img
-          className="footer-logo"
-          src="/images/logo-prismic.svg"
-          alt="Gray Prismic logo"
-        />
-      </PrismicLink>
     </p>
+    <PrismicLink href="https://prismic.io" target="_blank">
+      <img
+        src="/images/logo-prismic.svg"
+        alt="Gray Prismic logo"
+        className="logo"
+      />
+    </PrismicLink>
     <style jsx>{styles}</style>
+    {linkStyles.styles}
   </footer>
 );
 
 const styles = css`
   .container {
-    max-width: 700px;
-    margin: 0 auto;
+    border-top: 1px solid #dadada;
     color: #9a9a9a;
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
+    display: grid;
     font-style: italic;
+    gap: 10px;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 2rem 0;
     text-align: center;
   }
 
-  .container p {
-    border-top: 1px solid #dadada;
-    padding: 2rem 0;
-    margin-bottom: 0;
-  }
-
-  .container a {
-    font-weight: bold;
-  }
-
-  .footer-logo {
+  .logo {
     width: 30px;
-    margin-top: 10px;
+  }
+`;
+
+const linkStyles = css.resolve`
+  a {
+    font-weight: bold;
+    color: #353535;
   }
 `;

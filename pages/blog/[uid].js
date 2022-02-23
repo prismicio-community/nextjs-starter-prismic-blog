@@ -26,9 +26,9 @@ const BlogPostPage = ({ post }) => {
         <title>{title}</title>
       </Head>
       <div className="main">
-        <div className="outer-container">
+        <div className="title">
           <BackButton />
-          <h1>{title}</h1>
+          <h1 className="title__text">{title}</h1>
         </div>
         <SliceZone slices={post.data.slices} components={components} />
       </div>
@@ -65,12 +65,20 @@ export const getStaticPaths = async () => {
 export default BlogPostPage;
 
 const styles = css.global`
-  .outer-container {
+  .title {
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
   }
+
+  .title__text {
+    color: #353535;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 60px;
+  }
+
   .back {
     color: #9a9a9a;
     display: block;

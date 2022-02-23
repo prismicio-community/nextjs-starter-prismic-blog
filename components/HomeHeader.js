@@ -6,15 +6,14 @@ import css from "styled-jsx/css";
  */
 export const HomeHeader = ({ image, headline, description }) => {
   return (
-    <header className="home">
-      <div
-        className="blog-avatar"
-        style={{ backgroundImage: `url(${image.url})` }}
-      />
-      <h1 className="blog-title">
+    <header className="container">
+      <div className="avatar">
+        <img src={image.url} alt={image.alt} className="avatar__img" />
+      </div>
+      <h1 className="title">
         <PrismicText field={headline} />
       </h1>
-      <p className="blog-description">
+      <p className="description">
         <PrismicText field={description} />
       </p>
       <style jsx>{styles}</style>
@@ -23,28 +22,41 @@ export const HomeHeader = ({ image, headline, description }) => {
 };
 
 const styles = css`
-  .home {
-    text-align: center;
+  .container {
+    border-bottom: 1px solid #dadada;
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    margin: 0 auto 3rem;
     max-width: 700px;
-    margin: auto;
+    padding: 3rem 0;
   }
 
-  .blog-avatar {
+  .title {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  .avatar {
     height: 140px;
     width: 140px;
     border-radius: 50%;
-    background-position: center;
-    background-size: cover;
-    margin: 1em auto;
+    overflow: hidden;
   }
 
-  .blog-description {
+  .avatar__img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .description {
     font-size: 18px;
     color: #9a9a9a;
     line-height: 30px;
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    font-family: "Lato", sans-serif;
-    border-bottom: 1px solid #dadada;
+    text-align: center;
   }
 `;
