@@ -1,20 +1,18 @@
 import * as prismic from "@prismicio/client";
+import * as prismicH from "@prismicio/helpers";
 import * as prismicNext from "@prismicio/next";
 
-import sliceMachineConfig from "./sm.json";
-
-/**
- * The project's Prismic Rest API V2 endpoint.
- */
-const endpoint = sliceMachineConfig.apiEndpoint;
+import sm from "./sm.json";
 
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = new URL(endpoint).hostname.split(".")[0];
+export const repositoryName = new URL(sm.apiEndpoint).hostname.split(".")[0];
 
 /**
  * The project's Prismic Link Resolver. This function determines the URL for a given Prismic document.
+ *
+ * @type {prismicH.LinkResolverFunction}
  */
 export const linkResolver = (doc) => {
   if (doc.type === "post") {
@@ -31,11 +29,11 @@ export const linkResolver = (doc) => {
  * @param config {prismicNext.CreateClientConfig} - A configuration object to
  */
 export const createClient = (config) => {
-  const client = prismic.createClient(endpoint);
+  const client = prismic.createClient(sm.apiEndpoint);
 
   prismicNext.enableAutoPreviews({
     client,
-    context: config?.context,
+    previewData: config.previewData,
     req: config?.req,
   });
 
