@@ -1,24 +1,16 @@
-import css from "styled-jsx/css";
-
 import { PostItem } from "./PostItem";
 
 /**
- * Post list component
+ * List of posts.
  */
 export const PostList = ({ posts }) => {
   return (
-    <div className="blog-main">
+    <ul className="grid gap-10 md:gap-12">
       {posts.map((post) => (
-        <PostItem post={post} key={post.id} />
+        <li key={post.id}>
+          <PostItem post={post} />
+        </li>
       ))}
-      <style jsx>{styles}</style>
-    </div>
+    </ul>
   );
 };
-
-const styles = css`
-  .blog-main {
-    max-width: 700px;
-    margin: auto;
-  }
-`;

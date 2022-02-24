@@ -1,21 +1,15 @@
 import { Footer } from "../components/Footer";
-import css from "styled-jsx/css";
 
 /**
  * The default layout for all pages.
  */
 export const Layout = ({ children }) => {
   return (
-    <div className="container">
-      <main>{children}</main>
-      <Footer />
-      <style jsx>{styles}</style>
+    <div className="px-6 pt-12 pb-10 text-neutral-700 antialiased md:pt-20">
+      <div className="mx-auto w-full max-w-3xl">
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   );
 };
-
-const styles = css`
-  .container {
-    padding: 3rem 2rem;
-  }
-`;

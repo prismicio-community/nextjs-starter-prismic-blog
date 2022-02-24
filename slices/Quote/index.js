@@ -1,52 +1,23 @@
 import { PrismicText } from "@prismicio/react";
-import css from "styled-jsx/css";
+import * as prismicH from "@prismicio/helpers";
 
 /**
  * Component for the Quote Slice.
  */
 const Quote = ({ slice }) => {
   return (
-    <div className="post-part single container">
-      <blockquote className="block-quotation">
-        <PrismicText field={slice.primary.quote} />
-      </blockquote>
-      <style jsx>{styles}</style>
-    </div>
+    <section className="py-5">
+      {prismicH.isFilled.richText(slice.primary.quote) && (
+        <blockquote className="relative font-serif text-2xl italic leading-relaxed">
+          <span className="pointer-events-none absolute top-0 -left-3 select-none">
+            &ldquo;
+          </span>
+          <PrismicText field={slice.primary.quote} />
+          <span className="pointer-events-none select-none">&rdquo;</span>
+        </blockquote>
+      )}
+    </section>
   );
 };
 
 export default Quote;
-
-const styles = css`
-  .block-quotation {
-    margin-bottom: 2rem;
-    display: inline-block;
-    font-style: italic;
-    font-size: 24px;
-  }
-
-  .block-quotation:before {
-    content: "« ";
-  }
-
-  .block-quotation:after {
-    content: " »";
-  }
-
-  .block-citation {
-    display: inline-block;
-    font-style: italic;
-    border-left: solid #b4b4b4 4px;
-    padding-left: 10px;
-  }
-
-  @media screen and (min-width: 920px) {
-    .post-part.single .block-quotation,
-    .blog-main.single .block-quotation {
-      width: 130%;
-      margin: 0 -15% 2rem -15%;
-      font-size: 30px;
-      padding: 0;
-    }
-  }
-`;
