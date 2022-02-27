@@ -2,12 +2,14 @@ import Head from "next/head";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
+import { NextUIProvider } from "@nextui-org/react";
 
 import { repositoryName, linkResolver } from "../prismicio";
 
 import "../styles.css";
+import { AppProps } from "next/app";
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -21,7 +23,9 @@ const App = ({ Component, pageProps }) => {
           </Link>
         )}
       >
-        <Component {...pageProps} />
+        <NextUIProvider>
+          <Component {...pageProps} />
+        </NextUIProvider>
       </PrismicProvider>
       <PrismicPreview repositoryName={repositoryName} />
     </>
