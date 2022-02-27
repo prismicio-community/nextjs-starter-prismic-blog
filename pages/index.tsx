@@ -8,6 +8,8 @@ import { Layout } from "../components/Layout";
 import { HomeHeader } from "../components/HomeHeader";
 import { PostList } from "../components/PostList";
 import { SetupRepo } from "../components/SetupRepo";
+import { GetStaticProps } from "next";
+import Image from "next/image";
 
 /**
  * Homepage component
@@ -31,12 +33,20 @@ const Home = ({ blogHome, posts }) => {
       <div className="py-12 md:py-16">
         <PostList posts={posts} />
       </div>
+      <Image
+        src="https://images.prismic.io/slicemachine-blank/3109b42f-4f55-4de1-91fa-40c734f88e62_ice-cream.png"
+        alt="cool"
+        width={200}
+        height={200}
+        placeholder="blur"
+        blurDataURL="https://images.prismic.io/slicemachine-blank/3109b42f-4f55-4de1-91fa-40c734f88e62_ice-cream.png?blur=200&px=16&auto=format"
+      />
     </Layout>
   );
 };
 
-export async function getStaticProps(context) {
-  const client = createClient({ context });
+export const getStaticProps: GetStaticProps = async (context) => {
+  const client = createClient({ previewData: context.previewData });
 
   let blogHome = null;
   try {
@@ -57,6 +67,6 @@ export async function getStaticProps(context) {
       posts,
     },
   };
-}
+};
 
 export default Home;

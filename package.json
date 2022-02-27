@@ -31,6 +31,8 @@
     "@prismicio/slice-simulator-react": "^0.2.0",
     "@types/react": "^17.0.39",
     "autoprefixer": "^10.4.2",
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
