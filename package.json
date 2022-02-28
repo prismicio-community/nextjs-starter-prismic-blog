@@ -6,15 +6,18 @@
     "@fontsource/lato": "^4.5.2",
     "@fontsource/libre-baskerville": "^4.5.2",
     "@nextui-org/react": "^1.0.2-beta.4",
+    "@plaiceholder/next": "^2.3.0",
     "@prismicio/client": "^6.3.0",
     "@prismicio/helpers": "^2.1.1",
     "@prismicio/next": "0.0.5",
     "@prismicio/react": "^2.0.6",
     "next": "^12.1.0",
     "next-slicezone": "^0.2.1",
+    "plaiceholder": "^2.3.0",
     "prismic-reactjs": "^1.3.4",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sharp": "^0.30.1"
   },
   "scripts": {
     "dev": "next dev",

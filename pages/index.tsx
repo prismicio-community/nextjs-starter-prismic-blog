@@ -10,11 +10,13 @@ import { PostList } from "../components/PostList";
 import { SetupRepo } from "../components/SetupRepo";
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import { Container, StyledContainer } from "@nextui-org/react";
+import { getPlaiceholder } from "plaiceholder";
 
 /**
  * Homepage component
  */
-const Home = ({ blogHome, posts }) => {
+const Home = ({ blogHome, posts, base64 }) => {
   if (!blogHome) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -33,14 +35,18 @@ const Home = ({ blogHome, posts }) => {
       <div className="py-12 md:py-16">
         <PostList posts={posts} />
       </div>
-      <Image
-        src="https://images.prismic.io/slicemachine-blank/3109b42f-4f55-4de1-91fa-40c734f88e62_ice-cream.png"
-        alt="cool"
-        width={200}
-        height={200}
-        placeholder="blur"
-        blurDataURL="https://images.prismic.io/slicemachine-blank/3109b42f-4f55-4de1-91fa-40c734f88e62_ice-cream.png?blur=200&px=16&auto=format"
-      />
+
+      <StyledContainer css={{ 'img': { transition: '0.3s ease' } }}>
+        <Image
+          src={blogHome.data.image.url}
+          alt="cool"
+          placeholder="blur"
+          blurDataURL={base64}
+          width={blogHome.data.image.dimensions.width}
+          height={blogHome.data.image.dimensions.height}
+          layout="responsive"
+        />
+      </StyledContainer>
     </Layout>
   );
 };
@@ -57,6 +63,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     // the page with a helpful setup message.
   }
 
+  const { base64 } = await getPlaiceholder(blogHome?.data.image.url, {
+    size: 64,
+  });
   const posts = await client.getAllByType("post", {
     orderings: [{ field: "my.post.date", direction: "desc" }],
   });
@@ -65,6 +74,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       blogHome,
       posts,
+      base64,
     },
   };
 };
