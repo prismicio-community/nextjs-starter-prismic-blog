@@ -1,5 +1,4 @@
 import { PrismicLink } from "@prismicio/react";
-import css from "styled-jsx/css";
 
 import { repositoryName } from "../prismicio";
 import { Layout } from "./Layout";
@@ -13,31 +12,23 @@ export const SetupRepo = () => {
 
   return (
     <Layout>
-      <div className="setup-repo">
-        <h1>Good job!</h1>
-        <h2>You're halfway done with setting up your Prismic website</h2>
-        <h4>
+      <div className="grid gap-6 py-10 text-center text-xl">
+        <h1 className="text-center text-4xl font-black md:text-5xl">
+          Good job!
+        </h1>
+        <p>You're halfway done with setting up your Prismic website</p>
+        <p>
           Just visit your{" "}
-          <PrismicLink href={repositoryURL}>Prismic dashboard</PrismicLink> and
-          add some content there
-        </h4>
-        <style jsx>{styles}</style>
+          <PrismicLink
+            href={repositoryURL}
+            target="_blank"
+            className="underline"
+          >
+            Prismic dashboard
+          </PrismicLink>{" "}
+          and add some content there
+        </p>
       </div>
     </Layout>
   );
 };
-
-const styles = css`
-  .setup-repo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 50vw;
-    align-items: center;
-  }
-
-  a {
-    color: purple;
-    font-weight: 700;
-  }
-`;

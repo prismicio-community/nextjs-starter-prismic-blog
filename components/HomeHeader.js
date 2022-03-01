@@ -1,50 +1,22 @@
 import { PrismicText } from "@prismicio/react";
-import css from "styled-jsx/css";
 
 /**
  * The site's global header.
  */
 export const HomeHeader = ({ image, headline, description }) => {
   return (
-    <header className="home">
-      <div
-        className="blog-avatar"
-        style={{ backgroundImage: `url(${image.url})` }}
+    <header className="grid justify-items-center gap-4 border-b border-neutral-200 pb-12">
+      <img
+        src={image.url}
+        alt={image.alt}
+        className="block h-36 w-36 rounded-full object-cover"
       />
-      <h1 className="blog-title">
+      <h1 className="text-center text-4xl font-black md:text-5xl">
         <PrismicText field={headline} />
       </h1>
-      <p className="blog-description">
+      <p className="text-center text-lg text-neutral-400">
         <PrismicText field={description} />
       </p>
-      <style jsx>{styles}</style>
     </header>
   );
 };
-
-const styles = css`
-  .home {
-    text-align: center;
-    max-width: 700px;
-    margin: auto;
-  }
-
-  .blog-avatar {
-    height: 140px;
-    width: 140px;
-    border-radius: 50%;
-    background-position: center;
-    background-size: cover;
-    margin: 1em auto;
-  }
-
-  .blog-description {
-    font-size: 18px;
-    color: #9a9a9a;
-    line-height: 30px;
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    font-family: "Lato", sans-serif;
-    border-bottom: 1px solid #dadada;
-  }
-`;

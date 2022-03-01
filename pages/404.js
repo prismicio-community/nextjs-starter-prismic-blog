@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { PrismicLink } from "@prismicio/react";
-import css from "styled-jsx/css";
 
 import { Layout } from "../components/Layout";
 
@@ -8,23 +7,20 @@ const NotFoundPage = () => {
   return (
     <Layout>
       <Head>
-        <title>404 - Page Not Found</title>
+        <title>Page Not Found</title>
       </Head>
-      <div className="container">
-        <h1>404 - Page Not Found</h1>
-        <PrismicLink href="/">Go back home</PrismicLink>
+      <div className="grid gap-8 py-10">
+        <h1 className="text-center text-4xl font-black md:text-5xl">
+          Page Not Found
+        </h1>
+        <p className="text-center">
+          <PrismicLink href="/" className="hover:underline">
+            Go to the homepage &rarr;
+          </PrismicLink>
+        </p>
       </div>
-      <style jsx>{styles}</style>
     </Layout>
   );
 };
 
 export default NotFoundPage;
-
-const styles = css`
-  .container {
-    margin: 0 auto;
-    padding: 100px 0 100px 0;
-    max-width: 700px;
-  }
-`;

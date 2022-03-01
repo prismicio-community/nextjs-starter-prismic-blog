@@ -28,7 +28,9 @@ const Home = ({ blogHome, posts }) => {
         headline={blogHome.data.headline}
         description={blogHome.data.description}
       />
-      <PostList posts={posts} />
+      <div className="py-12 md:py-16">
+        <PostList posts={posts} />
+      </div>
     </Layout>
   );
 };
