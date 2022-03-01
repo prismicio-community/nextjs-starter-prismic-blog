@@ -1,35 +1,42 @@
-import React from 'react'
-import Image from 'next/image'
-import { PrismicText } from '@prismicio/react'
-import { imageCaptionStyles } from 'styles'
+import { PrismicText } from "@prismicio/react";
+import * as prismicH from "@prismicio/helpers";
+import Image from "next/image";
 
 /**
- * Default image component
+ * Component for the ImageWithCaption Slice.
  */
-export const ImageWithCaption = ({ slice }) => {
-  const imageUrl = slice.primary.image.url
-  const imageAlt = slice.primary.image.alt
-  const caption = slice.primary.caption
+const ImageWithCaption = ({ slice }) => {
+  const image = slice.primary.image;
+  const caption = slice.primary.caption;
 
   return (
-    <div className="post-part single">
-      <div className={`block-img ${slice.variation}`}>
-        {slice.variation === 'fullWidthImage' ? (
-          <div>
-            <Image src={imageUrl} alt={imageAlt} layout="fill" objectFit="cover"/>
+    <section className="py-5">
+      <figure className="grid gap-4">
+        {prismicH.isFilled.image(image) && (
+          <div
+            className={
+              slice.variation === "fullWidthImage"
+                ? "-mx-6 md:mx-0 md:-mx-[calc((100vw-100%)/2)]"
+                : "-mx-6 md:mx-0"
+            }
+          >
+            <Image
+              src={image.url}
+              alt={image.alt}
+              width={image.dimensions.width}
+              height={image.dimensions.height}
+              layout="responsive"
+            />
           </div>
-        ) : 
-          <div className="container">
-            <Image src={imageUrl} alt={imageAlt} layout="fill" objectPosition="center" objectFit="cover"/>
-          </div>
-        }
-        {<PrismicText field={caption} /> !== '' ? (
-          <span className='image-label'>
+        )}
+        {prismicH.isFilled.richText(caption) && (
+          <figcaption className="text-center font-serif text-xs italic text-neutral-400 md:text-sm">
             <PrismicText field={caption} />
-          </span>
-        ) : null}
-      </div>
-      <style jsx global>{imageCaptionStyles}</style>
-    </div>
-  )
-}
+          </figcaption>
+        )}
+      </figure>
+    </section>
+  );
+};
+
+export default ImageWithCaption;

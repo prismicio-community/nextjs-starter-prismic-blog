@@ -3,9 +3,13 @@
   "description": "Sample blog built with Next.js using Prismic headless CMS",
   "author": "Prismic",
   "dependencies": {
-    "@prismicio/next": "^0.0.1",
-    "js-cookie": "^3.0.1",
-    "next": "^12.0.4",
+    "@fontsource/lato": "^4.5.2",
+    "@fontsource/libre-baskerville": "^4.5.2",
+    "@prismicio/client": "^6.3.0",
+    "@prismicio/helpers": "^2.1.1",
+    "@prismicio/next": "0.0.5",
+    "@prismicio/react": "^2.0.6",
+    "next": "^12.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -13,14 +17,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/prismicio/nextjs-blog"
   },
   "devDependencies": {
-    "@prismicio/slice-simulator-react": "^0.1.1",
-    "slice-machine-ui": "^0.2.0"
+    "@prismicio/slice-simulator-react": "^0.2.0",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.7",
+    "slice-machine-ui": "^0.2.1",
+    "tailwindcss": "^3.0.23"
   }
 }

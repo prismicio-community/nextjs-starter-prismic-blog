@@ -1,7 +1,9 @@
 # Prismic & Next.js Example Blog
+
 > [Next.js](https://nextjs.org/) example blog project with content managed in [Prismic](https://prismic.io)
 
 ## Check out the dedicated article to get this project up and running
+
 > [Prismic project guide](https://intercom.help/prismicio/en/articles/2882569-sample-blog-with-api-based-cms-in-next-js)
 
 ## Learn more about using Prismic with Next

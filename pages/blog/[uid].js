@@ -1,68 +1,65 @@
 import React from "react";
 import Head from "next/head";
-import { asText } from '@prismicio/helpers';
-import { SliceZone } from '@prismicio/react'
+import { SliceZone } from "@prismicio/react";
+import * as prismicH from "@prismicio/helpers";
 
-// Project components
-import DefaultLayout from "../../layouts";
-import { BackButton } from "../../components/post";
-import { components } from '../../slices';
+import { createClient, linkResolver } from "../../prismicio";
+import { components } from "../../slices/components";
 
-// Project functions & styles
-import { createClient } from "../../prismicio";
-import { postStyles } from "../../styles";
+import { Layout } from "../../components/Layout";
+import { BackButton } from "../../components/BackButton";
 
 /**
- * Post page component
+ * Page for a blog post.
  */
-const Post = ({ post }) => {
-
-  if (post && post.data) {
-    const hasTitle = asText(post.data.title).length !== 0;
-    const title = hasTitle ? asText(post.data.title) : "Untitled";
-
-    return (
-      <DefaultLayout>
-        <Head>
-          <title>{title}</title>
-        </Head>
-        <div className="main">
-          <div className="outer-container">
-            <BackButton />
-            <h1>{title}</h1>
-          </div>
-          <SliceZone 
-            slices={post.data.slices}
-            components={components} 
-          />
-        </div>
-        <style jsx global>
-          {postStyles}
-        </style>
-      </DefaultLayout>
-    );
+const BlogPostPage = ({ post }) => {
+  if (!post) {
+    return null;
   }
 
-  return null;
+  const title = prismicH.asText(post.data.title) || "Untitled";
+
+  return (
+    <Layout>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <article>
+        <div className="grid gap-6 md:gap-8">
+          <BackButton />
+          <h1 className="text-3xl font-black md:text-5xl md:leading-tight">
+            {title}
+          </h1>
+        </div>
+        <div className="py-5 md:pb-10">
+          <SliceZone slices={post.data.slices} components={components} />
+        </div>
+      </article>
+    </Layout>
+  );
 };
 
-export async function getStaticProps(context) {
+export const getStaticProps = async ({ params, previewData }) => {
+  const client = createClient({ previewData });
 
-  const post = await createClient({context}).getByUID("post", context.params.uid) || {}
+  const post = await client.getByUID("post", params.uid);
+
   return {
     props: {
-      post
-    }
-  }
-}
+      post,
+    },
+  };
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
+  const client = createClient();
 
-  const documents = await createClient().getAllByType('post')
+  const documents = await client.getAllByType("post");
+
   return {
-    paths: documents.map(doc => `/blog/${doc.uid}`),
+    paths: documents.map((doc) => prismicH.asLink(doc, linkResolver)),
     fallback: true,
-  }
-}
+  };
+};
 
-export default Post;
+export default BlogPostPage;

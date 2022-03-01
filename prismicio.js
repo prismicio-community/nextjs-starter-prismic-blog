@@ -1,35 +1,41 @@
-//Imports
 import * as prismic from "@prismicio/client";
-import { enableAutoPreviews } from '@prismicio/next';
-import smConfig from "./sm.json";
+import * as prismicH from "@prismicio/helpers";
+import * as prismicNext from "@prismicio/next";
 
-// -- Prismic Repo API Endpoint
-export const endpoint = smConfig.apiEndpoint;
+import sm from "./sm.json";
 
-// -- Prismic Repo Name //Regex to get repo ID
-export const repositoryName = new URL(endpoint).hostname.split('.')[0]
+/**
+ * The project's Prismic repository name.
+ */
+export const repositoryName = new URL(sm.apiEndpoint).hostname.split(".")[0];
 
-// -- Link resolution rules
-// Manages the url links to internal Prismic documents
+/**
+ * The project's Prismic Link Resolver. This function determines the URL for a given Prismic document.
+ *
+ * @type {prismicH.LinkResolverFunction}
+ */
 export const linkResolver = (doc) => {
   if (doc.type === "post") {
     return `/blog/${doc.uid}`;
   }
+
   return "/";
 };
 
-// -- @prismicio/client initialisation
-// Initialises the Prismic Client that's used for querying the API and passes it any query options.
-export const createClient = (config) => {
-  const client = prismic.createClient(endpoint);
+/**
+ * Creates a Prismic client for the project's repository. The client is used to
+ * query content from the Prismic API.
+ *
+ * @param config {prismicNext.CreateClientConfig} - A configuration object to
+ */
+export const createClient = (config = {}) => {
+  const client = prismic.createClient(sm.apiEndpoint);
 
-  enableAutoPreviews({
+  prismicNext.enableAutoPreviews({
     client,
-    context: config?.context,
-    req: config?.req,
+    previewData: config.previewData,
+    req: config.req,
   });
 
   return client;
 };
-
-export default createClient
