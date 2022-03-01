@@ -8,7 +8,7 @@ const Quote = ({ slice }) => {
   return (
     <section className="py-5">
       {prismicH.isFilled.richText(slice.primary.quote) && (
-        <blockquote className="relative font-serif text-2xl italic leading-relaxed">
+        <blockquote className="relative font-serif text-2xl italic leading-relaxed lg:-mx-20">
           <span className="pointer-events-none absolute top-0 -left-3 select-none">
             &ldquo;
           </span>
