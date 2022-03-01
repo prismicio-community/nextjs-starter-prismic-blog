@@ -7,7 +7,7 @@ import sm from "./sm.json";
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = new URL(sm.apiEndpoint).hostname.split(".")[0];
+export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
 /**
  * The project's Prismic Link Resolver. This function determines the URL for a given Prismic document.
