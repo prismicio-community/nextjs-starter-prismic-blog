@@ -10,7 +10,7 @@ const Text = ({ slice }) => {
         field={slice.primary.text}
         components={{
           heading2: ({ children }) => (
-            <h2 className="mb-7 font-sans text-2xl last:mb-0 md:text-3xl md:leading-snug">
+            <h2 className="mb-7 font-sans text-2xl font-bold last:mb-0 md:text-3xl md:leading-snug">
               {children}
             </h2>
           ),
@@ -32,6 +32,9 @@ const Text = ({ slice }) => {
             <li className="mb-4 list-disc pl-1 last:mb-0 md:pl-2">
               {children}
             </li>
+          ),
+          strong: ({ children }) => (
+            <strong className="font-bold">{children}</strong>
           ),
         }}
       />
