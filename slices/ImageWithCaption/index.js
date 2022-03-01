@@ -16,7 +16,7 @@ const ImageWithCaption = ({ slice }) => {
           <div
             className={
               slice.variation === "fullWidthImage"
-                ? "-mx-6 w-screen md:mx-0 md:-ml-[calc((100vw-42rem)/2)]"
+                ? "-mx-6 md:mx-0 md:-mx-[calc((100vw-100%)/2)]"
                 : "-mx-6 md:mx-0"
             }
           >
@@ -30,7 +30,7 @@ const ImageWithCaption = ({ slice }) => {
           </div>
         )}
         {prismicH.isFilled.richText(caption) && (
-          <figcaption className="max-w-2xl text-center font-serif text-xs italic text-neutral-400 md:text-sm">
+          <figcaption className="text-center font-serif text-xs italic text-neutral-400 md:text-sm">
             <PrismicText field={caption} />
           </figcaption>
         )}
