@@ -1,0 +1,30 @@
+{
+  "id": "6f2338dd-cb65-4da5-9ba6-363e0bd8e844",
+  "uid": "harum-facilis-cumque",
+  "type": "blog-home",
+  "data": {
+    "headline": [
+      {
+        "type": "heading1",
+        "text": "Repurpose B2B e-tailers",
+        "spans": []
+      }
+    ],
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Id et veniam reprehenderit enim aliqua quis veniam veniam exercitation.",
+        "spans": []
+      }
+    ],
+    "image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
+    }
+  }
+}

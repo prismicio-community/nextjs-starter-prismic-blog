@@ -1,35 +1,24 @@
-import React from 'react'
-import { footerStyles } from 'styles'
+import { PrismicLink } from "@prismicio/react";
 
 /**
- * Site footer component
+ * Links and credit to be used at the bottom of every page.
  */
-const Footer = () => (
-  <footer>
-    <p>
-      Proudly published with &nbsp;
-      <a
-        href="https://prismic.io"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Prismic
-      </a>
-      <br />
-      <a
-        href="https://prismic.io"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          className="footer-logo"
-          src="/images/logo-prismic.svg"
-          alt="Gray Prismic logo"
-        />
-      </a>
-    </p>
-    <style jsx global>{footerStyles}</style>
-  </footer>
-)
-
-export default Footer
+export const Footer = () => {
+  return (
+    <footer className="grid justify-items-center gap-4 border-t border-neutral-200 pt-8">
+      <p className="text-center italic text-neutral-400">
+        Proudly published with{" "}
+        <PrismicLink
+          href="https://prismic.io"
+          target="_blank"
+          className="pl-1 font-bold text-neutral-700"
+        >
+          Prismic
+        </PrismicLink>
+      </p>
+      <PrismicLink href="https://prismic.io" target="_blank">
+        <img src="/logo-prismic.svg" alt="Prismic logo" className="w-8" />
+      </PrismicLink>
+    </footer>
+  );
+};
