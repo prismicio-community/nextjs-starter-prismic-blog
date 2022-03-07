@@ -28,7 +28,7 @@
           "quote": [
             {
               "type": "paragraph",
-              "text": "Aliqua eu enim veniam pariatur exercitation dolor fugiat commodo in fugiat nisi.",
+              "text": "Officia anim labore eu quis cupidatat minim deserunt.",
               "spans": []
             }
           ]
@@ -45,7 +45,7 @@
           "text": [
             {
               "type": "paragraph",
-              "text": "Dolore cillum consequat ad dolore excepteur nostrud nostrud.",
+              "text": "Velit magna est pariatur. Do culpa amet amet reprehenderit aliquip irure aliqua do cupidatat magna. Deserunt voluptate id qui dolore consectetur exercitation aute.",
               "spans": []
             }
           ]
@@ -66,12 +66,12 @@
             },
             "alt": "Placeholder image",
             "copyright": null,
-            "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"
+            "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
           },
           "caption": [
             {
               "type": "paragraph",
-              "text": "Nostrud consequat cupidatat irure. Cillum nisi sunt ullamco enim pariatur veniam. Officia ipsum pariatur dolore enim mollit in laboris aute voluptate dolor excepteur esse ipsum.",
+              "text": "Laboris eu aliquip consectetur id velit id consectetur nostrud laboris ea deserunt cupidatat occaecat.",
               "spans": []
             }
           ]
@@ -90,12 +90,61 @@
             },
             "alt": "Placeholder image",
             "copyright": null,
-            "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
+            "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=900&h=500&fit=crop"
           },
           "caption": [
             {
               "type": "paragraph",
-              "text": "Ullamco aliquip deserunt minim elit laborum nulla consequat.",
+              "text": "Qui est commodo ea ex qui reprehenderit aliqua irure cupidatat duis labore ex ad deserunt minim. Minim ullamco pariatur aliquip esse ex duis ad ullamco.",
+              "spans": []
+            }
+          ]
+        }
+      }
+    ],
+    "Testing": [
+      {
+        "variation": "default-slice",
+        "name": "Default slice",
+        "slice_type": "testing",
+        "items": [
+          {
+            "image": {
+              "dimensions": {
+                "width": 900,
+                "height": 500
+              },
+              "alt": "Placeholder image",
+              "copyright": null,
+              "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?w=900&h=500&fit=crop"
+            },
+            "working": false
+          },
+          {
+            "image": {
+              "dimensions": {
+                "width": 900,
+                "height": 500
+              },
+              "alt": "Placeholder image",
+              "copyright": null,
+              "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
+            },
+            "working": false
+          }
+        ],
+        "primary": {
+          "title": [
+            {
+              "type": "heading1",
+              "text": "Cultivate end-to-end synergies",
+              "spans": []
+            }
+          ],
+          "description": [
+            {
+              "type": "paragraph",
+              "text": "Enim ullamco consequat est ex amet officia irure reprehenderit do eiusmod ut reprehenderit.",
               "spans": []
             }
           ]

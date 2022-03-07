@@ -41,6 +41,9 @@
             },
             "text": {
               "type": "SharedSlice"
+            },
+            "testing": {
+              "type": "SharedSlice"
             }
           }
         }
