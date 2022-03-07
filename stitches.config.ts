@@ -201,6 +201,8 @@ export const {
       transparentPanel: 'hsl(0 0% 0% / 97%)',
       shadowLight: 'hsl(206 22% 7% / 35%)',
       shadowDark: 'hsl(206 22% 7% / 20%)',
+      superCoolColor: 'hsl(206 22% 7% / 35%)',
+      primary: '#d6b161',
     },
     fonts: {
       untitled: 'Untitled Sans, -apple-system, system-ui, sans-serif',

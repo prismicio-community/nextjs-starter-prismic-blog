@@ -16,6 +16,7 @@ import {
 import Image from "next/image";
 import { Container, StyledContainer } from "@nextui-org/react";
 import { getPlaiceholder } from "plaiceholder";
+import { styled } from "../stitches.config";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -41,6 +42,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   };
 };
 
+
 /**
  * Homepage component
  */
@@ -58,13 +60,9 @@ const Home = ({
       <Head>
         <title>{prismicH.asText(blogHome.data.headline)}</title>
       </Head>
-      <HomeHeader
-        image={blogHome.data.image}
-        headline={blogHome.data.headline}
-        description={blogHome.data.description}
-      />
+      <Home />
 
-      <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
+      {/* <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
         <Image
           src={blogHome.data.image.url}
           alt="cool"
@@ -74,7 +72,7 @@ const Home = ({
           height={blogHome.data.image.dimensions.height}
           layout="responsive"
         />
-      </StyledContainer>
+      </StyledContainer> */}
     </Layout>
   );
 };

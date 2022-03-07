@@ -1835,12 +1835,12 @@
     "@prismicio/helpers" "^2.0.1"
     "@prismicio/richtext" "^2.0.1"
 
-"@prismicio/react@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@prismicio/react/-/react-2.1.0.tgz#b156ef02daeed3eecd86be7aec757900b7c33554"
-  integrity sha512-BklWL+pFWLP+88QCazJFDBc/jYATjlRa/Lsyry+N5+HnMga/rJHKz3XsBJ7p+8zT2DSVGayBFPwGjt6xgi33hg==
+"@prismicio/react@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@prismicio/react/-/react-2.1.1.tgz#95ed2fd086bb9232b7ea5c90412aa82d8c397154"
+  integrity sha512-klyOtRpvmBs28A5vxEzS1956Wrn4CzlQLvrbi9IROyIw8jxc444bcpBv1xctv6lPIR0bYxYcNEM0wWmv67shnA==
   dependencies:
-    "@prismicio/helpers" "^2.1.1"
+    "@prismicio/helpers" "^2.2.0"
     "@prismicio/richtext" "^2.0.1"
 
 "@prismicio/richtext@^2.0.1":
@@ -1885,10 +1885,10 @@
   resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.1.25.tgz#65b9d23a78e937e5d1d9ca5d20ffb81394726cdf"
   integrity sha512-kvTJYwj98qLd/Wi9CFDbyl8XBmvhnyo6SNGo78S1gFNhEnCgYVA+OJ6y9cPBQwQ9bAONO7H4X5uYhoPZXV0jeg==
 
-"@prismicio/types@^0.1.26":
-  version "0.1.26"
-  resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.1.26.tgz#c232f72b06a465262af784028a1368ca938752f0"
-  integrity sha512-IIfnZU1eHtlyHMFe+5XFWpHwD4x+kdweuB36TpusR/tOeiF8MLsFFYosNOr5z/b8YFXK7u6JCAxjFxz/WDKmUA==
+"@prismicio/types@^0.1.27":
+  version "0.1.27"
+  resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.1.27.tgz#7f2fd91f1781a6da62630438b828230df72ae2b3"
+  integrity sha512-+Oc7EFcp6RGVMvFKQl9y9D4HtBhHeOtE0asfYhedCflQDf3OOzjE8POIu1bXTkk8i1kEWM3oYvz6yLN4yAyGWQ==
 
 "@radix-ui/colors@^0.1.8":
   version "0.1.8"
@@ -3512,7 +3512,7 @@ color-support@^1.1.2:
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==
 
-color@^4.2.0:
+color@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/color/-/color-4.2.1.tgz#498aee5fce7fc982606c8875cab080ac0547c884"
   integrity sha512-MFJr0uY4RvTQUKvPq7dh9grVOTYSFeXja2mBXioCGjnjJoXrAp9jJ1NQTDR73c9nwBSAQiNKloKl5zq9WB9UPw==
@@ -3994,7 +3994,7 @@ detect-indent@^6.0.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.1.0.tgz#592485ebbbf6b3b1ab2be175c8393d04ca0d57e6"
   integrity sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==
 
-detect-libc@^2.0.0:
+detect-libc@^2.0.0, detect-libc@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.1.tgz#e1897aa88fa6ad197862937fbc0441ef352ee0cd"
   integrity sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==
@@ -7689,11 +7689,6 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier-plugin-tailwindcss@^0.1.7:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.1.8.tgz#ba0f606ed91959ede670303d905b99106e9e6293"
-  integrity sha512-hwarSBCswAXa+kqYtaAkFr3Vop9o04WOyZs0qo3NyvW8L7f1rif61wRyq0+ArmVThOuRBcJF5hjGXYk86cwemg==
-
 prettier@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
@@ -8574,13 +8569,13 @@ shallow-clone@^3.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-sharp@^0.30.1:
-  version "0.30.1"
-  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.30.1.tgz#203efaf9acfc5c15c8a343800254621e56011c12"
-  integrity sha512-ycpz81q8AeVjz1pGvvirQBeJcYE2sXAjcLXR/69LWOe/oxavBLOrenZcTzvTXn83jqAGqY+OuwF+2kFXzbKtDA==
+sharp@^0.30.2:
+  version "0.30.2"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.30.2.tgz#95b309b2740424702dc19b62a62595dd34a458b1"
+  integrity sha512-mrMeKI5ECTdYhslPlA2TbBtU3nZXMEBcQwI6qYXjPlu1LpW4HBZLFm6xshMI1HpIdEEJ3UcYp5AKifLT/fEHZQ==
   dependencies:
-    color "^4.2.0"
-    detect-libc "^2.0.0"
+    color "^4.2.1"
+    detect-libc "^2.0.1"
     node-addon-api "^4.3.0"
     prebuild-install "^7.0.1"
     semver "^7.3.5"
