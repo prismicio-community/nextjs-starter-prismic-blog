@@ -3,8 +3,8 @@ schema:
   - https://dadaboom.prismic.io/graphql:
       method: GET
       headers:
-        Authorization: "Token MC5ZaVBUTlJJQUFDOEFEVFdF.O3ZC77-977-9Fhsr77-977-9Ru-_vRjvv71Sa--_ve-_vT5177-9fSnvv71UHu-_ve-_ve-_vQvvv70Q"
-        Prismic-Ref: "YhzgMhIAACoA7clL"
+        Authorization: "Token ${PRISMIC_TOKEN}"
+        Prismic-Ref: "${PRISMIC_REF}"
 generates:
   src/generated/graphql.ts:
     plugins:

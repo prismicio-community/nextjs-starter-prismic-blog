@@ -1,19 +1,14 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
-import { CssBaseline } from '@nextui-org/react';
+import React from 'react';
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import { getCssText } from '../stitches.config';
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return {
-      ...initialProps,
-      styles: <>{initialProps.styles}</>
-    };
-  }
-
+export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <Head>{CssBaseline.flush()}</Head>
+        <Head>
+          <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+        </Head>
         <body>
           <Main />
           <NextScript />
@@ -22,5 +17,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;
