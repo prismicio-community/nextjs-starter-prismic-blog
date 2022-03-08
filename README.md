@@ -4,11 +4,11 @@
 
 ## Check out the dedicated article to get this project up and running
 
-> [Prismic project guide](https://intercom.help/prismicio/en/articles/2882569-sample-blog-with-api-based-cms-in-next-js)
+> [Prismic project guide](https://prismic.io/docs/technologies/prismic-example-projects-nextjs)
 
 ## Learn more about using Prismic with Next
 
-[Prismic + Next documentation](https://prismic.io/docs/technologies/getting-started-nextjs).
+[Prismic + Next documentation](https://prismic.io/docs/technologies/nextjs).
 
 ## License
 

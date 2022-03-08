@@ -1,5 +1,5 @@
 {
-  "apiEndpoint": "https://nextjs-sm-blog.prismic.io/api/v2",
+  "apiEndpoint": "https://your-repo-name.prismic.io/api/v2",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
   "libraries": ["@/slices"],
   "_latest": "0.1.0"
