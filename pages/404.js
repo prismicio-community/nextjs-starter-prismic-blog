@@ -1,25 +1,26 @@
-import Link from 'next/link'
-import Head from "next/head"
-import DefaultLayout from "../layouts"
-import { fourohfourStyles } from "../styles";
+import Head from "next/head";
+import { PrismicLink } from "@prismicio/react";
 
-export default function Custom404() {
-  return <>
-    <DefaultLayout>
+import { Layout } from "../components/Layout";
+
+const NotFoundPage = () => {
+  return (
+    <Layout>
       <Head>
-          <title>404 - oops</title>
+        <title>Page Not Found</title>
       </Head>
-      <div className="fourohfour">
-        <h1>404 - Page Not Found</h1>
-        <Link href="/">
-          <a>
-            Go back home
-          </a>
-        </Link>
+      <div className="grid gap-8 py-10">
+        <h1 className="text-center text-4xl font-black md:text-5xl">
+          Page Not Found
+        </h1>
+        <p className="text-center">
+          <PrismicLink href="/" className="hover:underline">
+            Go to the homepage &rarr;
+          </PrismicLink>
+        </p>
       </div>
-      <style jsx global>
-        {fourohfourStyles}
-      </style>
-    </DefaultLayout>
-  </>
-}
+    </Layout>
+  );
+};
+
+export default NotFoundPage;

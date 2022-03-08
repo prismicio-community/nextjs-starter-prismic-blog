@@ -1,80 +1,65 @@
 import React from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { RichText } from "prismic-reactjs";
+import { SliceZone } from "@prismicio/react";
+import * as prismicH from "@prismicio/helpers";
 
-// Project components
-import DefaultLayout from "../../layouts";
-import { BackButton, SliceZone } from "../../components/post";
-import Loader from "../../components/Loader";
-import Custom404 from '../404';
+import { createClient, linkResolver } from "../../prismicio";
+import { components } from "../../slices";
 
-// Project functions & styles
-import { Client } from "../../utils/prismicHelpers";
-import { queryRepeatableDocuments } from '../../utils/queries';
-import useUpdatePreviewRef from '../../utils/useUpdatePreviewRef';
-import { postStyles } from "../../styles";
+import { Layout } from "../../components/Layout";
+import { BackButton } from "../../components/BackButton";
 
 /**
- * Post page component
+ * Page for a blog post.
  */
-const Post = ({ post, previewRef }) => {
-  const router = useRouter()
-  if (router.isFallback) {
-    return <Loader />
+const BlogPostPage = ({ post }) => {
+  if (!post) {
+    return null;
   }
 
-  if (!post.id) {
-    return <Custom404 />
-  }
+  const title = prismicH.asText(post.data.title) || "Untitled";
 
-  useUpdatePreviewRef(previewRef, post.id)
-
-  if (post && post.data) {
-    const hasTitle = RichText.asText(post.data.title).length !== 0;
-    const title = hasTitle ? RichText.asText(post.data.title) : "Untitled";
-
-    return (
-      <DefaultLayout>
-        <Head>
-          <title>{title}</title>
-        </Head>
-        <div className="main">
-          <div className="outer-container">
-            <BackButton />
-            <h1>{title}</h1>
-          </div>
-          <SliceZone sliceZone={post.data.body} />
+  return (
+    <Layout>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <article>
+        <div className="grid gap-6 md:gap-8">
+          <BackButton />
+          <h1 className="text-3xl font-black md:text-5xl md:leading-tight">
+            {title}
+          </h1>
         </div>
-        <style jsx global>
-          {postStyles}
-        </style>
-      </DefaultLayout>
-    );
-  }
-
-  return null;
+        <div className="py-5 md:pb-10">
+          <SliceZone slices={post.data.slices} components={components} />
+        </div>
+      </article>
+    </Layout>
+  );
 };
 
-export async function getStaticProps({ params, previewData }) {
-  const previewRef = previewData ? previewData.ref : null
-  const refOption = previewRef ? { ref: previewRef } : null
+export const getStaticProps = async ({ params, previewData }) => {
+  const client = createClient({ previewData });
 
-  const post = await Client().getByUID("post", params.uid, refOption) || {}
+  const post = await client.getByUID("post", params.uid);
+
   return {
     props: {
-      previewRef,
-      post
-    }
-  }
-}
+      post,
+    },
+  };
+};
 
-export async function getStaticPaths() {
-  const documents = await queryRepeatableDocuments((doc) => doc.type === 'post')
+export const getStaticPaths = async () => {
+  const client = createClient();
+
+  const documents = await client.getAllByType("post");
+
   return {
-    paths: documents.map(doc => `/blog/${doc.uid}`),
+    paths: documents.map((doc) => prismicH.asLink(doc, linkResolver)),
     fallback: true,
-  }
-}
+  };
+};
 
-export default Post;
+export default BlogPostPage;

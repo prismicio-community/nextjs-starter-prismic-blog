@@ -1,58 +1,62 @@
 import React from "react";
 import Head from "next/head";
-import Prismic from '@prismicio/client'
-import { RichText } from "prismic-reactjs";
+import * as prismicH from "@prismicio/helpers";
 
-// Project components & functions
-import { Client } from "../utils/prismicHelpers";
-import DefaultLayout from "../layouts";
-import { Header, PostList, SetupRepo } from "../components/home";
-import useUpdatePreviewRef from '../utils/useUpdatePreviewRef';
+import { createClient } from "../prismicio";
+
+import { Layout } from "../components/Layout";
+import { HomeHeader } from "../components/HomeHeader";
+import { PostList } from "../components/PostList";
+import { SetupRepo } from "../components/SetupRepo";
 
 /**
  * Homepage component
  */
-const Home = ({ blogHome, posts, previewRef }) => {
-
-  useUpdatePreviewRef(previewRef, blogHome.id)
-
-  if (blogHome && blogHome.data) {
-    return (
-      <DefaultLayout>
-        <Head>
-          <title>{RichText.asText(blogHome.data.headline)}</title>
-        </Head>
-        <Header
-          image={blogHome.data.image}
-          headline={blogHome.data.headline}
-          description={blogHome.data.description}
-        />
-        <PostList posts={posts} />
-      </DefaultLayout>
-    );
+const Home = ({ blogHome, posts }) => {
+  if (!blogHome) {
+    // Message when the Prismic repository has not been setup yet.
+    return <SetupRepo />;
   }
 
-  // Message when repository has not been setup yet
-  return <SetupRepo />;
+  return (
+    <Layout>
+      <Head>
+        <title>{prismicH.asText(blogHome.data.headline)}</title>
+      </Head>
+      <HomeHeader
+        image={blogHome.data.image}
+        headline={blogHome.data.headline}
+        description={blogHome.data.description}
+      />
+      <div className="py-12 md:py-16">
+        <PostList posts={posts} />
+      </div>
+    </Layout>
+  );
 };
 
-export async function getStaticProps({ previewData }) {
+export async function getStaticProps(context) {
+  const client = createClient({ context });
 
-  const previewRef = previewData ? previewData.ref : null
-  const refOption = previewRef ? { ref: previewRef } : null
+  let blogHome = null;
+  try {
+    blogHome = await client.getSingle("blog-home");
+  } catch {
+    // If we reach this line, it means a Blog Home document was not created
+    // yet. We don't need to do anything here. We will render a component on
+    // the page with a helpful setup message.
+  }
 
-  const blogHome = await Client().getSingle("blog_home", refOption) || null
-
-  const postsQueryOptions = { orderings: "[my.post.date desc]", ...(refOption)}
-  const posts = await Client().query(Prismic.Predicates.at("document.type", "post"), postsQueryOptions)
+  const posts = await client.getAllByType("post", {
+    orderings: [{ field: "my.post.date", direction: "desc" }],
+  });
 
   return {
     props: {
       blogHome,
-      posts: posts ? posts.results : [],
-      previewRef,
-    }
-  }
+      posts,
+    },
+  };
 }
 
 export default Home;
