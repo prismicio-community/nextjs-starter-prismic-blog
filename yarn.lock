@@ -2118,10 +2118,10 @@
     ora "^5.4.1"
     prompt "^1.2.0"
 
-"@slicemachine/core@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@slicemachine/core/-/core-1.1.1.tgz#9a0116e8e69431fa552b0b325c4fbe760e98b553"
-  integrity sha512-J8oQNgeF4tfsyH5gl1MbYuwNHd4UCgUD0ErxVXB4LRj9dE1wd2snkpGLnHDlPIiAzkLYlvTbtr/OM8Y0jccloQ==
+"@slicemachine/core@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@slicemachine/core/-/core-1.1.2.tgz#0c0519a633b38590417b04d520d5b997ceccc819"
+  integrity sha512-4oSI0Tzpk9mWd8hazxc47fkNQqHOgWnQiZbAna09QkbnssT9oW0KsgQDYgLPh0MmYdkKveFrxzqpQrUu2Si4bg==
   dependencies:
     "@hapi/hapi" "^20.2.0"
     axios "^0.22.0"
@@ -6888,10 +6888,10 @@ neverthrow@^4.2.1:
   resolved "https://registry.yarnpkg.com/neverthrow/-/neverthrow-4.3.1.tgz#04c4c15e7f6fc45faad36885fa7a42b85f8f39ab"
   integrity sha512-+vxjSaiDWjAj6kR6KKW0YDuV6O4UCNWGAO8m8ITjFKPWcTmU1GVnL+J5TAUTKpPnUAHCKDxXpOHVaERid223Ww==
 
-next-slicezone@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/next-slicezone/-/next-slicezone-0.2.1.tgz#cdf74a11ed7de8f85056e6a3a9a782dac9f54d3e"
-  integrity sha512-ImAQcsf97jAEmxNVk4/kEnOBuFK3NOT1x3VO8+153lN/i1FWgzBlUdQhD5vw6GfhtSNQiWtCVQ1e3ypY2LEo+A==
+next-slicezone@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/next-slicezone/-/next-slicezone-0.2.2.tgz#d9c8b38f783ef175d155fd573b47b95855600b4b"
+  integrity sha512-+ws+dDuoTC4MKWWOpn6z5b5IDgpzY/G6MWF9gqwXXSw92mEFNzUn05B0gdSBIMebhG0DkdpGPwrhoUlcoxOLYA==
   dependencies:
     slash "^3.0.0"
     sm-commons "^0.0.21"
@@ -8650,15 +8650,15 @@ slice-ansi@0.0.4:
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
   integrity sha1-7b+JA/ZvfOL46v1s7tZeJkyDGzU=
 
-slice-machine-ui@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-0.2.1.tgz#d35ab54569ae0b3b2cba6e3a0eaac733cb00e407"
-  integrity sha512-g1ap0gemgz0C+LANKE6nBWZc/SyRbYhF2BRp+r16OJg1KmJgoZe37L/Xxc/tANeOFSlrOyxpDEKmWu5Ilm0nwg==
+slice-machine-ui@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-0.3.1.tgz#440e80b5f84b38c86256304aeb566c929d2bea0d"
+  integrity sha512-du+uMtO4DWI/KfR89C/zuItm2aqMM5gyhw2rWy4P6tsaJUicwN6mxnkH8kN0O4xpHxbDKKEenKM7tYrBTxDW5w==
   dependencies:
     "@babel/register" "^7.11.5"
     "@prismicio/slice-simulator-com" "^0.2.0"
     "@reach/menu-button" "^0.16.2"
-    "@slicemachine/core" "^1.1.1"
+    "@slicemachine/core" "1.1.2"
     "@svgr/webpack" "^5.4.0"
     atob "^2.1.2"
     axios "^0.24.0"

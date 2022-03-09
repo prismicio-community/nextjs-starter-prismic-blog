@@ -17,6 +17,7 @@ import Image from "next/image";
 import { Container, StyledContainer } from "@nextui-org/react";
 import { getPlaiceholder } from "plaiceholder";
 import { styled } from "../stitches.config";
+import Header from "../components/Home/Header/Header";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -60,7 +61,7 @@ const Home = ({
       <Head>
         <title>{prismicH.asText(blogHome.data.headline)}</title>
       </Head>
-      <Home />
+      <Header />
 
       {/* <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
         <Image

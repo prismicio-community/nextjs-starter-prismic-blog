@@ -8,6 +8,7 @@ import { repositoryName, linkResolver } from "../prismicio";
 
 import "../styles.css";
 import { AppProps } from "next/app";
+import theme from "../theme/theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -23,7 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           </Link>
         )}
       >
-        <NextUIProvider>
+        <NextUIProvider theme={theme}>
           <Component {...pageProps} />
         </NextUIProvider>
       </PrismicProvider>
