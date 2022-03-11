@@ -7,25 +7,21 @@ import { repositoryName, linkResolver } from "../prismicio";
 
 import "../styles.css";
 
-const App = ({ Component, pageProps }) => {
+export default function App({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
-      </Head>
-      <PrismicProvider
-        linkResolver={linkResolver}
-        internalLinkComponent={({ href, ...props }) => (
-          <Link href={href}>
-            <a {...props} />
-          </Link>
-        )}
-      >
+    <PrismicProvider
+      linkResolver={linkResolver}
+      internalLinkComponent={({ href, children, ...props }) => (
+        <Link href={href}>
+          <a {...props}>
+            {children}
+          </a>
+        </Link>
+      )}
+    >
+      <PrismicPreview repositoryName={repositoryName}>
         <Component {...pageProps} />
-      </PrismicProvider>
-      <PrismicPreview repositoryName={repositoryName} />
-    </>
-  );
-};
-
-export default App;
+      </PrismicPreview>
+    </PrismicProvider>
+  )
+}
