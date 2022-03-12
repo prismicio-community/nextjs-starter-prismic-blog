@@ -1,13 +1,15 @@
 import React from "react";
 import { INavigationBarProps } from "./interfaces";
-import { Container } from "@nextui-org/react";
+import { Grid } from "@nextui-org/react";
 
-const NavigationBar: React.FC<INavigationBarProps> = () => {
+const NavigationBar: React.FC<INavigationBarProps> = ({ navItems }) => {
   console.log("bla");
   return (
-    <div>
-      <Container css={{ color: "$primary" }}>COOL</Container>
-    </div>
+    <Grid.Container gap={4}>
+      {
+        navItems.map(({ name }) => <Grid key={name}>{name}</Grid>)
+      }
+    </Grid.Container>
   );
 };
 

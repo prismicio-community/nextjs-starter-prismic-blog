@@ -123,7 +123,18 @@
           "isDirectory": true,
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default-slice": {
+            "path": "/Users/rafael/projects/dadaboom-next/.slicemachine/assets/slices/ImageWithCaption/default-slice/preview.png",
+            "width": 800,
+            "height": 540
+          },
+          "fullWidthImage": {
+            "path": "/Users/rafael/projects/dadaboom-next/.slicemachine/assets/slices/ImageWithCaption/fullWidthImage/preview.png",
+            "width": 800,
+            "height": 540
+          }
+        }
       },
       "quote": {
         "library": "slices",
@@ -179,7 +190,13 @@
           "isDirectory": true,
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default-slice": {
+            "path": "/Users/rafael/projects/dadaboom-next/.slicemachine/assets/slices/Quote/default-slice/preview.png",
+            "width": 800,
+            "height": 111
+          }
+        }
       },
       "testing": {
         "library": "slices",

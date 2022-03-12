@@ -30,6 +30,33 @@
           "thumbnails": []
         },
         "type": "Image"
+      },
+      "anotherField": {
+        "config": {
+          "label": "Another Field",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      }
+    },
+    "NavigationBar": {
+      "navItems": {
+        "config": {
+          "label": "Nav Items",
+          "placeholder": "",
+          "fields": {
+            "name": {
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              },
+              "type": "Text"
+            }
+          }
+        },
+        "type": "Group"
       }
     }
   }

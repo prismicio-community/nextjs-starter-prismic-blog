@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "scripts/updateRefFromPrismic.mjs"  ],
   "exclude": [
     "node_modules"
   ]

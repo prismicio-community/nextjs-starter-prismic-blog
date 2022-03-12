@@ -24,17 +24,9 @@ export type BlogHome = _Document & _Linkable & {
   __typename?: 'BlogHome';
   _linkType?: Maybe<Scalars['String']>;
   _meta: Meta;
-  cards?: Maybe<Array<BlogHomeCards>>;
   description?: Maybe<Scalars['Json']>;
   headline?: Maybe<Scalars['Json']>;
   image?: Maybe<Scalars['Json']>;
-  video?: Maybe<Scalars['Json']>;
-};
-
-export type BlogHomeCards = {
-  __typename?: 'BlogHomeCards';
-  cardimage?: Maybe<Scalars['Json']>;
-  cardtitle?: Maybe<Scalars['Json']>;
 };
 
 /** A connection to a list of items. */
@@ -54,6 +46,40 @@ export type BlogHomeConnectionEdge = {
   cursor: Scalars['String'];
   /** The item at the end of the edge. */
   node: BlogHome;
+};
+
+export type Homepage = _Document & _Linkable & {
+  __typename?: 'Homepage';
+  _linkType?: Maybe<Scalars['String']>;
+  _meta: Meta;
+  header_image?: Maybe<Scalars['Json']>;
+  navitems?: Maybe<Array<HomepageNavitems>>;
+  title?: Maybe<Scalars['Json']>;
+  type?: Maybe<Scalars['String']>;
+};
+
+/** A connection to a list of items. */
+export type HomepageConnectionConnection = {
+  __typename?: 'HomepageConnectionConnection';
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<HomepageConnectionEdge>>>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  totalCount: Scalars['Long'];
+};
+
+/** An edge in a connection. */
+export type HomepageConnectionEdge = {
+  __typename?: 'HomepageConnectionEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node: Homepage;
+};
+
+export type HomepageNavitems = {
+  __typename?: 'HomepageNavitems';
+  name?: Maybe<Scalars['Json']>;
 };
 
 export type Meta = {
@@ -95,6 +121,7 @@ export type Post = _Document & _Linkable & {
   _meta: Meta;
   date?: Maybe<Scalars['Date']>;
   slices?: Maybe<Array<PostSlices>>;
+  subtitle?: Maybe<Scalars['Json']>;
   title?: Maybe<Scalars['Json']>;
 };
 
@@ -219,6 +246,7 @@ export type Query = {
   __typename?: 'Query';
   _allDocuments: _DocumentConnection;
   allBlogHomes: BlogHomeConnectionConnection;
+  allHomepages: HomepageConnectionConnection;
   allPosts: PostConnectionConnection;
   post?: Maybe<Post>;
 };
@@ -270,6 +298,31 @@ export type QueryAllBlogHomesArgs = {
   uid?: InputMaybe<Scalars['String']>;
   uid_in?: InputMaybe<Array<Scalars['String']>>;
   where?: InputMaybe<WhereBlogHome>;
+};
+
+
+export type QueryAllHomepagesArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  firstPublicationDate?: InputMaybe<Scalars['DateTime']>;
+  firstPublicationDate_after?: InputMaybe<Scalars['DateTime']>;
+  firstPublicationDate_before?: InputMaybe<Scalars['DateTime']>;
+  fulltext?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['String']>;
+  id_in?: InputMaybe<Array<Scalars['String']>>;
+  lang?: InputMaybe<Scalars['String']>;
+  last?: InputMaybe<Scalars['Int']>;
+  lastPublicationDate?: InputMaybe<Scalars['DateTime']>;
+  lastPublicationDate_after?: InputMaybe<Scalars['DateTime']>;
+  lastPublicationDate_before?: InputMaybe<Scalars['DateTime']>;
+  similar?: InputMaybe<Similar>;
+  sortBy?: InputMaybe<SortHomepagey>;
+  tags?: InputMaybe<Array<Scalars['String']>>;
+  tags_in?: InputMaybe<Array<Scalars['String']>>;
+  uid?: InputMaybe<Scalars['String']>;
+  uid_in?: InputMaybe<Array<Scalars['String']>>;
+  where?: InputMaybe<WhereHomepage>;
 };
 
 
@@ -333,6 +386,17 @@ export enum SortDocumentsBy {
   MetaLastPublicationDateDesc = 'meta_lastPublicationDate_DESC'
 }
 
+export enum SortHomepagey {
+  MetaFirstPublicationDateAsc = 'meta_firstPublicationDate_ASC',
+  MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
+  MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
+  MetaLastPublicationDateDesc = 'meta_lastPublicationDate_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  TypeAsc = 'type_ASC',
+  TypeDesc = 'type_DESC'
+}
+
 export enum SortPosty {
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
@@ -340,21 +404,30 @@ export enum SortPosty {
   MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
   MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
   MetaLastPublicationDateDesc = 'meta_lastPublicationDate_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
 
 export type WhereBlogHome = {
-  cards?: InputMaybe<WhereBlogHomeCards>;
   /** description */
   description_fulltext?: InputMaybe<Scalars['String']>;
   /** headline */
   headline_fulltext?: InputMaybe<Scalars['String']>;
 };
 
-export type WhereBlogHomeCards = {
-  /** cardtitle */
-  cardtitle_fulltext?: InputMaybe<Scalars['String']>;
+export type WhereHomepage = {
+  navitems?: InputMaybe<WhereHomepageNavitems>;
+  /** title */
+  title_fulltext?: InputMaybe<Scalars['String']>;
+  type?: InputMaybe<Scalars['String']>;
+  type_fulltext?: InputMaybe<Scalars['String']>;
+};
+
+export type WhereHomepageNavitems = {
+  /** name */
+  name_fulltext?: InputMaybe<Scalars['String']>;
 };
 
 export type WherePost = {
@@ -364,6 +437,8 @@ export type WherePost = {
   date_after?: InputMaybe<Scalars['Date']>;
   /** date */
   date_before?: InputMaybe<Scalars['Date']>;
+  /** subtitle */
+  subtitle_fulltext?: InputMaybe<Scalars['String']>;
   /** title */
   title_fulltext?: InputMaybe<Scalars['String']>;
 };

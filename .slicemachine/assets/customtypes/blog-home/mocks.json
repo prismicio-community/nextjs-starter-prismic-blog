@@ -1,19 +1,19 @@
 {
-  "id": "6f2338dd-cb65-4da5-9ba6-363e0bd8e844",
-  "uid": "harum-facilis-cumque",
+  "id": "b14cd12b-d868-4cd6-9d60-a5dcbe4fd772",
+  "uid": "quod-aut-doloribus",
   "type": "blog-home",
   "data": {
     "headline": [
       {
         "type": "heading1",
-        "text": "Repurpose B2B e-tailers",
+        "text": "Empower real-time partnerships",
         "spans": []
       }
     ],
     "description": [
       {
         "type": "paragraph",
-        "text": "Id et veniam reprehenderit enim aliqua quis veniam veniam exercitation.",
+        "text": "Aute officia excepteur id proident tempor sit tempor cupidatat esse commodo Lorem proident Lorem consectetur anim. Dolor ut aute velit aute ex adipisicing irure magna veniam ex nisi elit tempor et officia.",
         "spans": []
       }
     ],
@@ -24,7 +24,25 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?w=900&h=500&fit=crop"
-    }
+      "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?w=900&h=500&fit=crop"
+    },
+    "anotherField": [
+      {
+        "type": "paragraph",
+        "text": "Proident enim dolore reprehenderit mollit fugiat in enim adipisicing. Fugiat laboris cupidatat esse minim pariatur qui ea amet. Magna nostrud id anim cupidatat magna irure sunt exercitation nulla enim Lorem eiusmod et sit.",
+        "spans": []
+      }
+    ],
+    "navItems": [
+      {
+        "name": "mesh bricks-and-clicks functionalities"
+      },
+      {
+        "name": "utilize rich niches"
+      },
+      {
+        "name": "strategize cross-media vortals"
+      }
+    ]
   }
 }

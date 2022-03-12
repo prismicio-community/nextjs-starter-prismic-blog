@@ -5,40 +5,37 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 
 import { Layout } from "../components/Layout";
-import { HomeHeader } from "../components/HomeHeader";
-import { PostList } from "../components/PostList";
 import { SetupRepo } from "../components/SetupRepo";
 import {
-  GetStaticProps,
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
-import Image from "next/image";
-import { Container, StyledContainer } from "@nextui-org/react";
 import { getPlaiceholder } from "plaiceholder";
-import { styled } from "../stitches.config";
 import Header from "../components/Home/Header/Header";
+import { BlogHome, Homepage } from "../src/generated/graphql";
+import { DeepNonNullRequired } from "../types";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
 
-  let blogHome = null;
+  let homepage: DeepNonNullRequired<Homepage> | null = null;
   try {
-    blogHome = await client.getSingle("blog-home");
+    const result = await client.getSingle("homepage");
+    homepage = result.data as DeepNonNullRequired<Homepage>;
   } catch {
     // If we reach this line, it means a Blog Home document was not created
     // yet. We don't need to do anything here. We will render a component on
     // the page with a helpful setup message.
   }
 
-  const { base64 } = await getPlaiceholder(blogHome?.data.image.url, {
-    size: 64,
-  });
+  // const { base64 } = await getPlaiceholder(blogHome?.image.url, {
+    // size: 64,
+  // });
 
   return {
     props: {
-      blogHome,
-      base64,
+      homepage,
+      // base64,
     },
   };
 };
@@ -48,10 +45,9 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
  * Homepage component
  */
 const Home = ({
-  blogHome,
-  base64,
+  homepage
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if (!blogHome) {
+  if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
   }
@@ -59,9 +55,9 @@ const Home = ({
   return (
     <Layout>
       <Head>
-        <title>{prismicH.asText(blogHome.data.headline)}</title>
+        <title>{prismicH.asText(homepage.title)}</title>
       </Head>
-      <Header />
+      <Header navItems={homepage.navitems}/>
 
       {/* <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
         <Image

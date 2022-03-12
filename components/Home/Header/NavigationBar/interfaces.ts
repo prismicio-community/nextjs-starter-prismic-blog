@@ -1,3 +1,5 @@
+import { IHeaderProps } from "../interfaces";
+
 export interface INavigationBarProps {
-test?: string;
+  navItems: IHeaderProps["navItems"];
 }
