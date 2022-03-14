@@ -6,14 +6,12 @@ import { createClient } from "../prismicio";
 
 import { Layout } from "../components/Layout";
 import { SetupRepo } from "../components/SetupRepo";
-import {
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-} from "next";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import Header from "../components/Home/Header/Header";
 import { BlogHome, Homepage } from "../src/generated/graphql";
 import { DeepNonNullRequired } from "../types";
+import Image from "next/image";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -29,7 +27,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   }
 
   // const { base64 } = await getPlaiceholder(blogHome?.image.url, {
-    // size: 64,
+  // size: 64,
   // });
 
   return {
@@ -40,13 +38,10 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   };
 };
 
-
 /**
  * Homepage component
  */
-const Home = ({
-  homepage
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -57,8 +52,7 @@ const Home = ({
       <Head>
         <title>{prismicH.asText(homepage.title)}</title>
       </Head>
-      <Header navItems={homepage.navitems}/>
-
+      <Header navItems={homepage.navitems} heroImage={homepage.header_image} />
       {/* <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
         <Image
           src={blogHome.data.image.url}

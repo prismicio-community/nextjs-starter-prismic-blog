@@ -1,11 +1,10 @@
-import { createStitches } from '@stitches/react';
-import type * as Stitches from '@stitches/react';
-import { gold, gray, purple, red, yellow } from './theme/colors';
-import { fontSizes, radii, sizes, space } from './theme/sizes';
-import { media } from './theme/media';
-import { utils } from './theme/utils';
-export type { VariantProps } from '@stitches/react';
-
+import { createStitches } from "@stitches/react";
+import type * as Stitches from "@stitches/react";
+import { gold, gray, purple, red, yellow } from "./theme/colors";
+import { fontSizes, radii, sizes, space } from "./theme/sizes";
+import { media } from "./theme/media";
+import { utils } from "./theme/utils";
+export type { VariantProps } from "@stitches/react";
 
 export const {
   styled,
@@ -25,37 +24,37 @@ export const {
       ...purple,
       ...yellow,
       ...gold,
-      primary: '#d6b161',
+      primary: "#d6b161",
     },
     fonts: {
-      untitled: 'Untitled Sans, -apple-system, system-ui, sans-serif',
-      mono: 'Söhne Mono, menlo, monospace',
+      untitled: "Untitled Sans, -apple-system, system-ui, sans-serif",
+      mono: "Söhne Mono, menlo, monospace",
     },
     space: {
-      ...space
+      ...space,
     },
     sizes: {
-      ...sizes
+      ...sizes,
     },
     fontSizes: {
-      ...fontSizes
+      ...fontSizes,
     },
     radii: {
-      ...radii
+      ...radii,
     },
     zIndices: {
-      1: '100',
-      2: '200',
-      3: '300',
-      4: '400',
-      max: '999',
+      1: "100",
+      2: "200",
+      3: "300",
+      4: "400",
+      max: "999",
     },
   },
   media: {
-    ...media
+    ...media,
   },
   utils: {
-    ...utils
+    ...utils,
   },
 });
 

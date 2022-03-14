@@ -1,9 +1,7 @@
 {
   "apiEndpoint": "https://dadaboom.prismic.io/api/v2",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
-  "libraries": [
-    "@/slices"
-  ],
+  "libraries": ["@/slices"],
   "_latest": "0.3.0",
   "framework": "previousNext"
 }

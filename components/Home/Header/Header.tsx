@@ -1,12 +1,22 @@
+import { Container } from "@nextui-org/react";
+import Image from "next/image";
 import { IHeaderProps } from "./interfaces";
 import NavigationBar from "./NavigationBar";
 
-const Header: React.FC<IHeaderProps> = ({ navItems }) => {
-  console.log('inside: ', navItems);
+const Header: React.FC<IHeaderProps> = ({ navItems, heroImage }) => {
   return (
-    <div>
-      <NavigationBar navItems={navItems} />
-    </div>
+    <>
+      <Image
+        src={heroImage.url ?? ""}
+        layout="responsive"
+        alt={heroImage.alt ?? ""}
+        width={heroImage.dimensions?.width}
+        height={heroImage.dimensions?.height}
+      />
+      <Container md css={{ height: "100vh", position: 'absolute', top: 0 }}>
+        <NavigationBar navItems={navItems} />
+      </Container>
+    </>
   );
 };
 

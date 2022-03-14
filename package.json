@@ -1,11 +1,9 @@
 {
-  "name": "nextjs-blog",
-  "description": "Sample blog built with Next.js using Prismic headless CMS",
-  "author": "Prismic",
+  "name": "dadaboom",
+  "description": "Dadaboom website",
+  "author": "solimer",
+  "license": "UNLICENSED",
   "dependencies": {
-    "@fontsource/lato": "^4.5.2",
-    "@fontsource/libre-baskerville": "^4.5.2",
-    "@graphql-codegen/cli": "^2.6.2",
     "@nextui-org/react": "^1.0.2-beta.4",
     "@plaiceholder/next": "^2.3.0",
     "@prismicio/client": "^6.4.1",
