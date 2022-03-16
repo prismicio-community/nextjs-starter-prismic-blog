@@ -13,7 +13,11 @@ const Header: React.FC<IHeaderProps> = ({ navItems, heroImage }) => {
         width={heroImage.dimensions?.width}
         height={heroImage.dimensions?.height}
       />
-      <Container md css={{ height: "100vh", position: 'absolute', top: 0 }}>
+      <Container
+        fluid
+        justify="center"
+        css={{ height: "100vh", position: "absolute", top: 0 }}
+      >
         <NavigationBar navItems={navItems} />
       </Container>
     </>
