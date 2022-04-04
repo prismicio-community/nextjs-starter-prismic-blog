@@ -46,7 +46,6 @@
     "babel-plugin-transform-stitches-display-name": "^0.0.1",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.4",
-    "node-fetch": "^3.2.3",
     "postcss": "^8.4.6",
     "prettier": "^2.6.2",
     "prismic-ts-codegen": "^0.0.2",

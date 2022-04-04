@@ -12,6 +12,7 @@ import Header from "../components/Home/Header/Header";
 import { BlogHome, Homepage } from "../src/generated/graphql";
 import { DeepNonNullRequired } from "../types";
 import Image from "next/image";
+import { StyledContainer } from "@nextui-org/react";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -26,14 +27,14 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     // the page with a helpful setup message.
   }
 
-  // const { base64 } = await getPlaiceholder(blogHome?.image.url, {
-  // size: 64,
-  // });
+  const { base64 } = await getPlaiceholder(homepage?.header_image.url, {
+    size: 64,
+  });
 
   return {
     props: {
       homepage,
-      // base64,
+      base64,
     },
   };
 };
@@ -41,7 +42,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 /**
  * Homepage component
  */
-const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ homepage, base64 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -52,18 +53,18 @@ const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Head>
         <title>{prismicH.asText(homepage.title)}</title>
       </Head>
-      {/* <Header navItems={homepage.navitems} heroImage={homepage.header_image} /> */}
-      {/* <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
+      <Header navItems={homepage.navitems} heroImage={homepage.header_image} />
+      <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
         <Image
-          src={blogHome.data.image.url}
+          src={homepage.header_image.url}
           alt="cool"
           placeholder="blur"
           blurDataURL={base64}
-          width={blogHome.data.image.dimensions.width}
-          height={blogHome.data.image.dimensions.height}
+          width={homepage.header_image.dimensions.width}
+          height={homepage.header_image.dimensions.height}
           layout="responsive"
         />
-      </StyledContainer> */}
+      </StyledContainer>
     </Layout>
   );
 };
