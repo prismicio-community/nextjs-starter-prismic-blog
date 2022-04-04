@@ -52,7 +52,7 @@ const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Head>
         <title>{prismicH.asText(homepage.title)}</title>
       </Head>
-      <Header navItems={homepage.navitems} heroImage={homepage.header_image} />
+      {/* <Header navItems={homepage.navitems} heroImage={homepage.header_image} /> */}
       {/* <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
         <Image
           src={blogHome.data.image.url}

@@ -1,3 +1,4 @@
+import { CssBaseline } from "@nextui-org/react";
 import Document, {
   Html,
   Head,
@@ -5,7 +6,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import { CssBaseline } from "@nextui-org/react";
+import { getCssText } from "../stitches.config";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -18,22 +19,8 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" dir="rtl">
-        <Head>
-          {CssBaseline.flush()}
-          {/* <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Roboto:300,400|Athiti:300,400|Indie+Flower&display=optional"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Indie+Flower|Secular+One|Assistant&display=optional"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans&subset=hebrew&display=swap"
-            rel="stylesheet"
-          /> */}
-        </Head>
+      <Html lang="he" dir="rtl">
+        <Head>{CssBaseline.flush()}</Head>
         <body>
           <Main />
           <NextScript />

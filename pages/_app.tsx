@@ -2,12 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
-import { NextUIProvider } from "@nextui-org/react";
 
 import { repositoryName, linkResolver } from "../prismicio";
 
 import "../styles.css";
 import { AppProps } from "next/app";
+import { NextUIProvider } from "@nextui-org/react";
 import theme from "../theme/theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
