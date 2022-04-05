@@ -34,7 +34,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   return {
     props: {
       homepage,
-      base64,
+      lqip: base64,
     },
   };
 };
@@ -42,7 +42,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 /**
  * Homepage component
  */
-const Home = ({ homepage, base64 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ homepage, lqip }: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -53,18 +53,7 @@ const Home = ({ homepage, base64 }: InferGetStaticPropsType<typeof getStaticProp
       <Head>
         <title>{prismicH.asText(homepage.title)}</title>
       </Head>
-      <Header navItems={homepage.navitems} heroImage={homepage.header_image} />
-      <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
-        <Image
-          src={homepage.header_image.url}
-          alt="cool"
-          placeholder="blur"
-          blurDataURL={base64}
-          width={homepage.header_image.dimensions.width}
-          height={homepage.header_image.dimensions.height}
-          layout="responsive"
-        />
-      </StyledContainer>
+      <Header navItems={homepage.navitems} heroImage={homepage.header_image} lqipImage={lqip} />
     </Layout>
   );
 };

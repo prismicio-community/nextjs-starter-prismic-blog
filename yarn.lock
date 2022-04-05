@@ -8754,7 +8754,7 @@ slice-ansi@0.0.4:
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
   integrity sha1-7b+JA/ZvfOL46v1s7tZeJkyDGzU=
 
-slice-machine-ui@^0.3.3:
+slice-machine-ui@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-0.3.4.tgz#6e336c34bd482d2f37711072eb78d62d13377536"
   integrity sha512-lYGRfp4S/H3Yo6znMV39hZh85dL5vNm5+5+Lmr08JqJFa/cAOy0NgYCdtfHRXu6muSedlZw6ZVJlBNLO4UkcuQ==

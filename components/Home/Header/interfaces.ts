@@ -5,4 +5,5 @@ import * as PrismicT from "@prismicio/types";
 export interface IHeaderProps {
   navItems: DeepNonNullRequired<Homepage>["navitems"];
   heroImage: PrismicT.ImageField;
+  lqipImage: string;
 }

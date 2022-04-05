@@ -1,18 +1,22 @@
-import { Container } from "@nextui-org/react";
+import { Container, StyledContainer } from "@nextui-org/react";
 import Image from "next/image";
 import { IHeaderProps } from "./interfaces";
 import NavigationBar from "./NavigationBar";
 
-const Header: React.FC<IHeaderProps> = ({ navItems, heroImage }) => {
+const Header: React.FC<IHeaderProps> = ({ navItems, heroImage, lqipImage }) => {
   return (
     <>
-      <Image
-        src={heroImage.url ?? ""}
-        layout="responsive"
-        alt={heroImage.alt ?? ""}
-        width={heroImage.dimensions?.width}
-        height={heroImage.dimensions?.height}
-      />
+      <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
+        <Image
+          src={heroImage.url ?? ""}
+          layout="responsive"
+          alt={heroImage.alt ?? ""}
+          width={heroImage.dimensions?.width}
+          height={heroImage.dimensions?.height}
+          blurDataURL={lqipImage}
+          placeholder="blur"
+        />
+      </StyledContainer>
       <Container
         fluid
         justify="center"
