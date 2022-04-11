@@ -16,6 +16,14 @@
         }
       },
       "navItems": {}
+    },
+    "homepage": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
     }
   },
   "slices": {

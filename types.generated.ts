@@ -84,6 +84,65 @@ interface BlogHomeDocumentDataNavItemsItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type BlogHomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<BlogHomeDocumentData>, "blog-home", Lang>;
+/** Content for Homepage documents */
+interface HomepageDocumentData {
+    /**
+     * Title field in *Homepage*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Header Image field in *Homepage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.headerImage
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    headerImage: prismicT.ImageField<null>;
+    /**
+     * NavigationItems field in *Homepage*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.navigationItems[]
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    navigationItems: prismicT.GroupField<Simplify<HomepageDocumentDataNavigationItemsItem>>;
+}
+/**
+ * Item in Homepage → NavigationItems
+ *
+ */
+interface HomepageDocumentDataNavigationItemsItem {
+    /**
+     * Name field in *Homepage → NavigationItems*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.navigationItems[].name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+}
+/**
+ * Homepage document from Prismic
+ *
+ * - **API ID**: `homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
 /** Content for Post documents */
 interface PostDocumentData {
     /**
@@ -256,6 +315,45 @@ type QuoteSliceVariation = QuoteSliceDefaultSlice;
  */
 export type QuoteSlice = prismicT.SharedSlice<"quote", QuoteSliceVariation>;
 /**
+ * Primary content in Text → Primary
+ *
+ */
+interface TextSliceDefaultSlicePrimary {
+    /**
+     * text field in *Text → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+}
+/**
+ * Default slice variation for Text Slice
+ *
+ * - **API ID**: `default-slice`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+type TextSliceDefaultSlice = prismicT.SharedSliceVariation<"default-slice", Simplify<TextSliceDefaultSlicePrimary>, never>;
+/**
+ * Slice variation for *Text*
+ *
+ */
+type TextSliceVariation = TextSliceDefaultSlice;
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
+/**
  * Primary content in Testing → Primary
  *
  */
@@ -331,42 +429,3 @@ type TestingSliceVariation = TestingSliceDefaultSlice;
  *
  */
 export type TestingSlice = prismicT.SharedSlice<"testing", TestingSliceVariation>;
-/**
- * Primary content in Text → Primary
- *
- */
-interface TextSliceDefaultSlicePrimary {
-    /**
-     * text field in *Text → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: text.primary.text
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    text: prismicT.RichTextField;
-}
-/**
- * Default slice variation for Text Slice
- *
- * - **API ID**: `default-slice`
- * - **Description**: `Text`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-type TextSliceDefaultSlice = prismicT.SharedSliceVariation<"default-slice", Simplify<TextSliceDefaultSlicePrimary>, never>;
-/**
- * Slice variation for *Text*
- *
- */
-type TextSliceVariation = TextSliceDefaultSlice;
-/**
- * Text Shared Slice
- *
- * - **API ID**: `text`
- * - **Description**: `Text`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;

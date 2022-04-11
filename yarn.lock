@@ -1810,10 +1810,10 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.1.4.tgz#a72ed44c9b1f850986a30fe36c59e01f8a79b5f3"
   integrity sha512-JtYuWzKXKLDMgE/xTcFtCm1MiCIRaAc5XYZfYX3n/ZWSI1SJS/GMm+Su0SAHJgRFavJh6U/p998YwO/iGTIgqQ==
 
-"@nextui-org/react@^1.0.6-beta.5":
-  version "1.0.6-beta.5"
-  resolved "https://registry.yarnpkg.com/@nextui-org/react/-/react-1.0.6-beta.5.tgz#63af0ead54f43bcec7c30050c0e223c71d7b05c0"
-  integrity sha512-GvEgHud6MdAPSSix/FNiZD1mH4QZhJHLJ4mAYC59IF3zxHgSb+me+6cN1d5v32pIoPUShG9MWUiIhmAis+j7mg==
+"@nextui-org/react@^1.0.8-beta.5":
+  version "1.0.8-beta.5"
+  resolved "https://registry.yarnpkg.com/@nextui-org/react/-/react-1.0.8-beta.5.tgz#7168e6dd7ee8872c7e8f0078a8455c28cc25e6eb"
+  integrity sha512-rLM3PPuo0bNSp+WpawDUGRsa4FQTPuYwLEa6v9jSYzJMbSPr265LCOopn+h9o95CAFBJ48C1laSnnJ4SEEE0DQ==
   dependencies:
     "@babel/runtime" "7.9.6"
     "@react-aria/button" "3.4.3"
@@ -1826,10 +1826,12 @@
     "@react-aria/table" "3.2.1"
     "@react-aria/utils" "3.11.1"
     "@react-aria/visually-hidden" "3.2.4"
+    "@react-stately/checkbox" "3.0.6"
     "@react-stately/data" "3.4.5"
     "@react-stately/table" "3.1.1"
     "@react-stately/toggle" "3.2.4"
     "@react-types/button" "^3.4.4"
+    "@react-types/checkbox" "3.2.6"
     "@react-types/grid" "3.0.1"
     "@react-types/shared" "3.11.0"
     "@stitches/react" "1.2.7"
@@ -1943,6 +1945,15 @@
   integrity sha512-BO1jQU4jGyIhT8Hhb+10CIWulXR9ail107TW7xky9K3MkMKNJcueKo9ljoj/sq6dtvq3r04cSusyhZQrj/hJxw==
   dependencies:
     "@prismicio/slice-simulator-core" "^0.2.0"
+
+"@prismicio/types-internal@^0.2.7", "@prismicio/types-internal@^0.2.8":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@prismicio/types-internal/-/types-internal-0.2.10.tgz#215173ff01f8a1874035c498e08b85a18dd0e514"
+  integrity sha512-xGxf6l6LsY4JfRZpvCjAqXt2uSkwk3tesrvzzV9FUkzlS7S/DFznn5CDhnF/pfeDIBRQnNFs6CClZobcdz2YJg==
+  dependencies:
+    monocle-ts "^2.3.11"
+    newtype-ts "^0.3.5"
+    tslib "^2.3.1"
 
 "@prismicio/types@^0.1.22", "@prismicio/types@^0.1.27":
   version "0.1.27"
@@ -2185,7 +2196,7 @@
     "@react-aria/utils" "^3.11.3"
     clsx "^1.1.1"
 
-"@react-stately/checkbox@^3.0.4":
+"@react-stately/checkbox@3.0.6", "@react-stately/checkbox@^3.0.4":
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/@react-stately/checkbox/-/checkbox-3.0.6.tgz#6c3e125902f4478f6b8abf3e78a088804c66ae28"
   integrity sha512-RrXJlEtp2q3g6Yex9QI8/tRJhIDmG1oKc5+VyVvdxp0NXtK0Zz+ycIlXuzcI5gwlBemv5ETxbIG4p5gdNXVeKA==
@@ -2309,7 +2320,7 @@
   dependencies:
     "@react-types/shared" "^3.11.2"
 
-"@react-types/checkbox@^3.2.4", "@react-types/checkbox@^3.2.6":
+"@react-types/checkbox@3.2.6", "@react-types/checkbox@^3.2.4", "@react-types/checkbox@^3.2.6":
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/@react-types/checkbox/-/checkbox-3.2.6.tgz#61fd70857bdd2d6da9289892ea366f305ab47ed6"
   integrity sha512-bOQAnnDEpXL1P4oRBiwjnOskKQtawc+JcRZzQk/9k7NwKWfv5MHG/MFDJsW057GPm9Ks0onNATohtw6LFvzAQA==
@@ -2375,6 +2386,11 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@scarf/scarf@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@scarf/scarf/-/scarf-1.1.1.tgz#d8b9f20037b3a37dbf8dcdc4b3b72f9285bfce35"
+  integrity sha512-VGbKDbk1RFIaSmdVb0cNjjWJoRWRI/Weo23AjRCC2nryO0iAS8pzsToJfPVPtVs74WHw4L1UTADNdIYRLkirZQ==
+
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
@@ -2418,15 +2434,18 @@
     ora "^5.4.1"
     prompt "^1.2.0"
 
-"@slicemachine/core@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@slicemachine/core/-/core-1.1.5.tgz#8c9b63aa013cc3c8578189c3c9909e69be2263e8"
-  integrity sha512-mHZTQ5E8iAoXIfjDscclgG867BW8UUdjeCUJCzqQV8W2ZPDdkQ3R6VQc55V6IWLbP4fNiM0ThCRoTTjGwVRFFg==
+"@slicemachine/core@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@slicemachine/core/-/core-1.1.6.tgz#a5d627f5a14265a12d8465e7eabef4ec9f2d754a"
+  integrity sha512-/V2IPtvGyTDoBr2oDMhZSyGgHM1/wJ8DD6Tp9/hDhLxBAl4r9DuSOgg7MpXhCO6u4bKG3uzOEPrSoQXt22qWsQ==
   dependencies:
+    "@prismicio/types-internal" "^0.2.8"
     axios "^0.26.0"
     cookie "^0.4.1"
     fp-ts "^2.11.5"
     io-ts "^2.2.16"
+    io-ts-reporters "^2.0.1"
+    io-ts-types "^0.5.16"
 
 "@stitches/react@1.2.7", "@stitches/react@^1.2.7":
   version "1.2.7"
@@ -5752,6 +5771,18 @@ invariant@^2.2.4:
   dependencies:
     loose-envify "^1.0.0"
 
+io-ts-reporters@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/io-ts-reporters/-/io-ts-reporters-2.0.1.tgz#0154545aefd115f0f175a41743ed7327d19b1c34"
+  integrity sha512-RVpLstYBsmTGgCW9wJ5KVyN/eRnRUDp87Flt4D1O3aJ7oAnd8csq8aXuu7ZeNK8qEDKmjUl9oUuzfwikaNAMKQ==
+  dependencies:
+    "@scarf/scarf" "^1.1.1"
+
+io-ts-types@^0.5.16:
+  version "0.5.16"
+  resolved "https://registry.yarnpkg.com/io-ts-types/-/io-ts-types-0.5.16.tgz#e9eed75371e217c97050cc507915e8eedc250946"
+  integrity sha512-h9noYVfY9rlbmKI902SJdnV/06jgiT2chxG6lYDxaYNp88HscPi+SBCtmcU+m0E7WT5QSwt7sIMj93+qu0FEwQ==
+
 io-ts@^2.2.16:
   version "2.2.16"
   resolved "https://registry.yarnpkg.com/io-ts/-/io-ts-2.2.16.tgz#597dffa03db1913fc318c9c6df6931cb4ed808b2"
@@ -6975,6 +7006,11 @@ module-alias@^2.2.2:
   resolved "https://registry.yarnpkg.com/module-alias/-/module-alias-2.2.2.tgz#151cdcecc24e25739ff0aa6e51e1c5716974c0e0"
   integrity sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
 
+monocle-ts@^2.3.11:
+  version "2.3.13"
+  resolved "https://registry.yarnpkg.com/monocle-ts/-/monocle-ts-2.3.13.tgz#7c8af489613cd5175df2ea3c02c57c6151995e5d"
+  integrity sha512-D5Ygd3oulEoAm3KuGO0eeJIrhFf1jlQIoEVV2DYsZUMz42j4tGxgct97Aq68+F8w4w4geEnwFa8HayTS/7lpKQ==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -7074,13 +7110,18 @@ neverthrow@^4.2.1:
   resolved "https://registry.yarnpkg.com/neverthrow/-/neverthrow-4.3.1.tgz#04c4c15e7f6fc45faad36885fa7a42b85f8f39ab"
   integrity sha512-+vxjSaiDWjAj6kR6KKW0YDuV6O4UCNWGAO8m8ITjFKPWcTmU1GVnL+J5TAUTKpPnUAHCKDxXpOHVaERid223Ww==
 
-next-slicezone@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/next-slicezone/-/next-slicezone-0.2.5.tgz#ccc4682091c900efb2f249a91802817b8db8c922"
-  integrity sha512-UbkfPN1PS/Q7zIFG+PgBC1AtA73AkQ0D1iPTqJZmK5odcapPYwcqNN/GEIetMXnn4i2v/guzul+fZHaxkKSGFw==
+newtype-ts@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/newtype-ts/-/newtype-ts-0.3.5.tgz#5c113d34a04938d9e90061437638260ea965c490"
+  integrity sha512-v83UEQMlVR75yf1OUdoSFssjitxzjZlqBAjiGQ4WJaML8Jdc68LJ+BaSAXUmKY4bNzp7hygkKLYTsDi14PxI2g==
+
+next-slicezone@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/next-slicezone/-/next-slicezone-0.2.6.tgz#903ee3b6d1aa56657a7f6cdce5886e5cf7138227"
+  integrity sha512-FmLkyOXNTSw1aAsp9RE7wh+diaFjHI2TVehOeX46kQX6tVsQ7orQCUMgecz9+UUbz84xo1ke0wo+RoXkDWK67Q==
   dependencies:
     slash "^3.0.0"
-    sm-commons "0.1.5"
+    sm-commons "0.1.6"
 
 next@^12.1.4:
   version "12.1.4"
@@ -8754,14 +8795,15 @@ slice-ansi@0.0.4:
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
   integrity sha1-7b+JA/ZvfOL46v1s7tZeJkyDGzU=
 
-slice-machine-ui@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-0.3.4.tgz#6e336c34bd482d2f37711072eb78d62d13377536"
-  integrity sha512-lYGRfp4S/H3Yo6znMV39hZh85dL5vNm5+5+Lmr08JqJFa/cAOy0NgYCdtfHRXu6muSedlZw6ZVJlBNLO4UkcuQ==
+slice-machine-ui@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-0.3.5.tgz#4a63e8158b83ab4c863cdb1c4d879f0db09d9a1f"
+  integrity sha512-2Ndjkse8dwrcboYolF0+JksM0f8guYDWQHsUlPxYL2Ta7gWbferqouYZDYX3D57eFo3SmcOhRmnSNRwzvBwS7A==
   dependencies:
     "@babel/register" "^7.17.7"
     "@faker-js/faker" "^6.0.0"
-    "@slicemachine/core" "1.1.5"
+    "@prismicio/types-internal" "^0.2.7"
+    "@slicemachine/core" "1.1.6"
     "@svgr/webpack" "^5.4.0"
     atob "^2.1.2"
     axios "^0.26.0"
@@ -8784,6 +8826,7 @@ slice-machine-ui@^0.3.4:
     fp-ts "^2.11.5"
     glob "^7.1.6"
     io-ts "^2.2.16"
+    io-ts-reporters "^2.0.1"
     lodash "^4.17.21"
     lorem-ipsum "^2.0.3"
     mime "^2.5.2"
@@ -8807,10 +8850,10 @@ slice-machine-ui@^0.3.4:
     uniqid "^5.2.0"
     yup "^0.32.9"
 
-sm-commons@0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/sm-commons/-/sm-commons-0.1.5.tgz#a9bd50d84587cc29e77eb055d7528747fdb80038"
-  integrity sha512-D3G6IMaIO0yShZFHNPhakhLhjday4GejXS331vh3KuKmW9vEQzqun1KWpabEH/xC+PWIiW07lOSgpme9V34kZw==
+sm-commons@0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/sm-commons/-/sm-commons-0.1.6.tgz#6a3633fb4e4788d57fad008868cec4bf3696abd8"
+  integrity sha512-koFAXghHIa28Nnwh2mighltNsx2FZy6eizINO5K0IOImYwCrEzUsTrAZjv6D2Ul+XNz61jqPnmGNLeKnSIZ3SQ==
   dependencies:
     consola "^2.11.3"
     deepmerge "^4.2.2"
@@ -9447,7 +9490,7 @@ tsconfig-paths@^3.11.0, tsconfig-paths@^3.14.1, tsconfig-paths@^3.9.0:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@2.3.1, tslib@^2, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@~2.3.0:
+tslib@2.3.1, tslib@^2, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1, tslib@~2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==

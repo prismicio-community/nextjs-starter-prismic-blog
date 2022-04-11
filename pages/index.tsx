@@ -13,21 +13,22 @@ import { BlogHome, Homepage } from "../src/generated/graphql";
 import { DeepNonNullRequired } from "../types";
 import Image from "next/image";
 import { StyledContainer } from "@nextui-org/react";
+import { HomepageDocument } from "../types.generated";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
 
-  let homepage: DeepNonNullRequired<Homepage> | null = null;
+  let homepage: HomepageDocument['data'] | null = null;
   try {
-    const result = await client.getSingle("homepage");
-    homepage = result.data as DeepNonNullRequired<Homepage>;
+    const result = await client.getSingle<HomepageDocument>("homepage");
+    homepage = result.data;
   } catch {
     // If we reach this line, it means a Blog Home document was not created
     // yet. We don't need to do anything here. We will render a component on
     // the page with a helpful setup message.
   }
 
-  const { base64 } = await getPlaiceholder(homepage?.header_image.url, {
+  const { base64 } = await getPlaiceholder(homepage?.headerImage.url ?? '', {
     size: 64,
   });
 
@@ -53,7 +54,7 @@ const Home = ({ homepage, lqip }: InferGetStaticPropsType<typeof getStaticProps>
       <Head>
         <title>{prismicH.asText(homepage.title)}</title>
       </Head>
-      <Header navItems={homepage.navitems} heroImage={homepage.header_image} lqipImage={lqip} />
+      <Header navItems={homepage.navigationItems} heroImage={homepage.headerImage} lqipImage={lqip} />
     </Layout>
   );
 };

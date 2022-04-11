@@ -1,9 +1,8 @@
-import { Homepage } from "../../../src/generated/graphql";
-import { DeepNonNullRequired } from "../../../types";
+import {Homepage, HomepageNavitems } from "../../../src/generated/graphql";
 import * as PrismicT from "@prismicio/types";
 
 export interface IHeaderProps {
-  navItems: DeepNonNullRequired<Homepage>["navitems"];
+  navItems: Homepage['navitems'];
   heroImage: PrismicT.ImageField;
   lqipImage: string;
 }
