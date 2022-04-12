@@ -14,7 +14,8 @@
     "react-dom": "^17.0.2"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors gray,magenta",
+    "next:dev": "next",
     "build": "next build",
     "start": "next start",
     "slicemachine": "start-slicemachine",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@prismicio/slice-simulator-react": "^0.2.0",
     "autoprefixer": "^10.4.2",
+    "concurrently": "^7.1.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
