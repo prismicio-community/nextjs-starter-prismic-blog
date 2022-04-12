@@ -6,15 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@prismicio/client": "^6.4.2",
+    "@prismicio/helpers": "^2.2.1",
+    "@prismicio/react": "^2.2.0",
+    "@prismicio/slice-simulator-react": "^0.2.2",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },
   "devDependencies": {
     "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5"
+    "eslint-config-next": "12.1.5",
+    "slice-machine-ui": "^0.3.6"
   }
 }
