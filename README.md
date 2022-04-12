@@ -1,21 +1,54 @@
-# Prismic & Next.js Example Blog
+# Prismic + Next.js Blog Starter
 
-> [Next.js](https://nextjs.org/) example blog project with content managed in [Prismic](https://prismic.io)
+This sample blog is an excellent starting point to explore [Next.js][nextjs] and [Prismic][prismic]. Get it up and running in minutes. Modify and adapt it to your liking; it's all yours!
 
-## Check out the dedicated article to get this project up and running
+- **Demo**: [Open live demo][live-demo]
+- **Learn more about Prismic and Next.js**: [Prismic Next.js Documentation][prismic-docs]
 
-> [Prismic project guide](https://prismic.io/docs/technologies/prismic-example-projects-nextjs)
+&nbsp;
 
-## Learn more about using Prismic with Next
+<img src="https://user-images.githubusercontent.com/8601064/162868106-f3359eeb-0949-4a86-82ec-4bd461828ef7.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
 
-[Prismic + Next documentation](https://prismic.io/docs/technologies/nextjs).
+&nbsp;
+
+## 🚀 Quick Start
+
+To start a new project using this starter, run the following command in your terminal:
+
+```sh
+npx prismic-cli@latest theme \
+  --theme-url https://github.com/prismicio-community/nextjsjs-blog \
+  --conf sm.json
+```
+
+This command will do the following:
+
+1. Ask you to log in to Prismic or [create an account][prismic-sign-up].
+2. Create a new Prismic content repository.
+3. Start a new Next.js project using this starter.
+
+To learn more about working with Prismic, [**see the Prismic docs**][prismic-docs].
 
 ## License
 
-This software is licensed under the Apache 2 license, quoted below.
+```
+Copyright 2013-2022 Prismic <contact@prismic.io> (https://prismic.io)
 
-Copyright 2021 [Prismic](https://prismic.io).
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this project except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
+    http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+[prismic]: https://prismic.io/
+[prismic-docs]: https://prismic.io/docs/technologies/nextjs
+[prismic-sign-up]: https://prismic.io/dashboard/signup
+[nextjs]: https://nextjs.org/
+[live-demo]: https://prismic-nextjs-blog.raulg.vercel.app/
