@@ -51,4 +51,4 @@ limitations under the License.
 [prismic-docs]: https://prismic.io/docs/technologies/nextjs
 [prismic-sign-up]: https://prismic.io/dashboard/signup
 [nextjs]: https://nextjs.org/
-[live-demo]: https://prismic-nextjs-blog.raulg.vercel.app/
+[live-demo]: https://nextjs-starter-prismic-blog.vercel.app/
