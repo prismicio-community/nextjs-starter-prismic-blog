@@ -16,7 +16,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 const findFirstImage = (slices) => {
   const imageSlice = slices.find((slice) => slice.slice_type === "image");
 
-  if (imageSlice && prismicH.isFilled(imageSlice.primary.image)) {
+  if (imageSlice && prismicH.isFilled.image(imageSlice.primary.image)) {
     return imageSlice.primary.image;
   }
 };
@@ -38,7 +38,9 @@ const getExcerpt = (slices) => {
 
 const Post = ({ post }) => {
   const featuredImage =
-    post.data.featuredImage || findFirstImage(post.data.slices);
+    (prismicH.isFilled.image(post.data.featuredImage) &&
+      post.data.featuredImage) ||
+    findFirstImage(post.data.slices);
   const date = prismicH.asDate(
     post.data.publishDate || post.first_publication_date
   );
