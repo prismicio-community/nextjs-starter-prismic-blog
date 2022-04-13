@@ -79,7 +79,7 @@ const Post = ({ post, latestPosts, navigation, settings }) => {
               </Heading>
               <ul className="grid grid-cols-1 gap-12">
                 {latestPosts.map((post) => (
-                  <LatestArticle post={post} />
+                  <LatestArticle key={post.id} post={post} />
                 ))}
               </ul>
             </div>
