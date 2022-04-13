@@ -1,3 +1,4 @@
+import Head from "next/head";
 import NextImage from "next/image";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
@@ -89,6 +90,9 @@ const Index = ({ posts, navigation, settings }) => {
       navigation={navigation}
       settings={settings}
     >
+      <Head>
+        <title>{prismicH.asText(settings.data.name)}</title>
+      </Head>
       <Bounded size="widest">
         <ul className="grid grid-cols-1 gap-16">
           {posts.map((post) => (
