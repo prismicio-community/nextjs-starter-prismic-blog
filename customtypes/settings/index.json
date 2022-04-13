@@ -33,6 +33,24 @@
           },
           "thumbnails": []
         }
+      },
+      "newsletterDescription": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Newsletter Description",
+          "placeholder": "Text above the sign up form",
+          "allowTargetBlank": true,
+          "multi": "heading1,paragraph,strong,em,hyperlink,list-item,o-list-item"
+        }
+      },
+      "newsletterDisclaimer": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Newsletter Disclaimer",
+          "placeholder": "Small text below sign up form",
+          "allowTargetBlank": true,
+          "multi": "paragraph,em,strong,hyperlink"
+        }
       }
     }
   }

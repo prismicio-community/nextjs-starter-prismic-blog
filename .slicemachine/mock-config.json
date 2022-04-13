@@ -44,6 +44,18 @@
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
+      },
+      "newsletterDescription": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "newsletterDisclaimer": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
       }
     }
   },
@@ -85,6 +97,11 @@
             }
           }
         }
+      }
+    },
+    "ContactForm": {
+      "default": {
+        "primary": {}
       }
     }
   }

@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export const Bounded = ({
   as: Comp = "div",
-  xSize = "base",
+  size = "base",
   className,
   children,
 }) => {
@@ -11,9 +11,10 @@ export const Bounded = ({
       <div
         className={clsx(
           "mx-auto w-full",
-          xSize === "base" && "max-w-3xl",
-          xSize === "wide" && "max-w-4xl",
-          xSize === "widest" && "max-w-6xl"
+          size === "small" && "max-w-xl",
+          size === "base" && "max-w-3xl",
+          size === "wide" && "max-w-4xl",
+          size === "widest" && "max-w-6xl"
         )}
       >
         {children}

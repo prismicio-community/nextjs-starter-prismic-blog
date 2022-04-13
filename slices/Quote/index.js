@@ -5,7 +5,7 @@ import { Bounded } from "../../components/Bounded";
 
 const Quote = ({ slice }) => {
   return (
-    <Bounded as="section" xSize="wide">
+    <Bounded as="section" size="wide">
       {prismicH.isFilled.richText(slice.primary.quote) && (
         <div className="font-serif text-3xl italic leading-relaxed">
           &ldquo;

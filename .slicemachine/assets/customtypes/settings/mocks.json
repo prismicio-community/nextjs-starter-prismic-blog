@@ -1,19 +1,19 @@
 {
-  "id": "5c92fc81-604d-4c3b-8ed9-efc76fc99a9f",
-  "uid": "dignissimos-omnis-rerum",
+  "id": "0fb28ff8-4d66-4dd1-a99d-02e1de57d3fd",
+  "uid": "quo-quis-sint",
   "type": "settings",
   "data": {
     "name": [
       {
         "type": "heading1",
-        "text": "Whiteboard best-of-breed convergence",
+        "text": "Extend back-end web services",
         "spans": []
       }
     ],
     "description": [
       {
         "type": "paragraph",
-        "text": "Ipsum duis Lorem quis proident quis dolor nisi irure velit.",
+        "text": "Minim velit nostrud velit veniam elit consequat deserunt labore.",
         "spans": []
       }
     ],
@@ -24,7 +24,21 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=2000&h=2000&fit=crop"
-    }
+      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=2000&h=2000&fit=crop"
+    },
+    "newsletterDescription": [
+      {
+        "type": "paragraph",
+        "text": "Lorem est excepteur nostrud exercitation nostrud amet minim velit ad dolore adipisicing eiusmod quis ipsum. Sint amet mollit eiusmod aute ipsum duis veniam qui labore laboris consectetur in.",
+        "spans": []
+      }
+    ],
+    "newsletterDisclaimer": [
+      {
+        "type": "paragraph",
+        "text": "Excepteur ut esse aliquip incididunt laborum. Est nulla ut cupidatat occaecat. Dolore nulla irure anim anim ad ullamco ipsum id laboris do aliquip excepteur eu aute esse.",
+        "spans": []
+      }
+    ]
   }
 }
