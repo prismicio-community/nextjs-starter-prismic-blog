@@ -11,16 +11,18 @@ const Image = ({ slice }) => {
     <Bounded as="section" size={slice.variation === "wide" ? "widest" : "base"}>
       <figure className="grid grid-cols-1 gap-4">
         {prismicH.isFilled.image(image) && (
-          <NextImage
-            src={prismicH.asImageSrc(image, {
-              w: undefined,
-              h: undefined,
-            })}
-            alt={image.alt}
-            width={image.dimensions.width}
-            height={image.dimensions.height}
-            layout="responsive"
-          />
+          <div className="bg-gray-100">
+            <NextImage
+              src={prismicH.asImageSrc(image, {
+                w: undefined,
+                h: undefined,
+              })}
+              alt={image.alt}
+              width={image.dimensions.width}
+              height={image.dimensions.height}
+              layout="responsive"
+            />
+          </div>
         )}
         {prismicH.isFilled.richText(slice.primary.caption) && (
           <figcaption className="text-center font-serif italic tracking-tight text-slate-500">
