@@ -52,7 +52,12 @@ const NavItem = ({ children }) => {
   );
 };
 
-export const Header = ({ withProfile = true, navigation, settings }) => {
+export const Header = ({
+  withDivider = true,
+  withProfile = true,
+  navigation,
+  settings,
+}) => {
   return (
     <Bounded as="header">
       <div className="grid grid-cols-1 justify-items-center gap-20">
@@ -73,14 +78,14 @@ export const Header = ({ withProfile = true, navigation, settings }) => {
           </ul>
         </nav>
         {withProfile && (
-          <>
-            <Profile
-              name={settings.data.name}
-              description={settings.data.description}
-              profilePicture={settings.data.profilePicture}
-            />
-            <hr className="h-px w-1/2 max-w-sm border-0 bg-slate-200" />
-          </>
+          <Profile
+            name={settings.data.name}
+            description={settings.data.description}
+            profilePicture={settings.data.profilePicture}
+          />
+        )}
+        {withDivider && (
+          <hr className="h-px w-1/2 max-w-sm border-0 bg-slate-200" />
         )}
       </div>
     </Bounded>

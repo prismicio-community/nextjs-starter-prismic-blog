@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 export const Layout = ({
   navigation,
   settings,
+  withHeaderDivider,
   withProfile,
   withSignUpForm,
   children,
@@ -12,6 +13,7 @@ export const Layout = ({
     <div className="text-slate-700">
       <Header
         withProfile={withProfile}
+        withDivider={withHeaderDivider}
         navigation={navigation}
         settings={settings}
       />

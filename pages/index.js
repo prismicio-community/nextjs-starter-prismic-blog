@@ -80,9 +80,13 @@ const Post = ({ post }) => {
   );
 };
 
-const Index = ({ posts, hasNextPage, navigation, settings }) => {
+const Index = ({ posts, navigation, settings }) => {
   return (
-    <Layout navigation={navigation} settings={settings}>
+    <Layout
+      withHeaderDivider={false}
+      navigation={navigation}
+      settings={settings}
+    >
       <Bounded size="widest">
         <ul className="grid grid-cols-1 gap-16">
           {posts.map((post) => (
