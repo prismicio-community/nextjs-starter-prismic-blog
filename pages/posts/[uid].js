@@ -19,7 +19,12 @@ const Post = ({ post, navigation, settings }) => {
   );
 
   return (
-    <Layout withProfile={false} navigation={navigation} settings={settings}>
+    <Layout
+      withHeaderDivider={false}
+      withProfile={false}
+      navigation={navigation}
+      settings={settings}
+    >
       <Head>
         <title>
           {prismicH.asText(post.data.title)} |{" "}
