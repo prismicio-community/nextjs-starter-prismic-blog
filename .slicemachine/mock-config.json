@@ -1,6 +1,22 @@
 {
   "_cts": {
-    "post": {
+    "navigation": {
+      "links": {
+        "label": {
+          "config": {
+            "patternType": "HEADING",
+            "blocks": 1
+          }
+        }
+      },
+      "homepageLabel": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    },
+    "page": {
       "title": {
         "config": {
           "patternType": "HEADING",
@@ -8,30 +24,44 @@
         }
       }
     },
-    "blog-home": {
-      "headline": {
+    "blogPost": {
+      "title": {
         "config": {
           "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    },
+    "settings": {
+      "name": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "newsletterDescription": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "newsletterDisclaimer": {
+        "config": {
+          "patternType": "PARAGRAPH",
           "blocks": 1
         }
       }
     }
   },
   "slices": {
-    "Quote": {
-      "default-slice": {
-        "primary": {
-          "quote": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
-      }
-    },
     "Text": {
-      "default-slice": {
+      "default": {
         "primary": {
           "text": {
             "config": {
@@ -42,8 +72,8 @@
         }
       }
     },
-    "ImageWithCaption": {
-      "default-slice": {
+    "Image": {
+      "default": {
         "primary": {
           "caption": {
             "config": {
@@ -52,6 +82,26 @@
             }
           }
         }
+      },
+      "wide": {
+        "primary": {}
+      }
+    },
+    "Quote": {
+      "default": {
+        "primary": {
+          "quote": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "ContactForm": {
+      "default": {
+        "primary": {}
       }
     }
   }

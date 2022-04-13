@@ -1,0 +1,24 @@
+{
+  "id": "95894078-a8a9-4d64-b74d-4bd9609cab21",
+  "uid": "enim-ipsam-laboriosam",
+  "type": "blogPost",
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Cultivate vertical synergies",
+        "spans": []
+      }
+    ],
+    "publishDate": "2019-08-15",
+    "featuredImage": {
+      "dimensions": {
+        "width": 2000,
+        "height": 1500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=2000&h=1500&fit=crop"
+    }
+  }
+}

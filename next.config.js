@@ -1,11 +1,19 @@
-const path = require("path");
-
-module.exports = {
-  webpack(config) {
-    config.resolve.modules.push(path.resolve("./"));
-    return config;
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
   images: {
-    domains: ["images.prismic.io", "images.unsplash.com"],
+    loader: "imgix",
+    path: "",
+    domains: ["images.prismic.io"],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/posts",
+        destination: "/",
+      },
+    ];
   },
 };
+
+module.exports = nextConfig;

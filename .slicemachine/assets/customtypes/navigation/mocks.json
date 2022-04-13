@@ -1,0 +1,42 @@
+{
+  "id": "91725e73-0c0d-4a3d-a9d9-db33cf1ff70a",
+  "uid": "dolores-aut-aliquam",
+  "type": "navigation",
+  "data": {
+    "homepageLabel": [
+      {
+        "type": "heading3",
+        "text": "Enable intuitive channels",
+        "spans": []
+      }
+    ],
+    "links": [
+      {
+        "label": [
+          {
+            "type": "heading3",
+            "text": "Implement interactive portals",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "label": [
+          {
+            "type": "heading3",
+            "text": "Optimize innovative eyeballs",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ]
+  }
+}

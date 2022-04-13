@@ -1,22 +1,22 @@
-import { PrismicText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
+import { PrismicText } from "@prismicio/react";
 
-/**
- * Component for the Quote Slice.
- */
+import { Bounded } from "../../components/Bounded";
+
 const Quote = ({ slice }) => {
   return (
-    <section className="py-5">
+    <Bounded as="section" size="wide">
       {prismicH.isFilled.richText(slice.primary.quote) && (
-        <blockquote className="relative font-serif text-2xl italic leading-relaxed lg:-mx-20">
-          <span className="pointer-events-none absolute top-0 -left-3 select-none">
-            &ldquo;
-          </span>
+        <div className="font-serif text-3xl italic leading-relaxed">
+          &ldquo;
           <PrismicText field={slice.primary.quote} />
-          <span className="pointer-events-none select-none">&rdquo;</span>
-        </blockquote>
+          &rdquo;
+          {prismicH.isFilled.keyText(slice.primary.source) && (
+            <> &mdash; {slice.primary.source}</>
+          )}
+        </div>
       )}
-    </section>
+    </Bounded>
   );
 };
 

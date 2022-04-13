@@ -1,17 +1,18 @@
 [
   {
-    "variation": "default-slice",
-    "name": "Default slice",
+    "variation": "default",
+    "name": "Default",
     "slice_type": "quote",
     "items": [],
     "primary": {
       "quote": [
         {
-          "type": "paragraph",
-          "text": "Aliqua eu enim veniam pariatur exercitation dolor fugiat commodo in fugiat nisi.",
+          "type": "heading2",
+          "text": "Harness world-class applications",
           "spans": []
         }
-      ]
+      ],
+      "source": "productize granular blockchains"
     }
   }
 ]

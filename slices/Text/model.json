@@ -5,23 +5,24 @@
   "description": "Text",
   "variations": [
     {
-      "id": "default-slice",
-      "name": "Default slice",
+      "id": "default",
+      "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "Text",
       "primary": {
         "text": {
+          "type": "StructuredText",
           "config": {
-            "label": "text",
-            "placeholder": "",
+            "label": "Text",
+            "placeholder": "Text with rich formatting",
             "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          },
-          "type": "StructuredText"
+            "multi": "paragraph,preformatted,heading1,heading2,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading3"
+          }
         }
       },
-      "items": {}
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
 }

@@ -1,14 +1,14 @@
 [
   {
-    "variation": "default-slice",
-    "name": "Default slice",
+    "variation": "default",
+    "name": "Default",
     "slice_type": "text",
     "items": [],
     "primary": {
       "text": [
         {
           "type": "paragraph",
-          "text": "Dolore cillum consequat ad dolore excepteur nostrud nostrud.",
+          "text": "Ut aliqua mollit deserunt qui aute cillum do sint aliqua.",
           "spans": []
         }
       ]

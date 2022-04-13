@@ -7,7 +7,7 @@ This sample blog is an excellent starting point to explore [Next.js][nextjs] and
 
 &nbsp;
 
-<img src="https://user-images.githubusercontent.com/8601064/162868106-f3359eeb-0949-4a86-82ec-4bd461828ef7.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
+<img src="https://user-images.githubusercontent.com/8601064/163122284-5b80a81e-a4fd-482e-9bd5-99b22f61175f.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
 
 &nbsp;
 
@@ -51,4 +51,4 @@ limitations under the License.
 [prismic-docs]: https://prismic.io/docs/technologies/nextjs
 [prismic-sign-up]: https://prismic.io/dashboard/signup
 [nextjs]: https://nextjs.org/
-[live-demo]: https://prismic-nextjs-blog.raulg.vercel.app/
+[live-demo]: https://nextjs-starter-prismic-blog.vercel.app/
