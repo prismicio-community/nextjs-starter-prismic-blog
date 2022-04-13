@@ -38,12 +38,12 @@ const SignUpForm = ({ settings }) => {
                 type="email"
                 placeholder="jane.doe@example.com"
                 required={true}
-                className="w-full rounded-none border-b border-slate-200 py-3 pr-7 text-slate-800 placeholder-slate-400"
+                className="w-full rounded-none border-b border-slate-200 py-3 pl-3 pr-10 text-slate-800 placeholder-slate-400"
               />
             </label>
             <button
               type="submit"
-              className="absolute top-0 right-0 bottom-0 -mx-2 flex items-center justify-center px-2 text-2xl text-slate-400"
+              className="absolute top-0 right-0 bottom-0 flex items-center justify-center px-3 text-2xl text-slate-400"
             >
               <span className="sr-only">Submit</span>
               <span aria-hidden={true}>&rarr;</span>

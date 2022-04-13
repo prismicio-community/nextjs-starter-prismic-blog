@@ -23,7 +23,7 @@ const InputField = ({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-none border-b border-slate-200 py-3 pr-7 text-slate-800 placeholder-slate-400"
+        className="w-full rounded-none border-b border-slate-200 py-3 pr-7 pl-3 text-slate-800 placeholder-slate-400"
       />
     </Field>
   );
@@ -36,7 +36,7 @@ const TextareaField = ({ label, name, placeholder, required = true }) => {
         name={name}
         required={required}
         placeholder={placeholder}
-        className="h-40 w-full rounded-none border-b border-slate-200 py-3 pr-7 text-slate-800 placeholder-slate-400"
+        className="h-40 w-full rounded-none border-b border-slate-200 py-3 pr-7 pl-3 text-slate-800 placeholder-slate-400"
       />
     </Field>
   );
