@@ -4,6 +4,7 @@ import { PrismicLink, PrismicText } from "@prismicio/react";
 
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
+import { HorizontalDivider } from "./HorizontalDivider";
 
 const Profile = ({ name, description, profilePicture }) => {
   return (
@@ -84,9 +85,7 @@ export const Header = ({
             profilePicture={settings.data.profilePicture}
           />
         )}
-        {withDivider && (
-          <hr className="h-px w-1/2 max-w-sm border-0 bg-slate-200" />
-        )}
+        {withDivider && <HorizontalDivider />}
       </div>
     </Bounded>
   );

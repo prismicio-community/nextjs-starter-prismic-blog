@@ -6,6 +6,8 @@ import { createClient, linkResolver } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
 import { Bounded } from "../../components/Bounded";
+import { Heading } from "../../components/Heading";
+import { HorizontalDivider } from "../../components/HorizontalDivider";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -13,7 +15,24 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-const Post = ({ post, navigation, settings }) => {
+const LatestArticle = ({ post }) => {
+  const date = prismicH.asDate(
+    post.data.publishDate || post.first_publication_date
+  );
+
+  return (
+    <li>
+      <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
+        <PrismicText field={post.data.title} />
+      </h1>
+      <p className="font-serif italic tracking-tighter text-slate-500">
+        {dateFormatter.format(date)}
+      </p>
+    </li>
+  );
+};
+
+const Post = ({ post, latestPosts, navigation, settings }) => {
   const date = prismicH.asDate(
     post.data.publishDate || post.first_publication_date
   );
@@ -50,6 +69,23 @@ const Post = ({ post, navigation, settings }) => {
         </Bounded>
         <SliceZone slices={post.data.slices} components={components} />
       </article>
+      {latestPosts.length > 0 && (
+        <Bounded>
+          <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
+            <HorizontalDivider />
+            <div className="w-full">
+              <Heading size="2xl" className="mb-10">
+                Latest articles
+              </Heading>
+              <ul className="grid grid-cols-1 gap-12">
+                {latestPosts.map((post) => (
+                  <LatestArticle post={post} />
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Bounded>
+      )}
     </Layout>
   );
 };
@@ -60,12 +96,20 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
   const post = await client.getByUID("blogPost", params.uid);
+  const latestPosts = await client.getAllByType("blogPost", {
+    limit: 3,
+    orderings: [
+      { field: "my.post.date", direction: "asc" },
+      { field: "document.first_publication_date", direction: "asc" },
+    ],
+  });
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
 
   return {
     props: {
       post,
+      latestPosts,
       navigation,
       settings,
     },

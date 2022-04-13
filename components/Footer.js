@@ -3,6 +3,7 @@ import * as prismicH from "@prismicio/helpers";
 
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
+import { HorizontalDivider } from "./HorizontalDivider";
 
 const SignUpForm = ({ settings }) => {
   return (
@@ -64,7 +65,7 @@ export const Footer = ({ withSignUpForm = true, settings }) => {
   return (
     <Bounded as="footer">
       <div className="grid grid-cols-1 justify-items-center gap-24">
-        <hr className="h-px w-1/2 border-0 bg-slate-200 md:max-w-sm" />
+        <HorizontalDivider />
         {withSignUpForm && <SignUpForm settings={settings} />}
         <div className="mx-auto w-full max-w-3xl text-center text-xs font-semibold tracking-tight text-slate-500">
           Proudly published using{" "}
