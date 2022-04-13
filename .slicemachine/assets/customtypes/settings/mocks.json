@@ -1,0 +1,30 @@
+{
+  "id": "5c92fc81-604d-4c3b-8ed9-efc76fc99a9f",
+  "uid": "dignissimos-omnis-rerum",
+  "type": "settings",
+  "data": {
+    "name": [
+      {
+        "type": "heading1",
+        "text": "Whiteboard best-of-breed convergence",
+        "spans": []
+      }
+    ],
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Ipsum duis Lorem quis proident quis dolor nisi irure velit.",
+        "spans": []
+      }
+    ],
+    "profilePicture": {
+      "dimensions": {
+        "width": 2000,
+        "height": 2000
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab?w=2000&h=2000&fit=crop"
+    }
+  }
+}

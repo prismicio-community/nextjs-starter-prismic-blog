@@ -1,0 +1,17 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "text",
+    "items": [],
+    "primary": {
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Ut aliqua mollit deserunt qui aute cillum do sint aliqua.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]
