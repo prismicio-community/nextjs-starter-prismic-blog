@@ -15,16 +15,16 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-const LatestArticle = ({ post }) => {
+const LatestArticle = ({ article }) => {
   const date = prismicH.asDate(
-    post.data.publishDate || post.first_publication_date
+    article.data.publishDate || article.first_publication_date
   );
 
   return (
     <li>
       <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-        <PrismicLink document={post}>
-          <PrismicText field={post.data.title} />
+        <PrismicLink document={article}>
+          <PrismicText field={article.data.title} />
         </PrismicLink>
       </h1>
       <p className="font-serif italic tracking-tighter text-slate-500">
@@ -34,9 +34,9 @@ const LatestArticle = ({ post }) => {
   );
 };
 
-const Post = ({ post, latestPosts, navigation, settings }) => {
+const Article = ({ article, latestArticles, navigation, settings }) => {
   const date = prismicH.asDate(
-    post.data.publishDate || post.first_publication_date
+    article.data.publishDate || article.first_publication_date
   );
 
   return (
@@ -48,7 +48,7 @@ const Post = ({ post, latestPosts, navigation, settings }) => {
     >
       <Head>
         <title>
-          {prismicH.asText(post.data.title)} |{" "}
+          {prismicH.asText(article.data.title)} |{" "}
           {prismicH.asText(settings.data.name)}
         </title>
       </Head>
@@ -57,21 +57,21 @@ const Post = ({ post, latestPosts, navigation, settings }) => {
           href="/"
           className="font-semibold tracking-tight text-slate-400"
         >
-          &larr; Back to posts
+          &larr; Back to articles
         </PrismicLink>
       </Bounded>
       <article>
         <Bounded className="pb-0">
           <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-            <PrismicText field={post.data.title} />
+            <PrismicText field={article.data.title} />
           </h1>
           <p className="font-serif italic tracking-tighter text-slate-500">
             {dateFormatter.format(date)}
           </p>
         </Bounded>
-        <SliceZone slices={post.data.slices} components={components} />
+        <SliceZone slices={article.data.slices} components={components} />
       </article>
-      {latestPosts.length > 0 && (
+      {latestArticles.length > 0 && (
         <Bounded>
           <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
             <HorizontalDivider />
@@ -80,8 +80,8 @@ const Post = ({ post, latestPosts, navigation, settings }) => {
                 Latest articles
               </Heading>
               <ul className="grid grid-cols-1 gap-12">
-                {latestPosts.map((post) => (
-                  <LatestArticle key={post.id} post={post} />
+                {latestArticles.map((article) => (
+                  <LatestArticle key={article.id} article={article} />
                 ))}
               </ul>
             </div>
@@ -92,17 +92,17 @@ const Post = ({ post, latestPosts, navigation, settings }) => {
   );
 };
 
-export default Post;
+export default Article;
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  const post = await client.getByUID("blogPost", params.uid);
-  const latestPosts = await client.getAllByType("blogPost", {
+  const article = await client.getByUID("article", params.uid);
+  const latestArticles = await client.getAllByType("article", {
     limit: 3,
     orderings: [
-      { field: "my.post.date", direction: "asc" },
-      { field: "document.first_publication_date", direction: "asc" },
+      { field: "my.article.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
     ],
   });
   const navigation = await client.getSingle("navigation");
@@ -110,8 +110,8 @@ export async function getStaticProps({ params, previewData }) {
 
   return {
     props: {
-      post,
-      latestPosts,
+      article,
+      latestArticles,
       navigation,
       settings,
     },
@@ -121,10 +121,10 @@ export async function getStaticProps({ params, previewData }) {
 export async function getStaticPaths() {
   const client = createClient();
 
-  const posts = await client.getAllByType("blogPost");
+  const articles = await client.getAllByType("article");
 
   return {
-    paths: posts.map((post) => prismicH.asLink(post, linkResolver)),
+    paths: articles.map((article) => prismicH.asLink(article, linkResolver)),
     fallback: false,
   };
 }

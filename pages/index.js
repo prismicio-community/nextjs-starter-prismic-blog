@@ -37,19 +37,19 @@ const getExcerpt = (slices) => {
   }
 };
 
-const Post = ({ post }) => {
+const Article = ({ article }) => {
   const featuredImage =
-    (prismicH.isFilled.image(post.data.featuredImage) &&
-      post.data.featuredImage) ||
-    findFirstImage(post.data.slices);
+    (prismicH.isFilled.image(article.data.featuredImage) &&
+      article.data.featuredImage) ||
+    findFirstImage(article.data.slices);
   const date = prismicH.asDate(
-    post.data.publishDate || post.first_publication_date
+    article.data.publishDate || article.first_publication_date
   );
-  const excerpt = getExcerpt(post.data.slices);
+  const excerpt = getExcerpt(article.data.slices);
 
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
-      <PrismicLink document={post} tabIndex="-1">
+      <PrismicLink document={article} tabIndex="-1">
         <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
           {prismicH.isFilled.image(featuredImage) && (
             <NextImage
@@ -66,8 +66,8 @@ const Post = ({ post }) => {
       </PrismicLink>
       <div className="grid grid-cols-1 gap-3 md:col-span-2">
         <Heading as="h2">
-          <PrismicLink document={post}>
-            <PrismicText field={post.data.title} />
+          <PrismicLink document={article}>
+            <PrismicText field={article.data.title} />
           </PrismicLink>
         </Heading>
         <p className="font-serif italic tracking-tighter text-slate-500">
@@ -83,7 +83,7 @@ const Post = ({ post }) => {
   );
 };
 
-const Index = ({ posts, navigation, settings }) => {
+const Index = ({ articles, navigation, settings }) => {
   return (
     <Layout
       withHeaderDivider={false}
@@ -95,8 +95,8 @@ const Index = ({ posts, navigation, settings }) => {
       </Head>
       <Bounded size="widest">
         <ul className="grid grid-cols-1 gap-16">
-          {posts.map((post) => (
-            <Post key={post.id} post={post} />
+          {articles.map((article) => (
+            <Article key={article.id} article={article} />
           ))}
         </ul>
       </Bounded>
@@ -109,10 +109,10 @@ export default Index;
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const posts = await client.getAllByType("blogPost", {
+  const articles = await client.getAllByType("article", {
     orderings: [
-      { field: "my.post.date", direction: "asc" },
-      { field: "document.first_publication_date", direction: "asc" },
+      { field: "my.article.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
     ],
   });
   const navigation = await client.getSingle("navigation");
@@ -120,7 +120,7 @@ export async function getStaticProps({ previewData }) {
 
   return {
     props: {
-      posts,
+      articles,
       navigation,
       settings,
     },

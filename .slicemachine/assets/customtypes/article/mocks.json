@@ -1,0 +1,24 @@
+{
+  "id": "bb44b119-fd37-4b02-822f-dd46c76d10e0",
+  "uid": "animi-quidem-aspernatur",
+  "type": "article",
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Target integrated bandwidth",
+        "spans": []
+      }
+    ],
+    "publishDate": "2014-08-18",
+    "featuredImage": {
+      "dimensions": {
+        "width": 2000,
+        "height": 1500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=2000&h=1500&fit=crop"
+    }
+  }
+}

@@ -9,7 +9,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/posts",
+        source: "/articles",
         destination: "/",
       },
     ];

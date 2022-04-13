@@ -1,6 +1,6 @@
 {
-  "id": "blogPost",
-  "label": "Blog Post",
+  "id": "article",
+  "label": "Article",
   "repeatable": true,
   "status": true,
   "json": {
@@ -9,14 +9,14 @@
         "type": "UID",
         "config": {
           "label": "UID",
-          "placeholder": "URL slug for the post"
+          "placeholder": "URL slug for the article"
         }
       },
       "title": {
         "type": "StructuredText",
         "config": {
           "label": "Title",
-          "placeholder": "Title of the post",
+          "placeholder": "Title of the article",
           "allowTargetBlank": false,
           "single": "heading1"
         }
@@ -25,7 +25,7 @@
         "type": "Date",
         "config": {
           "label": "Publish Date",
-          "placeholder": "Date the post was published"
+          "placeholder": "Date the article was published"
         }
       },
       "featuredImage": {

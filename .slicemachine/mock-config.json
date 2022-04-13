@@ -24,7 +24,7 @@
         }
       }
     },
-    "blogPost": {
+    "article": {
       "title": {
         "config": {
           "patternType": "HEADING",
