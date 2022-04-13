@@ -38,7 +38,7 @@ const SignUpForm = ({ settings }) => {
                 type="email"
                 placeholder="jane.doe@example.com"
                 required={true}
-                className="w-full border-b border-slate-200 py-3 pr-7 text-slate-800 placeholder-slate-400"
+                className="w-full rounded-none border-b border-slate-200 py-3 pr-7 text-slate-800 placeholder-slate-400"
               />
             </label>
             <button
