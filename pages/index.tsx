@@ -9,10 +9,6 @@ import { SetupRepo } from "../components/SetupRepo";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import Header from "../components/Home/Header/Header";
-import { BlogHome, Homepage } from "../src/generated/graphql";
-import { DeepNonNullRequired } from "../types";
-import Image from "next/image";
-import { StyledContainer } from "@nextui-org/react";
 import { HomepageDocument } from "../types.generated";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
