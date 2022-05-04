@@ -1,0 +1,633 @@
+{
+  "uid": "start-here",
+  "title": [
+    { "type": "heading1", "content": { "text": "Start Here", "spans": [] } }
+  ],
+  "featuredImage": {
+    "origin": {
+      "id": "Ylg8bhcAACYA-hAC",
+      "url": "https://prismic-io.s3.amazonaws.com/sam-220414-next-02/66893f2b-489f-4b8f-af99-9f49b0289f3f_tyler-lastovich-etuPl3bjiOk-unsplash.jpg",
+      "width": 3970,
+      "height": 2717
+    },
+    "width": 2000,
+    "height": 1500,
+    "url": "https://images.prismic.io/sam-220414-next-02/66893f2b-489f-4b8f-af99-9f49b0289f3f_tyler-lastovich-etuPl3bjiOk-unsplash.jpg?auto=compress,format&rect=174,0,3623,2717&w=2000&h=1500",
+    "edit": {
+      "background": "#fff",
+      "zoom": 0.5520794994479205,
+      "crop": { "x": -96, "y": 0 }
+    },
+    "credits": null,
+    "alt": null,
+    "provider": "imgix",
+    "thumbnails": {}
+  },
+  "slices": [
+    {
+      "key": "image$28f5fb92-1950-4cc2-8694-a835efb919b7",
+      "value": {
+        "variation": "default",
+        "items": [{}],
+        "primary": {
+          "image": {
+            "origin": {
+              "id": "Ylg8bhcAACYA-hAC",
+              "url": "https://prismic-io.s3.amazonaws.com/sam-220414-next-02/66893f2b-489f-4b8f-af99-9f49b0289f3f_tyler-lastovich-etuPl3bjiOk-unsplash.jpg",
+              "width": 3970,
+              "height": 2717
+            },
+            "width": 3970,
+            "height": 2717,
+            "url": "https://images.prismic.io/sam-220414-next-02/66893f2b-489f-4b8f-af99-9f49b0289f3f_tyler-lastovich-etuPl3bjiOk-unsplash.jpg?auto=compress,format",
+            "edit": {
+              "background": "#fff",
+              "zoom": 1,
+              "crop": { "x": 0, "y": 0 }
+            },
+            "credits": null,
+            "alt": null,
+            "provider": "imgix",
+            "thumbnails": {}
+          },
+          "caption": [
+            {
+              "type": "paragraph",
+              "content": { "text": "It's a new adventure.", "spans": [] }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "key": "text$9996959b-462d-4947-bdbe-898f772afac1",
+      "value": {
+        "variation": "default",
+        "primary": {
+          "text": [
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Congratulations on launching your Prismic blog!",
+                "spans": []
+              }
+            },
+            {
+              "type": "heading1",
+              "content": { "text": "Using this blog", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "To get started, go to prismic.io/dashboard, click on the repository for this blog, and start editing.",
+                "spans": [
+                  {
+                    "start": 22,
+                    "end": 42,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": { "title": "https://prismic.io/dashboard" },
+                      "url": "https://prismic.io/dashboard",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "heading2",
+              "content": { "text": "Write an article", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "To create a new article, click on the green pencil icon in the top-right corner of the screen, then select Article. After adding some content, click Save and then Publish.",
+                "spans": [
+                  { "start": 107, "end": 114, "type": "strong" },
+                  { "start": 149, "end": 153, "type": "strong" },
+                  { "start": 163, "end": 170, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Your article will appear in the homepage feed.",
+                "spans": []
+              }
+            },
+            {
+              "type": "heading2",
+              "content": { "text": "Create a page", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "To create a page, click on the green pencil icon, then select Page.",
+                "spans": [{ "start": 62, "end": 66, "type": "strong" }]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Your new page will be accessible by its URL, but it won't appear on the website automatically. To let users discover it, add it to the navigation.",
+                "spans": []
+              }
+            },
+            {
+              "type": "heading2",
+              "content": { "text": "Update the navigation", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "To add a page to your navigation menu, go to the document list and open the Navigation document. In the Links group, click Add a new element in Links. Select the page to add and fill in a label.",
+                "spans": [
+                  { "start": 76, "end": 86, "type": "strong" },
+                  { "start": 104, "end": 109, "type": "strong" },
+                  { "start": 123, "end": 149, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "heading2",
+              "content": { "text": "Preview documents", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "In your repository, go to Settings > Previews. Under Create a New Preview, fill in the three fields:",
+                "spans": [
+                  { "start": 26, "end": 45, "type": "em" },
+                  { "start": 53, "end": 73, "type": "em" }
+                ]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "a name (like Development or Production)",
+                "spans": [
+                  { "start": 13, "end": 24, "type": "strong" },
+                  { "start": 28, "end": 38, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "the domain where your app is running (like http://localhost:3000 or https://www.yoursite.com)",
+                "spans": [
+                  { "start": 43, "end": 64, "type": "strong" },
+                  { "start": 68, "end": 92, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "/api/preview for the Link Resolver",
+                "spans": [{ "start": 0, "end": 12, "type": "strong" }]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Now, go to a draft document and click the eye icon in the top-right corner.",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "To learn more about how to configure previews, read Preview Drafts in Next.js in the Prismic documentation.",
+                "spans": [
+                  {
+                    "start": 52,
+                    "end": 77,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/preview-content-nextjs"
+                      },
+                      "url": "https://prismic.io/docs/technologies/preview-content-nextjs",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "heading1",
+              "content": { "text": "Customizing this blog", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "This blog is preconfigured with Prismic. It has three Prismic packages installed:",
+                "spans": []
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "@prismicio/client provides helpers for fetching content from Prismic",
+                "spans": [{ "start": 0, "end": 17, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "@prismicio/react provides React components for rendering content from Prismic",
+                "spans": [{ "start": 0, "end": 16, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "@prismicio/next provides a wrapper component to configure Prismic previews",
+                "spans": [{ "start": 0, "end": 15, "type": "strong" }]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "These packages are already integrated and employed in this app. Take a look at the code to see how they're used.",
+                "spans": []
+              }
+            },
+            {
+              "type": "heading2",
+              "content": { "text": "Edit the code", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "There are two steps to rendering content from Prismic in your Next.js project:",
+                "spans": []
+              }
+            },
+            {
+              "type": "o-list-item",
+              "content": {
+                "text": "Fetch content from the Prismic API using @prismicio/client.",
+                "spans": [{ "start": 41, "end": 58, "type": "strong" }]
+              }
+            },
+            {
+              "type": "o-list-item",
+              "content": {
+                "text": "Template the content using components from @prismicio/react.",
+                "spans": [{ "start": 43, "end": 59, "type": "strong" }]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Here are some of the files in your project that you can edit:",
+                "spans": []
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "prismicio.js - This file includes configuration for @prismicio/client and exports useful API helpers.",
+                "spans": [
+                  { "start": 0, "end": 12, "type": "strong" },
+                  { "start": 52, "end": 69, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/_app.js - This is your app component, which includes configuration for @prismicio/react and @prismicio/next.",
+                "spans": [
+                  { "start": 0, "end": 13, "type": "strong" },
+                  { "start": 77, "end": 93, "type": "strong" },
+                  { "start": 98, "end": 113, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/index.js - This is the app homepage. It queries and renders a list of articles and some config from the Prismic API.",
+                "spans": [{ "start": 0, "end": 14, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/[uid].js - This is the page component, which queries and renders a page document from your Prismic repository based on the UID (unique identifier).",
+                "spans": [{ "start": 0, "end": 14, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/articles/[uid].js - This is the article component, which queries and renders an article document from your Prismic repository based on the UID.",
+                "spans": [{ "start": 0, "end": 23, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/api/contact.js - This is the API endpoint for your contact form. To use the contact form, send a POST request to a back end from this endpoint.",
+                "spans": [{ "start": 0, "end": 20, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/api/sign-up.js - This is the API endpoint for your newsletter form. To allow signups, send a POST request to a newsletter service like Mailchimp.",
+                "spans": [{ "start": 0, "end": 20, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "slices/*/index.js - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.",
+                "spans": [
+                  { "start": 0, "end": 17, "type": "strong" },
+                  { "start": 54, "end": 62, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "These are important files that you should leave as is:",
+                "spans": []
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/api/exit-preview.js - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.",
+                "spans": [{ "start": 0, "end": 25, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/api/preview.js - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.",
+                "spans": [{ "start": 0, "end": 20, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "pages/slice-simulator.js - Do not edit or delete this file. This file simulates your Slice components in development.",
+                "spans": [{ "start": 0, "end": 24, "type": "strong" }]
+              }
+            },
+            {
+              "type": "list-item",
+              "content": {
+                "text": "slices/ - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.js file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).",
+                "spans": [
+                  { "start": 0, "end": 7, "type": "strong" },
+                  { "start": 163, "end": 171, "type": "strong" }
+                ]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Learn more about how edit your components with Fetch Data in Next.js and Template Content in Next.js.",
+                "spans": [
+                  {
+                    "start": 47,
+                    "end": 68,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/fetch-data-nextjs"
+                      },
+                      "url": "https://prismic.io/docs/technologies/fetch-data-nextjs",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "start": 73,
+                    "end": 100,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/template-content-nextjs"
+                      },
+                      "url": "https://prismic.io/docs/technologies/template-content-nextjs",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "Styling in this project is implemented with Tailwind CSS. See the Tailwind docs for more info.",
+                "spans": [
+                  {
+                    "start": 44,
+                    "end": 56,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": { "title": "https://tailwindcss.com/" },
+                      "url": "https://tailwindcss.com/",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "heading2",
+              "content": { "text": "Deploy to the web", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "To put your project online, see Deploy your Next.js App.",
+                "spans": [
+                  {
+                    "start": 32,
+                    "end": 55,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/deploy-nextjs"
+                      },
+                      "url": "https://prismic.io/docs/technologies/deploy-nextjs",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "heading2",
+              "content": {
+                "text": "Edit content models with Slice Machine",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read Model Content in Next.js.",
+                "spans": [
+                  {
+                    "start": 286,
+                    "end": 310,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/model-content-nextjs"
+                      },
+                      "url": "https://prismic.io/docs/technologies/model-content-nextjs",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read Define Paths in Next.js.",
+                "spans": [
+                  {
+                    "start": 125,
+                    "end": 148,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/define-paths-nextjs"
+                      },
+                      "url": "https://prismic.io/docs/technologies/define-paths-nextjs",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "heading2",
+              "content": {
+                "text": "Handle contact and newsletter form submissions",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "The contact and newsletter forms both send requests to active API endpoints. The endpoints do not do anything with the data that they receive. ",
+                "spans": []
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "To make the forms functional, add a POST request from the respective endpoints to appropriate services. For instance, you could send the contact form data to Supabase and the newsletter form data to Mailchimp.",
+                "spans": []
+              }
+            },
+            {
+              "type": "heading1",
+              "content": { "text": "Learn more", "spans": [] }
+            },
+            {
+              "type": "paragraph",
+              "content": {
+                "text": "For the official Prismic documentation, see Prismic's guide for Next.js or the technical references for the installed Prismic packages.",
+                "spans": [
+                  {
+                    "start": 44,
+                    "end": 71,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/nextjs"
+                      },
+                      "url": "https://prismic.io/docs/technologies/nextjs",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "start": 79,
+                    "end": 134,
+                    "type": "hyperlink",
+                    "data": {
+                      "preview": {
+                        "title": "https://prismic.io/docs/technologies/technical-references"
+                      },
+                      "url": "https://prismic.io/docs/technologies/technical-references",
+                      "target": "_blank"
+                    }
+                  }
+                ]
+              }
+            },
+            { "type": "paragraph", "content": { "text": "", "spans": [] } }
+          ]
+        },
+        "items": [{}]
+      }
+    },
+    {
+      "key": "quote$5fbf14bc-3aa2-451b-ab61-7e9bb9258888",
+      "value": {
+        "variation": "default",
+        "items": [{}],
+        "primary": {
+          "quote": [
+            {
+              "type": "heading2",
+              "content": {
+                "text": "A ship in port is safe, but that is not what ships are for. Sail out to sea and do new things.",
+                "spans": []
+              }
+            }
+          ],
+          "source": "Grace Hopper"
+        }
+      }
+    }
+  ],
+  "uid_TYPE": "UID",
+  "uid_POSITION": 0,
+  "title_TYPE": "StructuredText",
+  "title_POSITION": 1,
+  "publishDate_TYPE": "Date",
+  "publishDate_POSITION": 2,
+  "featuredImage_TYPE": "Image",
+  "featuredImage_POSITION": 3,
+  "slices_TYPE": "Slices",
+  "slices_POSITION": 4,
+  "slices.image_TYPE": "SharedSlice",
+  "slices.image_POSITION": 5,
+  "slices.image.variations.default.primary.image_TYPE": "Image",
+  "slices.image.variations.default.primary.image_POSITION": 6,
+  "slices.image.variations.default.primary.caption_TYPE": "StructuredText",
+  "slices.image.variations.default.primary.caption_POSITION": 7,
+  "slices.image.variations.wide.primary.image_TYPE": "Image",
+  "slices.image.variations.wide.primary.image_POSITION": 8,
+  "slices.image.variations.wide.primary.caption_TYPE": "StructuredText",
+  "slices.image.variations.wide.primary.caption_POSITION": 9,
+  "slices.quote_TYPE": "SharedSlice",
+  "slices.quote_POSITION": 10,
+  "slices.quote.variations.default.primary.quote_TYPE": "StructuredText",
+  "slices.quote.variations.default.primary.quote_POSITION": 11,
+  "slices.quote.variations.default.primary.source_TYPE": "Text",
+  "slices.quote.variations.default.primary.source_POSITION": 12,
+  "slices.text_TYPE": "SharedSlice",
+  "slices.text_POSITION": 13,
+  "slices.text.variations.default.primary.text_TYPE": "StructuredText",
+  "slices.text.variations.default.primary.text_POSITION": 14,
+  "slices.contact_form_TYPE": "SharedSlice",
+  "slices.contact_form_POSITION": 15,
+  "slugs_INTERNAL": ["start-here"],
+  "uids_INTERNAL": ["start-here", "here-you-go..."]
+}
