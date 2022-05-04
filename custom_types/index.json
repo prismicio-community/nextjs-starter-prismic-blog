@@ -1,0 +1,1 @@
+[{"id":"settings","name":"Settings","repeatable":false,"value":"settings.json"},{"id":"navigation","name":"Navigation","repeatable":false,"value":"navigation.json"},{"id":"page","name":"Page","repeatable":true,"value":"page.json"},{"id":"article","name":"Article","repeatable":true,"value":"article.json"}]
