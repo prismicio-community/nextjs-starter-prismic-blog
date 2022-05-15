@@ -4,7 +4,7 @@
   "author": "solimer",
   "license": "UNLICENSED",
   "dependencies": {
-    "@nextui-org/react": "^1.0.0-beta.6",
+    "@nextui-org/react": "^1.0.0-beta.7",
     "@plaiceholder/next": "^2.3.0",
     "@prismicio/client": "^6.4.3",
     "@prismicio/helpers": "^2.3.0",
