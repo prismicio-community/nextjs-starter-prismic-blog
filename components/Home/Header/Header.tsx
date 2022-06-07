@@ -1,24 +1,17 @@
 import { Container, StyledContainer } from "@nextui-org/react";
 import { PrismicNextImage } from "@prismicio/next";
-import Image from "next/image";
 import { IHeaderProps } from "./interfaces";
 import NavigationBar from "./NavigationBar";
 
 const Header: React.FC<IHeaderProps> = ({ navItems, heroImage, lqipImage }) => {
   return (
     <>
-      <StyledContainer css={{ img: { transition: "0.3s ease" } }}>
-        {/* <Image
-          src={heroImage.url ?? ""}
-          layout="responsive"
-          alt={heroImage.alt ?? ""}
-          width={heroImage.dimensions?.width}
-          height={heroImage.dimensions?.height}
-          blurDataURL={lqipImage}
-          placeholder="blur"
-        /> */}
-        <PrismicNextImage field={heroImage} placeholder="blur" blurDataURL={lqipImage} />
-      </StyledContainer>
+      <PrismicNextImage
+        field={heroImage}
+        placeholder="blur"
+        blurDataURL={lqipImage}
+        layout="responsive"
+      />
       <Container
         fluid
         justify="center"
