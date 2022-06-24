@@ -1,6 +1,6 @@
 import Head from "next/head";
-import NextImage from "next/image";
 import { PrismicLink, PrismicText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
@@ -52,12 +52,8 @@ const Article = ({ article }) => {
       <PrismicLink document={article} tabIndex="-1">
         <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
           {prismicH.isFilled.image(featuredImage) && (
-            <NextImage
-              src={prismicH.asImageSrc(featuredImage, {
-                w: undefined,
-                h: undefined,
-              })}
-              alt={featuredImage.alt}
+            <PrismicNextImage
+              field={featuredImage}
               layout="fill"
               className="object-cover"
             />
