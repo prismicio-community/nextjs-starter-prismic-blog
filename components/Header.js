@@ -1,6 +1,6 @@
-import NextImage from "next/image";
 import * as prismicH from "@prismicio/helpers";
 import { PrismicLink, PrismicText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
@@ -13,12 +13,8 @@ const Profile = ({ name, description, profilePicture }) => {
         <PrismicLink href="/" tabIndex="-1">
           <div className="relative h-40 w-40 overflow-hidden rounded-full bg-slate-300">
             {prismicH.isFilled.image(profilePicture) && (
-              <NextImage
-                src={prismicH.asImageSrc(profilePicture, {
-                  w: undefined,
-                  h: undefined,
-                })}
-                alt={profilePicture.alt}
+              <PrismicNextImage
+                field={profilePicture}
                 layout="fill"
                 className="object-cover"
               />

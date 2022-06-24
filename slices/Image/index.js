@@ -1,6 +1,6 @@
-import NextImage from "next/image";
 import * as prismicH from "@prismicio/helpers";
 import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 
 import { Bounded } from "../../components/Bounded";
 
@@ -12,16 +12,7 @@ const Image = ({ slice }) => {
       <figure className="grid grid-cols-1 gap-4">
         {prismicH.isFilled.image(image) && (
           <div className="bg-gray-100">
-            <NextImage
-              src={prismicH.asImageSrc(image, {
-                w: undefined,
-                h: undefined,
-              })}
-              alt={image.alt}
-              width={image.dimensions.width}
-              height={image.dimensions.height}
-              layout="responsive"
-            />
+            <PrismicNextImage field={image} layout="responsive" />
           </div>
         )}
         {prismicH.isFilled.richText(slice.primary.caption) && (
