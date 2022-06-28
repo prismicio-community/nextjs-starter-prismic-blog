@@ -27,6 +27,10 @@ This command will do the following:
 2. Create a new Prismic content repository.
 3. Start a new Next.js project using this starter.
 
+## Documentation
+
+To learn how to work with your new project, [**see this starter's docs**][starter-docs].
+
 To learn more about working with Prismic, [**see the Prismic docs**][prismic-docs].
 
 ## License
@@ -50,5 +54,6 @@ limitations under the License.
 [prismic]: https://prismic.io/
 [prismic-docs]: https://prismic.io/docs/technologies/nextjs
 [prismic-sign-up]: https://prismic.io/dashboard/signup
+[starter-docs]: ./docs/README.md
 [nextjs]: https://nextjs.org/
 [live-demo]: https://nextjs-starter-prismic-blog.vercel.app/
