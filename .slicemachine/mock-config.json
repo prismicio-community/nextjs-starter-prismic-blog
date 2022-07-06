@@ -66,7 +66,7 @@
           "text": {
             "config": {
               "patternType": "PARAGRAPH",
-              "blocks": 1
+              "blocks": 4
             }
           }
         }
@@ -80,11 +80,18 @@
               "patternType": "PARAGRAPH",
               "blocks": 1
             }
+          },
+          "image": {
+            "content": "https://images.prismic.io/nextjs-starter-prismic-blog/bbde7d62-670b-4592-b76c-4047d0cf1635_jake-melara-Yh6K2eTr_FY-unsplash.jpg"
           }
         }
       },
       "wide": {
-        "primary": {}
+        "primary": {
+          "image": {
+            "content": "https://images.unsplash.com/photo-1493397212122-2b85dda8106b"
+          }
+        }
       }
     },
     "Quote": {

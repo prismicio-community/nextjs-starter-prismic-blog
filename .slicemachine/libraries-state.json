@@ -37,7 +37,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/ContactForm/default/preview.png",
+            "width": 800,
+            "height": 517
+          }
+        }
       },
       "image": {
         "library": "slices",
@@ -122,12 +128,12 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"
+                "url": "https://images.prismic.io/nextjs-starter-prismic-blog/bbde7d62-670b-4592-b76c-4047d0cf1635_jake-melara-Yh6K2eTr_FY-unsplash.jpg?w=900&h=500&fit=crop"
               },
               "caption": [
                 {
                   "type": "paragraph",
-                  "text": "Sunt eiusmod anim velit occaecat.",
+                  "text": "Commodo magna dolor est aute in enim do in minim excepteur pariatur duis culpa dolor. Fugiat non ipsum cupidatat proident velit aute Lorem cillum reprehenderit Lorem occaecat esse cillum. Aute aliqua dolor ad elit et.",
                   "spans": []
                 }
               ]
@@ -146,12 +152,12 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=900&h=500&fit=crop"
               },
               "caption": [
                 {
                   "type": "paragraph",
-                  "text": "Pariatur sit exercitation velit nisi fugiat esse incididunt eiusmod do cupidatat. Mollit sunt cupidatat Lorem nisi consectetur irure. Non veniam Lorem reprehenderit esse officia sit ullamco ex.",
+                  "text": "Elit sunt cillum deserunt in qui culpa anim veniam amet dolore consectetur pariatur magna dolor ex.",
                   "spans": []
                 }
               ]
@@ -162,7 +168,18 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Image/default/preview.png",
+            "width": 800,
+            "height": 586
+          },
+          "wide": {
+            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Image/wide/preview.png",
+            "width": 800,
+            "height": 538
+          }
+        }
       },
       "quote": {
         "library": "slices",
@@ -226,7 +243,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Quote/default/preview.png",
+            "width": 800,
+            "height": 178
+          }
+        }
       },
       "text": {
         "library": "slices",
@@ -252,7 +275,7 @@
                     "label": "Text",
                     "placeholder": "Text with rich formatting",
                     "allowTargetBlank": true,
-                    "multi": "paragraph,preformatted,heading1,heading2,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading3"
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
                   }
                 }
               },
@@ -271,7 +294,22 @@
               "text": [
                 {
                   "type": "paragraph",
-                  "text": "Ut aliqua mollit deserunt qui aute cillum do sint aliqua.",
+                  "text": "Nostrud non tempor anim officia ad mollit minim ut culpa enim magna. Esse qui labore consectetur amet mollit tempor non reprehenderit ex occaecat aliquip sunt quis veniam. Veniam amet ad occaecat ipsum exercitation consequat dolore fugiat ad minim consequat voluptate.",
+                  "spans": []
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sit non laborum excepteur. Commodo dolore sint proident excepteur veniam aute ullamco ullamco laboris labore velit nostrud id. Ea quis incididunt adipisicing est aute commodo proident.",
+                  "spans": []
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Occaecat commodo sint fugiat magna labore mollit irure exercitation aute ipsum velit irure. Cillum culpa ea veniam.",
+                  "spans": []
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Excepteur et pariatur excepteur id laborum ad consectetur.",
                   "spans": []
                 }
               ]
@@ -282,7 +320,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Text/default/preview.png",
+            "width": 800,
+            "height": 489
+          }
+        }
       }
     }
   }
