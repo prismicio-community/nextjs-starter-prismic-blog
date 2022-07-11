@@ -27,7 +27,7 @@ The commands will do the following:
 2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
 3. Create a new Prismic content repository with sample content.
 
-When you're ready to start your app, run the following command:
+When you're ready to start your project, run the following command:
 
 ```sh
 npm run dev
