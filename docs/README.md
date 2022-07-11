@@ -13,19 +13,25 @@ This page covers how to use **Prismic + Next.js Blog Starter** with Prismic.
 
 ## 🚀 Quick Start
 
-To start a new project using this starter, run the following command in your terminal:
+To start a new project using this starter, run the following commands in your terminal:
 
 ```sh
-npx prismic-cli@latest theme \
-  --theme-url https://github.com/prismicio-community/nextjs-starter-prismic-blog \
-  --conf sm.json
+npx degit prismicio-community/nextjs-starter-prismic-blog your-project-name
+cd your-project-name
+npx @slicemachine/init
 ```
 
-This command will do the following:
+The commands will do the following:
 
-1. Ask you to log in to Prismic or [create an account](https://prismic.io/dashboard/signup).
-2. Create a new Prismic content repository.
-3. Start a new Next.js project using this starter.
+1. Start a new Next.js project using this starter.
+2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
+3. Create a new Prismic content repository with sample content.
+
+When you're ready to start your project, run the following command:
+
+```sh
+npm run dev
+```
 
 To learn more about working with Prismic, [**see the Prismic docs**](https://prismic.io/docs/technologies/nextjs).
 
@@ -51,7 +57,7 @@ To add a page to your navigation menu, go to the document list and open the **Na
 
 ### Preview documents
 
-In your repository, go to *Settings > Previews*. Under *Create a New Preview*, fill in the three fields:
+In your repository, go to _Settings > Previews_. Under _Create a New Preview_, fill in the three fields:
 
 - a name (like **Development** or **Production**)
 - the domain where your app is running (like <http://localhost:3000> or <https://www.yoursite.com>)
@@ -118,3 +124,4 @@ For the official Prismic documentation, see [Prismic's guide for Next.js](https:
 [prismic-sign-up]: https://prismic.io/dashboard/signup
 [nextjs]: https://nextjs.org/
 [live-demo]: https://nextjs-starter-prismic-blog.vercel.app/
+
