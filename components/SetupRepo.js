@@ -16,7 +16,7 @@ export const SetupRepo = () => {
         <h1 className="text-center text-4xl font-black md:text-5xl">
           Good job!
         </h1>
-        <p>You're halfway done with setting up your Prismic website</p>
+        <p>You&apos;re halfway done with setting up your Prismic website</p>
         <p>
           Just visit your{" "}
           <PrismicLink

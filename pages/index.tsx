@@ -16,7 +16,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   let homepage: HomepageDocument['data'] | null = null;
   try {
-    const result = await client.getSingle<HomepageDocument>("homepage");
+    const result = await client.getSingle("homepage");
     homepage = result.data;
   } catch {
     // If we reach this line, it means a Blog Home document was not created
