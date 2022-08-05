@@ -1,3 +1,8 @@
+// NOTE: This file will be removed automatically after creating a new project
+// using this starter.
+//
+// This file is only used to test the starter between dependency upgrades.
+
 const http = require("http");
 const { spawn } = require("child_process");
 
@@ -29,6 +34,10 @@ Promise.all([
   }
 });
 
+/**
+ * Spawns a child process which starts an HTTP server and checks periodically
+ * for access.
+ */
 function startProcessAndCheckAccess({
   command,
   commandArgs,
@@ -52,7 +61,6 @@ function startProcessAndCheckAccess({
       http
         .get(url, (res) => {
           if (res.statusCode >= 200 && res.statusCode < 300) {
-            ok = true;
             clearInterval(checker);
             resolve();
           }
@@ -63,16 +71,10 @@ function startProcessAndCheckAccess({
     }, checkInterval);
   })
     .then(() => {
-      return {
-        ok: true,
-        attempts,
-      };
+      return { ok: true, attempts };
     })
     .catch(() => {
-      return {
-        ok: false,
-        attempts,
-      };
+      return { ok: false, attempts };
     })
     .finally(() => {
       child.kill();
