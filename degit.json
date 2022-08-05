@@ -1,6 +1,6 @@
 [
   {
     "action": "remove",
-    "files": [".github", "test-dev-access.mjs"]
+    "files": [".github"]
   }
 ]
