@@ -4,7 +4,7 @@ const { spawn } = require("child_process");
 Promise.all([
   startProcessAndCheckAccess({
     command: "npm",
-    commandArgs: ["run", "slice-machine"],
+    commandArgs: ["run", "slicemachine"],
     url: "http://localhost:9999",
   }),
   startProcessAndCheckAccess({
@@ -13,10 +13,14 @@ Promise.all([
     url: "http://localhost:3000",
   }),
 ]).then((res) => {
-  console.log(`Slice Machine is accessible: ${res[0]}`);
-  console.log(`App development environment is accessible: ${res[1]}`);
+  console.log(
+    `Slice Machine is accessible: ${res[0].ok} (attempts: ${res[0].attempts})`
+  );
+  console.log(
+    `App development environment is accessible: ${res[1].ok} (attempts: ${res[1].attempts})`
+  );
 
-  if (res.every((ok) => ok === true)) {
+  if (res.every((r) => r.ok === true)) {
     console.log(`PASSED`);
     process.exit(0);
   } else {
@@ -29,18 +33,18 @@ function startProcessAndCheckAccess({
   command,
   commandArgs,
   url,
-  maxAttempts = 3,
+  maxAttempts = 10,
   checkInterval = 1000,
 }) {
   const child = spawn(command, commandArgs);
 
-  return new Promise((resolve, reject) => {
-    let attempts = 0;
+  let attempts = 0;
 
+  return new Promise((resolve, reject) => {
     const checker = setInterval(() => {
       attempts++;
 
-      if (attempts > maxAttempts) {
+      if (attempts >= maxAttempts) {
         clearInterval(checker);
         reject();
       }
@@ -59,10 +63,16 @@ function startProcessAndCheckAccess({
     }, checkInterval);
   })
     .then(() => {
-      return true;
+      return {
+        ok: true,
+        attempts,
+      };
     })
     .catch(() => {
-      return false;
+      return {
+        ok: false,
+        attempts,
+      };
     })
     .finally(() => {
       child.kill();
