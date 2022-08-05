@@ -6,31 +6,27 @@
 import { get } from "node:http";
 import { spawn } from "node:child_process";
 
-(async function () {
-  const child = spawn("npm", ["run", "dev"]);
+const child = spawn("npm", ["run", "dev"]);
 
-  const res = await Promise.all([
-    checkAccess("http://localhost:9999"),
-    checkAccess("http://localhost:3000"),
-  ]);
+const res = await Promise.all([
+  checkAccess("http://localhost:9999"),
+  checkAccess("http://localhost:3000"),
+]);
 
-  child.kill();
+child.kill();
 
-  console.log(
-    `Slice Machine is accessible: ${res[0].ok} (attempts: ${res[0].attempts})`
-  );
-  console.log(
-    `App development environment is accessible: ${res[1].ok} (attempts: ${res[1].attempts})`
-  );
+console.log(
+  `Slice Machine is accessible: ${res[0].ok} (attempts: ${res[0].attempts})`
+);
+console.log(
+  `App development environment is accessible: ${res[1].ok} (attempts: ${res[1].attempts})`
+);
 
-  if (res.every((r) => r.ok === true)) {
-    console.log(`PASSED`);
-    process.exitCode = 0;
-  } else {
-    console.log(`FAILED`);
-    process.exitCode = 1;
-  }
-})();
+if (res.every((r) => r.ok === true)) {
+  console.log(`PASSED`);
+} else {
+  console.error(`FAILED`)
+}
 
 /**
  * Checks for access to a given URL at a set interval.
