@@ -1,5 +1,8 @@
-import * as prismicNext from "@prismicio/next";
+export default async function handler(_req, res) {
+  res.setHeader("Cache-Control", "no-store; max-age=0");
 
-export default async function handler(req, res) {
-  prismicNext.exitPreview({ res, req });
+  // Exit the current user from Preview Mode.
+  res.clearPreviewData();
+
+  res.json({ success: true });
 }
