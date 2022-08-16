@@ -4,5 +4,5 @@ export default async function handler(_req, res) {
   // Exit the current user from Preview Mode.
   res.clearPreviewData();
 
-  res.json({ success: true });
+  res.json({ success: true, foo: "bar" });
 }
