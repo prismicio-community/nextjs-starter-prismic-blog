@@ -1,6 +1,4 @@
-export default async function handler(_req, res) {
-  res.setHeader("Cache-Control", "no-store; max-age=0");
-
+export default function handler(_req, res) {
   // Exit the current user from Preview Mode.
   res.clearPreviewData();
 
