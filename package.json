@@ -30,7 +30,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "autoprefixer": "^10.4.8",
     "concurrently": "^7.4.0",
-    "eslint": "8.23.0",
+    "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
