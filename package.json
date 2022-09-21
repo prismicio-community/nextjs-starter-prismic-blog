@@ -28,7 +28,7 @@
   "devDependencies": {
     "@prismicio/types": "^0.2.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "autoprefixer": "^10.4.11",
+    "autoprefixer": "^10.4.12",
     "concurrently": "^7.4.0",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.1",
