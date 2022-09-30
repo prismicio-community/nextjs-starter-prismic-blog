@@ -32,7 +32,7 @@
     "concurrently": "^7.4.0",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.1",
-    "postcss": "^8.4.16",
+    "postcss": "^8.4.17",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "prismic-ts-codegen": "^0.1.5",
