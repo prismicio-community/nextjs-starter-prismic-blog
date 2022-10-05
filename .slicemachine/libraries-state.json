@@ -39,7 +39,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/ContactForm/default/preview.png",
+            "path": "D:\\Libraries\\Desktop\\prismic\\starter\\blog-next\\.slicemachine\\assets\\slices\\ContactForm\\default\\preview.png",
             "width": 800,
             "height": 517
           }
@@ -170,12 +170,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Image/default/preview.png",
+            "path": "D:\\Libraries\\Desktop\\prismic\\starter\\blog-next\\.slicemachine\\assets\\slices\\Image\\default\\preview.png",
             "width": 800,
             "height": 586
           },
           "wide": {
-            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Image/wide/preview.png",
+            "path": "D:\\Libraries\\Desktop\\prismic\\starter\\blog-next\\.slicemachine\\assets\\slices\\Image\\wide\\preview.png",
             "width": 800,
             "height": 538
           }
@@ -245,7 +245,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Quote/default/preview.png",
+            "path": "D:\\Libraries\\Desktop\\prismic\\starter\\blog-next\\.slicemachine\\assets\\slices\\Quote\\default\\preview.png",
             "width": 800,
             "height": 178
           }
@@ -322,7 +322,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/angeloashmore/projects/prismic/nextjs-starter-prismic-blog/.slicemachine/assets/slices/Text/default/preview.png",
+            "path": "D:\\Libraries\\Desktop\\prismic\\starter\\blog-next\\.slicemachine\\assets\\slices\\Text\\default\\preview.png",
             "width": 800,
             "height": 489
           }
