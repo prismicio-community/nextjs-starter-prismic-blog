@@ -1,24 +1,33 @@
 {
-  "id": "bb44b119-fd37-4b02-822f-dd46c76d10e0",
-  "uid": "animi-quidem-aspernatur",
+  "id": "mock-doc-id",
+  "url": null,
   "type": "article",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
   "data": {
     "title": [
       {
         "type": "heading1",
-        "text": "Target integrated bandwidth",
+        "text": "Unless",
         "spans": []
       }
     ],
-    "publishDate": "2014-08-18",
+    "publishDate": "2018-06-24",
     "featuredImage": {
       "dimensions": {
         "width": 2000,
         "height": 1500
       },
-      "alt": "Placeholder image",
+      "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=2000&h=1500&fit=crop"
-    }
+      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e"
+    },
+    "slices": []
   }
 }
