@@ -2,7 +2,7 @@ import Head from "next/head";
 import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
-import { createClient, linkResolver } from "../../prismicio";
+import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
 import { Bounded } from "../../components/Bounded";
@@ -124,7 +124,7 @@ export async function getStaticPaths() {
   const articles = await client.getAllByType("article");
 
   return {
-    paths: articles.map((article) => prismicH.asLink(article, linkResolver)),
+    paths: articles.map((article) => prismicH.asLink(article)),
     fallback: false,
   };
 }

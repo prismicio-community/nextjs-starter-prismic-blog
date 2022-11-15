@@ -2,18 +2,10 @@ import Link from "next/link";
 import { PrismicLink, PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 
-import { repositoryName, linkResolver } from "../prismicio";
+import { repositoryName } from "../prismicio";
 
 import "../styles/globals.css";
 import { Heading } from "../components/Heading";
-
-const NextLinkShim = ({ href, children, locale, ...props }) => {
-  return (
-    <Link href={href} locale={locale}>
-      <a {...props}>{children}</a>
-    </Link>
-  );
-};
 
 const richTextComponents = {
   heading1: ({ children }) => (
@@ -65,8 +57,7 @@ const richTextComponents = {
 export default function App({ Component, pageProps }) {
   return (
     <PrismicProvider
-      linkResolver={linkResolver}
-      internalLinkComponent={NextLinkShim}
+      internalLinkComponent={Link}
       richTextComponents={richTextComponents}
     >
       {/* TODO: Remove the following element once you have read the documentation. */}
