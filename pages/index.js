@@ -54,7 +54,7 @@ const Article = ({ article }) => {
           {prismicH.isFilled.image(featuredImage) && (
             <PrismicNextImage
               field={featuredImage}
-              layout="fill"
+              fill={true}
               className="object-cover"
             />
           )}

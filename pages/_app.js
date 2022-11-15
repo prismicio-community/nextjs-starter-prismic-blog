@@ -7,14 +7,6 @@ import { repositoryName, linkResolver } from "../prismicio";
 import "../styles/globals.css";
 import { Heading } from "../components/Heading";
 
-const NextLinkShim = ({ href, children, locale, ...props }) => {
-  return (
-    <Link href={href} locale={locale}>
-      <a {...props}>{children}</a>
-    </Link>
-  );
-};
-
 const richTextComponents = {
   heading1: ({ children }) => (
     <Heading as="h2" size="3xl" className="mb-7 mt-12 first:mt-0 last:mb-0">
@@ -66,7 +58,7 @@ export default function App({ Component, pageProps }) {
   return (
     <PrismicProvider
       linkResolver={linkResolver}
-      internalLinkComponent={NextLinkShim}
+      internalLinkComponent={Link}
       richTextComponents={richTextComponents}
     >
       {/* TODO: Remove the following element once you have read the documentation. */}

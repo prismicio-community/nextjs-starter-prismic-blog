@@ -15,7 +15,7 @@ const Profile = ({ name, description, profilePicture }) => {
             {prismicH.isFilled.image(profilePicture) && (
               <PrismicNextImage
                 field={profilePicture}
-                layout="fill"
+                fill={true}
                 className="object-cover"
               />
             )}
