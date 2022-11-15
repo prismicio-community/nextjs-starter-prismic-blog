@@ -2,7 +2,7 @@ import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
-import { createClient, linkResolver } from "../prismicio";
+import { createClient } from "../prismicio";
 import { components } from "../slices";
 import { Layout } from "../components/Layout";
 
@@ -44,7 +44,7 @@ export async function getStaticPaths() {
   const pages = await client.getAllByType("page");
 
   return {
-    paths: pages.map((page) => prismicH.asLink(page, linkResolver)),
+    paths: pages.map((page) => prismicH.asLink(page)),
     fallback: false,
   };
 }

@@ -1,5 +1,4 @@
 import * as prismic from "@prismicio/client";
-import * as prismicH from "@prismicio/helpers";
 import * as prismicNext from "@prismicio/next";
 
 import sm from "./sm.json";
@@ -10,21 +9,20 @@ import sm from "./sm.json";
 export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
 /**
- * The project's Prismic Link Resolver. This function determines the URL for a given Prismic document.
+ * The project's Prismic Route Resolvers. This list determines a Prismic document's URL.
  *
- * @type {prismicH.LinkResolverFunction}
+ * @type {prismic.ClientConfig['routes']}
  */
-export const linkResolver = (doc) => {
-  if (doc.type === "article") {
-    return `/articles/${doc.uid}`;
-  }
-
-  if (doc.type === "page") {
-    return `/${doc.uid}`;
-  }
-
-  return "/";
-};
+const routes = [
+  {
+    type: "article",
+    path: "/articles/:uid",
+  },
+  {
+    type: "page",
+    path: "/:uid",
+  },
+];
 
 /**
  * Creates a Prismic client for the project's repository. The client is used to
@@ -33,7 +31,10 @@ export const linkResolver = (doc) => {
  * @param config {prismicNext.CreateClientConfig} - A configuration object to
  */
 export const createClient = ({ previewData, req, ...config } = {}) => {
-  const client = prismic.createClient(sm.apiEndpoint, config);
+  const client = prismic.createClient(sm.apiEndpoint, {
+    routes,
+    ...config,
+  });
 
   prismicNext.enableAutoPreviews({ client, previewData, req });
 
