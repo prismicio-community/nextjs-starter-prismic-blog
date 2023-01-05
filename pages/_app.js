@@ -57,7 +57,7 @@ const richTextComponents = {
 export default function App({ Component, pageProps }) {
   return (
     <PrismicProvider
-      internalLinkComponent={(...props) => <Link {...props} />}
+      internalLinkComponent={(props) => <Link {...props} />}
       richTextComponents={richTextComponents}
     >
       {/* TODO: Remove the following element once you have read the documentation. */}
