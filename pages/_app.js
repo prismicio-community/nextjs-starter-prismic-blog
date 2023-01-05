@@ -3,9 +3,9 @@ import { PrismicLink, PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 
 import { repositoryName } from "../prismicio";
+import { Heading } from "../components/Heading";
 
 import "../styles/globals.css";
-import { Heading } from "../components/Heading";
 
 const richTextComponents = {
   heading1: ({ children }) => (
@@ -57,7 +57,7 @@ const richTextComponents = {
 export default function App({ Component, pageProps }) {
   return (
     <PrismicProvider
-      internalLinkComponent={Link}
+      internalLinkComponent={(...props) => <Link {...props} />}
       richTextComponents={richTextComponents}
     >
       {/* TODO: Remove the following element once you have read the documentation. */}
