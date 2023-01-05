@@ -19,7 +19,7 @@
     "@prismicio/helpers": "^2.3.5",
     "@prismicio/next": "^1.0.0-alpha.2",
     "@prismicio/react": "^2.5.0",
-    "@prismicio/slice-simulator-react": "^0.2.2",
+    "@prismicio/slice-simulator-react": "^0.2.3",
     "clsx": "^1.2.1",
     "next": "^13.0.3",
     "react": "^18.2.0",
@@ -37,7 +37,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "prismic-ts-codegen": "^0.1.5",
-    "slice-machine-ui": "^0.5.2",
+    "slice-machine-ui": "^0.6.0",
     "tailwindcss": "^3.2.4"
   }
 }
