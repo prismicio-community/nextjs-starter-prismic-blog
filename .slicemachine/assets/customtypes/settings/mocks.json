@@ -1,43 +1,66 @@
 {
-  "id": "0fb28ff8-4d66-4dd1-a99d-02e1de57d3fd",
-  "uid": "quo-quis-sint",
-  "type": "settings",
-  "data": {
-    "name": [
+  "name": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "heading1",
-        "text": "Extend back-end web services",
-        "spans": []
+        "content": {
+          "text": "Moving"
+        }
       }
-    ],
-    "description": [
+    ]
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Minim velit nostrud velit veniam elit consequat deserunt labore.",
-        "spans": []
+        "content": {
+          "text": "Eu dolore veniam amet do cupidatat Lorem. Nostrud excepteur anim deserunt labore minim sint aliquip in."
+        }
       }
-    ],
-    "profilePicture": {
-      "dimensions": {
-        "width": 2000,
-        "height": 2000
-      },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=2000&h=2000&fit=crop"
+    ]
+  },
+  "profilePicture": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+      "width": 3199,
+      "height": 3199
     },
-    "newsletterDescription": [
+    "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?rect=0%2C0%2C3199%2C3199&w=2000&h=2000",
+    "width": 2000,
+    "height": 2000,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "newsletterDescription": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Lorem est excepteur nostrud exercitation nostrud amet minim velit ad dolore adipisicing eiusmod quis ipsum. Sint amet mollit eiusmod aute ipsum duis veniam qui labore laboris consectetur in.",
-        "spans": []
+        "content": {
+          "text": "Veniam fugiat dolor consequat velit eiusmod labore consequat aute mollit qui."
+        }
       }
-    ],
-    "newsletterDisclaimer": [
+    ]
+  },
+  "newsletterDisclaimer": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Excepteur ut esse aliquip incididunt laborum. Est nulla ut cupidatat occaecat. Dolore nulla irure anim anim ad ullamco ipsum id laboris do aliquip excepteur eu aute esse.",
-        "spans": []
+        "content": {
+          "text": "Irure sint elit reprehenderit laboris reprehenderit consequat eu eiusmod incididunt excepteur eu voluptate tempor. Qui ut ut excepteur culpa ut veniam deserunt aliquip id adipisicing aliqua fugiat ad."
+        }
       }
     ]
   }
