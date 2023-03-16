@@ -1,7 +1,7 @@
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import * as prismicH from "@prismicio/helpers";
-
+import { getExcerpt, findFirstImage, dateFormatter } from "../utils";
 import { Heading } from "../components/Heading";
 
 export const Article = ({ article }) => {

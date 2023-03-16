@@ -1,13 +1,10 @@
 import Head from "next/head";
-import { PrismicLink, PrismicText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Bounded } from "../components/Bounded";
 import { Article } from "../components/Article";
-import { getExcerpt, findFirstImage, dateFormatter } from "../utils";
 
 const Index = ({ articles, navigation, settings }) => {
   return (
