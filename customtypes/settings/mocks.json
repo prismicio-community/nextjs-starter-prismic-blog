@@ -1,0 +1,69 @@
+[
+  {
+    "name": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "heading1",
+          "content": {
+            "text": "Fighting"
+          }
+        }
+      ]
+    },
+    "description": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Labore nulla nisi dolore cupidatat deserunt laborum nisi aute voluptate irure commodo mollit qui minim dolor."
+          }
+        }
+      ]
+    },
+    "profilePicture": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+        "width": 8640,
+        "height": 8640
+      },
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?rect=0%2C0%2C8640%2C8640&w=2000&h=2000",
+      "width": 2000,
+      "height": 2000,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "thumbnails": {}
+    },
+    "newsletterDescription": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Mollit enim occaecat duis occaecat anim cupidatat non. Incididunt proident nisi do do."
+          }
+        }
+      ]
+    },
+    "newsletterDisclaimer": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Consectetur laborum incididunt officia nulla cupidatat ea laborum in laborum aute quis."
+          }
+        }
+      ]
+    }
+  }
+]
