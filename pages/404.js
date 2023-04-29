@@ -1,11 +1,9 @@
 import Head from "next/head";
 import { PrismicLink } from "@prismicio/react";
 
-import { Layout } from "../components/Layout";
-
 const NotFoundPage = () => {
   return (
-    <Layout>
+    <div>
       <Head>
         <title>Page Not Found</title>
       </Head>
@@ -19,7 +17,7 @@ const NotFoundPage = () => {
           </PrismicLink>
         </p>
       </div>
-    </Layout>
+    </div>
   );
 };
 

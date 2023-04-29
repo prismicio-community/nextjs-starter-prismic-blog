@@ -1,27 +1,33 @@
 import React from "react";
-import { INavigationBarProps } from "./interfaces";
-import { Container, Grid, Text } from "@nextui-org/react";
-import { PrismicRichText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
+import NavigationItems from "./NavigationItems";
 
-const NavigationBar: React.FC<INavigationBarProps> = ({ navItems }) => {
+const NavigationBar: React.FC = () => {
   return (
-    <Container md css={{ mt: 45 }}>
-      <Grid.Container gap={4}>
-        {navItems.map(({ name }) => (
-          <Grid key={prismicH.asText(name)}>
-            <PrismicRichText
-              field={name}
-              components={{
-                paragraph: ({ children }) => (
-                  <Text color="white" size={15} css={{ fontFamily: 'Open Sans Hebrew', letterSpacing: '0.5pt' }}>{children}</Text>
-                ),
-              }}
-            />
-          </Grid>
-        ))}
-      </Grid.Container>
-    </Container>
+    <nav className="navbar navbar-default navbar-fixed-top mynavbar">
+      <div className="container">
+        <div className="navbar-header">
+          <button
+            type="button"
+            className="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-mobile"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+          </button>
+          <a className="navbar-brand" href=".">
+            D<span>A</span>D<span>A</span>
+            BOOM
+          </a>
+        </div>
+        <div className="collapse navbar-collapse" id="navbar-mobile">
+          <NavigationItems />
+        </div>
+      </div>
+    </nav>
   );
 };
 

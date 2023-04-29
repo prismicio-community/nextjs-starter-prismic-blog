@@ -1,7 +1,4 @@
 {
-  "apiEndpoint": "https://dadaboom.prismic.io/api/v2",
-  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
-  "libraries": ["@/slices"],
-  "_latest": "0.3.0",
-  "framework": "previousNext"
+	"//": "sm.json is deprecated, if you were importing values from this file please now import them from slicemachine.config.json, else you can safely delete this file",
+	"apiEndpoint": "https://dadaboom.prismic.io/api/v2"
 }

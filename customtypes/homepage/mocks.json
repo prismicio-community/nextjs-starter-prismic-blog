@@ -1,0 +1,60 @@
+[
+  {
+    "title": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "heading1",
+          "content": {
+            "text": "Greatly"
+          }
+        }
+      ]
+    },
+    "headerImage": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+        "width": 8640,
+        "height": 8640
+      },
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+      "width": 8640,
+      "height": 8640,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "thumbnails": {}
+    },
+    "navigationItems": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "name",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Sint est fugiat dolor veniam enim incididunt commodo anim occaecat nisi minim irure enim et. Fugiat cupidatat pariatur ipsum dolor id. Dolor officia fugiat mollit irure voluptate et culpa minim sunt laborum ea."
+                    }
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]
