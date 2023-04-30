@@ -9,6 +9,8 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import Header from "../components/Home/Header/Header";
 import { HomepageDocument } from "../types.generated";
+import About from "../components/Home/About/About";
+import Services from "../components/Home/Services/Services";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -24,7 +26,6 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     // the page with a helpful setup message.
   }
 
-    console.log('@@@ ~ homepage:', homepage);
   const { base64 } = await getPlaiceholder(homepage?.headerImage.url ?? "", {
     size: 64,
   });
@@ -59,6 +60,8 @@ const Home = ({
         heroImage={homepage.headerImage}
         lqipImage={lqip}
       />
+      <About />
+      <Services />
     </>
   );
 };

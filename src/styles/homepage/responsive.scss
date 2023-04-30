@@ -1,0 +1,119 @@
+/**
+*
+* -------------------------------------------------
+*
+* Template : Yala - One Page Personal Portfolio Template
+* Author   : Hamza Mensouri
+* Version  : 1.0
+*
+* --------------------------------------------------
+*
+**/
+
+/* Extra Small devices (Phones) */
+@media (max-width: 767px) {
+	.navbar-default {
+		.navbar-collapse {
+			background-color: #ffffff;
+		}
+		.nav-list li a {
+			color: #222222;
+			&:hover, &:focus {
+				color: #222222;
+			}
+		}
+	}
+	.welcome-area {
+		h2 {
+			color: #fff;
+			font-size: 36px;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		span {
+			color: #fff;
+			font-size: 14px;
+		}
+	}
+	.about-section .section-content {
+		margin-top: 15px;
+	}
+	.counter-section .projects #border-left1, #border-left2, #border-left3 {
+		border-left: none;
+	}
+	.blogs-section .blog-content-title a {
+		font-weight: 400;
+		color: #222222;
+		font-size: 18px;
+	}
+	.contact-section form .textarea {
+		margin-top: 15px;
+	}
+	.footer-area .footer-text p {
+		color: #555;
+		font-weight: 500;
+		font-size: 13px;
+	}
+	.footer-text {
+		text-align: center;
+	}
+	/*-------------------- Wow animation disabled --------------------*/
+	.wow {
+		animation-name: none !important;
+		visibility: visible !important;
+	}
+}
+
+/* Small devices (Tablets) */
+@media (min-width: 768px) and (max-width: 992px) {
+	/*-------------------- Intro --------------------*/
+	.welcome-area {
+		h2 {
+			color: #fff;
+			font-weight: 700;
+			font-size: 44px;
+			text-transform: uppercase;
+		}
+		span {
+			color: #fff;
+			font-size: 17px;
+		}
+	}
+	.about-section .section-content {
+		margin-top: 15px;
+	}
+	.counter-section .projects #border-left1, #border-left2, #border-left3 {
+		border-left: none;
+	}
+	.blogs-section .blog-content-title a {
+		font-weight: 400;
+		color: #222222;
+		font-size: 18px;
+	}
+	.footer-area .footer-text p {
+		color: #555;
+		text-align: center;
+		font-weight: 500;
+		font-size: 13px;
+	}
+	/*-------------------- Wow animation disabled --------------------*/
+	.wow {
+		animation-name: none !important;
+		visibility: visible !important;
+	}
+}
+
+/* Medium devices (Desktops) */
+@media (min-width: 992px) and (max-width: 1200px) {
+	.welcome-area h2 {
+		color: #fff;
+		font-size: 50px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+	.about-section .section-title h1 {
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+}

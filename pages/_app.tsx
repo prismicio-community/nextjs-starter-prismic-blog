@@ -5,7 +5,8 @@ import { PrismicPreview } from "@prismicio/next";
 
 import { repositoryName } from "../prismicio";
 
-import "../styles.css";
+import "../src/styles/styles.scss";
+import 'react-tooltip/dist/react-tooltip.css'
 import { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {

@@ -5,7 +5,7 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 const FacebookNav: React.FC<{ facebookLink: string }> = ({ facebookLink }) => (
   <li>
     <a href={facebookLink} target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faFacebookF} />
+      <FontAwesomeIcon icon={faFacebookF} width={10} height={10} />
     </a>
   </li>
 );
