@@ -2,11 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
+import { ThemeProvider } from "styled-components";
 
 import { repositoryName } from "../prismicio";
 
 import "../src/styles/styles.scss";
-import 'react-tooltip/dist/react-tooltip.css'
+import "react-tooltip/dist/react-tooltip.css";
 import { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -22,7 +23,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           </Link>
         )}
       >
-        <Component {...pageProps} />
+        <ThemeProvider theme={{}}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </PrismicProvider>
       <PrismicPreview repositoryName={repositoryName} />
     </>

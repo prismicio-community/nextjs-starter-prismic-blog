@@ -13,7 +13,6 @@ const NavigationBar: React.FC = () => {
             data-target="#navbar-mobile"
             aria-expanded="false"
           >
-            <span className="sr-only">Toggle navigation</span>
             <span className="icon-bar" />
             <span className="icon-bar" />
             <span className="icon-bar" />

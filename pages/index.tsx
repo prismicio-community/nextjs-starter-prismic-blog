@@ -11,6 +11,7 @@ import Header from "../components/Home/Header/Header";
 import { HomepageDocument } from "../types.generated";
 import About from "../components/Home/About/About";
 import Services from "../components/Home/Services/Services";
+import Counter from "../components/Home/Counter/Counter";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -62,6 +63,7 @@ const Home = ({
       />
       <About />
       <Services />
+      <Counter />
     </>
   );
 };
