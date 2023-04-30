@@ -1,5 +1,6 @@
 import Document, {
   Html,
+  Head,
   Main,
   NextScript,
   DocumentContext,
@@ -17,6 +18,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="he" dir="rtl">
+        <Head>
+        <link
+          href="https://fonts.googleapis.com/earlyaccess/opensanshebrew.css?display=swap"
+          rel="stylesheet"
+        />
+        </Head>
         <body>
           <Main />
           <NextScript />

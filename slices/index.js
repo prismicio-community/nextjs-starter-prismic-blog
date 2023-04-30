@@ -4,3 +4,10 @@ export { default as ImageWithCaption } from "./ImageWithCaption";
 export { default as Quote } from "./Quote";
 export { default as Testing } from "./Testing";
 export { default as Text } from "./Text";
+
+export const components = {
+  text: Text,
+  testing: Testing,
+  quote: Quote,
+  image_with_caption: ImageWithCaption,
+};

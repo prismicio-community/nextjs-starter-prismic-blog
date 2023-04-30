@@ -17,12 +17,14 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   try {
     const result = await client.getSingle("homepage");
     homepage = result.data;
-  } catch {
+  } catch(e) {
+    console.log('On CATCH', e)
     // If we reach this line, it means a Blog Home document was not created
     // yet. We don't need to do anything here. We will render a component on
     // the page with a helpful setup message.
   }
 
+    console.log('@@@ ~ homepage:', homepage);
   const { base64 } = await getPlaiceholder(homepage?.headerImage.url ?? "", {
     size: 64,
   });
@@ -52,11 +54,11 @@ const Home = ({
       <Head>
         <title>{prismicH.asText(homepage.title)}</title>
       </Head>
-      {/* <Header
+      <Header
         navItems={homepage.navigationItems}
         heroImage={homepage.headerImage}
         lqipImage={lqip}
-      /> */}
+      />
     </>
   );
 };

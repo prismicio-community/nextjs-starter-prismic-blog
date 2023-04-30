@@ -16,7 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <PrismicProvider
         internalLinkComponent={({ href, ...props }) => (
-          <Link href={href}>
+          <Link href={href} legacyBehavior>
             <a {...props} />
           </Link>
         )}
