@@ -12,7 +12,7 @@ const Portfolio: React.FC = () => (
           </div>
         </div>
       </div>
-      <div className="row popup-gallery">
+      <div className="grid grid-cols-3 grid-rows-3 gap-4">
         <PortfolioImage imgName="gallery_image" alt="First Image" />
         <PortfolioImage imgName="p2" alt="Second Image" />
         <PortfolioImage imgName="p3" alt="Third Image" />

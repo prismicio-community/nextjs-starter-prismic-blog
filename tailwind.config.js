@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./pages/**/*.js", "./components/**/*.js", "./slices/**/*.js"],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./slices/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
       sans: "Lato, sans-serif",

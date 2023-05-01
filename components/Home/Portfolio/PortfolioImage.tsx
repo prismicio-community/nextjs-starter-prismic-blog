@@ -12,8 +12,8 @@ const PortfolioImage: React.FC<{ imgName: string; alt: string }> = ({
   imgName,
 }) => {
   return (
-    <div className="col-md-4 col-sm-6 portfolio-b">
-      <a href={cloudinaryCore.url(imgName)} className="portfolio-box">
+    <div className="p-[10px] overflow-hidden h-[255px]">
+      <a href={cloudinaryCore.url(imgName)} className="">
         <Image
           cloudName="dadaboom"
           publicId={imgName}
@@ -25,11 +25,6 @@ const PortfolioImage: React.FC<{ imgName: string; alt: string }> = ({
       </a>
     </div>
   );
-};
-
-PortfolioImage.propTypes = {
-  imgName: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
 };
 
 export default PortfolioImage;

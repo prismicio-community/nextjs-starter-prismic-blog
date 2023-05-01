@@ -8,3 +8,7 @@
 @import 'homepage/blog';
 @import 'homepage/contact';
 @import 'homepage/responsive';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
