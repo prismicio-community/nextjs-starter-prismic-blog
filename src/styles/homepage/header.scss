@@ -1,0 +1,134 @@
+.header {
+  background-image: url(https://res.cloudinary.com/dadaboom/image/upload/q_auto/v1521616799/Cover/zafrir-b_w_20_950KB_Flip.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0px;
+  background-attachment: fixed;
+  position: relative;
+  height: 100vh;
+  min-height: 750px;
+  overflow-y: hidden;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+  }
+}
+
+.mynavbar {
+  background-color: transparent;
+  width: 100%;
+  padding: 30px 0;
+  z-index: 20;
+  top: 0;
+  position: fixed;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.nav-scroll .mynavbar {
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-radius: 0;
+  box-shadow: 0 0 2px #e0e0e0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.navbar-default {
+  border: none;
+
+  .navbar-header a {
+    font-family: 'Open Sans Hebrew', sans-serif;
+    display: block;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: #ffffff;
+    }
+
+    span {
+      color: #d6b161;
+      font-weight: 700;
+    }
+  }
+
+  .nav-list li a {
+    font-family: 'Open Sans Hebrew', sans-serif;
+    color: #ffffff;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    text-align: right;
+
+    &:hover, &:focus {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+
+  .navbar-nav .active {
+    a, a:focus, a:hover {
+      color: #d6b161;
+      background-color: transparent;
+    }
+  }
+}
+
+.nav-scroll .mynavbar {
+  a, a:hover, a:focus {
+    color: #222222;
+  }
+  .nav-list li {
+    a {
+      font-family: 'Open Sans Hebrew', sans-serif;
+      color: #222222;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5pt;
+      &:hover {
+        color: #222222;
+        transition: 700ms ease;
+      }
+    }
+
+    &.active a {
+      color: #d6b161;
+      -webkit-transition: all .5s ease;
+      transition: all .5s ease;
+    }
+  }
+}
+
+.navbar-default {
+  .navbar-nav .active {
+    a, a:focus, a:hover {
+      color: #d6b161;
+      background-color: transparent;
+    }
+  }
+
+  .nav-list li a:focus {
+    transition: 700ms ease;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .navbar-toggle {
+    border: none;
+
+    &:hover, &:focus {
+      background-color: transparent;
+      border: none;
+    }
+
+    .icon-bar {
+      background-color: #d6b161;
+    }
+  }
+}

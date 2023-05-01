@@ -2,11 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
-import { NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider } from "styled-components";
 
-import { repositoryName, linkResolver } from "../prismicio";
+import { repositoryName } from "../prismicio";
 
-import "../styles.css";
+import "../src/styles/styles.scss";
+import "react-tooltip/dist/react-tooltip.css";
 import { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -16,16 +17,15 @@ const App = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
       <PrismicProvider
-        linkResolver={linkResolver}
         internalLinkComponent={({ href, ...props }) => (
-          <Link href={href}>
+          <Link href={href} legacyBehavior>
             <a {...props} />
           </Link>
         )}
       >
-        <NextUIProvider>
+        <ThemeProvider theme={{}}>
           <Component {...pageProps} />
-        </NextUIProvider>
+        </ThemeProvider>
       </PrismicProvider>
       <PrismicPreview repositoryName={repositoryName} />
     </>

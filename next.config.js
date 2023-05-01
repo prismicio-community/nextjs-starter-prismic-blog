@@ -14,4 +14,5 @@ module.exports = withPlaiceholder({
   images: {
     domains: ["images.prismic.io", "images.unsplash.com"],
   },
+  transpilePackages: ["react-countup"]
 });

@@ -1,0 +1,96 @@
+.contact-section {
+	background-size: cover;
+	background: no-repeat fixed center;
+	position: relative;
+	.overlay {
+		background-color: rgba(0, 0, 0, 0.9);
+		height: 100%;
+		width: 100%;
+	}
+	.section-title {
+		padding: 0 0 50px 0;
+		h1 {
+			color: #ffffff;
+			font-size: 25px;
+			font-weight: 700;
+			text-transform: uppercase;
+			border-right: 5px solid #d6b161;
+			padding-right: 10px;
+			letter-spacing: 0.5pt;
+			text-align: right;
+			direction: rtl;
+		}
+	}
+}
+
+.map {
+	width: 100%;
+	height: 150px;
+	margin-bottom: 30px;
+}
+
+.contact-section {
+	.input-margin-top {
+		margin-top: 15px;
+	}
+	form {
+		.textarea {
+			font-family: 'Montserrat', sans-serif;
+			background: transparent;
+			border: 1px solid #ffffff;
+			color: #ffffff;
+			height: 180px;
+			margin-bottom: 15px;
+			padding-top: 15px;
+			border-radius: 0;
+			text-align: right;
+			direction: rtl;
+		}
+		.form-input {
+			font-family: 'Montserrat', sans-serif;
+			background: transparent;
+			border: 1px solid #ffffff;
+			color: #ffffff;
+			height: 50px;
+			border-radius: 0;
+			text-align: right;
+			direction: rtl;
+		}
+	}
+	.form-control {
+		&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder {
+			color: #ffffff;
+		}
+	}
+	form .button {
+		background-color: transparent;
+		color: #d6b161;
+		font-family: 'Open Sans Hebrew', sans-serif;
+		font-size: 12px;
+		border: 1px solid #ffffff;
+		text-transform: uppercase;
+		letter-spacing: 1pt;
+		padding: 16px 0;
+		border-radius: 0;
+	}
+	.success {
+		padding: 1em;
+		margin-bottom: 20px;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		color: #468847;
+		background-color: #dff0d8;
+		border: 1px solid #468847;
+		transition: 500ms ease;
+		text-align: right;
+	}
+	.error {
+		padding: 1em;
+		margin-bottom: 20px;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		color: #b94a48;
+		background-color: #f2dede;
+		border: 1px solid #b94a48;
+		transition: 500ms ease;
+		text-align: right;
+	}
+}

@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Roboto:300,400|Athiti:300,400|Indie+Flower');
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Secular+One|Assistant');
+
+@import url('//fonts.googleapis.com/earlyaccess/opensanshebrew.css');
+
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#about, #services, #resume, #counter, #portfolio, #testimonials, #blogs, #contact {
+	padding: 65px 0 85px 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	font-family: 'Open Sans Hebrew', sans-serif;
+}
+
+body.modal-open {
+  margin-right: 0;
+}
