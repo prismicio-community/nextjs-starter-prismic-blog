@@ -42,7 +42,8 @@
     "slicemachine": "start-slicemachine",
     "format": "prettier --write .",
     "gen": "PRISMIC_REF=`node scripts/updateRefFromPrismic.mjs` graphql-codegen --config codegen.yml -r dotenv/config",
-    "tsn": "ts-node --files -r dotenv/config -r tsconfig-paths/register --project tsconfig.script.json -r esm"
+    "tsn": "ts-node --files -r dotenv/config -r tsconfig-paths/register --project tsconfig.script.json -r esm",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "8.17.0",
     "eslint-config-next": "13.3.2",
+    "eslint-config-prettier": "^8.8.0",
     "postcss": "^8.4.14",
     "prettier": "^2.8.8",
     "prismic-ts-codegen": "^0.1.5",
