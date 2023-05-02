@@ -8,6 +8,13 @@
 		font-style: italic;
 		direction: rtl;
 	}
+	.carousel-inner .item {
+		display: none;
+	}
+
+	.carousel-inner .item.active {
+		display: block;
+	}
 	.carousel-inner .item h5 {
 		font-weight: 700;
 		letter-spacing: 1px;
@@ -25,7 +32,7 @@
 #quote-carousel {
 	padding-bottom: 30px;
 	text-align: center;
-	min-height: 335px;
+	min-height: 337px;
 	.carousel-indicators {
 		left: 0%;
 		top: auto;
@@ -35,13 +42,16 @@
 		margin-bottom: 0;
 		li {
 			background: #c0c0c0;
-			height: 15px;
-			width: 15px;
+			height: 6px;
+			width: 6px;
+		}
+		li + li {
+			margin-right: 10px;
 		}
 		.active {
 			background: #333333;
-			height: 15px;
-			width: 15px;
+			height: 6px;
+			width: 6px;
 			margin-bottom: 1px;
 		}
 	}
