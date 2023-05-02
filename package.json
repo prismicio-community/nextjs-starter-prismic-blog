@@ -17,7 +17,7 @@
     "cloudinary-react": "^1.8.1",
     "dotenv": "^16.0.1",
     "graphql": "^16.5.0",
-    "next": "^13.3.1",
+    "next": "^13.3.4",
     "next-slicezone": "^0.2.6",
     "plaiceholder": "^2.5.0",
     "prismic-reactjs": "^1.3.4",
@@ -42,7 +42,8 @@
     "slicemachine": "start-slicemachine",
     "format": "prettier --write .",
     "gen": "PRISMIC_REF=`node scripts/updateRefFromPrismic.mjs` graphql-codegen --config codegen.yml -r dotenv/config",
-    "tsn": "ts-node --files -r dotenv/config -r tsconfig-paths/register --project tsconfig.script.json -r esm"
+    "tsn": "ts-node --files -r dotenv/config -r tsconfig-paths/register --project tsconfig.script.json -r esm",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -62,7 +63,8 @@
     "autoprefixer": "^10.4.14",
     "eslint": "8.17.0",
     "eslint-config-next": "13.3.2",
-    "postcss": "^8.4.14",
+    "eslint-config-prettier": "^8.8.0",
+    "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prismic-ts-codegen": "^0.1.5",
     "slice-machine-ui": "^1.0.2",

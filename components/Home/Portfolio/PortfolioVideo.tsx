@@ -1,26 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import YouTube from 'react-youtube';
-import { isMobile } from 'react-device-detect';
+import React from "react";
+import YouTube from "react-youtube";
 
 const PortfolioVideo: React.FC<{ videoId: string }> = ({ videoId }) => {
-  const opts = {
-    height: 247,
-    width: 370,
-  };
-  if (isMobile) opts.width = window.innerWidth - 20;
-  return (
-    <div className="col-md-4 col-sm-6 portfolio-b">
-      <YouTube
-        videoId={videoId}
-        opts={opts}
-      />
-    </div>
-  );
-};
-
-PortfolioVideo.propTypes = {
-  videoId: PropTypes.string.isRequired,
+  return <YouTube videoId={videoId}  className="h-full" iframeClassName="h-full w-full" />;
 };
 
 export default PortfolioVideo;
