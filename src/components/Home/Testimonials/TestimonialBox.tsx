@@ -5,10 +5,13 @@ const TestimonialBox: React.FC<{
   name: string;
   text: string;
   active: boolean;
-}> = (props) => {
-  const { active, text, name } = props;
+  moveLeft?: boolean;
+  moveRight?: boolean;
+}> = ({ name, text, active, moveLeft, moveRight }) => {
+  const bla = cx(["item", { active, moveLeft, moveRight }]);
+  console.log("bla", bla, name);
   return (
-    <div className={cx(["item", { active }])}>
+    <div className={cx(["item", { active, moveLeft, moveRight }])}>
       <div className="row">
         <div className="col-sm-12">
           <blockquote tw="pt-4 mb-4">
