@@ -14,6 +14,7 @@ import Portfolio from "../components/Home/Portfolio/Portfolio";
 import Services from "../components/Home/Services/Services";
 import Testimonials from "../components/Home/Testimonials/Testimonials";
 import { SetupRepo } from "../components/SetupRepo";
+import Blog from "../components/Home/Blog/Blog";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -68,6 +69,7 @@ const Home = ({
       <Counter />
       <Portfolio />
       <Testimonials />
+      <Blog />
     </>
   );
 };

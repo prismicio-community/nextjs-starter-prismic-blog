@@ -41,8 +41,7 @@ const Testimonials: React.FC = () => {
                 {data.map((_slider, i) => (
                   <li
                     css={[
-                      tw`cursor-pointer w-[6px] h-[6px] bg-[#c0c0c0] rounded`,
-                      tw`[&+&]:mr-[10px]`,
+                      tw`cursor-pointer w-[6px] h-[6px] bg-[#c0c0c0] rounded mr-3`,
                       i === activeIndex && tw`bg-[#333333] mb-px`,
                     ]}
                     onClick={() => setActiveIndex(i)}
