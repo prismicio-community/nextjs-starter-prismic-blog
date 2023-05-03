@@ -1,6 +1,5 @@
 import { PrismicLink } from "@prismicio/react";
-
-import { repositoryName } from "../prismicio";
+import { repositoryName } from "../../prismicio";
 
 /**
  * A setup message displayed when the Prismic repository does not contain blog

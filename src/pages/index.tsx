@@ -2,17 +2,18 @@ import React from "react";
 import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 
-import { createClient } from "../prismicio";
+import { createClient } from "../../prismicio";
 
-import { SetupRepo } from "../components/SetupRepo";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { getPlaiceholder } from "plaiceholder";
-import Header from "../components/Home/Header/Header";
-import { HomepageDocument } from "../types.generated";
+import { HomepageDocument } from "../../types.generated";
 import About from "../components/Home/About/About";
-import Services from "../components/Home/Services/Services";
 import Counter from "../components/Home/Counter/Counter";
+import Header from "../components/Home/Header/Header";
 import Portfolio from "../components/Home/Portfolio/Portfolio";
+import Services from "../components/Home/Services/Services";
+import Testimonials from "../components/Home/Testimonials/Testimonials";
+import { SetupRepo } from "../components/SetupRepo";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
@@ -21,8 +22,8 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   try {
     const result = await client.getSingle("homepage");
     homepage = result.data;
-  } catch(e) {
-    console.log('On CATCH', e)
+  } catch (e) {
+    console.log("On CATCH", e);
     // If we reach this line, it means a Blog Home document was not created
     // yet. We don't need to do anything here. We will render a component on
     // the page with a helpful setup message.
@@ -66,6 +67,7 @@ const Home = ({
       <Services />
       <Counter />
       <Portfolio />
+      <Testimonials />
     </>
   );
 };

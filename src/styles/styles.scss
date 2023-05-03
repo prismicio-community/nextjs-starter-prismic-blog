@@ -2,7 +2,7 @@
 @import 'homepage/header';
 @import 'homepage/welcome';
 @import 'homepage/services';
-@import 'homepage/testimonials';
+// @import 'homepage/testimonials';
 @import 'homepage/about';
 @import 'homepage/portfolio';
 @import 'homepage/blog';
@@ -12,3 +12,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
