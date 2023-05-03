@@ -3,23 +3,28 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import TestimonialBox from "./TestimonialBox";
 import data from "./TestimonialData";
-import cx from "classnames";
+import tw from "twin.macro";
 
 export type Direction = "left" | "right";
 
 const Testimonials: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [clickDirection, setClickDirection] = useState<Direction>("left");
 
   const onArrowClick = (direction: "left" | "right") => {
-    setClickDirection(direction);
-    setActiveIndex(direction === "left" ? activeIndex - 1 : activeIndex + 1);
+    let newIndex = direction === "left" ? activeIndex - 1 : activeIndex + 1;
+    if (newIndex < 0) newIndex = data.length - 1;
+    if (newIndex > data.length - 1) newIndex = 0;
+    setActiveIndex(newIndex);
   };
 
   return (
-    <section className="testimonials-section" id="testimonials">
+    <section
+      className="testimonials-section"
+      id="testimonials"
+      tw="bg-gray-100"
+    >
       <div className="container">
-        <div className="row testimonials-row">
+        <div className="row" tw="flex justify-center items-center">
           <div
             tw="cursor-pointer"
             className="col-md-1"
@@ -28,35 +33,40 @@ const Testimonials: React.FC = () => {
             <KeyboardArrowRight style={{ fontSize: "35px" }} />
           </div>
           <div className="col-md-10">
-            <div className="carousel slide" id="quote-carousel">
-              <ol className="carousel-indicators" tw="mr-0">
+            <div tw="pb-7 text-center min-h-[337px] relative">
+              <ol
+                className="carousel-indicators"
+                tw="left-[0%] mr-0 top-auto -bottom-[10px] w-full ml-0 mb-0"
+              >
                 {data.map((_slider, i) => (
                   <li
-                    className={cx("cursor-pointer rounded", {
-                      active: i === activeIndex,
-                    })}
+                    css={[
+                      tw`cursor-pointer w-[6px] h-[6px] bg-[#c0c0c0] rounded`,
+                      tw`[&+&]:mr-[10px]`,
+                      i === activeIndex && tw`bg-[#333333] mb-px`,
+                    ]}
                     onClick={() => setActiveIndex(i)}
                     key={`sliders-key-${i}`}
                   />
                 ))}
               </ol>
-              <div className="carousel-inner">
-                {data.map((item, i) => {
-                  return (
-                    <TestimonialBox
-                      key={`testimonial-key-${i}`}
-                      name={item.name}
-                      text={item.text}
-                      active={i === activeIndex}
-                      moveLeft={
-                        clickDirection === "left" && i === activeIndex + 1
-                      }
-                      moveRight={
-                        clickDirection === "right" && i === activeIndex - 1
-                      }
-                    />
-                  );
-                })}
+              <div
+                className="carousel-inner"
+                tw="relative h-[307px] w-full overflow-hidden"
+              >
+                <div tw="flex transition-transform duration-500 ease-in-out">
+                  {data.map((item, i) => {
+                    return (
+                      <TestimonialBox
+                        key={`testimonial-key-${i}`}
+                        name={item.name}
+                        text={item.text}
+                        index={i}
+                        currentIndex={activeIndex}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
