@@ -7,7 +7,6 @@ const TestimonialBox: React.FC<{
   index: number;
   currentIndex: number;
 }> = ({ name, text, index, currentIndex }) => {
-  console.log("@@", name, index, currentIndex);
   return (
     <div
       className="item"
