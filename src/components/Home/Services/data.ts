@@ -1,9 +1,9 @@
-import QueueMusic from '@material-ui/icons/QueueMusic';
-import Work from '@material-ui/icons/Work';
-import TagFaces from '@material-ui/icons/TagFaces';
-import School from '@material-ui/icons/School';
+import QueueMusic from "@material-ui/icons/QueueMusic";
+import Work from "@material-ui/icons/Work";
+import TagFaces from "@material-ui/icons/TagFaces";
+import School from "@material-ui/icons/School";
 
-export default [
+const data = [
   {
     title: "שיעורי תופים",
     text: "מוזיקה היא שפה. אנו יודעים כי המרכיב הבסיסי ההכרחי להצלחה של כל תהליך למידה, הוא התקשורת בין המורה לתלמיד/ה. בלימוד מוסיקה - נוסף המרכיב של יצירת תקשורת באמצעות הנגינה. קצב וסגנון הלימוד שונים אצל כל אחד ואחת מאתנו ולכן, כבר בתחילת התהליך חשוב לשים על כך דגש ולבצע את ההתאמות הדרושות. במהלך השיעורים אנו לומדים טכניקה, קריאת תווים, יציבה, אחיזה נכונה ונשימות ועוד... כל זאת תוך לימוד מרתק ומעמיק של סגנונות מוזיקה מגוונים ומקצבים מרחבי העולם. השיעורים מתקיימים בגבעתיים בסטודיו מקצועי המאובזר במערכות תופים, מגוון כלי הקשה מרחבי העולם ומערכת הגברה משוכללת.",
@@ -40,3 +40,5 @@ export default [
     Icon: TagFaces,
   },
 ];
+
+export default data;

@@ -1,6 +1,7 @@
 import React from "react";
 import PortfolioImage from "./PortfolioImage";
 import PortfolioVideo from "./PortfolioVideo";
+import "twin.macro";
 
 const Portfolio: React.FC = () => (
   <section id="portfolio" className="portfolio-section">
@@ -12,7 +13,7 @@ const Portfolio: React.FC = () => (
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-fr">
+      <div tw="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-fr">
         <PortfolioImage imgName="gallery_image" alt="First Image" />
         <PortfolioImage imgName="p2" alt="Second Image" />
         <PortfolioImage imgName="p3" alt="Third Image" />

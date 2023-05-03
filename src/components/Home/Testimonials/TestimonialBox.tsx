@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "classnames";
 
 const TestimonialBox: React.FC<{
   name: string;
@@ -7,10 +8,10 @@ const TestimonialBox: React.FC<{
 }> = (props) => {
   const { active, text, name } = props;
   return (
-    <div className={`item${active ? " active" : ""}`}>
+    <div className={cx(["item", { active }])}>
       <div className="row">
         <div className="col-sm-12">
-          <blockquote className="pt-4 mb-4">
+          <blockquote tw="pt-4 mb-4">
             <p>{`"${text}"`}</p>
           </blockquote>
           <h5>{name}</h5>

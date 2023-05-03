@@ -2,17 +2,19 @@
 
 const path = require("path");
 const { withPlaiceholder } = require("@plaiceholder/next");
+const withTwin = require("./withTwin");
 
 /**
  * @type {import('next').NextConfig}
  **/
-module.exports = withPlaiceholder({
-  webpack(config) {
-    config.resolve.modules.push(path.resolve("./"));
-    return config;
-  },
-  images: {
-    domains: ["images.prismic.io", "images.unsplash.com"],
-  },
-  transpilePackages: ["react-countup"]
-});
+module.exports = withTwin(
+  withPlaiceholder({
+    webpack(config) {
+      config.resolve.modules.push(path.resolve("./"));
+      return config;
+    },
+    images: {
+      domains: ["images.prismic.io", "images.unsplash.com"],
+    },
+  })
+);

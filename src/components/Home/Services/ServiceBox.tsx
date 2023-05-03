@@ -1,7 +1,7 @@
 import { RemoveRedEye } from "@material-ui/icons";
 import React, { useState } from "react";
 import Lightbox from "react-images";
-import { Tooltip } from 'react-tooltip'
+import { Tooltip } from "react-tooltip";
 
 const ServiceBox: React.FC<{
   title: string;

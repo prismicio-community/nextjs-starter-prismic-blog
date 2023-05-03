@@ -8,13 +8,31 @@
 		font-style: italic;
 		direction: rtl;
 	}
-	.carousel-inner .item {
-		display: none;
+
+	.item {
+		position: absolute;
+		left: -100%;
+		transition: .6s ease-in-out left;
+		display: block;
+		width: 100%;
+		&.active {
+			left: 0;
+		}
+		&.next {
+			left: 100%;
+		}
+		&.prev {
+			left: -100%;
+		}
 	}
 
-	.carousel-inner .item.active {
-		display: block;
+	.carousel-inner {
+    position: relative;
+		height: 307px;
+    width: 100%;
+    overflow: hidden;
 	}
+
 	.carousel-inner .item h5 {
 		font-weight: 700;
 		letter-spacing: 1px;
