@@ -1,26 +1,19 @@
 import React from "react";
 import axios from "axios";
-import pick from "lodash/pick";
 import MapWithAMakredInfoWindow from "./Map";
-import { SubmitHandler, useForm } from "react-hook-form";
-
-type FormValues = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ValidationSchema, validationSchema } from "./validationSchema";
 
 const Contact: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<ValidationSchema>({ resolver: zodResolver(validationSchema) });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    console.log(data, errors);
   });
 
   // const onSubmit: SubmitHandler<FormValues> = (e) => {
@@ -83,20 +76,9 @@ const Contact: React.FC = () => {
               <div className="col-sm-6">
                 <div className="row">
                   <div className="col-sm-12">
-                    <textarea
-                      {...register("message")}
-                      className="form-control textarea"
-                      placeholder="תוכן ההודעה (אופציונאלי)"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6">
-                <div className="row">
-                  <div className="col-sm-12">
                     <div className="form-group">
                       <input
-                        {...register("name")}
+                        {...register("name", { required: true })}
                         className="form-control form-input"
                         placeholder="שם"
                       />
@@ -106,7 +88,7 @@ const Contact: React.FC = () => {
                       style={{ marginBottom: 0 }}
                     >
                       <input
-                        {...register("phone")}
+                        {...register("phone", { required: true })}
                         className="form-control form-input"
                         placeholder="טלפון"
                       />
@@ -118,6 +100,17 @@ const Contact: React.FC = () => {
                         placeholder="אימייל (אופציונאלי)"
                       />
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="row">
+                  <div className="col-sm-12">
+                    <textarea
+                      {...register("message")}
+                      className="form-control textarea"
+                      placeholder="תוכן ההודעה (אופציונאלי)"
+                    />
                   </div>
                 </div>
               </div>
