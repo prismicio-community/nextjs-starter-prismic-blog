@@ -64,9 +64,10 @@ const Contact: React.FC = () => {
               style={{ height: "410px", width: "100%" }}
             >
               <MapWithAMakredInfoWindow
+                // @ts-ignore
                 googleMapURL={
                   "https://maps.googleapis.com/maps/api/js?" +
-                  "key=AIzaSyAwWfMRMTV4Gifrym8XPE5HLOKdmW7vl1U&libraries=places&language=he&region=IL"
+                  `key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places&language=he&region=IL`
                 }
                 loadingElement={<div style={{ height: "100%" }} />}
                 containerElement={<div style={{ height: "400px" }} />}

@@ -45,9 +45,13 @@ const MapWithAMakredInfoWindow = compose(
   withScriptjs,
   withGoogleMap
 )((props) => (
+  // @ts-ignore
   <GoogleMap defaultZoom={16} defaultCenter={coordinates}>
+    {/* @ts-ignore */}
     <Marker position={coordinates} onClick={props.onToggleOpen}>
+      {/* @ts-ignore */}
       {props.isOpen && (
+        /* @ts-ignore */
         <InfoWindow onCloseClick={props.onToggleOpen}>
           <MapLabel />
         </InfoWindow>
