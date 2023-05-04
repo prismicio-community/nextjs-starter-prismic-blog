@@ -1317,10 +1317,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-13.4.0.tgz#8f044b8d8e4e8205a8e250866cfc6fbca44a786d"
   integrity sha512-LKofmUuxwGXk2OZJSSJ2SlJE62s6z+56aRsze7chc5TPoVouLR9liTiSWxzYuVzuxk0ui2wtIjyR2tcgS1dIyw==
 
-"@next/eslint-plugin-next@13.3.2":
-  version "13.3.2"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-13.3.2.tgz#1126508131f85d550da0ad8eb3888ddc5ae4c9c1"
-  integrity sha512-YHugXBtXWVUjSMRirZPxDlDn3LvYpuCqaRlIHgKA52Q6PVtYtmFjhzYQ8LuN9mKCKF5NOZcrf3jya2uL8WQwuw==
+"@next/eslint-plugin-next@13.4.0":
+  version "13.4.0"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-13.4.0.tgz#54ef3147b12a71ff5f7d69dfad49290962263d35"
+  integrity sha512-ZqQi1slguDavpuNUcl9va8+WtHHpgymIW2g+4Gs9FdI+5rjAvrUqqjfCec2hi3Cjbbp7zULFQuAiPwASKHbrxw==
   dependencies:
     glob "7.1.7"
 
@@ -2473,7 +2473,7 @@
   resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
-"@slicemachine/adapter-next@^0.1.2":
+"@slicemachine/adapter-next@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@slicemachine/adapter-next/-/adapter-next-0.1.3.tgz#2aa0beb39c8c165a7e81a3c39c411bbaf06a6463"
   integrity sha512-Tc+FxLKsqOBkqtCOGKu2TchSBDxGToK7EGdkdogTJv2Q1EaKkYxatshPwRnA2Y4lMowTq0eNvdbyaLmKl7Yl6A==
@@ -2806,22 +2806,13 @@
     "@types/react" "*"
 
 "@types/react-transition-group@^4.2.0", "@types/react-transition-group@^4.4.5":
-  version "4.4.5"
-  resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.4.5.tgz#aae20dcf773c5aa275d5b9f7cdbca638abc5e416"
-  integrity sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.4.6.tgz#18187bcda5281f8e10dfc48f0943e2fdf4f75e2e"
+  integrity sha512-VnCdSxfcm08KjsJVQcfBmhEQAPnLB8G08hAxn39azX1qYBQ/5RVQuoHuKIcfKOdncuaUvEpFKFzEvbtIMsfVew==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.9.11":
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.0.tgz#15cda145354accfc09a18d2f2305f9fc099ada21"
-  integrity sha512-0FLj93y5USLHdnhIhABk83rm8XEGA7kH3cr+YUlvxoUGp1xNt/DINUMvqPxLyOQMzLmZe8i4RTHbvb8MC7NmrA==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^18.2.0":
+"@types/react@*", "@types/react@>=16.9.11", "@types/react@^18.2.5":
   version "18.2.5"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.5.tgz#f9403e1113b12b53f7edcdd9a900c10dd4b49a59"
   integrity sha512-RuoMedzJ5AOh23Dvws13LU9jpZHIc/k90AgmK7CecAYeWmSr3553L4u5rk4sWAPBuQosfT7HmTfG4Rg5o4nGEA==
@@ -4607,12 +4598,12 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz#4683126b500b61762f2dbebace1806e8be31b1c8"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-config-next@13.3.2:
-  version "13.3.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-13.3.2.tgz#4f8b1717e0caa2126e1e8141e4e6808d2da95dcd"
-  integrity sha512-SHhE2Jo06wL3Y/hkb0in2FPXZJY3Q+6sTMUtlQkAYZFldRxoK4C5siXmuOcwSKBnaddVM1Az6GpTIDwFmKRwbg==
+eslint-config-next@13.4.0:
+  version "13.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-13.4.0.tgz#c9353a250b9bebb8e364915d025ec1fdd5f32acd"
+  integrity sha512-FkO3QRyUEKAHM4ie0xAcxo7fQ8gWevuLqgf6/g1Y6zWybqSa4FNeJr4hqqTbP25xIRgUUIPILBlx9RSH4C6+gQ==
   dependencies:
-    "@next/eslint-plugin-next" "13.3.2"
+    "@next/eslint-plugin-next" "13.4.0"
     "@rushstack/eslint-patch" "^1.1.3"
     "@typescript-eslint/parser" "^5.42.0"
     eslint-import-resolver-node "^0.3.6"
@@ -9187,7 +9178,7 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-slice-machine-ui@^1.0.2:
+slice-machine-ui@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-1.0.3.tgz#311fbddcd3fce7dfdefabed3680373282a7d6069"
   integrity sha512-eFdG5lb3KcaOM0e3FjEgdpD7Vl4vIGVi6+InjNiLP8NwvNwyxZFQ4+v6HLFVgiup+z7TVWxGuPqWTdzlpv1Psw==
