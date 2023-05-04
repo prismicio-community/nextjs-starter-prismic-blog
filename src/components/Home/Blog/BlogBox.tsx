@@ -1,7 +1,6 @@
 import React from "react";
 // @ts-ignore
 import { Image, Transformation } from "cloudinary-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 
 type BlogBoxProps = {
