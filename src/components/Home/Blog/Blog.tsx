@@ -1,5 +1,5 @@
-import React from 'react';
-import BlogBox from './BlogBox';
+import React from "react";
+import BlogBox from "./BlogBox";
 
 const Blog = () => (
   <section className="blogs-section" id="blogs">
@@ -17,8 +17,10 @@ const Blog = () => (
           img="Cover/5.jpg"
           alt="סודות לחיים"
           href="music-teaching"
-          text={'השבוע הסתיימה שנת הלימודים באחד מבתי הספר בהם אני מלמד.'
-          + ' השנה הזמנו את הורי התלמידים לשיעור כלי הקשה רגיל, כמו זה שיש לנו כל שבוע...'}
+          text={
+            "השבוע הסתיימה שנת הלימודים באחד מבתי הספר בהם אני מלמד." +
+            " השנה הזמנו את הורי התלמידים לשיעור כלי הקשה רגיל, כמו זה שיש לנו כל שבוע..."
+          }
         />
       </div>
     </div>
