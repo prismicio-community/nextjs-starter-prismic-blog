@@ -4,17 +4,29 @@ import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import TestimonialBox from "./TestimonialBox";
 import data from "./TestimonialData";
 import tw from "twin.macro";
+import useInterval from "../../../hooks/useInterval";
 
 export type Direction = "left" | "right";
 
 const Testimonials: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(0);
+
+  const { setRestart } = useInterval(() => onArrowClick("right"), 5000);
 
   const onArrowClick = (direction: "left" | "right") => {
+    setRestart(true);
+    setPrevIndex(activeIndex);
     let newIndex = direction === "left" ? activeIndex - 1 : activeIndex + 1;
     if (newIndex < 0) newIndex = data.length - 1;
     if (newIndex > data.length - 1) newIndex = 0;
     setActiveIndex(newIndex);
+  };
+
+  const onIndicatorClick = (index: number) => {
+    setRestart(true);
+    setPrevIndex(activeIndex);
+    setActiveIndex(index);
   };
 
   return (
@@ -44,7 +56,7 @@ const Testimonials: React.FC = () => {
                       tw`cursor-pointer w-[6px] h-[6px] bg-[#c0c0c0] rounded mr-3`,
                       i === activeIndex && tw`bg-[#333333] mb-px`,
                     ]}
-                    onClick={() => setActiveIndex(i)}
+                    onClick={() => onIndicatorClick(i)}
                     key={`sliders-key-${i}`}
                   />
                 ))}
@@ -62,6 +74,7 @@ const Testimonials: React.FC = () => {
                         text={item.text}
                         index={i}
                         currentIndex={activeIndex}
+                        prevIndex={prevIndex}
                       />
                     );
                   })}
