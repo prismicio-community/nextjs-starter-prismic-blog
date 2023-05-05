@@ -1,44 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import MapWithAMakredInfoWindow from "./Map";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ValidationSchema, validationSchema } from "./validationSchema";
+import GenericFormInput from "../../Shared/FormInput";
 
 const Contact: React.FC = () => {
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ValidationSchema>({ resolver: zodResolver(validationSchema) });
 
   const onSubmit = handleSubmit((data) => {
     console.log(data, errors);
+    setShowSuccess(true);
+    reset();
   });
-
-  // const onSubmit: SubmitHandler<FormValues> = (e) => {
-  //   e.preventDefault();
-  //   const data = { source: 'hompage', ...pick(this.state, ['name', 'email', 'phone', 'message']) };
-  //   axios.post('/api/contactus', data).then((response) => {
-  //     let formMessage; let
-  //       formClass;
-  //     if (response.status === 200) {
-  //       formMessage = 'הטופס נשלח בהצלחה';
-  //       formClass = 'success';
-  //     } else {
-  //       formMessage = 'שגיאה. ניתן ליצור קשר באמצעות המייל: boomtah@gmail.com';
-  //       formClass = 'error';
-  //     }
-  //     this.setState({
-  //       name: '',
-  //       phone: '',
-  //       email: '',
-  //       message: '',
-  //       formMessageClass: formClass,
-  //       formMessageText: formMessage,
-  //     });
-  //   });
-  // };
 
   return (
     <section className="contact-section" id="contact-section-id">
@@ -68,64 +50,75 @@ const Contact: React.FC = () => {
               />
             </div>
           </div>
-          <form onSubmit={onSubmit}>
-            <div id="form-messages" className={""}>
-              form message text
+          {showSuccess && (
+            <div tw="flex items-center justify-center">
+              <div className="success">הטופס נשלח בהצלחה</div>
             </div>
-            <div className="row">
-              <div className="col-sm-6">
-                <div className="row">
-                  <div className="col-sm-12">
-                    <div className="form-group">
-                      <input
-                        {...register("name", { required: true })}
-                        className="form-control form-input"
-                        placeholder="שם"
-                      />
+          )}
+          {showError && (
+            <div tw="flex items-center justify-center">
+              <div className="error">
+                שגיאה. ניתן ליצור קשר באמצעות המייל: boomtah@gmail.com
+              </div>
+            </div>
+          )}
+          {!showError && !showSuccess && (
+            <form onSubmit={onSubmit}>
+              <div className="row">
+                <div className="col-sm-6">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <div className="form-group">
+                        <GenericFormInput
+                          placeholder="שם"
+                          errors={errors}
+                          {...register("name")}
+                        />
+                      </div>
+                      <div
+                        className="form-group input-margin-top"
+                        style={{ marginBottom: 0 }}
+                      >
+                        <GenericFormInput
+                          {...register("phone", { required: true })}
+                          placeholder="טלפון"
+                          errors={errors}
+                        />
+                      </div>
+                      <div className="form-group input-margin-top">
+                        <GenericFormInput
+                          {...register("email")}
+                          placeholder="אימייל (אופציונאלי)"
+                          errors={errors}
+                        />
+                      </div>
                     </div>
-                    <div
-                      className="form-group input-margin-top"
-                      style={{ marginBottom: 0 }}
-                    >
-                      <input
-                        {...register("phone", { required: true })}
-                        className="form-control form-input"
-                        placeholder="טלפון"
-                      />
-                    </div>
-                    <div className="form-group input-margin-top">
-                      <input
-                        {...register("email")}
-                        className="form-control form-input"
-                        placeholder="אימייל (אופציונאלי)"
+                  </div>
+                </div>
+                <div className="col-sm-6">
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <textarea
+                        {...register("message")}
+                        className="form-control textarea"
+                        placeholder="תוכן ההודעה (אופציונאלי)"
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-sm-6">
-                <div className="row">
-                  <div className="col-sm-12">
-                    <textarea
-                      {...register("message")}
-                      className="form-control textarea"
-                      placeholder="תוכן ההודעה (אופציונאלי)"
-                    />
-                  </div>
+              <div className="row">
+                <div className="col-sm-12">
+                  <button
+                    className="btn btn-secondary btn-lg btn-block button"
+                    type="submit"
+                  >
+                    שלח
+                  </button>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-12">
-                <button
-                  className="btn btn-secondary btn-lg btn-block button"
-                  type="submit"
-                >
-                  שלח
-                </button>
-              </div>
-            </div>
-          </form>
+            </form>
+          )}
         </div>
       </div>
     </section>

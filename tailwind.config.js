@@ -15,6 +15,7 @@ module.exports = {
     fontFamily: {
       sans: "Lato, sans-serif",
       serif: "'Libre Baskerville', sans-serif",
+      montserrat: "Montserrat, sans-serif",
     },
     extend: {},
   },

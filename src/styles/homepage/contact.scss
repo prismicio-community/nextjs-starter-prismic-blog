@@ -76,22 +76,26 @@
 	}
 	.success {
 		padding: 1em;
-		margin-bottom: 20px;
+		margin: 80px 0;
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 		color: #468847;
 		background-color: #dff0d8;
 		border: 1px solid #468847;
 		transition: 500ms ease;
 		text-align: right;
+		max-width: 247px;
+		border-radius: 8px;
 	}
 	.error {
 		padding: 1em;
-		margin-bottom: 20px;
+		margin: 80px 0;
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 		color: #b94a48;
 		background-color: #f2dede;
 		border: 1px solid #b94a48;
 		transition: 500ms ease;
 		text-align: right;
+		max-width: 247px;
+		border-radius: 8px;
 	}
 }
