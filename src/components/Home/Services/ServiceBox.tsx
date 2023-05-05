@@ -1,7 +1,7 @@
 import { RemoveRedEye } from "@material-ui/icons";
 import React, { useState } from "react";
 import Lightbox from "react-images";
-import { Tooltip } from "react-tooltip";
+// import { Tooltip } from "react-tooltip";
 
 const ServiceBox: React.FC<{
   title: string;
@@ -37,9 +37,9 @@ const ServiceBox: React.FC<{
       </div>
       {isImages && (
         <div>
-          <Tooltip id="services-tooltip">
+          {/* <Tooltip id="services-tooltip">
             <span>לחץ למידע נוסף</span>
-          </Tooltip>
+          </Tooltip> */}
           <span
             role="button"
             tabIndex={0}

@@ -7,7 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { repositoryName } from "../../prismicio";
 
 import "../styles/styles.scss";
-import "react-tooltip/dist/react-tooltip.css";
+// import "react-tooltip/dist/react-tooltip.css";
 import { AppProps } from "next/app";
 import GlobalStyles from "../styles/GlobalStyles";
 
