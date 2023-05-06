@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 // @ts-ignore
-import { Image } from 'cloudinary-react';
-import data from './datat.json';
+import { Image } from "cloudinary-react";
+import data from "./datat.json";
 
-
-const getAboutData = () => data.paragraphs.map((paragraph, i) => (
-  <p className="text-right" key={`about-par-${i}`}>
-    {paragraph}
-  </p>
-));
+const getAboutData = () =>
+  data.paragraphs.map((paragraph, i) => (
+    <p className="text-right" key={`about-par-${i}`}>
+      {paragraph}
+    </p>
+  ));
 
 const About = () => (
   <section id="about" className="about-section">
@@ -38,13 +38,11 @@ const About = () => (
                 animateIn="fadeInUp"
                 animateOnce
               > */}
-                <h3
-                  className="text-right"
-                >
+              <h3 className="text-right" tw="text-2xl mb-2">
                 צפריר ליכטנשטיין
-                </h3>
+              </h3>
               {/* </ScrollAnimation> */}
-              { getAboutData() }
+              {getAboutData()}
             </div>
           </div>
         </div>

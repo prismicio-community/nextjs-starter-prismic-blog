@@ -1,17 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-
-const FooterArea = styled.footer`
-  background-color: #ffffff;
-  padding: 30px 0;
-`;
-
-const FooterText = styled.p`
-  color: #555555;
-  letter-spacing: 1px;
-  margin: 0 0 0;
-  opacity: 1;
-`;
 
 const Footer = () => (
   <div tw="bg-white py-8 px-0">
