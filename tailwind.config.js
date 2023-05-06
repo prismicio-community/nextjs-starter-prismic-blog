@@ -17,7 +17,11 @@ module.exports = {
       serif: "'Libre Baskerville', sans-serif",
       montserrat: "Montserrat, sans-serif",
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#d6b161",
+      },
+    },
   },
   plugins: [],
 };

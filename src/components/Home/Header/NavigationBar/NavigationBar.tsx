@@ -1,27 +1,19 @@
 import React from "react";
 import NavigationItems from "./NavigationItems";
 import Brand from "./Brand";
+import BurgerMenu from "./BurgerMenu";
 
 const NavigationBar: React.FC = () => {
   return (
-    <nav className="navbar navbar-default navbar-fixed-top mynavbar">
+    <nav className="navbar navbar-default navbar-fixed-top mynavbar flex flex-col">
       <div className="container">
-        <NavigationItems />
+        <NavigationItems target="desktop" />
+        <BurgerMenu />
         <div className="navbar-header">
-          {/* <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar-mobile"
-            aria-expanded="false"
-          >
-            <span className="icon-bar" />
-            <span className="icon-bar" />
-            <span className="icon-bar" />
-          </button> */}
           <Brand />
         </div>
       </div>
+      <NavigationItems target="mobile" />
     </nav>
   );
 };
