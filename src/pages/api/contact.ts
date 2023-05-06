@@ -18,7 +18,7 @@ const contact = async function handler(
           user_id: "1234",
           first_name: "Rafael",
           last_name: "Paz",
-          email: "refaelypaz@gmail.com",
+          email: process.env.CONTACT_EMAIL,
         },
         template: "2BKS20D8N2MDRCG7ZWCJA2TKZY5Y",
         data: {
