@@ -15,7 +15,7 @@ const NavigationItems: React.FC = () => {
     }
     return <ItemNav item={item} key={item.target} />;
   });
-  return <ul className="nav navbar-nav nav-list navbar-right">{items}</ul>;
+  return <ul tw="flex text-white text-lg">{items}</ul>;
 };
 
 export default NavigationItems;

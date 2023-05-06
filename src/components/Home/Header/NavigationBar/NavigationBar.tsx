@@ -1,12 +1,14 @@
 import React from "react";
 import NavigationItems from "./NavigationItems";
+import Brand from "./Brand";
 
 const NavigationBar: React.FC = () => {
   return (
     <nav className="navbar navbar-default navbar-fixed-top mynavbar">
       <div className="container">
+        <NavigationItems />
         <div className="navbar-header">
-          <button
+          {/* <button
             type="button"
             className="navbar-toggle collapsed"
             data-toggle="collapse"
@@ -16,14 +18,8 @@ const NavigationBar: React.FC = () => {
             <span className="icon-bar" />
             <span className="icon-bar" />
             <span className="icon-bar" />
-          </button>
-          <a className="navbar-brand" href=".">
-            D<span>A</span>D<span>A</span>
-            BOOM
-          </a>
-        </div>
-        <div className="collapse navbar-collapse" id="navbar-mobile">
-          <NavigationItems />
+          </button> */}
+          <Brand />
         </div>
       </div>
     </nav>
