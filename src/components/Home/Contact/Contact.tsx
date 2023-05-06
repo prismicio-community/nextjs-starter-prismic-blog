@@ -16,8 +16,13 @@ const Contact: React.FC = () => {
     formState: { errors },
   } = useForm<ValidationSchema>({ resolver: zodResolver(validationSchema) });
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async (data) => {
     console.log(data, errors);
+    await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
     setShowSuccess(true);
     reset();
   });

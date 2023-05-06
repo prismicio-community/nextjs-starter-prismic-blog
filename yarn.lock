@@ -2687,6 +2687,13 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
+"@trycourier/courier@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@trycourier/courier/-/courier-4.2.0.tgz#13b5a694d5ac2180815f2e0686c0a16dddde2b54"
+  integrity sha512-Ny4aFNUBbKehCnynq54XpLqh0cfLcmu63MDXqLvYIDHxVekA74Vol2+0+QEryV9SgY4nsAQOy2NrHz/uHBp/7Q==
+  dependencies:
+    cross-fetch "^3.1.5"
+
 "@ts-morph/common@~0.16.0":
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/@ts-morph/common/-/common-0.16.0.tgz#57e27d4b3fd65a4cd72cb36679ed08acb40fa3ba"

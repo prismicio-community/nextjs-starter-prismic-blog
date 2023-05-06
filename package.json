@@ -15,6 +15,7 @@
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.0.3",
     "@prismicio/react": "^2.5.2",
+    "@trycourier/courier": "^4.2.0",
     "@types/recompose": "^0.30.10",
     "classnames": "^2.3.2",
     "cloudinary-react": "^1.8.1",
