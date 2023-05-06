@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import MapWithAMakredInfoWindow from "./Map";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,13 +16,21 @@ const Contact: React.FC = () => {
   } = useForm<ValidationSchema>({ resolver: zodResolver(validationSchema) });
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data, errors);
-    await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    });
-    setShowSuccess(true);
+    try {
+      const result = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      });
+      if (result.ok) {
+        setShowSuccess(true);
+        reset();
+      } else {
+        setShowError(true);
+      }
+    } catch (e) {
+      setShowError(true);
+    }
     reset();
   });
 
@@ -70,7 +77,7 @@ const Contact: React.FC = () => {
           {!showError && !showSuccess && (
             <form onSubmit={onSubmit}>
               <div className="row">
-                <div className="col-sm-6">
+                <div className="col-md-12 col-lg-6">
                   <div className="row">
                     <div className="col-sm-12">
                       <div className="form-group">
@@ -100,7 +107,7 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-sm-6">
+                <div className="col-md-12 col-lg-6">
                   <div className="row">
                     <div className="col-sm-12">
                       <textarea

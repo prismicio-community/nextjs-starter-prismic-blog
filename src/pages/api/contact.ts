@@ -1,27 +1,40 @@
-// Install with: npm install @trycourier/courier
 import { CourierClient } from "@trycourier/courier";
 import { NextApiRequest, NextApiResponse } from "next";
+import { validationSchema } from "../../components/Home/Contact/validationSchema";
 
-const contact = async function handler(req: NextApiRequest) {
-  console.log("@@", req);
-  const courier = CourierClient({
-    authorizationToken: process.env.COURIER_API_KEY,
-  });
+const contact = async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  try {
+    const data = validationSchema.parse(req.body);
+    const courier = CourierClient({
+      authorizationToken: process.env.COURIER_API_KEY,
+    });
 
-  const { requestId } = await courier.send({
-    message: {
-      to: {
-        user_id: "1234",
-        first_name: "Rafael",
-        last_name: "Paz",
-        email: "refaelypaz@gmail.com",
+    await courier.send({
+      message: {
+        to: {
+          user_id: "1234",
+          first_name: "Rafael",
+          last_name: "Paz",
+          email: "refaelypaz@gmail.com",
+        },
+        template: "2BKS20D8N2MDRCG7ZWCJA2TKZY5Y",
+        data: {
+          ...data,
+        },
       },
-      template: "2BKS20D8N2MDRCG7ZWCJA2TKZY5Y",
-      data: {
-        variables: "awesomeness",
-      },
-    },
-  });
+    });
+
+    res.status(200).json({
+      msg: "Message sent successfully",
+    });
+  } catch (e) {
+    res.status(500).json({
+      error: e,
+    });
+  }
 };
 
 export default contact;
