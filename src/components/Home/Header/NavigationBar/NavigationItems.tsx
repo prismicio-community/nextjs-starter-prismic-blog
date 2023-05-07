@@ -3,7 +3,6 @@ import FacebookNav from "./FacebookNav";
 import ItemNav from "./ItemNav";
 import { navArray } from "./navArray";
 import tw from "twin.macro";
-import useOnScroll from "../../../../hooks/useOnScroll";
 
 const NavigationItems: React.FC<{
   target: "mobile" | "desktop";
@@ -23,7 +22,7 @@ const NavigationItems: React.FC<{
   return (
     <ul
       css={[
-        tw`text-white text-xl font-hebrew md:space-x-4 md:space-x-reverse items-center flex-col md:flex-row transition-all duration-700 lg:m-8`,
+        tw`text-white text-xl font-hebrew md:space-x-4 md:space-x-reverse items-center flex-col md:flex-row transition-all duration-700`,
         target === "mobile" &&
           tw`flex md:hidden top-20 bg-white text-gray-800 items-start w-full space-y-3 h-[285px] opacity-100 pr-8`,
         target === "mobile" && !isOpen && tw`h-0 opacity-0 `,
