@@ -1,31 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import NavigationItems from "./NavigationItems";
+import Brand from "./Brand";
+import BurgerMenu from "./BurgerMenu";
 
 const NavigationBar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="navbar navbar-default navbar-fixed-top mynavbar">
-      <div className="container">
-        <div className="navbar-header">
-          <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar-mobile"
-            aria-expanded="false"
-          >
-            <span className="icon-bar" />
-            <span className="icon-bar" />
-            <span className="icon-bar" />
-          </button>
-          <a className="navbar-brand" href=".">
-            D<span>A</span>D<span>A</span>
-            BOOM
-          </a>
+    <nav className="navbar navbar-default navbar-fixed-top mynavbar flex flex-col">
+      <div tw="flex justify-between w-full items-center mx-8 xl:mx-auto max-w-[1320px]">
+        <NavigationItems target="desktop" />
+        <div onClick={() => setIsOpen((isOpen) => !isOpen)}>
+          <BurgerMenu />
         </div>
-        <div className="collapse navbar-collapse" id="navbar-mobile">
-          <NavigationItems />
+        <div className="navbar-header">
+          <Brand />
         </div>
       </div>
+      <NavigationItems target="mobile" isOpen={isOpen} />
     </nav>
   );
 };

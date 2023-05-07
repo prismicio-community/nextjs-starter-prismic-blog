@@ -67,7 +67,7 @@
     text-align: right;
 
     &:hover, &:focus {
-      color: #ffffff;
+      color: #d6b161;
       text-decoration: none;
     }
   }
@@ -81,8 +81,11 @@
 }
 
 .nav-scroll .mynavbar {
-  a, a:hover, a:focus {
+  a, a:focus {
     color: #222222;
+  }
+  a:hover {
+    color: #d6b161;
   }
   .nav-list li {
     a {

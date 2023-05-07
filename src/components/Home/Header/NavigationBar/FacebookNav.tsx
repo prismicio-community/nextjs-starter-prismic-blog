@@ -3,9 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 const FacebookNav: React.FC<{ facebookLink: string }> = ({ facebookLink }) => (
-  <li>
+  <li tw="hover:text-primary">
     <a href={facebookLink} target="_blank" rel="noopener noreferrer">
-      <FontAwesomeIcon icon={faFacebookF} width={10} height={10} />
+      <FontAwesomeIcon
+        icon={faFacebookF}
+        width={15}
+        height={15}
+        tw="hover:text-primary transition-colors"
+      />
     </a>
   </li>
 );
