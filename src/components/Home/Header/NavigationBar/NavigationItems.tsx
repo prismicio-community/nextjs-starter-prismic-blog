@@ -3,10 +3,12 @@ import FacebookNav from "./FacebookNav";
 import ItemNav from "./ItemNav";
 import { navArray } from "./navArray";
 import tw from "twin.macro";
+import useOnScroll from "../../../../hooks/useOnScroll";
 
-const NavigationItems: React.FC<{ target: "mobile" | "desktop" }> = ({
-  target,
-}) => {
+const NavigationItems: React.FC<{
+  target: "mobile" | "desktop";
+  isOpen?: boolean;
+}> = ({ target, isOpen }) => {
   const facebookLink =
     "https://www.facebook.com/%D7%A6%D7%A4%D7%A8%D7%99%D7%A8-%D7%9C%D7%99%D7%9B%D7%98%D7%A0%D7" +
     "%A9%D7%98%D7%99%D7%99%D7%9F-%D7%9C%D7%99%D7%9E%D7%95%D7%93-%D7%AA%D7%95%D7%A4%D7%99%D7%9D-%D7%95%D7%9B%D7%9C" +
@@ -21,8 +23,11 @@ const NavigationItems: React.FC<{ target: "mobile" | "desktop" }> = ({
   return (
     <ul
       css={[
-        tw`text-white text-xl font-montserrat space-x-4 space-x-reverse items-center flex-col md:flex-row`,
-        target === "mobile" && tw`flex md:hidden`,
+        tw`text-white text-xl font-hebrew md:space-x-4 md:space-x-reverse items-center flex-col md:flex-row transition-all duration-700 lg:m-8`,
+        target === "mobile" &&
+          tw`flex md:hidden top-20 bg-white text-gray-800 items-start w-full space-y-3 h-[285px] opacity-100 pr-8`,
+        target === "mobile" && !isOpen && tw`h-0 opacity-0 `,
+        isOpen && tw`pt-4 mt-4`,
         target === "desktop" && tw`hidden md:flex`,
       ]}
     >
