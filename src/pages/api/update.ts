@@ -4,7 +4,7 @@ const update = async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.dir(`@@ req: ${req.body}`);
+  console.dir(req.body, { depth: null });
   res.status(200).json({
     message: "OK",
   });
