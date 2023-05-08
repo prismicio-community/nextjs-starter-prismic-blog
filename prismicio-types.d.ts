@@ -108,63 +108,7 @@ export type HomepageDocument<Lang extends string = string> =
     "homepage",
     Lang
   >;
-/** Content for Post documents */
-interface PostDocumentData {
-  /**
-   * title field in *Post*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: post.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  title: prismicT.TitleField;
-  /**
-   * date field in *Post*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: post.date
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/date
-   *
-   */
-  date: prismicT.DateField;
-  /**
-   * Slice Zone field in *Post*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: post.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-   *
-   */
-  slices: prismicT.SliceZone<PostDocumentDataSlicesSlice>;
-}
-/**
- * Slice for *Post → Slice Zone*
- *
- */
-type PostDocumentDataSlicesSlice =
-  | ImageWithCaptionSlice
-  | QuoteSlice
-  | TextSlice
-  | TestingSlice;
-/**
- * Post document from Prismic
- *
- * - **API ID**: `post`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type PostDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
-export type AllDocumentTypes = HomepageDocument | PostDocument;
+export type AllDocumentTypes = HomepageDocument;
 /**
  * Primary content in ImageWithCaption → Primary
  *
@@ -443,9 +387,6 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataNavigationItemsItem,
       HomepageDocument,
-      PostDocumentData,
-      PostDocumentDataSlicesSlice,
-      PostDocument,
       AllDocumentTypes,
       ImageWithCaptionSliceDefaultSlicePrimary,
       ImageWithCaptionSliceDefaultSlice,

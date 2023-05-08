@@ -26,10 +26,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         )}
       >
         <ThemeProvider theme={{}}>
-          <Component {...pageProps} />
+          <PrismicPreview repositoryName={repositoryName}>
+            <Component {...pageProps} />
+          </PrismicPreview>
         </ThemeProvider>
       </PrismicProvider>
-      <PrismicPreview repositoryName={repositoryName} />
     </>
   );
 };

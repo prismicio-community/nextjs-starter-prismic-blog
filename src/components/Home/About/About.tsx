@@ -1,19 +1,8 @@
 import React from "react";
-// @ts-ignore
-import { Image } from "cloudinary-react";
-import data from "./datat.json";
-import useOnScreen from "../../../hooks/useOnScreen";
 import SlideWhenVisible from "../../Shared/SlideWhenVisible";
 import { HomepageDocument } from "../../../../types.generated";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-
-const getAboutData = () =>
-  data.paragraphs.map((paragraph, i) => (
-    <p className="text-right" key={`about-par-${i}`}>
-      {paragraph}
-    </p>
-  ));
 
 const About: React.FC<
   Pick<

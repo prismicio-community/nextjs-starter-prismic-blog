@@ -1,12 +1,10 @@
 import React from "react";
 import Head from "next/head";
-import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../../prismicio";
 
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { getPlaiceholder } from "plaiceholder";
-import { HomepageDocument } from "../../types.generated";
 import About from "../components/Home/About/About";
 import Counter from "../components/Home/Counter/Counter";
 import Header from "../components/Home/Header/Header";
@@ -17,6 +15,7 @@ import { SetupRepo } from "../components/SetupRepo";
 import Blog from "../components/Home/Blog/Blog";
 import Contact from "../components/Home/Contact/Contact";
 import Footer from "../components/Home/Footer/Footer";
+import { HomepageDocument } from "../../prismicio-types";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
