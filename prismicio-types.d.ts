@@ -76,6 +76,17 @@ interface HomepageDocumentData {
    *
    */
   about_image: prismicT.ImageField<never>;
+  /**
+   * services field in *Homepage*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.services[]
+   * - **Tab**: Services
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  services: prismicT.GroupField<Simplify<HomepageDocumentDataServicesItem>>;
 }
 /**
  * Item in Homepage → NavigationItems
@@ -92,6 +103,42 @@ export interface HomepageDocumentDataNavigationItemsItem {
    *
    */
   name: prismicT.RichTextField;
+}
+/**
+ * Item in Homepage → services
+ *
+ */
+export interface HomepageDocumentDataServicesItem {
+  /**
+   * title field in *Homepage → services*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.services[].title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  title: prismicT.TitleField;
+  /**
+   * content field in *Homepage → services*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.services[].content
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  content: prismicT.RichTextField;
+  /**
+   * icon field in *Homepage → services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.services[].icon
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  icon: prismicT.ImageField<never>;
 }
 /**
  * Homepage document from Prismic
@@ -386,6 +433,7 @@ declare module "@prismicio/client" {
     export type {
       HomepageDocumentData,
       HomepageDocumentDataNavigationItemsItem,
+      HomepageDocumentDataServicesItem,
       HomepageDocument,
       AllDocumentTypes,
       ImageWithCaptionSliceDefaultSlicePrimary,

@@ -40,6 +40,7 @@ const Home = ({
   homepage,
   lqip,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log("@@@ ~ homepage:", homepage);
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -60,7 +61,7 @@ const Home = ({
         about_title={homepage.about_title}
         about_image={homepage.about_image}
       />
-      <Services />
+      <Services services={homepage.services} />
       <Counter />
       <Portfolio />
       <Testimonials />
