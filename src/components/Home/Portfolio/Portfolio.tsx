@@ -31,7 +31,7 @@ const Portfolio: React.FC = () => (
                 ref={ref}
                 onClick={open}
                 src="https://res.cloudinary.com/dadaboom/image/upload/c_thumb,h_335,w_424/v1530620438/gallery_image.jpg"
-                tw="cursor-pointer"
+                tw="cursor-pointer w-full"
               />
             )}
           </Item>
@@ -47,7 +47,7 @@ const Portfolio: React.FC = () => (
                 ref={ref}
                 onClick={open}
                 src="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p2.jpg"
-                tw="cursor-pointer"
+                tw="cursor-pointer w-full"
               />
             )}
           </Item>
@@ -56,7 +56,6 @@ const Portfolio: React.FC = () => (
             thumbnail="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p3.jpg"
             width="370"
             height="247"
-            tw="cursor-pointer"
           >
             {({ ref, open }) => (
               <img
@@ -64,7 +63,7 @@ const Portfolio: React.FC = () => (
                 ref={ref}
                 onClick={open}
                 src="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p3.jpg"
-                tw="cursor-pointer"
+                tw="cursor-pointer w-full"
               />
             )}
           </Item>
