@@ -3,8 +3,10 @@ import React from "react";
 import { Image } from "cloudinary-react";
 import data from "./datat.json";
 import useOnScreen from "../../../hooks/useOnScreen";
-import tw from "twin.macro";
 import SlideWhenVisible from "../../Shared/SlideWhenVisible";
+import { HomepageDocument } from "../../../../types.generated";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 
 const getAboutData = () =>
   data.paragraphs.map((paragraph, i) => (
@@ -13,8 +15,12 @@ const getAboutData = () =>
     </p>
   ));
 
-const About = () => {
-  const { isIntersecting, ref } = useOnScreen();
+const About: React.FC<
+  Pick<
+    HomepageDocument["data"],
+    "about_title" | "about_content" | "about_image"
+  >
+> = ({ about_content, about_title, about_image }) => {
   return (
     <section id="about" className="about-section">
       <div className="container">
@@ -28,11 +34,9 @@ const About = () => {
         <div className="row">
           <div className="col-md-4 col-md-push-8">
             <div className="section-picture">
-              <Image
-                cloudName="dadaboom"
-                publicId="Cover/about.jpg"
+              <PrismicNextImage
+                field={about_image}
                 className="img-responsive"
-                alt="about cover"
               />
             </div>
           </div>
@@ -40,11 +44,16 @@ const About = () => {
             <div className="section-content">
               <div className="tab-content">
                 <SlideWhenVisible>
-                  <h3 ref={ref} className="text-right" tw="text-2xl mb-2">
-                    צפריר ליכטנשטיין
-                  </h3>
+                  <PrismicRichText
+                    field={about_title}
+                    components={{
+                      heading3: ({ children }) => (
+                        <h3 tw="text-2xl mb-2">{children}</h3>
+                      ),
+                    }}
+                  />
                 </SlideWhenVisible>
-                {getAboutData()}
+                <PrismicRichText field={about_content} />
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ interface HomepageDocumentData {
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    headerImage: prismicT.ImageField<null>;
+    headerImage: prismicT.ImageField<never>;
     /**
      * NavigationItems field in *Homepage*
      *
@@ -41,6 +41,39 @@ interface HomepageDocumentData {
      *
      */
     navigationItems: prismicT.GroupField<Simplify<HomepageDocumentDataNavigationItemsItem>>;
+    /**
+     * about_title field in *Homepage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.about_title
+     * - **Tab**: About
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    about_title: prismicT.RichTextField;
+    /**
+     * about_content field in *Homepage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.about_content
+     * - **Tab**: About
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    about_content: prismicT.RichTextField;
+    /**
+     * about_image field in *Homepage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.about_image
+     * - **Tab**: About
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    about_image: prismicT.ImageField<never>;
 }
 /**
  * Item in Homepage → NavigationItems
@@ -134,7 +167,7 @@ interface ImageWithCaptionSliceDefaultSlicePrimary {
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    image: prismicT.ImageField<null>;
+    image: prismicT.ImageField<never>;
     /**
      * caption field in *ImageWithCaption → Primary*
      *
@@ -169,7 +202,7 @@ interface ImageWithCaptionSliceFullWidthImagePrimary {
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    image: prismicT.ImageField<null>;
+    image: prismicT.ImageField<never>;
     /**
      * caption field in *ImageWithCaption → Primary*
      *
@@ -283,7 +316,7 @@ export interface TestingSliceDefaultSliceItem {
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    image: prismicT.ImageField<null>;
+    image: prismicT.ImageField<never>;
     /**
      * working field in *Testing → Items*
      *
@@ -361,5 +394,8 @@ export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
+    }
+    namespace Content {
+        export type { HomepageDocumentData, HomepageDocumentDataNavigationItemsItem, HomepageDocument, PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, AllDocumentTypes, ImageWithCaptionSliceDefaultSlicePrimary, ImageWithCaptionSliceDefaultSlice, ImageWithCaptionSliceFullWidthImagePrimary, ImageWithCaptionSliceFullWidthImage, ImageWithCaptionSliceVariation, ImageWithCaptionSlice, QuoteSliceDefaultSlicePrimary, QuoteSliceDefaultSlice, QuoteSliceVariation, QuoteSlice, TestingSliceDefaultSlicePrimary, TestingSliceDefaultSliceItem, TestingSliceDefaultSlice, TestingSliceVariation, TestingSlice, TextSliceDefaultSlicePrimary, TextSliceDefaultSlice, TextSliceVariation, TextSlice };
     }
 }

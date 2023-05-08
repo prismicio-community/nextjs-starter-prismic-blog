@@ -66,7 +66,11 @@ const Home = ({
         heroImage={homepage.headerImage}
         lqipImage={lqip}
       />
-      <About />
+      <About
+        about_content={homepage.about_content}
+        about_title={homepage.about_title}
+        about_image={homepage.about_image}
+      />
       <Services />
       <Counter />
       <Portfolio />

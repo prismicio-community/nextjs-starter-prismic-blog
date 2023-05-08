@@ -41,6 +41,30 @@
           }
         }
       }
+    },
+    "About": {
+      "about_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "about_title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "about_content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "about_content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "about_image": {
+        "type": "Image",
+        "config": { "label": "about_image", "constraint": {}, "thumbnails": [] }
+      }
     }
   }
 }

@@ -16,38 +16,12 @@ export type Scalars = {
   Long: any;
 };
 
-export type BlogHome = _Document & _Linkable & {
-  __typename?: 'BlogHome';
-  _linkType?: Maybe<Scalars['String']>;
-  _meta: Meta;
-  description?: Maybe<Scalars['Json']>;
-  headline?: Maybe<Scalars['Json']>;
-  image?: Maybe<Scalars['Json']>;
-};
-
-/** A connection to a list of items. */
-export type BlogHomeConnectionConnection = {
-  __typename?: 'BlogHomeConnectionConnection';
-  /** A list of edges. */
-  edges?: Maybe<Array<Maybe<BlogHomeConnectionEdge>>>;
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo;
-  totalCount: Scalars['Long'];
-};
-
-/** An edge in a connection. */
-export type BlogHomeConnectionEdge = {
-  __typename?: 'BlogHomeConnectionEdge';
-  /** A cursor for use in pagination. */
-  cursor: Scalars['String'];
-  /** The item at the end of the edge. */
-  node: BlogHome;
-};
-
 export type Homepage = _Document & _Linkable & {
   __typename?: 'Homepage';
   _linkType?: Maybe<Scalars['String']>;
   _meta: Meta;
+  about_content?: Maybe<Scalars['Json']>;
+  about_title?: Maybe<Scalars['Json']>;
   title?: Maybe<Scalars['Json']>;
 };
 
@@ -109,7 +83,6 @@ export type Post = _Document & _Linkable & {
   _meta: Meta;
   date?: Maybe<Scalars['Date']>;
   slices?: Maybe<Array<PostSlices>>;
-  subtitle?: Maybe<Scalars['Json']>;
   title?: Maybe<Scalars['Json']>;
 };
 
@@ -233,7 +206,6 @@ export type PostSlicesTextVariation = PostSlicesTextDefaultSlice;
 export type Query = {
   __typename?: 'Query';
   _allDocuments: _DocumentConnection;
-  allBlogHomes: BlogHomeConnectionConnection;
   allHomepages: HomepageConnectionConnection;
   allPosts: PostConnectionConnection;
   post?: Maybe<Post>;
@@ -261,31 +233,6 @@ export type Query_AllDocumentsArgs = {
   tags_in?: InputMaybe<Array<Scalars['String']>>;
   type?: InputMaybe<Scalars['String']>;
   type_in?: InputMaybe<Array<Scalars['String']>>;
-};
-
-
-export type QueryAllBlogHomesArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  firstPublicationDate?: InputMaybe<Scalars['DateTime']>;
-  firstPublicationDate_after?: InputMaybe<Scalars['DateTime']>;
-  firstPublicationDate_before?: InputMaybe<Scalars['DateTime']>;
-  fulltext?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['String']>;
-  id_in?: InputMaybe<Array<Scalars['String']>>;
-  lang?: InputMaybe<Scalars['String']>;
-  last?: InputMaybe<Scalars['Int']>;
-  lastPublicationDate?: InputMaybe<Scalars['DateTime']>;
-  lastPublicationDate_after?: InputMaybe<Scalars['DateTime']>;
-  lastPublicationDate_before?: InputMaybe<Scalars['DateTime']>;
-  similar?: InputMaybe<Similar>;
-  sortBy?: InputMaybe<SortBlogHomey>;
-  tags?: InputMaybe<Array<Scalars['String']>>;
-  tags_in?: InputMaybe<Array<Scalars['String']>>;
-  uid?: InputMaybe<Scalars['String']>;
-  uid_in?: InputMaybe<Array<Scalars['String']>>;
-  where?: InputMaybe<WhereBlogHome>;
 };
 
 
@@ -356,17 +303,6 @@ export type RelatedDocument = {
   uid?: Maybe<Scalars['String']>;
 };
 
-export enum SortBlogHomey {
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
-  HeadlineAsc = 'headline_ASC',
-  HeadlineDesc = 'headline_DESC',
-  MetaFirstPublicationDateAsc = 'meta_firstPublicationDate_ASC',
-  MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
-  MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
-  MetaLastPublicationDateDesc = 'meta_lastPublicationDate_DESC'
-}
-
 export enum SortDocumentsBy {
   MetaFirstPublicationDateAsc = 'meta_firstPublicationDate_ASC',
   MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
@@ -375,6 +311,10 @@ export enum SortDocumentsBy {
 }
 
 export enum SortHomepagey {
+  AboutContentAsc = 'about_content_ASC',
+  AboutContentDesc = 'about_content_DESC',
+  AboutTitleAsc = 'about_title_ASC',
+  AboutTitleDesc = 'about_title_DESC',
   MetaFirstPublicationDateAsc = 'meta_firstPublicationDate_ASC',
   MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
   MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
@@ -390,20 +330,15 @@ export enum SortPosty {
   MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
   MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
   MetaLastPublicationDateDesc = 'meta_lastPublicationDate_DESC',
-  SubtitleAsc = 'subtitle_ASC',
-  SubtitleDesc = 'subtitle_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
 
-export type WhereBlogHome = {
-  /** description */
-  description_fulltext?: InputMaybe<Scalars['String']>;
-  /** headline */
-  headline_fulltext?: InputMaybe<Scalars['String']>;
-};
-
 export type WhereHomepage = {
+  /** about_content */
+  about_content_fulltext?: InputMaybe<Scalars['String']>;
+  /** about_title */
+  about_title_fulltext?: InputMaybe<Scalars['String']>;
   /** title */
   title_fulltext?: InputMaybe<Scalars['String']>;
 };
@@ -415,8 +350,6 @@ export type WherePost = {
   date_after?: InputMaybe<Scalars['Date']>;
   /** date */
   date_before?: InputMaybe<Scalars['Date']>;
-  /** subtitle */
-  subtitle_fulltext?: InputMaybe<Scalars['String']>;
   /** title */
   title_fulltext?: InputMaybe<Scalars['String']>;
 };
