@@ -57,6 +57,10 @@ class MyDocument extends Document {
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
             crossOrigin="anonymous"
           />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dadaboom/image/upload/q_auto/v1521616799/Cover/zafrir-b_w_20_950KB_Flip.jpg"
+          />
         </Head>
         <body>
           <Main />
