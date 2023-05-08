@@ -27,6 +27,7 @@ const Portfolio: React.FC = () => (
           >
             {({ ref, open }) => (
               <img
+                // @ts-ignore
                 ref={ref}
                 onClick={open}
                 src="https://res.cloudinary.com/dadaboom/image/upload/c_thumb,h_335,w_424/v1530620438/gallery_image.jpg"
@@ -42,6 +43,7 @@ const Portfolio: React.FC = () => (
           >
             {({ ref, open }) => (
               <img
+                // @ts-ignore
                 ref={ref}
                 onClick={open}
                 src="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p2.jpg"
@@ -58,6 +60,7 @@ const Portfolio: React.FC = () => (
           >
             {({ ref, open }) => (
               <img
+                // @ts-ignore
                 ref={ref}
                 onClick={open}
                 src="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p3.jpg"
