@@ -38,6 +38,15 @@ class MyDocument extends Document {
     return (
       <Html lang="he" dir="rtl">
         <Head>
+          <meta
+            name="description"
+            content='צפריר ליכטנשטיין. מתופף מקצועי, בעל למעלה מ-25 שנות נסיון בהוראת תופים וכלי הקשה לכל הגילאים והרמות, בארץ ובחו"ל.  מתמחה בלימוד ילדים ומבוגרים על הרצף האוטיסטי, לקויות והפרעות קשב'
+          />
+          <meta
+            name="keywords"
+            content="drums, drums lessons, music, music lessons, תופים, שיעורי תופים, מוזיקה"
+          />
+          <meta name="author" content="Rafael Paz" />
           <link
             href="https://fonts.googleapis.com/earlyaccess/opensanshebrew.css?display=swap"
             rel="stylesheet"

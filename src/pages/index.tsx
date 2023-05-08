@@ -59,7 +59,7 @@ const Home = ({
   return (
     <>
       <Head>
-        <title>{prismicH.asText(homepage.title)}</title>
+        <title>צפריר ליכשטנשטיין | מורה לתופים לאוטיסטים | דה דה בום</title>
       </Head>
       <Header
         navItems={homepage.navigationItems}
