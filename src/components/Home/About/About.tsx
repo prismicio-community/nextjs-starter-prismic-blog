@@ -1,14 +1,12 @@
 import React from "react";
 import SlideWhenVisible from "../../Shared/SlideWhenVisible";
-import { HomepageDocument } from "../../../../types.generated";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
+import { HomepageDocument } from "../../../../prismicio-types";
+import { PickFieldsStartingWith } from "../../../../types";
 
 const About: React.FC<
-  Pick<
-    HomepageDocument["data"],
-    "about_title" | "about_content" | "about_image"
-  >
+  PickFieldsStartingWith<HomepageDocument["data"], "about">
 > = ({ about_content, about_title, about_image }) => {
   return (
     <section id="about" className="about-section">

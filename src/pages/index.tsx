@@ -15,29 +15,19 @@ import { SetupRepo } from "../components/SetupRepo";
 import Blog from "../components/Home/Blog/Blog";
 import Contact from "../components/Home/Contact/Contact";
 import Footer from "../components/Home/Footer/Footer";
-import { HomepageDocument } from "../../prismicio-types";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
 
-  let homepage: HomepageDocument["data"] | null = null;
-  try {
-    const result = await client.getSingle("homepage");
-    homepage = result.data;
-  } catch (e) {
-    console.log("On CATCH", e);
-    // If we reach this line, it means a Blog Home document was not created
-    // yet. We don't need to do anything here. We will render a component on
-    // the page with a helpful setup message.
-  }
+  const result = await client.getSingle("homepage");
 
-  const { base64 } = await getPlaiceholder(homepage?.headerImage.url ?? "", {
+  const { base64 } = await getPlaiceholder(result.data?.headerImage.url ?? "", {
     size: 64,
   });
 
   return {
     props: {
-      homepage,
+      homepage: result.data,
       lqip: base64,
     },
   };
