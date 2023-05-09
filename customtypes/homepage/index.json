@@ -87,7 +87,7 @@
                 "label": "content",
                 "placeholder": "",
                 "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
               }
             },
             "icon": {
@@ -96,6 +96,60 @@
             }
           }
         }
+      }
+    },
+    "Counters": {
+      "counters": {
+        "type": "Group",
+        "config": {
+          "label": "counters",
+          "fields": {
+            "title": {
+              "type": "StructuredText",
+              "config": {
+                "label": "title",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "counter": {
+              "type": "Number",
+              "config": { "label": "counter", "placeholder": "" }
+            }
+          }
+        }
+      }
+    },
+    "Gallery": {
+      "images": {
+        "type": "Group",
+        "config": {
+          "label": "images",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": { "label": "image", "constraint": {}, "thumbnails": [] }
+            }
+          }
+        }
+      },
+      "videos": {
+        "type": "Group",
+        "config": {
+          "label": "videos",
+          "fields": {
+            "youtubevideoid": {
+              "type": "Text",
+              "config": { "label": "youtubeVideoId", "placeholder": "" }
+            }
+          }
+        }
+      },
+      "slices5": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": {} }
       }
     }
   }

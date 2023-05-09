@@ -24,6 +24,7 @@ const About: React.FC<
               <PrismicNextImage
                 field={about_image}
                 className="img-responsive"
+                tw="w-full"
               />
             </div>
           </div>

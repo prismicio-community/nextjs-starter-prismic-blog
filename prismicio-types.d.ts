@@ -87,6 +87,50 @@ interface HomepageDocumentData {
    *
    */
   services: prismicT.GroupField<Simplify<HomepageDocumentDataServicesItem>>;
+  /**
+   * counters field in *Homepage*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.counters[]
+   * - **Tab**: Counters
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  counters: prismicT.GroupField<Simplify<HomepageDocumentDataCountersItem>>;
+  /**
+   * images field in *Homepage*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.images[]
+   * - **Tab**: Gallery
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  images: prismicT.GroupField<Simplify<HomepageDocumentDataImagesItem>>;
+  /**
+   * videos field in *Homepage*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.videos[]
+   * - **Tab**: Gallery
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  videos: prismicT.GroupField<Simplify<HomepageDocumentDataVideosItem>>;
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices5[]
+   * - **Tab**: Gallery
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices5: prismicT.SliceZone<HomepageDocumentDataSlices5Slice>;
 }
 /**
  * Item in Homepage → NavigationItems
@@ -140,6 +184,69 @@ export interface HomepageDocumentDataServicesItem {
    */
   icon: prismicT.ImageField<never>;
 }
+/**
+ * Item in Homepage → counters
+ *
+ */
+export interface HomepageDocumentDataCountersItem {
+  /**
+   * title field in *Homepage → counters*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.counters[].title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  title: prismicT.RichTextField;
+  /**
+   * counter field in *Homepage → counters*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.counters[].counter
+   * - **Documentation**: https://prismic.io/docs/core-concepts/number
+   *
+   */
+  counter: prismicT.NumberField;
+}
+/**
+ * Item in Homepage → images
+ *
+ */
+export interface HomepageDocumentDataImagesItem {
+  /**
+   * image field in *Homepage → images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.images[].image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
+}
+/**
+ * Item in Homepage → videos
+ *
+ */
+export interface HomepageDocumentDataVideosItem {
+  /**
+   * youtubeVideoId field in *Homepage → videos*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.videos[].youtubevideoid
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  youtubevideoid: prismicT.KeyTextField;
+}
+/**
+ * Slice for *Homepage → Slice Zone*
+ *
+ */
+type HomepageDocumentDataSlices5Slice = never;
 /**
  * Homepage document from Prismic
  *
@@ -296,132 +403,6 @@ type QuoteSliceVariation = QuoteSliceDefaultSlice;
  *
  */
 export type QuoteSlice = prismicT.SharedSlice<"quote", QuoteSliceVariation>;
-/**
- * Primary content in Testing → Primary
- *
- */
-interface TestingSliceDefaultSlicePrimary {
-  /**
-   * Title field in *Testing → Primary*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: This is where it all begins...
-   * - **API ID Path**: testing.primary.title
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  title: prismicT.TitleField;
-  /**
-   * Description field in *Testing → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: A nice description of your feature
-   * - **API ID Path**: testing.primary.description
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismicT.RichTextField;
-}
-/**
- * Item in Testing → Items
- *
- */
-export interface TestingSliceDefaultSliceItem {
-  /**
-   * image field in *Testing → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testing.items[].image
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  image: prismicT.ImageField<never>;
-  /**
-   * working field in *Testing → Items*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: testing.items[].working
-   * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
-   *
-   */
-  working: prismicT.BooleanField;
-}
-/**
- * Default slice variation for Testing Slice
- *
- * - **API ID**: `default-slice`
- * - **Description**: `Testing`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TestingSliceDefaultSlice = prismicT.SharedSliceVariation<
-  "default-slice",
-  Simplify<TestingSliceDefaultSlicePrimary>,
-  Simplify<TestingSliceDefaultSliceItem>
->;
-/**
- * Slice variation for *Testing*
- *
- */
-type TestingSliceVariation = TestingSliceDefaultSlice;
-/**
- * Testing Shared Slice
- *
- * - **API ID**: `testing`
- * - **Description**: `Testing`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TestingSlice = prismicT.SharedSlice<
-  "testing",
-  TestingSliceVariation
->;
-/**
- * Primary content in Text → Primary
- *
- */
-interface TextSliceDefaultSlicePrimary {
-  /**
-   * text field in *Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text.primary.text
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  text: prismicT.RichTextField;
-}
-/**
- * Default slice variation for Text Slice
- *
- * - **API ID**: `default-slice`
- * - **Description**: `Text`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TextSliceDefaultSlice = prismicT.SharedSliceVariation<
-  "default-slice",
-  Simplify<TextSliceDefaultSlicePrimary>,
-  never
->;
-/**
- * Slice variation for *Text*
- *
- */
-type TextSliceVariation = TextSliceDefaultSlice;
-/**
- * Text Shared Slice
- *
- * - **API ID**: `text`
- * - **Description**: `Text`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -434,6 +415,10 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataNavigationItemsItem,
       HomepageDocumentDataServicesItem,
+      HomepageDocumentDataCountersItem,
+      HomepageDocumentDataImagesItem,
+      HomepageDocumentDataVideosItem,
+      HomepageDocumentDataSlices5Slice,
       HomepageDocument,
       AllDocumentTypes,
       ImageWithCaptionSliceDefaultSlicePrimary,
@@ -446,15 +431,6 @@ declare module "@prismicio/client" {
       QuoteSliceDefaultSlice,
       QuoteSliceVariation,
       QuoteSlice,
-      TestingSliceDefaultSlicePrimary,
-      TestingSliceDefaultSliceItem,
-      TestingSliceDefaultSlice,
-      TestingSliceVariation,
-      TestingSlice,
-      TextSliceDefaultSlicePrimary,
-      TextSliceDefaultSlice,
-      TextSliceVariation,
-      TextSlice,
     };
   }
 }
