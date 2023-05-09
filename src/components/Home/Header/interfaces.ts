@@ -1,5 +1,5 @@
 import * as PrismicT from "@prismicio/types";
-import { HomepageDocument } from "../../../../types.generated";
+import { HomepageDocument } from "../../../../prismicio-types";
 
 export interface IHeaderProps {
   navItems: HomepageDocument["data"]["navigationItems"];

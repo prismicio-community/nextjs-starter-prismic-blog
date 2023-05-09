@@ -51,6 +51,7 @@
     "slicemachine": "start-slicemachine",
     "format": "prettier --write .",
     "gen": "PRISMIC_REF=`node scripts/updateRefFromPrismic.mjs` graphql-codegen --config codegen.yml -r dotenv/config",
+    "prismic-gen": "npx prismic-ts-codegen",
     "tsn": "ts-node --files -r dotenv/config -r tsconfig-paths/register --project tsconfig.script.json -r esm",
     "lint": "next lint"
   },
@@ -80,7 +81,7 @@
     "eslint-config-prettier": "^8.8.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
-    "prismic-ts-codegen": "^0.1.5",
+    "prismic-ts-codegen": "^0.1.6",
     "slice-machine-ui": "^1.0.3",
     "tailwindcss": "^3.3.2",
     "ts-essentials": "^9.3.1",

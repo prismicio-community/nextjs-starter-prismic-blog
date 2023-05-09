@@ -38,6 +38,15 @@ class MyDocument extends Document {
     return (
       <Html lang="he" dir="rtl">
         <Head>
+          <meta
+            name="description"
+            content='צפריר ליכטנשטיין. מתופף מקצועי, בעל למעלה מ-25 שנות נסיון בהוראת תופים וכלי הקשה לכל הגילאים והרמות, בארץ ובחו"ל.  מתמחה בלימוד ילדים ומבוגרים על הרצף האוטיסטי, לקויות והפרעות קשב'
+          />
+          <meta
+            name="keywords"
+            content="drums, drums lessons, music, music lessons, תופים, שיעורי תופים, מוזיקה"
+          />
+          <meta name="author" content="Rafael Paz" />
           <link
             href="https://fonts.googleapis.com/earlyaccess/opensanshebrew.css?display=swap"
             rel="stylesheet"
@@ -47,6 +56,10 @@ class MyDocument extends Document {
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
             crossOrigin="anonymous"
+          />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dadaboom/image/upload/q_auto/v1521616799/Cover/zafrir-b_w_20_950KB_Flip.jpg"
           />
         </Head>
         <body>

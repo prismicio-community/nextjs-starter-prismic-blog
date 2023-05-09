@@ -15,7 +15,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" type="image/ico" />
       </Head>
       <GlobalStyles />
       <PrismicProvider
@@ -26,10 +26,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         )}
       >
         <ThemeProvider theme={{}}>
-          <Component {...pageProps} />
+          <PrismicPreview repositoryName={repositoryName}>
+            <Component {...pageProps} />
+          </PrismicPreview>
         </ThemeProvider>
       </PrismicProvider>
-      <PrismicPreview repositoryName={repositoryName} />
     </>
   );
 };

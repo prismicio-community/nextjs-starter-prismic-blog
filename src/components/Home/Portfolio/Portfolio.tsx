@@ -3,11 +3,19 @@ import PortfolioImage from "./PortfolioImage";
 import PortfolioVideo from "./PortfolioVideo";
 import "twin.macro";
 import "photoswipe/dist/photoswipe.css";
+import Image from "next/image";
 
 import { Gallery, Item } from "react-photoswipe-gallery";
+import {
+  HomepageDocumentDataImagesItem,
+  HomepageDocumentDataVideosItem,
+} from "../../../../prismicio-types";
+import { PrismicNextImage, imgixLoader } from "@prismicio/next";
 
-// https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/gallery_image.jpg
-const Portfolio: React.FC = () => (
+const Portfolio: React.FC<{
+  images: HomepageDocumentDataImagesItem[];
+  videos: HomepageDocumentDataVideosItem[];
+}> = ({ images, videos }) => (
   <section id="portfolio" className="portfolio-section">
     <div className="container">
       <div className="row">
@@ -19,61 +27,31 @@ const Portfolio: React.FC = () => (
       </div>
       <div tw="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-fr">
         <Gallery id="portfolio-gallery">
-          <Item
-            original="https://res.cloudinary.com/dadaboom/image/upload/c_crop,h_800,w_1000/v1530620438/gallery_image.jpg"
-            thumbnail="https://res.cloudinary.com/dadaboom/image/upload/c_thumb,h_335,w_424/v1530620438/gallery_image.jpg"
-            width="1000"
-            height="800"
-          >
-            {({ ref, open }) => (
-              <img
-                // @ts-ignore
-                ref={ref}
-                onClick={open}
-                src="https://res.cloudinary.com/dadaboom/image/upload/c_thumb,h_335,w_424/v1530620438/gallery_image.jpg"
-                tw="cursor-pointer w-full"
-              />
-            )}
-          </Item>
-          <Item
-            original="https://res.cloudinary.com/dadaboom/image/upload/v1530620438/p2.jpg"
-            thumbnail="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p2.jpg"
-            width="640"
-            height="506"
-          >
-            {({ ref, open }) => (
-              <img
-                // @ts-ignore
-                ref={ref}
-                onClick={open}
-                src="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p2.jpg"
-                tw="cursor-pointer w-full"
-              />
-            )}
-          </Item>
-          <Item
-            original="https://res.cloudinary.com/dadaboom/image/upload/v1530620438/p3.jpg"
-            thumbnail="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p3.jpg"
-            width="370"
-            height="247"
-          >
-            {({ ref, open }) => (
-              <img
-                // @ts-ignore
-                ref={ref}
-                onClick={open}
-                src="https://res.cloudinary.com/dadaboom/image/upload/c_scale,h_335,w_424/v1530620438/p3.jpg"
-                tw="cursor-pointer w-full"
-              />
-            )}
-          </Item>
+          {images.map(({ image }) => (
+            <Item
+              key={image.url}
+              original={image.url ?? ""}
+              thumbnail={`${image.url}&fit=crop&w=424&h=282` ?? ""}
+              width={image.dimensions?.width}
+              height={image.dimensions?.height}
+            >
+              {({ ref, open }) => (
+                <Image
+                  ref={ref as React.MutableRefObject<HTMLImageElement>}
+                  width={424}
+                  height={282}
+                  onClick={open}
+                  src={`${image.url}&fit=crop&w=424&h=282` ?? ""}
+                  alt={image.alt ?? ""}
+                  tw="cursor-pointer w-full"
+                />
+              )}
+            </Item>
+          ))}
         </Gallery>
-        <PortfolioVideo videoId="lUaMXm_DLJ4" />
-        <PortfolioVideo videoId="GNFQ8WzHc1w" />
-        <PortfolioVideo videoId="IB2v9tw7q_g" />
-        <PortfolioVideo videoId="4eNeaim4VRQ" />
-        <PortfolioVideo videoId="yDeH1W2eshQ" />
-        <PortfolioVideo videoId="qSgojcFYJ1Q" />
+        {videos.map(({ youtubevideoid }) => (
+          <PortfolioVideo videoId={youtubevideoid ?? ""} key={youtubevideoid} />
+        ))}
       </div>
     </div>
   </section>
