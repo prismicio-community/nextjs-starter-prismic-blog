@@ -1,9 +1,11 @@
+import { PrismicText } from "@prismicio/react";
+import { RichTextField } from "@prismicio/types";
 import React from "react";
 import tw from "twin.macro";
 
 const TestimonialBox: React.FC<{
   name: string;
-  text: string;
+  text: RichTextField;
   index: number;
   currentIndex: number;
   prevIndex: number;
@@ -22,7 +24,9 @@ const TestimonialBox: React.FC<{
       <div className="row">
         <div className="col-sm-12">
           <blockquote tw="pt-4 mb-4 border-none">
-            <p tw="text-lg tracking-wide italic">{`"${text}"`}</p>
+            <p tw="text-lg tracking-wide italic">
+              <PrismicText field={text} />
+            </p>
           </blockquote>
           <h5 tw="font-bold tracking-wide">{name}</h5>
         </div>

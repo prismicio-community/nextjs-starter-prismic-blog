@@ -20,16 +20,18 @@ interface HomepageDocumentData {
    */
   title: prismicT.TitleField;
   /**
-   * Header Image field in *Homepage*
+   * rotatingStrings field in *Homepage*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.headerImage
+   * - **API ID Path**: homepage.rotatingstrings[]
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
    *
    */
-  headerImage: prismicT.ImageField<never>;
+  rotatingstrings: prismicT.GroupField<
+    Simplify<HomepageDocumentDataRotatingstringsItem>
+  >;
   /**
    * NavigationItems field in *Homepage*
    *
@@ -131,6 +133,35 @@ interface HomepageDocumentData {
    *
    */
   slices5: prismicT.SliceZone<HomepageDocumentDataSlices5Slice>;
+  /**
+   * testimonials field in *Homepage*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.testimonials[]
+   * - **Tab**: Testimonials
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  testimonials: prismicT.GroupField<
+    Simplify<HomepageDocumentDataTestimonialsItem>
+  >;
+}
+/**
+ * Item in Homepage → rotatingStrings
+ *
+ */
+export interface HomepageDocumentDataRotatingstringsItem {
+  /**
+   * text field in *Homepage → rotatingStrings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.rotatingstrings[].text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismicT.KeyTextField;
 }
 /**
  * Item in Homepage → NavigationItems
@@ -247,6 +278,32 @@ export interface HomepageDocumentDataVideosItem {
  *
  */
 type HomepageDocumentDataSlices5Slice = never;
+/**
+ * Item in Homepage → testimonials
+ *
+ */
+export interface HomepageDocumentDataTestimonialsItem {
+  /**
+   * name field in *Homepage → testimonials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.testimonials[].name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismicT.KeyTextField;
+  /**
+   * text field in *Homepage → testimonials*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.testimonials[].text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismicT.RichTextField;
+}
 /**
  * Homepage document from Prismic
  *
@@ -413,12 +470,14 @@ declare module "@prismicio/client" {
   namespace Content {
     export type {
       HomepageDocumentData,
+      HomepageDocumentDataRotatingstringsItem,
       HomepageDocumentDataNavigationItemsItem,
       HomepageDocumentDataServicesItem,
       HomepageDocumentDataCountersItem,
       HomepageDocumentDataImagesItem,
       HomepageDocumentDataVideosItem,
       HomepageDocumentDataSlices5Slice,
+      HomepageDocumentDataTestimonialsItem,
       HomepageDocument,
       AllDocumentTypes,
       ImageWithCaptionSliceDefaultSlicePrimary,

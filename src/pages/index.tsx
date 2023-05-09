@@ -21,22 +21,22 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
   const result = await client.getSingle("homepage");
 
-  const { base64 } = await getPlaiceholder(result.data?.headerImage.url ?? "", {
-    size: 64,
-  });
+  // const { base64 } = await getPlaiceholder(result.data?.headerImage.url ?? "", {
+  //   size: 64,
+  // });
 
   return {
     props: {
       homepage: result.data,
-      lqip: base64,
+      // lqip: base64,
     },
   };
 };
 
 const Home = ({
   homepage,
-  lqip,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: // lqip,
+InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -47,11 +47,7 @@ const Home = ({
       <Head>
         <title>צפריר ליכשטנשטיין | מורה לתופים לאוטיסטים | דה דה בום</title>
       </Head>
-      <Header
-        navItems={homepage.navigationItems}
-        heroImage={homepage.headerImage}
-        lqipImage={lqip}
-      />
+      <Header rotatingStrings={homepage.rotatingstrings} />
       <About
         about_content={homepage.about_content}
         about_title={homepage.about_title}
@@ -60,7 +56,7 @@ const Home = ({
       <Services services={homepage.services} />
       <Counter counters={homepage.counters} />
       <Portfolio images={homepage.images} videos={homepage.videos} />
-      <Testimonials />
+      <Testimonials testimonials={homepage.testimonials} />
       <Blog />
       <Contact />
       <Footer />
