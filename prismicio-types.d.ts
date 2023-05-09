@@ -146,6 +146,50 @@ interface HomepageDocumentData {
   testimonials: prismicT.GroupField<
     Simplify<HomepageDocumentDataTestimonialsItem>
   >;
+  /**
+   * Map Label Text field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.map_label_text
+   * - **Tab**: Map
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  map_label_text: prismicT.KeyTextField;
+  /**
+   * Label Link field in *Homepage*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.map_label_link
+   * - **Tab**: Map
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  map_label_link: prismicT.LinkField;
+  /**
+   * Map Lat field in *Homepage*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.map_lat
+   * - **Tab**: Map
+   * - **Documentation**: https://prismic.io/docs/core-concepts/number
+   *
+   */
+  map_lat: prismicT.NumberField;
+  /**
+   * lng field in *Homepage*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.map_lng
+   * - **Tab**: Map
+   * - **Documentation**: https://prismic.io/docs/core-concepts/number
+   *
+   */
+  map_lng: prismicT.NumberField;
 }
 /**
  * Item in Homepage → rotatingStrings

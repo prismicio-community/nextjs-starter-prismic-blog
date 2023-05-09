@@ -4,8 +4,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ValidationSchema, validationSchema } from "./validationSchema";
 import GenericFormInput from "../../Shared/FormInput";
+import { HomepageDocumentData } from "../../../../prismicio-types";
 
-const Contact: React.FC = () => {
+const Contact: React.FC<
+  Pick<
+    HomepageDocumentData,
+    "map_label_link" | "map_label_text" | "map_lat" | "map_lng"
+  >
+> = ({ map_label_link, map_label_text, map_lat, map_lng }) => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const {
@@ -59,6 +65,10 @@ const Contact: React.FC = () => {
                 loadingElement={<div style={{ height: "100%" }} />}
                 containerElement={<div style={{ height: "400px" }} />}
                 mapElement={<div style={{ height: "100%" }} />}
+                map_label_link={map_label_link}
+                map_label_text={map_label_text}
+                map_lat={map_lat}
+                map_lng={map_lng}
               />
             </div>
           </div>

@@ -28,15 +28,12 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   return {
     props: {
       homepage: result.data,
-      // lqip: base64,
     },
   };
 };
 
-const Home = ({
-  homepage,
-}: // lqip,
-InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log("@@@ ~ homepage:", homepage);
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -58,7 +55,12 @@ InferGetStaticPropsType<typeof getStaticProps>) => {
       <Portfolio images={homepage.images} videos={homepage.videos} />
       <Testimonials testimonials={homepage.testimonials} />
       <Blog />
-      <Contact />
+      <Contact
+        map_label_link={homepage.map_label_link}
+        map_label_text={homepage.map_label_text}
+        map_lat={homepage.map_lat}
+        map_lng={homepage.map_lng}
+      />
       <Footer />
     </>
   );

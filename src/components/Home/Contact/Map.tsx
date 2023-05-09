@@ -8,6 +8,7 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
+import { KeyTextField, LinkField, NumberField } from "@prismicio/types";
 
 const coordinates = {
   lat: 32.0723871,
@@ -19,17 +20,28 @@ const labelUrl =
   "%A9%D7%98%D7%99%D7%99%D7%9F+%D7%9C%D7%99%D7%9E%D7%95%D7%93+%D7%AA%D7%95%D7%A4%D7%99%D7%9D%E2%80%AD/" +
   "@32.072442,34.813721,16z/data=!4m5!3m4!1s0x0:0xc28cd9557039a526!8m2!3d32.0724757!4d34.8140216?hl=he-IL";
 
-const MapLabel = () => (
+const MapLabel: React.FC<
+  Pick<MapProps, "map_label_link" | "map_label_text">
+> = ({ map_label_link, map_label_text }) => (
   <div>
-    <a href={labelUrl} target="_blank" rel="noopener noreferrer">
+    <a href={map_label_link.url} target="_blank" rel="noopener noreferrer">
       <h4 id="firstHeading" className="firstHeading">
-        הראל 19, גבעתיים
+        {map_label_text}
       </h4>
     </a>
   </div>
 );
 
-const MapWithAMakredInfoWindow = compose(
+type MapProps = {
+  onToggleOpen: () => void;
+  isOpen: boolean;
+  map_label_link: LinkField;
+  map_label_text: KeyTextField;
+  map_lat: NumberField;
+  map_lng: NumberField;
+};
+
+const MapWithAMakredInfoWindow = compose<MapProps, MapProps>(
   withStateHandlers(
     () => ({
       isOpen: false,
@@ -44,20 +56,33 @@ const MapWithAMakredInfoWindow = compose(
   ),
   withScriptjs,
   withGoogleMap
-)((props) => (
-  // @ts-ignore
-  <GoogleMap defaultZoom={16} defaultCenter={coordinates}>
-    {/* @ts-ignore */}
-    <Marker position={coordinates} onClick={props.onToggleOpen}>
+)((props) => {
+  const {
+    isOpen,
+    onToggleOpen,
+    map_label_link,
+    map_label_text,
+    map_lat,
+    map_lng,
+  } = props;
+  return (
+    // @ts-ignore
+    <GoogleMap defaultZoom={16} defaultCenter={{ lat: map_lat, lng: map_lng }}>
       {/* @ts-ignore */}
-      {props.isOpen && (
-        /* @ts-ignore */
-        <InfoWindow onCloseClick={props.onToggleOpen}>
-          <MapLabel />
-        </InfoWindow>
-      )}
-    </Marker>
-  </GoogleMap>
-));
+      <Marker position={coordinates} onClick={onToggleOpen}>
+        {/* @ts-ignore */}
+        {isOpen && (
+          /* @ts-ignore */
+          <InfoWindow onCloseClick={onToggleOpen}>
+            <MapLabel
+              map_label_link={map_label_link}
+              map_label_text={map_label_text}
+            />
+          </InfoWindow>
+        )}
+      </Marker>
+    </GoogleMap>
+  );
+});
 
 export default MapWithAMakredInfoWindow;
