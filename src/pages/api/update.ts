@@ -11,9 +11,9 @@ const update = async function handler(
     return res.status(401).json({ message: "Invalid token" });
   }
   console.dir(req.body, { depth: null });
-  res.status(200).json({
-    message: "OK",
-  });
+
+  await res.revalidate("/");
+  return res.json({ revalidated: true });
 };
 
 export default update;
