@@ -24,7 +24,11 @@ const MapLabel: React.FC<
   Pick<MapProps, "map_label_link" | "map_label_text">
 > = ({ map_label_link, map_label_text }) => (
   <div>
-    <a href={map_label_link.url} target="_blank" rel="noopener noreferrer">
+    <a
+      href={"url" in map_label_link ? map_label_link.url : ""}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <h4 id="firstHeading" className="firstHeading">
         {map_label_text}
       </h4>
