@@ -5,10 +5,9 @@ const update = async function handler(
   res: NextApiResponse
 ) {
   const { body } = req;
-  console.log("@@@ ~ body:", body);
   if (!body) return res.json({ revalidated: false });
 
-  if (req.query.secret !== process.env.REVALIDATE_SECRET_KEY) {
+  if (req.body.secret !== process.env.REVALIDATE_SECRET_KEY) {
     return res.status(401).json({ message: "Invalid token" });
   }
   console.dir(req.body, { depth: null });
