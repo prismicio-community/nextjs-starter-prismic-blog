@@ -1,5 +1,5 @@
 import React from "react";
-import SlideWhenVisible from "../../Shared/SlideWhenVisible";
+import SlideWhenVisible from "../SlideWhenVisible";
 
 const Footer = () => (
   <div tw="bg-white py-8 px-0">

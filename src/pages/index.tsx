@@ -24,9 +24,11 @@ const DynamicTestimonials = dynamic(
 );
 const DynamicBlog = dynamic(() => import("../components/Home/Blog/Blog"));
 const DynamicContact = dynamic(
-  () => import("../components/Home/Contact/Contact")
+  () => import("../components/Shared/Contact/Contact")
 );
-const DynamicFooter = dynamic(() => import("../components/Home/Footer/Footer"));
+const DynamicFooter = dynamic(
+  () => import("../components/Shared/Footer/Footer")
+);
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });

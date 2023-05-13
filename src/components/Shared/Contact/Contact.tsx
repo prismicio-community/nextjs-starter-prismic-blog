@@ -3,7 +3,7 @@ import MapWithAMakredInfoWindow from "./Map";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ValidationSchema, validationSchema } from "./validationSchema";
-import GenericFormInput from "../../Shared/FormInput";
+import GenericFormInput from "../FormInput";
 import { HomepageDocumentData } from "../../../../prismicio-types";
 
 const Contact: React.FC<

@@ -1,6 +1,6 @@
 import { CourierClient } from "@trycourier/courier";
 import { NextApiRequest, NextApiResponse } from "next";
-import { validationSchema } from "../../components/Home/Contact/validationSchema";
+import { validationSchema } from "../../components/Shared/Contact/validationSchema";
 
 const contact = async function handler(
   req: NextApiRequest,

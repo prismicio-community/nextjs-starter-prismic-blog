@@ -1,7 +1,7 @@
 import React from "react";
 import { FieldError, FieldErrors } from "react-hook-form";
 import tw from "twin.macro";
-import { ValidationSchema } from "../Home/Contact/validationSchema";
+import { ValidationSchema } from "./Contact/validationSchema";
 
 type GenericFormInputProps = {
   name: keyof ValidationSchema;
