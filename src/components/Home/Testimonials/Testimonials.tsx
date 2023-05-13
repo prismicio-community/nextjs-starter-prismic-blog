@@ -41,12 +41,12 @@ const Testimonials: React.FC<{
         <div className="row" tw="flex justify-center items-center">
           <div
             tw="cursor-pointer"
-            className="col-md-1"
+            className="col-1"
             onClick={() => onArrowClick("left")}
           >
             <KeyboardArrowRight style={{ fontSize: "35px" }} />
           </div>
-          <div className="col-md-10">
+          <div className="col-10">
             <div tw="pb-7 text-center min-h-[337px] relative">
               <ol
                 className="carousel-indicators"
@@ -65,7 +65,7 @@ const Testimonials: React.FC<{
               </ol>
               <div
                 className="carousel-inner"
-                tw="relative h-[307px] w-full overflow-hidden"
+                tw="relative h-[670px] sm:h-[597px] md:h-[417px] lg:h-[307px] w-full overflow-hidden"
               >
                 <div tw="flex transition-transform duration-500 ease-in-out">
                   {testimonials.map((item, i) => {
@@ -86,7 +86,7 @@ const Testimonials: React.FC<{
           </div>
           <div
             tw="cursor-pointer"
-            className="col-md-1"
+            className="col-1"
             onClick={() => onArrowClick("right")}
           >
             <KeyboardArrowLeft style={{ fontSize: "35px" }} />
