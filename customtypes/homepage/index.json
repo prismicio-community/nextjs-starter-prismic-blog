@@ -178,6 +178,29 @@
           }
         }
       }
+    },
+    "Map": {
+      "map_label_text": {
+        "type": "Text",
+        "config": { "label": "Map Label Text", "placeholder": "" }
+      },
+      "map_label_link": {
+        "type": "Link",
+        "config": {
+          "label": "Label Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "map_lat": {
+        "type": "Number",
+        "config": { "label": "Map Lat", "placeholder": "" }
+      },
+      "map_lng": {
+        "type": "Number",
+        "config": { "label": "lng", "placeholder": "" }
+      }
     }
   }
 }
