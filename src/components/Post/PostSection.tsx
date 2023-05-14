@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Transformation } from "cloudinary-react";
+// import { Image, Transformation } from "cloudinary-react";
 import get from "lodash/get";
 import PostContent from "./PostContent";
 import PostSidebar from "./SideBar/PostSidebar";
@@ -15,14 +15,14 @@ const PostSection: React.FC<{ postData: any }> = ({ postData }) => {
               <div className="col-sm-12 col-md-12">
                 <SingleBlog>
                   <PostThumb>
-                    <Image
+                    {/* <Image
                       cloudName="dadaboom"
                       publicId={get(postData, "image", "default")}
                       className="img-responsive"
                       alt=""
                     >
                       <Transformation width="850" crop="scale" />
-                    </Image>
+                    </Image> */}
                   </PostThumb>
                   <PostContent
                     _id={postData._id}

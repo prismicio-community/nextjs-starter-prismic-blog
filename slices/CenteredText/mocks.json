@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna deserunt ea minim quis aliquip amet. Exercitation consequat quis deserunt consequat nulla culpa aliqua."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

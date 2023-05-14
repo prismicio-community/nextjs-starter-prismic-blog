@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Breadcrum, BreadcrumActiveItem } from "./postHeaderStyle";
 import Link from "next/link";
 
 const PostHeader = () => (
@@ -16,11 +15,11 @@ const PostHeader = () => (
               <div tw="text-white text-4xl font-hebrew" id="blog-top-header">
                 דהדהבום בלוג
               </div>
-              <p tw="text-white text-lg font-hebrew mt-2">
+              <p tw="text-white text-lg font-hebrew mt-4">
                 הבלוג של צפריר ליכטנשטיין על תופים, חינוך ומה שביניהם
               </p>
             </div>
-            <div className="w-full mt-2">
+            <div className="w-full mt-4">
               <nav tw="w-full rounded-md" className="text-align-right">
                 <ol tw="list-none p-0 flex">
                   <li>
