@@ -16,5 +16,8 @@ module.exports = withTwin(
     images: {
       domains: ["images.prismic.io", "images.unsplash.com"],
     },
+    experimental: {
+      appDir: true,
+    },
   })
 );
