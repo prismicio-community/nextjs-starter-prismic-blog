@@ -2,7 +2,7 @@ import React from "react";
 import PortfolioImage from "./PortfolioImage";
 import PortfolioVideo from "./PortfolioVideo";
 import "twin.macro";
-import "photoswipe/dist/photoswipe.css";
+// import "photoswipe/dist/photoswipe.css";
 import Image from "next/image";
 
 import { Gallery, Item } from "react-photoswipe-gallery";
@@ -26,7 +26,7 @@ const Portfolio: React.FC<{
         </div>
       </div>
       <div tw="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-fr">
-        <Gallery id="portfolio-gallery">
+        {/* <Gallery id="portfolio-gallery">
           {images.map(({ image }) => (
             <Item
               key={image.url}
@@ -48,7 +48,7 @@ const Portfolio: React.FC<{
               )}
             </Item>
           ))}
-        </Gallery>
+        </Gallery> */}
         {videos.map(({ youtubevideoid }) => (
           <PortfolioVideo videoId={youtubevideoid ?? ""} key={youtubevideoid} />
         ))}
