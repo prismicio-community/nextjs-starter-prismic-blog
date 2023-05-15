@@ -2099,14 +2099,14 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
-"@prismicio/next@^1.0.3":
+"@prismicio/next@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-1.1.0.tgz#7430494d698a50dfaaa85f9ae500bd72ab90fcfa"
   integrity sha512-eU2FK13MmiqhBIs0BgLBaGQi4NLnBOUqS3Ll5OjLV2xDG8PICKZV5mCExrxF4lEH2HmT+l44hHNqfBHdQgpHVA==
   dependencies:
     imgix-url-builder "^0.0.3"
 
-"@prismicio/react@^2.5.2":
+"@prismicio/react@^2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@prismicio/react/-/react-2.6.1.tgz#8efc80b0016b2e68ab05cd399c05a2ceb5e2065a"
   integrity sha512-A2mutbOixkvDjO6VNixONplqYhCiGGLuIj9l+x0Qw9fwU4Tio+azlTXGyceL2S1kgoTB50rJVIFkmGJFiToTqw==
@@ -4667,6 +4667,11 @@ dataloader@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/dataloader/-/dataloader-2.2.2.tgz#216dc509b5abe39d43a9b9d97e6e5e473dfbe3e0"
   integrity sha512-8YnDaaf7N3k/q5HnTJVuzSyLETjoZjVmHc4AeKAzOvKHEFQKcn64OKBfzHYtE9zGjctNM7V9I0MfnUVLpi7M5g==
+
+dayjs@^1.11.7:
+  version "1.11.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
+  integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
 
 debounce@^1.2.0:
   version "1.2.1"

@@ -15,6 +15,7 @@ async function getPostData(postUID: string) {
 
 export default async function PostPage({ params }: PostPageProps) {
   const postData = await getPostData(params.postId);
-  {/* @ts-expect-error Async Server Component */}
-  return <Post postData={postData} />;
+
+  /* @ts-expect-error Async Server Component */
+  return <Post {...postData} />;
 }

@@ -22,6 +22,14 @@
         "type": "Date",
         "config": { "label": "publish_date", "placeholder": "" }
       },
+      "framework": {
+        "type": "Select",
+        "config": {
+          "label": "framework",
+          "placeholder": "",
+          "options": ["1", "2"]
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

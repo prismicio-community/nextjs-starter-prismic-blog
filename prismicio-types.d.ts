@@ -399,6 +399,17 @@ interface PostDocumentData {
    */
   publish_date: prismicT.DateField;
   /**
+   * framework field in *post*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.framework
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  framework: prismicT.SelectField<"1" | "2">;
+  /**
    * Slice Zone field in *post*
    *
    * - **Field Type**: Slice Zone
