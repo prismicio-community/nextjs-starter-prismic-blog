@@ -14,6 +14,12 @@ const components: JSXMapSerializer = {
       return <code>{children}</code>;
     }
   },
+  list: ({ children }) => {
+    return <ul className="list-disc text-lg mr-5 mb-3">{children}</ul>;
+  },
+  oList: ({ children }) => {
+    return <ol className="list-decimal text-lg mr-5 mb-3">{children}</ol>;
+  },
 };
 
 type RichTextProps = SliceComponentProps<Content.ParagraphSlice>;
