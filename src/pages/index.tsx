@@ -55,7 +55,7 @@ const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
-        <title>צפריר ליכשטנשטיין | מורה לתופים לאוטיסטים | דה דה בום</title>
+        <title>צפריר ליכטנשטיין | מורה לתופים לאוטיסטים | דה דה בום</title>
       </Head>
       <Header rotatingStrings={homepage.rotatingstrings} />
       <DynamicAbout

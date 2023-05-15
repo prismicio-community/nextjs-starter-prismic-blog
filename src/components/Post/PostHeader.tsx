@@ -15,11 +15,11 @@ const PostHeader = () => (
               <div tw="text-white text-4xl font-hebrew" id="blog-top-header">
                 דהדהבום בלוג
               </div>
-              <p tw="text-white text-lg font-hebrew mt-4">
+              <p tw="text-white text-base font-hebrew mt-3">
                 הבלוג של צפריר ליכטנשטיין על תופים, חינוך ומה שביניהם
               </p>
             </div>
-            <div className="w-full mt-4">
+            <div className="w-full mt-4 text-sm">
               <nav tw="w-full rounded-md" className="text-align-right">
                 <ol tw="list-none p-0 flex">
                   <li>
