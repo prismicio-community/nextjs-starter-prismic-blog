@@ -1,6 +1,15 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import {
+  JSXMapSerializer,
+  PrismicRichText,
+  SliceComponentProps,
+} from "@prismicio/react";
 
+const components: JSXMapSerializer = {
+  paragraph: ({ children }) => {
+    return <p className="text-center text-lg mb-3">{children}</p>;
+  },
+};
 /**
  * Props for `CenteredText`.
  */
@@ -15,8 +24,11 @@ const CenteredText = ({ slice }: CenteredTextProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for centered_text (variation: {slice.variation})
-      Slices
+      <PrismicRichText
+        key={slice.primary.text[0]?.type}
+        field={slice.primary.text}
+        components={components}
+      />
     </section>
   );
 };
