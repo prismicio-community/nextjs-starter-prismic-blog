@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,10 +18,11 @@ module.exports = {
       // "2xl": "1360px",
     },
     fontFamily: {
-      sans: "Lato, sans-serif",
+      // sans: "Lato, sans-serif",
       serif: "'Libre Baskerville', sans-serif",
       montserrat: "Montserrat, sans-serif",
       hebrew: "Open Sans Hebrew, sans-serif",
+      sans: ["var(--font-sans)", ...fontFamily.sans],
     },
     extend: {
       colors: {

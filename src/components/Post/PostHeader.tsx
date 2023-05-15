@@ -12,10 +12,10 @@ const PostHeader = () => (
         <div tw="container mx-auto px-4">
           <div tw="flex flex-wrap" className="text-align-right">
             <div tw="w-full">
-              <div tw="text-white text-4xl font-hebrew" id="blog-top-header">
+              <div tw="text-white text-4xl font-bold" id="blog-top-header">
                 דהדהבום בלוג
               </div>
-              <p tw="text-white text-base font-hebrew mt-3">
+              <p tw="text-white text-base mt-3">
                 הבלוג של צפריר ליכטנשטיין על תופים, חינוך ומה שביניהם
               </p>
             </div>
@@ -33,7 +33,7 @@ const PostHeader = () => (
                   <li>
                     <span tw="mx-2 text-neutral-500">/</span>
                   </li>
-                  <li tw="font-hebrew text-white">דהדהבום בלוג</li>
+                  <li tw="text-white">דהדהבום בלוג</li>
                 </ol>
               </nav>
             </div>

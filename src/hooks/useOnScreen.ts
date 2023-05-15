@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useRef, RefObject } from "react";
 
 interface IOnScreenResponse {

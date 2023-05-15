@@ -1,8 +1,9 @@
 "use client";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
-
 import "@/src/styles/GlobalStyles";
 import "@/src/styles/tailwind.scss";
+import openSans from "@/src/styles/fontLoad";
+import { cn } from "../lib/utils";
 // import StyledComponentsRegistry from "@/src/lib/registry";
 
 interface RootLayoutProps {
@@ -13,7 +14,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body tw="min-h-screen">
+      <body
+        className={cn("min-h-screen antialiased font-sans", openSans.variable)}
+      >
         {/* <StyledComponentsRegistry>{children}</StyledComponentsRegistry> */}
         {children}
         <VercelAnalytics />

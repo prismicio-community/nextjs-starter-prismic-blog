@@ -42,6 +42,7 @@
     "sass": "^1.62.1",
     "sharp": "^0.32.1",
     "styled-components": "^6.0.0-rc.1",
+    "tailwind-merge": "^1.12.0",
     "use-count-up": "^3.0.1",
     "zod": "^3.21.4"
   },

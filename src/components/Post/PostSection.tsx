@@ -4,17 +4,22 @@ import get from "lodash/get";
 import PostContent from "./PostContent";
 import PostSidebar from "./SideBar/PostSidebar";
 import { Blog, SingleBlog, PostThumb } from "./postSectionStyle";
+import { PrismicNextImage } from "@prismicio/next";
 
 const PostSection: React.FC<{ postData: any }> = ({ postData }) => {
   return (
-    <Blog>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-9 col-sm-12">
-            <div className="row">
+    <div className="mt-24">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap">
+          <div className="md:w-9/12 sm:w-full">
+            <div className="flex flex-wrap">
               <div className="col-sm-12 col-md-12">
-                <SingleBlog>
-                  <PostThumb>
+                <div className="pb-8">
+                  <div className="relative overflow-hidden">
+                    <PrismicNextImage
+                      field={postData.header_image}
+                      width={850}
+                    />
                     {/* <Image
                       cloudName="dadaboom"
                       publicId={get(postData, "image", "default")}
@@ -23,21 +28,21 @@ const PostSection: React.FC<{ postData: any }> = ({ postData }) => {
                     >
                       <Transformation width="850" crop="scale" />
                     </Image> */}
-                  </PostThumb>
-                  <PostContent
+                  </div>
+                  {/* <PostContent
                     _id={postData._id}
                     date={postData.date}
                     content={postData.content}
                     title={postData.title}
-                  />
-                </SingleBlog>
+                  /> */}
+                </div>
               </div>
             </div>
           </div>
-          <PostSidebar />
+          {/* <PostSidebar /> */}
         </div>
       </div>
-    </Blog>
+    </div>
   );
 };
 
