@@ -1,16 +1,15 @@
 import React from "react";
 import { SliceZone } from "@prismicio/react";
 import { PostDocumentData } from "@/prismicio-types";
-import ParagraphSlice from "./slices/ParagraphSlice";
+import Paragraph from "@/slices/Paragraph";
 
 const components = {
-  paragraph: ParagraphSlice,
+  paragraph: Paragraph,
 };
 
 const PostText: React.FC<{ slices: PostDocumentData["slices"] }> = ({
   slices,
 }) => {
-  console.log("@@@ ~ slices:", slices);
   return <SliceZone slices={slices} components={components} />;
 };
 

@@ -13,7 +13,7 @@ const PostContent: React.FC<
     <div className="py-5 text-align-right">
       <div className="text-2xl mb-2">{title}</div>
       {publish_date && (
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-gray-500 mb-3">
           <div>{dayjs(new Date(publish_date)).format("MMMM D, YYYY")}</div>
         </div>
       )}
