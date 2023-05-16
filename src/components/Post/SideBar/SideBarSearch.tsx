@@ -1,36 +1,5 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { SidebarItem } from "./sidebarSharedStyles";
-import { AlignRight } from "../../../styles/sharedStyles";
-import { useRouter } from "next/router";
-
-const FormControl = styled.input`
-  border-radius: 0;
-  border: 1px solid #e0e0e0;
-  box-shadow: none;
-  height: 45px;
-  ${AlignRight};
-
-  &:focus,
-  &:hover {
-    border: 1px solid #eeeeee;
-    box-shadow: none;
-  }
-`;
-
-const InputButton = styled.button`
-  background-color: #d6b161;
-  border: 1px solid #d6b161;
-  color: #ffffff;
-  height: 45px;
-  width: 45px;
-  box-shadow: none;
-  border-radius: 0;
-  &:hover {
-    background-color: #d6b161;
-    border: 1px solid #d6b161;
-  }
-`;
+import React from "react";
+import { useRouter } from "next/navigation";
 
 const SideBarSearch = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
@@ -52,26 +21,26 @@ const SideBarSearch = () => {
   };
 
   return (
-    <SidebarItem>
+    <div className="mb-12">
       <div className="input-group">
         <span className="input-group-btn">
-          <InputButton
-            className="btn btn-primary"
+          <input
+            className="btn btn-primary bg-primary border-primary border-solid border text-white h-11 w-11 hover:bg-primary"
             type="button"
             onClick={onClick}
           >
             <span className="glyphicon glyphicon-search" />
-          </InputButton>
+          </input>
         </span>
-        <FormControl
-          className="form-control"
+        <input
+          className="form-control border border-solid border-gray-300 h-11 text-align-right hover:border-gray-200"
           type="text"
           placeholder="חיפוש"
           onChange={handleInputChange}
           onKeyPress={handleKeyPress}
         />
       </div>
-    </SidebarItem>
+    </div>
   );
 };
 

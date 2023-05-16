@@ -8,9 +8,9 @@ const PostSidebar = () => (
   <div className="col-md-3 col-sm-12">
     <div className="sidebar">
       <SideBarSearch />
-      <SideBarLatest />
+      {/* <SideBarLatest />
       <SideBarCategories />
-      <SideBarTagCloud tags={[]} />
+      <SideBarTagCloud tags={[]} /> */}
     </div>
   </div>
 );

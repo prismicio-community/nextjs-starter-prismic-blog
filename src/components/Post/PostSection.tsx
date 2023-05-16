@@ -33,7 +33,7 @@ const PostSection: React.FC<
               </div>
             </div>
           </div>
-          {/* <PostSidebar /> */}
+          <PostSidebar />
         </div>
       </div>
     </div>
