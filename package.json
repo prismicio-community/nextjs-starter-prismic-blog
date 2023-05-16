@@ -36,7 +36,6 @@
     "react-google-maps": "^9.4.5",
     "react-hook-form": "^7.43.9",
     "react-images": "^1.2.0-beta.7",
-    "react-photoswipe-gallery": "^2.2.7",
     "react-typed": "^1.2.0",
     "react-youtube": "^10.1.0",
     "recompose": "^0.30.0",
@@ -45,6 +44,7 @@
     "styled-components": "^6.0.0-rc.1",
     "tailwind-merge": "^1.12.0",
     "use-count-up": "^3.0.1",
+    "yet-another-react-lightbox": "^3.8.2",
     "zod": "^3.21.4"
   },
   "scripts": {

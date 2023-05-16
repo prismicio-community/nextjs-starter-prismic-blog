@@ -1980,10 +1980,18 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
-"@prismicio/client@^6.6", "@prismicio/client@^6.7.3":
+"@prismicio/client@^6.6":
   version "6.7.3"
   resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-6.7.3.tgz#a9744f523507334de86c6bad98417b3dd4f4b6d2"
   integrity sha512-zQVZhuQDYIgdaY636u+QNk2tvvbtpkaKsEiLT0Ef51nFW/y5fqpOG5U0eU3cVsikZaYNlZ17x6O1wmvVCLdimQ==
+  dependencies:
+    "@prismicio/helpers" "^2.3.8"
+    "@prismicio/types" "^0.2.7"
+
+"@prismicio/client@^6.7.3":
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-6.8.0.tgz#49c476d8cbe70578db9e33dc72d4e0086872660f"
+  integrity sha512-6E2dGp1zsZRKe9g/YH/vUeKf2OZJqZJGJjTXuI+EjQxNROf0L1aTDxcpcxWRwLbHxFyMxdNAMY4rUyuNzRKY9Q==
   dependencies:
     "@prismicio/helpers" "^2.3.8"
     "@prismicio/types" "^0.2.7"
@@ -9187,11 +9195,6 @@ react-motion@^0.5.0:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-photoswipe-gallery@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/react-photoswipe-gallery/-/react-photoswipe-gallery-2.2.7.tgz#27fd45e84a3b7f15846761830c600b2c719053e3"
-  integrity sha512-AEYNoL4/IIRosIUonn4haaFQNn1ui4vdVgAY9LHd/imVamNCkqUcyWeT6317UILp/yJI2gohsd3lWmcJEbjCag==
-
 react-property@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-property/-/react-property-2.0.0.tgz#2156ba9d85fa4741faf1918b38efc1eae3c6a136"
@@ -11070,6 +11073,11 @@ yauzl@^2.10.0:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
+
+yet-another-react-lightbox@^3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/yet-another-react-lightbox/-/yet-another-react-lightbox-3.8.2.tgz#3b77944f0c75a00707821c2144f3b09cf97e876b"
+  integrity sha512-k/LaOzwYw0hNC3MJJdmlWVFyDYKIu3bCQ1u7dUpnxL713uBtOPRlLGlT4lCMAkhC/Cpd551p3hzoVResQpIL+g==
 
 yocto-queue@^0.1.0:
   version "0.1.0"
