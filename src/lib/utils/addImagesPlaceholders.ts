@@ -6,8 +6,8 @@ export default async function addImagesPlaceholders(obj: unknown) {
   const imageBlurs: Record<string, string> = {};
   await Promise.all(
     images.map(async (image) => {
-      const { blurhash } = await getPlaiceholder(image, { size: 64 });
-      imageBlurs[image] = blurhash.hash;
+      const { base64 } = await getPlaiceholder(image, { size: 64 });
+      imageBlurs[image] = base64;
     })
   );
   return imageBlurs;
