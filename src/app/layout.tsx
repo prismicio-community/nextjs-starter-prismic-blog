@@ -3,7 +3,7 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import "@/src/styles/GlobalStyles";
 import "@/src/styles/tailwind.scss";
 import openSans from "@/src/styles/fontLoad";
-import { cn } from "../lib/utils";
+import cn from "../lib/utils/cn";
 // import StyledComponentsRegistry from "@/src/lib/registry";
 
 interface RootLayoutProps {

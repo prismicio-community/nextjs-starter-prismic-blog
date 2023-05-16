@@ -7,8 +7,8 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Header from "../components/Home/Header/Header";
 import { SetupRepo } from "../components/SetupRepo";
 import dynamic from "next/dynamic";
-import { addImagesPlaceholders } from "../lib/utils";
 import { useImageStore } from "../lib/stores";
+import { addImagesPlaceholders } from "../lib/utils";
 
 const DynamicAbout = dynamic(() => import("../components/Home/About/About"));
 const DynamicCounter = dynamic(
