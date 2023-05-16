@@ -1,9 +1,9 @@
 import React from "react";
 import SlideWhenVisible from "../../Shared/SlideWhenVisible";
 import { PrismicRichText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
 import { HomepageDocument } from "../../../../prismicio-types";
 import { PickFieldsStartingWith } from "../../../../types";
+import ImageWithBlur from "../../Shared/ImageWithBlur";
 
 const About: React.FC<
   PickFieldsStartingWith<HomepageDocument["data"], "about">
@@ -21,11 +21,7 @@ const About: React.FC<
         <div className="row">
           <div className="col-md-4 col-md-push-8">
             <div className="section-picture">
-              <PrismicNextImage
-                field={about_image}
-                className="img-responsive"
-                tw="w-full"
-              />
+              <ImageWithBlur field={about_image} />
             </div>
           </div>
           <div className="col-md-8 col-md-pull-4">

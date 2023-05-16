@@ -45,7 +45,8 @@
     "tailwind-merge": "^1.12.0",
     "use-count-up": "^3.0.1",
     "yet-another-react-lightbox": "^3.8.2",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "zustand": "^4.3.8"
   },
   "scripts": {
     "dev": "next dev",

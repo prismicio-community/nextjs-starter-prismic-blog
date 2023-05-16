@@ -1,7 +1,8 @@
 import React from "react";
 import BlogBox from "./BlogBox";
+import { PostDocument } from "@/prismicio-types";
 
-const Blog = () => (
+const Blog: React.FC<{ posts: PostDocument[] }> = ({ posts }) => (
   <section className="blogs-section" id="blogs">
     <div className="container">
       <div className="row">
@@ -12,10 +13,16 @@ const Blog = () => (
         </div>
       </div>
       <div className="row">
+        {posts.map((post) => (
+          <BlogBox
+            title={post.data.title}
+            img={post.data.header_image}
+            href={post.url}
+          />
+        ))}
         <BlogBox
           title="מוזיקה היא שפה אבל לימוד מוזיקה הוא הרבה יותר מלימוד שפה"
           img="Cover/5.jpg"
-          alt="סודות לחיים"
           href="music-teaching"
           text={
             "השבוע הסתיימה שנת הלימודים באחד מבתי הספר בהם אני מלמד." +

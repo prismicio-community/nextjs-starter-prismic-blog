@@ -7,12 +7,13 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Header from "../components/Home/Header/Header";
 import { SetupRepo } from "../components/SetupRepo";
 import dynamic from "next/dynamic";
+import { addImagesPlaceholders } from "../lib/utils";
+import { useImageStore } from "../lib/stores";
 
 const DynamicAbout = dynamic(() => import("../components/Home/About/About"));
 const DynamicCounter = dynamic(
   () => import("../components/Home/Counter/Counter")
 );
-const DynamicHeader = dynamic(() => import("../components/Home/Header/Header"));
 const DynamicPortfolio = dynamic(
   () => import("../components/Home/Portfolio/Portfolio")
 );
@@ -34,19 +35,34 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
 
   const result = await client.getSingle("homepage");
-
-  // const { base64 } = await getPlaiceholder(result.data?.headerImage.url ?? "", {
-  //   size: 64,
-  // });
+  const posts = await client.getAllByType("post", {
+    graphQuery: `
+    {
+      post {
+        title
+        header_image
+        description
+      }
+    }
+  `,
+  });
+  const images = await addImagesPlaceholders(result);
 
   return {
     props: {
       homepage: result.data,
+      images,
+      posts,
     },
   };
 };
 
-const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({
+  homepage,
+  images,
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  useImageStore.setState({ images });
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -67,7 +83,7 @@ const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <DynamicCounter counters={homepage.counters} />
       <DynamicPortfolio images={homepage.images} videos={homepage.videos} />
       <DynamicTestimonials testimonials={homepage.testimonials} />
-      <DynamicBlog />
+      <DynamicBlog posts={posts} />
       <DynamicContact
         map_label_link={homepage.map_label_link}
         map_label_text={homepage.map_label_text}

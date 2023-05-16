@@ -369,7 +369,7 @@ interface PostDocumentData {
    * title field in *post*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: would be shown on homepage link
    * - **API ID Path**: post.title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
@@ -399,16 +399,16 @@ interface PostDocumentData {
    */
   publish_date: prismicT.DateField;
   /**
-   * framework field in *post*
+   * description field in *post*
    *
-   * - **Field Type**: Select
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: post.framework
+   * - **API ID Path**: post.description
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
    *
    */
-  framework: prismicT.SelectField<"1" | "2">;
+  description: prismicT.RichTextField;
   /**
    * Slice Zone field in *post*
    *

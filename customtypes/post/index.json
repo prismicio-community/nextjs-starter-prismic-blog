@@ -8,7 +8,10 @@
       "uid": { "type": "UID", "config": { "label": "id", "placeholder": "" } },
       "title": {
         "type": "Text",
-        "config": { "label": "title", "placeholder": "" }
+        "config": {
+          "label": "title",
+          "placeholder": "would be shown on homepage link"
+        }
       },
       "header_image": {
         "type": "Image",
@@ -22,12 +25,13 @@
         "type": "Date",
         "config": { "label": "publish_date", "placeholder": "" }
       },
-      "framework": {
-        "type": "Select",
+      "description": {
+        "type": "StructuredText",
         "config": {
-          "label": "framework",
+          "label": "description",
           "placeholder": "",
-          "options": ["1", "2"]
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "slices": {

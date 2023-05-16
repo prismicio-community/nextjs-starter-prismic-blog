@@ -1,7 +1,7 @@
+import { useImageStore } from "@/src/lib/stores";
 import Image from "next/image";
 import {
   ContainerRect,
-  LightboxProps,
   Slide,
   isImageFitCover,
   isImageSlide,
@@ -15,8 +15,11 @@ export default function NextJsImage({
   slide: Slide;
   rect: ContainerRect;
 }) {
+  const { getImage } = useImageStore();
   const { imageFit } = useLightboxProps().carousel;
   const cover = isImageSlide(slide) && isImageFitCover(slide, imageFit);
+
+  const imageBlurData = getImage(slide.src ?? "") ?? "";
 
   const width = !cover
     ? Math.round(
@@ -46,6 +49,8 @@ export default function NextJsImage({
         draggable={false}
         style={{ objectFit: cover ? "cover" : "contain" }}
         sizes={`${Math.ceil((width / window.innerWidth) * 100)}vw`}
+        placeholder={imageBlurData ? "blur" : "empty"}
+        blurDataURL={imageBlurData}
       />
     </div>
   );
