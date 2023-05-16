@@ -1,24 +1,20 @@
 import React from "react";
-// @ts-ignore
-import { Image, Transformation } from "cloudinary-react";
 import "twin.macro";
+import { ImageField } from "@prismicio/types";
+import { PrismicNextImage, imgixLoader } from "@prismicio/next";
+import Image from "next/image";
+import ImageWithBlur from "../../Shared/ImageWithBlur";
 
-const PortfolioImage: React.FC<{ imgName: string; alt: string }> = ({
-  alt,
-  imgName,
-}) => {
+const PortfolioImage: React.FC<{ image: ImageField }> = ({ image }) => {
   return (
     <div tw="cursor-pointer" className="group">
       <div tw="overflow-hidden">
-        <Image
-          cloudName="dadaboom"
-          publicId={imgName}
-          className="img-responsive"
-          tw="w-full transition-all duration-[0.6s] ease-[ease] group-hover:opacity-[0.8] group-hover:scale-[1.1]"
-          alt={alt}
-        >
-          <Transformation height="293" width="370" crop="scale" />
-        </Image>
+        <ImageWithBlur
+          field={image}
+          width={424}
+          height={282}
+          imgixParams={{ fit: "crop", ar: "424:282" }}
+        />
       </div>
     </div>
   );

@@ -7,12 +7,13 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Header from "../components/Home/Header/Header";
 import { SetupRepo } from "../components/SetupRepo";
 import dynamic from "next/dynamic";
+import { useImageStore } from "../lib/stores";
+import { addImagesPlaceholders } from "../lib/utils";
 
 const DynamicAbout = dynamic(() => import("../components/Home/About/About"));
 const DynamicCounter = dynamic(
   () => import("../components/Home/Counter/Counter")
 );
-const DynamicHeader = dynamic(() => import("../components/Home/Header/Header"));
 const DynamicPortfolio = dynamic(
   () => import("../components/Home/Portfolio/Portfolio")
 );
@@ -24,27 +25,44 @@ const DynamicTestimonials = dynamic(
 );
 const DynamicBlog = dynamic(() => import("../components/Home/Blog/Blog"));
 const DynamicContact = dynamic(
-  () => import("../components/Home/Contact/Contact")
+  () => import("../components/Shared/Contact/Contact")
 );
-const DynamicFooter = dynamic(() => import("../components/Home/Footer/Footer"));
+const DynamicFooter = dynamic(
+  () => import("../components/Shared/Footer/Footer")
+);
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const client = createClient({ previewData: context.previewData });
 
   const result = await client.getSingle("homepage");
-
-  // const { base64 } = await getPlaiceholder(result.data?.headerImage.url ?? "", {
-  //   size: 64,
-  // });
+  const posts = await client.getAllByType("post", {
+    graphQuery: `
+    {
+      post {
+        title
+        header_image
+        description
+      }
+    }
+  `,
+  });
+  const images = await addImagesPlaceholders({ result, posts });
 
   return {
     props: {
       homepage: result.data,
+      images,
+      posts,
     },
   };
 };
 
-const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({
+  homepage,
+  images,
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  useImageStore.setState({ images });
   if (!homepage) {
     // Message when the Prismic repository has not been setup yet.
     return <SetupRepo />;
@@ -53,7 +71,7 @@ const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
-        <title>צפריר ליכשטנשטיין | מורה לתופים לאוטיסטים | דה דה בום</title>
+        <title>צפריר ליכטנשטיין | מורה לתופים לאוטיסטים | דה דה בום</title>
       </Head>
       <Header rotatingStrings={homepage.rotatingstrings} />
       <DynamicAbout
@@ -65,7 +83,7 @@ const Home = ({ homepage }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <DynamicCounter counters={homepage.counters} />
       <DynamicPortfolio images={homepage.images} videos={homepage.videos} />
       <DynamicTestimonials testimonials={homepage.testimonials} />
-      <DynamicBlog />
+      <DynamicBlog posts={posts} />
       <DynamicContact
         map_label_link={homepage.map_label_link}
         map_label_text={homepage.map_label_text}

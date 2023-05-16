@@ -21,8 +21,19 @@ export type Homepage = _Document & _Linkable & {
   _linkType?: Maybe<Scalars['String']>;
   _meta: Meta;
   about_content?: Maybe<Scalars['Json']>;
+  about_image?: Maybe<Scalars['Json']>;
   about_title?: Maybe<Scalars['Json']>;
+  counters?: Maybe<Array<HomepageCounters>>;
+  images?: Maybe<Array<HomepageImages>>;
+  map_label_link?: Maybe<_Linkable>;
+  map_label_text?: Maybe<Scalars['String']>;
+  map_lat?: Maybe<Scalars['Float']>;
+  map_lng?: Maybe<Scalars['Float']>;
+  rotatingstrings?: Maybe<Array<HomepageRotatingstrings>>;
+  services?: Maybe<Array<HomepageServices>>;
+  testimonials?: Maybe<Array<HomepageTestimonials>>;
   title?: Maybe<Scalars['Json']>;
+  videos?: Maybe<Array<HomepageVideos>>;
 };
 
 /** A connection to a list of items. */
@@ -42,6 +53,40 @@ export type HomepageConnectionEdge = {
   cursor: Scalars['String'];
   /** The item at the end of the edge. */
   node: Homepage;
+};
+
+export type HomepageCounters = {
+  __typename?: 'HomepageCounters';
+  counter?: Maybe<Scalars['Float']>;
+  title?: Maybe<Scalars['Json']>;
+};
+
+export type HomepageImages = {
+  __typename?: 'HomepageImages';
+  image?: Maybe<Scalars['Json']>;
+};
+
+export type HomepageRotatingstrings = {
+  __typename?: 'HomepageRotatingstrings';
+  text?: Maybe<Scalars['String']>;
+};
+
+export type HomepageServices = {
+  __typename?: 'HomepageServices';
+  content?: Maybe<Scalars['Json']>;
+  icon?: Maybe<Scalars['Json']>;
+  title?: Maybe<Scalars['Json']>;
+};
+
+export type HomepageTestimonials = {
+  __typename?: 'HomepageTestimonials';
+  name?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['Json']>;
+};
+
+export type HomepageVideos = {
+  __typename?: 'HomepageVideos';
+  youtubevideoid?: Maybe<Scalars['String']>;
 };
 
 export type Meta = {
@@ -81,9 +126,10 @@ export type Post = _Document & _Linkable & {
   __typename?: 'Post';
   _linkType?: Maybe<Scalars['String']>;
   _meta: Meta;
-  date?: Maybe<Scalars['Date']>;
+  header_image?: Maybe<Scalars['Json']>;
+  publish_date?: Maybe<Scalars['Date']>;
   slices?: Maybe<Array<PostSlices>>;
-  title?: Maybe<Scalars['Json']>;
+  title?: Maybe<Scalars['String']>;
 };
 
 /** A connection to a list of items. */
@@ -105,103 +151,84 @@ export type PostConnectionEdge = {
   node: Post;
 };
 
-export type PostSlices = PostSlicesImage_With_Caption | PostSlicesQuote | PostSlicesTesting | PostSlicesText;
+export type PostSlices = PostSlicesCentered_Text | PostSlicesImage | PostSlicesParagraph | PostSlicesVideo;
 
-export type PostSlicesImage_With_Caption = {
-  __typename?: 'PostSlicesImage_with_caption';
+export type PostSlicesCentered_Text = {
+  __typename?: 'PostSlicesCentered_text';
   label?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
-  variation?: Maybe<PostSlicesImage_With_CaptionVariation>;
+  variation?: Maybe<PostSlicesCentered_TextVariation>;
 };
 
-export type PostSlicesImage_With_CaptionDefaultSlice = {
-  __typename?: 'PostSlicesImage_with_captionDefaultSlice';
-  primary?: Maybe<PostSlicesImage_With_CaptionDefaultSlicePrimary>;
+export type PostSlicesCentered_TextDefault = {
+  __typename?: 'PostSlicesCentered_textDefault';
+  primary?: Maybe<PostSlicesCentered_TextDefaultPrimary>;
 };
 
-export type PostSlicesImage_With_CaptionDefaultSlicePrimary = {
-  __typename?: 'PostSlicesImage_with_captionDefaultSlicePrimary';
-  caption?: Maybe<Scalars['Json']>;
-  image?: Maybe<Scalars['Json']>;
-};
-
-export type PostSlicesImage_With_CaptionFullwidthimage = {
-  __typename?: 'PostSlicesImage_with_captionFullwidthimage';
-  primary?: Maybe<PostSlicesImage_With_CaptionFullwidthimagePrimary>;
-};
-
-export type PostSlicesImage_With_CaptionFullwidthimagePrimary = {
-  __typename?: 'PostSlicesImage_with_captionFullwidthimagePrimary';
-  caption?: Maybe<Scalars['Json']>;
-  image?: Maybe<Scalars['Json']>;
-};
-
-export type PostSlicesImage_With_CaptionVariation = PostSlicesImage_With_CaptionDefaultSlice | PostSlicesImage_With_CaptionFullwidthimage;
-
-export type PostSlicesQuote = {
-  __typename?: 'PostSlicesQuote';
-  label?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  variation?: Maybe<PostSlicesQuoteVariation>;
-};
-
-export type PostSlicesQuoteDefaultSlice = {
-  __typename?: 'PostSlicesQuoteDefaultSlice';
-  primary?: Maybe<PostSlicesQuoteDefaultSlicePrimary>;
-};
-
-export type PostSlicesQuoteDefaultSlicePrimary = {
-  __typename?: 'PostSlicesQuoteDefaultSlicePrimary';
-  quote?: Maybe<Scalars['Json']>;
-};
-
-export type PostSlicesQuoteVariation = PostSlicesQuoteDefaultSlice;
-
-export type PostSlicesTesting = {
-  __typename?: 'PostSlicesTesting';
-  label?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  variation?: Maybe<PostSlicesTestingVariation>;
-};
-
-export type PostSlicesTestingDefaultSlice = {
-  __typename?: 'PostSlicesTestingDefaultSlice';
-  items?: Maybe<Array<PostSlicesTestingDefaultSliceItems>>;
-  primary?: Maybe<PostSlicesTestingDefaultSlicePrimary>;
-};
-
-export type PostSlicesTestingDefaultSliceItems = {
-  __typename?: 'PostSlicesTestingDefaultSliceItems';
-  image?: Maybe<Scalars['Json']>;
-  working?: Maybe<Scalars['Boolean']>;
-};
-
-export type PostSlicesTestingDefaultSlicePrimary = {
-  __typename?: 'PostSlicesTestingDefaultSlicePrimary';
-  description?: Maybe<Scalars['Json']>;
-  title?: Maybe<Scalars['Json']>;
-};
-
-export type PostSlicesTestingVariation = PostSlicesTestingDefaultSlice;
-
-export type PostSlicesText = {
-  __typename?: 'PostSlicesText';
-  label?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-  variation?: Maybe<PostSlicesTextVariation>;
-};
-
-export type PostSlicesTextDefaultSlice = {
-  __typename?: 'PostSlicesTextDefaultSlice';
-  primary?: Maybe<PostSlicesTextDefaultSlicePrimary>;
-};
-
-export type PostSlicesTextDefaultSlicePrimary = {
-  __typename?: 'PostSlicesTextDefaultSlicePrimary';
+export type PostSlicesCentered_TextDefaultPrimary = {
+  __typename?: 'PostSlicesCentered_textDefaultPrimary';
   text?: Maybe<Scalars['Json']>;
 };
 
-export type PostSlicesTextVariation = PostSlicesTextDefaultSlice;
+export type PostSlicesCentered_TextVariation = PostSlicesCentered_TextDefault;
+
+export type PostSlicesImage = {
+  __typename?: 'PostSlicesImage';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  variation?: Maybe<PostSlicesImageVariation>;
+};
+
+export type PostSlicesImageDefault = {
+  __typename?: 'PostSlicesImageDefault';
+  primary?: Maybe<PostSlicesImageDefaultPrimary>;
+};
+
+export type PostSlicesImageDefaultPrimary = {
+  __typename?: 'PostSlicesImageDefaultPrimary';
+  description?: Maybe<Scalars['Json']>;
+  image?: Maybe<Scalars['Json']>;
+};
+
+export type PostSlicesImageVariation = PostSlicesImageDefault;
+
+export type PostSlicesParagraph = {
+  __typename?: 'PostSlicesParagraph';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  variation?: Maybe<PostSlicesParagraphVariation>;
+};
+
+export type PostSlicesParagraphDefault = {
+  __typename?: 'PostSlicesParagraphDefault';
+  items?: Maybe<Array<PostSlicesParagraphDefaultItems>>;
+};
+
+export type PostSlicesParagraphDefaultItems = {
+  __typename?: 'PostSlicesParagraphDefaultItems';
+  paragraph?: Maybe<Scalars['Json']>;
+};
+
+export type PostSlicesParagraphVariation = PostSlicesParagraphDefault;
+
+export type PostSlicesVideo = {
+  __typename?: 'PostSlicesVideo';
+  label?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  variation?: Maybe<PostSlicesVideoVariation>;
+};
+
+export type PostSlicesVideoDefault = {
+  __typename?: 'PostSlicesVideoDefault';
+  primary?: Maybe<PostSlicesVideoDefaultPrimary>;
+};
+
+export type PostSlicesVideoDefaultPrimary = {
+  __typename?: 'PostSlicesVideoDefaultPrimary';
+  videoid?: Maybe<Scalars['String']>;
+};
+
+export type PostSlicesVideoVariation = PostSlicesVideoDefault;
 
 export type Query = {
   __typename?: 'Query';
@@ -315,6 +342,12 @@ export enum SortHomepagey {
   AboutContentDesc = 'about_content_DESC',
   AboutTitleAsc = 'about_title_ASC',
   AboutTitleDesc = 'about_title_DESC',
+  MapLabelTextAsc = 'map_label_text_ASC',
+  MapLabelTextDesc = 'map_label_text_DESC',
+  MapLatAsc = 'map_lat_ASC',
+  MapLatDesc = 'map_lat_DESC',
+  MapLngAsc = 'map_lng_ASC',
+  MapLngDesc = 'map_lng_DESC',
   MetaFirstPublicationDateAsc = 'meta_firstPublicationDate_ASC',
   MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
   MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
@@ -324,12 +357,12 @@ export enum SortHomepagey {
 }
 
 export enum SortPosty {
-  DateAsc = 'date_ASC',
-  DateDesc = 'date_DESC',
   MetaFirstPublicationDateAsc = 'meta_firstPublicationDate_ASC',
   MetaFirstPublicationDateDesc = 'meta_firstPublicationDate_DESC',
   MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
   MetaLastPublicationDateDesc = 'meta_lastPublicationDate_DESC',
+  PublishDateAsc = 'publish_date_ASC',
+  PublishDateDesc = 'publish_date_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
@@ -339,18 +372,80 @@ export type WhereHomepage = {
   about_content_fulltext?: InputMaybe<Scalars['String']>;
   /** about_title */
   about_title_fulltext?: InputMaybe<Scalars['String']>;
+  counters?: InputMaybe<WhereHomepageCounters>;
+  /** map_label_link */
+  map_label_link?: InputMaybe<Scalars['String']>;
+  map_label_text?: InputMaybe<Scalars['String']>;
+  map_label_text_fulltext?: InputMaybe<Scalars['String']>;
+  /** map_lat */
+  map_lat?: InputMaybe<Scalars['Float']>;
+  /** map_lat */
+  map_lat_gt?: InputMaybe<Scalars['Float']>;
+  /** map_lat */
+  map_lat_lt?: InputMaybe<Scalars['Float']>;
+  /** map_lat */
+  map_lat_range?: InputMaybe<Array<Scalars['Float']>>;
+  /** map_lng */
+  map_lng?: InputMaybe<Scalars['Float']>;
+  /** map_lng */
+  map_lng_gt?: InputMaybe<Scalars['Float']>;
+  /** map_lng */
+  map_lng_lt?: InputMaybe<Scalars['Float']>;
+  /** map_lng */
+  map_lng_range?: InputMaybe<Array<Scalars['Float']>>;
+  rotatingstrings?: InputMaybe<WhereHomepageRotatingstrings>;
+  services?: InputMaybe<WhereHomepageServices>;
+  testimonials?: InputMaybe<WhereHomepageTestimonials>;
+  /** title */
+  title_fulltext?: InputMaybe<Scalars['String']>;
+  videos?: InputMaybe<WhereHomepageVideos>;
+};
+
+export type WhereHomepageCounters = {
+  /** counter */
+  counter?: InputMaybe<Scalars['Float']>;
+  /** counter */
+  counter_gt?: InputMaybe<Scalars['Float']>;
+  /** counter */
+  counter_lt?: InputMaybe<Scalars['Float']>;
+  /** counter */
+  counter_range?: InputMaybe<Array<Scalars['Float']>>;
   /** title */
   title_fulltext?: InputMaybe<Scalars['String']>;
 };
 
-export type WherePost = {
-  /** date */
-  date?: InputMaybe<Scalars['Date']>;
-  /** date */
-  date_after?: InputMaybe<Scalars['Date']>;
-  /** date */
-  date_before?: InputMaybe<Scalars['Date']>;
+export type WhereHomepageRotatingstrings = {
+  text?: InputMaybe<Scalars['String']>;
+  text_fulltext?: InputMaybe<Scalars['String']>;
+};
+
+export type WhereHomepageServices = {
+  /** content */
+  content_fulltext?: InputMaybe<Scalars['String']>;
   /** title */
+  title_fulltext?: InputMaybe<Scalars['String']>;
+};
+
+export type WhereHomepageTestimonials = {
+  name?: InputMaybe<Scalars['String']>;
+  name_fulltext?: InputMaybe<Scalars['String']>;
+  /** text */
+  text_fulltext?: InputMaybe<Scalars['String']>;
+};
+
+export type WhereHomepageVideos = {
+  youtubevideoid?: InputMaybe<Scalars['String']>;
+  youtubevideoid_fulltext?: InputMaybe<Scalars['String']>;
+};
+
+export type WherePost = {
+  /** publish_date */
+  publish_date?: InputMaybe<Scalars['Date']>;
+  /** publish_date */
+  publish_date_after?: InputMaybe<Scalars['Date']>;
+  /** publish_date */
+  publish_date_before?: InputMaybe<Scalars['Date']>;
+  title?: InputMaybe<Scalars['String']>;
   title_fulltext?: InputMaybe<Scalars['String']>;
 };
 

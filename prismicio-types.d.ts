@@ -363,7 +363,184 @@ export type HomepageDocument<Lang extends string = string> =
     "homepage",
     Lang
   >;
-export type AllDocumentTypes = HomepageDocument;
+/** Content for post documents */
+interface PostDocumentData {
+  /**
+   * title field in *post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: would be shown on homepage link
+   * - **API ID Path**: post.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * Header Image field in *post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.header_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  header_image: prismicT.ImageField<never>;
+  /**
+   * publish_date field in *post*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.publish_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/date
+   *
+   */
+  publish_date: prismicT.DateField;
+  /**
+   * description field in *post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismicT.RichTextField;
+  /**
+   * Slice Zone field in *post*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<PostDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *post → Slice Zone*
+ *
+ */
+type PostDocumentDataSlicesSlice =
+  | ParagraphSlice
+  | VideoSlice
+  | ImageSlice
+  | CenteredTextSlice;
+/**
+ * post document from Prismic
+ *
+ * - **API ID**: `post`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
+export type AllDocumentTypes = HomepageDocument | PostDocument;
+/**
+ * Primary content in CenteredText → Primary
+ *
+ */
+interface CenteredTextSliceDefaultPrimary {
+  /**
+   * text field in *CenteredText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: centered_text.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismicT.RichTextField;
+}
+/**
+ * Default variation for CenteredText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CenteredTextSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<CenteredTextSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *CenteredText*
+ *
+ */
+type CenteredTextSliceVariation = CenteredTextSliceDefault;
+/**
+ * CenteredText Shared Slice
+ *
+ * - **API ID**: `centered_text`
+ * - **Description**: `CenteredText`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CenteredTextSlice = prismicT.SharedSlice<
+  "centered_text",
+  CenteredTextSliceVariation
+>;
+/**
+ * Primary content in Image → Primary
+ *
+ */
+interface ImageSliceDefaultPrimary {
+  /**
+   * image field in *Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
+  /**
+   * description field in *Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Image Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<ImageSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Image*
+ *
+ */
+type ImageSliceVariation = ImageSliceDefault;
+/**
+ * Image Shared Slice
+ *
+ * - **API ID**: `image`
+ * - **Description**: `Image`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
 /**
  * Primary content in ImageWithCaption → Primary
  *
@@ -462,6 +639,52 @@ export type ImageWithCaptionSlice = prismicT.SharedSlice<
   ImageWithCaptionSliceVariation
 >;
 /**
+ * Item in Paragraph → Items
+ *
+ */
+export interface ParagraphSliceDefaultItem {
+  /**
+   * paragraph field in *Paragraph → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: paragraph.items[].paragraph
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  paragraph: prismicT.RichTextField;
+}
+/**
+ * Default variation for Paragraph Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ParagraphSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<ParagraphSliceDefaultItem>
+>;
+/**
+ * Slice variation for *Paragraph*
+ *
+ */
+type ParagraphSliceVariation = ParagraphSliceDefault;
+/**
+ * Paragraph Shared Slice
+ *
+ * - **API ID**: `paragraph`
+ * - **Description**: `Paragraph`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ParagraphSlice = prismicT.SharedSlice<
+  "paragraph",
+  ParagraphSliceVariation
+>;
+/**
  * Primary content in Quote → Primary
  *
  */
@@ -504,6 +727,49 @@ type QuoteSliceVariation = QuoteSliceDefaultSlice;
  *
  */
 export type QuoteSlice = prismicT.SharedSlice<"quote", QuoteSliceVariation>;
+/**
+ * Primary content in Video → Primary
+ *
+ */
+interface VideoSliceDefaultPrimary {
+  /**
+   * videoId field in *Video → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.primary.videoid
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  videoid: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Video Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<VideoSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Video*
+ *
+ */
+type VideoSliceVariation = VideoSliceDefault;
+/**
+ * Video Shared Slice
+ *
+ * - **API ID**: `video`
+ * - **Description**: `Video`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSlice = prismicT.SharedSlice<"video", VideoSliceVariation>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -523,17 +789,36 @@ declare module "@prismicio/client" {
       HomepageDocumentDataSlices5Slice,
       HomepageDocumentDataTestimonialsItem,
       HomepageDocument,
+      PostDocumentData,
+      PostDocumentDataSlicesSlice,
+      PostDocument,
       AllDocumentTypes,
+      CenteredTextSliceDefaultPrimary,
+      CenteredTextSliceDefault,
+      CenteredTextSliceVariation,
+      CenteredTextSlice,
+      ImageSliceDefaultPrimary,
+      ImageSliceDefault,
+      ImageSliceVariation,
+      ImageSlice,
       ImageWithCaptionSliceDefaultSlicePrimary,
       ImageWithCaptionSliceDefaultSlice,
       ImageWithCaptionSliceFullWidthImagePrimary,
       ImageWithCaptionSliceFullWidthImage,
       ImageWithCaptionSliceVariation,
       ImageWithCaptionSlice,
+      ParagraphSliceDefaultItem,
+      ParagraphSliceDefault,
+      ParagraphSliceVariation,
+      ParagraphSlice,
       QuoteSliceDefaultSlicePrimary,
       QuoteSliceDefaultSlice,
       QuoteSliceVariation,
       QuoteSlice,
+      VideoSliceDefaultPrimary,
+      VideoSliceDefault,
+      VideoSliceVariation,
+      VideoSlice,
     };
   }
 }
