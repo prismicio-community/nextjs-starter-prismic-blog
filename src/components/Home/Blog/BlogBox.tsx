@@ -20,30 +20,28 @@ const BlogBox: React.FC<BlogBoxProps> = ({
   title,
   description,
 }: BlogBoxProps) => (
-  <div className="col-sm-4 col-xs-12" style={{ float: "right" }}>
-    <div className="blog-item">
-      <div className="blog-img">
-        <Link href={href}>
-          <ImageWithBlur field={img} />
-        </Link>
+  <div className="blog-item" tw="flex flex-col">
+    <div className="blog-img">
+      <Link href={href}>
+        <ImageWithBlur field={img} />
+      </Link>
+    </div>
+    <div className="blog-content" tw="flex-1 flex flex-col">
+      <div className="blog-content-head" tw="mb-3">
+        <h3 className="blog-content-title">
+          <a href={`/blog/${href}`}>{title}</a>
+        </h3>
       </div>
-      <div className="blog-content">
-        <div className="blog-content-head">
-          <h3 className="blog-content-title">
-            <a href={`/blog/${href}`}>{title}</a>
-          </h3>
-        </div>
-        <div className="blog-content-desc">
-          <p>
-            <PrismicText field={description} />
-          </p>
-        </div>
-        <div className="blog-content-footer">
-          <Link href={href}>
-            <span>קרא עוד</span>
-            <KeyboardBackspaceIcon />
-          </Link>
-        </div>
+      <div className="blog-content-desc" tw="flex-1">
+        <p>
+          <PrismicText field={description} />
+        </p>
+      </div>
+      <div className="blog-content-footer">
+        <Link href={href}>
+          <span>קרא עוד</span>
+          <KeyboardBackspaceIcon />
+        </Link>
       </div>
     </div>
   </div>

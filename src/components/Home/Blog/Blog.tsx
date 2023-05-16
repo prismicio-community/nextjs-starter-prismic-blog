@@ -12,7 +12,7 @@ const Blog: React.FC<{ posts: PostDocument[] }> = ({ posts }) => (
           </div>
         </div>
       </div>
-      <div className="row">
+      <div tw="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 auto-rows-fr">
         {posts.map((post) => (
           <BlogBox
             key={post.id}
