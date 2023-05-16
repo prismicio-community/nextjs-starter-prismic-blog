@@ -15,20 +15,13 @@ const Blog: React.FC<{ posts: PostDocument[] }> = ({ posts }) => (
       <div className="row">
         {posts.map((post) => (
           <BlogBox
-            title={post.data.title}
+            key={post.id}
+            title={post.data.title ?? ""}
             img={post.data.header_image}
-            href={post.url}
+            href={post.url ?? ""}
+            description={post.data.description ?? ""}
           />
         ))}
-        <BlogBox
-          title="מוזיקה היא שפה אבל לימוד מוזיקה הוא הרבה יותר מלימוד שפה"
-          img="Cover/5.jpg"
-          href="music-teaching"
-          text={
-            "השבוע הסתיימה שנת הלימודים באחד מבתי הספר בהם אני מלמד." +
-            " השנה הזמנו את הורי התלמידים לשיעור כלי הקשה רגיל, כמו זה שיש לנו כל שבוע..."
-          }
-        />
       </div>
     </div>
   </section>

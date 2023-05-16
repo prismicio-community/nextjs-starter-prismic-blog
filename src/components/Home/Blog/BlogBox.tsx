@@ -3,14 +3,15 @@ import React from "react";
 import { Image, Transformation } from "cloudinary-react";
 import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 import ImageWithBlur from "../../Shared/ImageWithBlur";
-import { ImageField } from "@prismicio/types";
+import { ImageField, RichTextField } from "@prismicio/types";
 import Link from "next/link";
+import { PrismicText } from "@prismicio/react";
 
 type BlogBoxProps = {
   href: string;
   img: ImageField;
   title: string;
-  description: string;
+  description: RichTextField;
 };
 
 const BlogBox: React.FC<BlogBoxProps> = ({
@@ -33,7 +34,9 @@ const BlogBox: React.FC<BlogBoxProps> = ({
           </h3>
         </div>
         <div className="blog-content-desc">
-          <p>{description}</p>
+          <p>
+            <PrismicText field={description} />
+          </p>
         </div>
         <div className="blog-content-footer">
           <Link href={href}>

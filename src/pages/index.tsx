@@ -46,7 +46,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     }
   `,
   });
-  const images = await addImagesPlaceholders(result);
+  const images = await addImagesPlaceholders({ result, posts });
 
   return {
     props: {
