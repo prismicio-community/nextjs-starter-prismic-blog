@@ -5,6 +5,7 @@ const update = async function handler(
   res: NextApiResponse
 ) {
   const { body } = req;
+  console.dir(body, { depth: null });
   if (!body) return res.json({ revalidated: false });
 
   if (req.body.secret !== process.env.REVALIDATE_SECRET_KEY) {
