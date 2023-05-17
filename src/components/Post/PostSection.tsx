@@ -1,16 +1,16 @@
-import React from "react"
-import { PostDocumentData } from "@/prismicio-types"
-import { PrismicNextImage } from "@prismicio/next"
-import dayjs from "dayjs"
+import React from "react";
+import { PostDocumentData } from "@/prismicio-types";
+import { PrismicNextImage } from "@prismicio/next";
+import dayjs from "dayjs";
 // import { Image, Transformation } from "cloudinary-react";
-import get from "lodash/get"
+import get from "lodash/get";
 
-import PostContent from "./PostContent/PostContent"
-import PostSidebar from "./SideBar/PostSidebar"
-import { Blog, PostThumb, SingleBlog } from "./postSectionStyle"
-import "dayjs/locale/he"
+import PostContent from "./PostContent/PostContent";
+import PostSidebar from "./SideBar/PostSidebar";
+import { Blog, PostThumb, SingleBlog } from "./postSectionStyle";
+import "dayjs/locale/he";
 
-dayjs.locale("he")
+dayjs.locale("he");
 
 const PostSection: React.FC<
   Pick<PostDocumentData, "header_image" | "publish_date" | "title" | "slices">
@@ -39,7 +39,7 @@ const PostSection: React.FC<
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PostSection
+export default PostSection;

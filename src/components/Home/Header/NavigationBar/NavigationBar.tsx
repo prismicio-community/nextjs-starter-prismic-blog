@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import NavigationItems from "./NavigationItems";
+
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
+import NavigationItems from "./NavigationItems";
 
 const NavigationBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="navbar navbar-default navbar-fixed-top mynavbar flex flex-col">
-      <div tw="flex justify-between w-full items-center mx-8 xl:mx-auto max-w-[1320px]">
+    <nav
+      className="fixed top-0 z-20 flex w-full flex-col bg-transparent py-7 transition-all duration-500
+    group-[.on-scroll]:bg-white group-[.on-scroll]:py-3"
+    >
+      <div className="container mx-8 flex w-full items-center justify-between xl:mx-auto">
         <NavigationItems target="desktop" />
         <div onClick={() => setIsOpen((isOpen) => !isOpen)}>
           <BurgerMenu />
         </div>
-        <div className="navbar-header">
+        <div>
           <Brand />
         </div>
       </div>

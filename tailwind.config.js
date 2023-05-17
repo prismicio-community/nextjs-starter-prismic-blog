@@ -1,5 +1,5 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
-const plugin = require("tailwindcss/plugin")
+const { fontFamily } = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -41,7 +41,7 @@ module.exports = {
           alignItems: "center",
           justifyContent: "center",
         },
-      })
+      });
     }),
   ],
-}
+};

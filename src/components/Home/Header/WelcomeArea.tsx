@@ -1,14 +1,13 @@
-import React from "react"
-import * as prismicH from "@prismicio/helpers"
+import React from "react";
 
-import { HomepageDocumentDataRotatingstringsItem } from "../../../../prismicio-types"
-import TypedHeader from "./TypedHeader"
+import { HomepageDocumentDataRotatingstringsItem } from "../../../../prismicio-types";
+import TypedHeader from "./TypedHeader";
 
 const WelcomeArea: React.FC<{
-  rotatingStrings: HomepageDocumentDataRotatingstringsItem[]
+  rotatingStrings: HomepageDocumentDataRotatingstringsItem[];
 }> = ({ rotatingStrings }) => (
   <div className="welcome-area">
-    <div className="container">
+    <div className="container mx-auto">
       <div className="row">
         <div className="col-md-12 text-align-right">
           <h2>צפריר ליכטנשטיין</h2>
@@ -19,19 +18,13 @@ const WelcomeArea: React.FC<{
           />
         </div>
       </div>
-      <div className="row text-right">
+      <div className="row text-align-right">
         <div className="col-md-12">
-          <div className="welcome-scroll">
-            <div className="arrow bounce">
-              <a href="#about" className="section-link" data-target="about">
-                <i className="fa fa-long-arrow-alt-down fa-2x" />
-              </a>
-            </div>
-          </div>
+          <div className="welcome-scroll" />
         </div>
       </div>
     </div>
   </div>
-)
+);
 
-export default WelcomeArea
+export default WelcomeArea;

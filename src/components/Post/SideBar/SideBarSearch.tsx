@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import React from "react"
-import { useRouter } from "next/navigation"
+import React from "react";
+import { useRouter } from "next/navigation";
 
 const SideBarSearch = () => {
-  const [searchQuery, setSearchQuery] = React.useState("")
-  const { push } = useRouter()
+  const [searchQuery, setSearchQuery] = React.useState("");
+  const { push } = useRouter();
 
   const onClick = () => {
-    console.log("clicked")
-  }
+    console.log("clicked");
+  };
 
   const handleInputChange = (e: any) => {
-    const { value } = e.target
-    setSearchQuery(value)
-  }
+    const { value } = e.target;
+    setSearchQuery(value);
+  };
 
   const handleKeyPress = (e: any) => {
     if (e.key === "Enter") {
-      onClick()
+      onClick();
     }
-  }
+  };
 
   return (
     <div className="mb-12">
@@ -42,7 +42,7 @@ const SideBarSearch = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SideBarSearch
+export default SideBarSearch;

@@ -1,6 +1,6 @@
-import React from "react"
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from "react";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FacebookNav: React.FC<{ facebookLink: string }> = ({ facebookLink }) => (
   <li className="hover:text-primary">
@@ -13,6 +13,6 @@ const FacebookNav: React.FC<{ facebookLink: string }> = ({ facebookLink }) => (
       />
     </a>
   </li>
-)
+);
 
-export default FacebookNav
+export default FacebookNav;
