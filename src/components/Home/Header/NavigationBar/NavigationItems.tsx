@@ -1,6 +1,5 @@
 import React from "react";
-import { cn } from "@/src/lib/utils";
-import tw from "twin.macro";
+import cn from "@/src/lib/utils/cn";
 
 import FacebookNav from "./FacebookNav";
 import ItemNav from "./ItemNav";
@@ -25,6 +24,7 @@ const NavigationItems: React.FC<{
     <ul
       className={cn(
         "flex-col items-center font-hebrew text-xl text-white transition-all duration-700 md:flex-row md:space-x-4 md:space-x-reverse",
+        "group-[.on-scroll]:text-black",
         {
           "top-20 flex h-[285px] w-full items-start space-y-3 bg-white pr-8 text-gray-800 opacity-100 md:hidden":
             target === "mobile",

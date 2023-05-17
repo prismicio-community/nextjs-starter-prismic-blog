@@ -8,10 +8,10 @@ const NavigationBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav
-      className="fixed top-0 z-20 flex w-full flex-col bg-transparent py-7 transition-all duration-500
+      className="fixed top-0 z-20 flex w-full flex-col bg-transparent py-7 transition-all duration-300
     group-[.on-scroll]:bg-white group-[.on-scroll]:py-3"
     >
-      <div className="container mx-8 flex w-full items-center justify-between xl:mx-auto">
+      <div className="container flex w-full items-center justify-between">
         <NavigationItems target="desktop" />
         <div onClick={() => setIsOpen((isOpen) => !isOpen)}>
           <BurgerMenu />

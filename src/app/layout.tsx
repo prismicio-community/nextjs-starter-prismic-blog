@@ -8,8 +8,6 @@ import openSans from "@/src/styles/fontLoad";
 
 import cn from "../lib/utils/cn";
 
-// import StyledComponentsRegistry from "@/src/lib/registry";
-
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -21,7 +19,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={cn("min-h-screen font-sans antialiased", openSans.variable)}
       >
-        {/* <StyledComponentsRegistry>{children}</StyledComponentsRegistry> */}
         {children}
         <VercelAnalytics />
       </body>
