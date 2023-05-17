@@ -1,18 +1,19 @@
-import React from "react";
-import TypedHeader from "./TypedHeader";
-import { HomepageDocumentDataRotatingstringsItem } from "../../../../prismicio-types";
-import * as prismicH from "@prismicio/helpers";
+import React from "react"
+import * as prismicH from "@prismicio/helpers"
+
+import { HomepageDocumentDataRotatingstringsItem } from "../../../../prismicio-types"
+import TypedHeader from "./TypedHeader"
 
 const WelcomeArea: React.FC<{
-  rotatingStrings: HomepageDocumentDataRotatingstringsItem[];
+  rotatingStrings: HomepageDocumentDataRotatingstringsItem[]
 }> = ({ rotatingStrings }) => (
   <div className="welcome-area">
     <div className="container">
       <div className="row">
-        <div className="col-md-12 text-right">
+        <div className="col-md-12 text-align-right">
           <h2>צפריר ליכטנשטיין</h2>
         </div>
-        <div className="col-md-12 text-right">
+        <div className="col-md-12 text-align-right">
           <TypedHeader
             strings={rotatingStrings.map(({ text }) => text ?? "")}
           />
@@ -31,6 +32,6 @@ const WelcomeArea: React.FC<{
       </div>
     </div>
   </div>
-);
+)
 
-export default WelcomeArea;
+export default WelcomeArea

@@ -1,8 +1,9 @@
-import React from "react";
-import SideBarSearch from "./SideBarSearch";
-import SideBarLatest from "./SideBarLatest";
-import SideBarCategories from "./SideBarCategories";
-import SideBarTagCloud from "./SideBarTagCloud";
+import React from "react"
+
+import SideBarCategories from "./SideBarCategories"
+import SideBarLatest from "./SideBarLatest"
+import SideBarSearch from "./SideBarSearch"
+import SideBarTagCloud from "./SideBarTagCloud"
 
 const PostSidebar = () => (
   <div className="col-md-3 col-sm-12">
@@ -13,6 +14,6 @@ const PostSidebar = () => (
       <SideBarTagCloud tags={[]} /> */}
     </div>
   </div>
-);
+)
 
-export default PostSidebar;
+export default PostSidebar
