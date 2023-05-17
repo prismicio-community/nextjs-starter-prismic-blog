@@ -1,4 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,10 +16,8 @@ module.exports = {
       md: "768px",
       lg: "992px",
       xl: "1200px",
-      // "2xl": "1360px",
     },
     fontFamily: {
-      // sans: "Lato, sans-serif",
       serif: "'Libre Baskerville', sans-serif",
       montserrat: "Montserrat, sans-serif",
       hebrew: "Open Sans Hebrew, sans-serif",
@@ -30,5 +29,19 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".text-align-right": {
+          "text-align": "right",
+          direction: "rtl",
+        },
+        ".flex-center": {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }
+      });
+    }),
+  ],
 };

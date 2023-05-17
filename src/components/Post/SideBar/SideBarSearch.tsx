@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useRouter } from "next/navigation";
 
@@ -28,9 +29,8 @@ const SideBarSearch = () => {
             className="btn btn-primary bg-primary border-primary border-solid border text-white h-11 w-11 hover:bg-primary"
             type="button"
             onClick={onClick}
-          >
-            <span className="glyphicon glyphicon-search" />
-          </input>
+          />
+          {/* <span className="glyphicon glyphicon-search" /> */}
         </span>
         <input
           className="form-control border border-solid border-gray-300 h-11 text-align-right hover:border-gray-200"

@@ -1,3 +1,4 @@
+// withTwin.js
 const path = require("path");
 
 // The folders containing files importing twin.macro
@@ -10,17 +11,11 @@ module.exports = function withTwin(nextConfig) {
       const { dev, isServer } = options;
       config.module = config.module || {};
       config.module.rules = config.module.rules || [];
-
-      // Make the loader work with the new app directory
-      // https://github.com/ben-rogerson/twin.macro/issues/788
-      const patchedDefaultLoaders = options.defaultLoaders.babel;
-      patchedDefaultLoaders.options.hasServerComponents = false;
-
       config.module.rules.push({
         test: /\.(tsx|ts)$/,
         include: includedDirs,
         use: [
-          patchedDefaultLoaders,
+          options.defaultLoaders.babel,
           {
             loader: "babel-loader",
             options: {
@@ -55,8 +50,9 @@ module.exports = function withTwin(nextConfig) {
 
       if (typeof nextConfig.webpack === "function") {
         return nextConfig.webpack(config, options);
+      } else {
+        return config;
       }
-      return config;
     },
   };
 };

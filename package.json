@@ -22,8 +22,9 @@
     "cloudinary-react": "^1.8.1",
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.1",
+    "eslint-plugin-tailwindcss": "^3.12.0",
     "graphql": "^16.5.0",
-    "next": "^13.4.1",
+    "next": "^13.4.2",
     "next-slicezone": "^0.2.6",
     "photoswipe": "^5.3.7",
     "plaiceholder": "^2.5.0",
@@ -64,7 +65,7 @@
     "url": "https://github.com/prismicio/nextjs-blog"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
+    "@babel/core": "^7.21.8",
     "@babel/plugin-syntax-typescript": "^7.21.4",
     "@graphql-codegen/cli": "3.3.1",
     "@graphql-codegen/introspection": "3.0.1",
@@ -82,7 +83,7 @@
     "babel-plugin-styled-components": "^2.1.1",
     "babel-plugin-twin": "^1.1.0",
     "eslint": "8.17.0",
-    "eslint-config-next": "13.4.0",
+    "eslint-config-next": "13.4.2",
     "eslint-config-prettier": "^8.8.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
