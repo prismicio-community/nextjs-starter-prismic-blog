@@ -1,8 +1,9 @@
 import React from "react";
+import { asText } from "@prismicio/client";
+
+import { HomepageDocumentDataCountersItem } from "../../../../prismicio-types";
 import CounterBox from "./CounterBox";
 import { CountersSection, Overlay } from "./counterStyles";
-import { HomepageDocumentDataCountersItem } from "../../../../prismicio-types";
-import * as prismicH from "@prismicio/helpers";
 
 const Counter: React.FC<{
   counters: HomepageDocumentDataCountersItem[];
@@ -19,7 +20,7 @@ const Counter: React.FC<{
                     border
                     to={counter}
                     text={title}
-                    key={prismicH.asText(title)}
+                    key={asText(title)}
                   />
                 ))}
               </div>

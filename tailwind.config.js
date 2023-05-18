@@ -20,6 +20,7 @@ module.exports = {
     },
     fontFamily: {
       serif: "'Libre Baskerville', sans-serif",
+      secular: "'Secular One', sans-serif",
       montserrat: "Montserrat, sans-serif",
       hebrew: "Open Sans Hebrew, sans-serif",
       sans: ["var(--font-sans)", ...fontFamily.sans],
@@ -31,7 +32,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities }) {
+    plugin(function ({ addUtilities, theme }) {
       addUtilities({
         ".text-align-right": {
           "text-align": "right",
@@ -41,6 +42,11 @@ module.exports = {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+        },
+        ".my-container": {
+          margin: "0 auto",
+          maxWidth: "1200px",
+          padding: "0 1rem",
         },
       });
     }),

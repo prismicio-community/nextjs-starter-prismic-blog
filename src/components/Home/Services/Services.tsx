@@ -1,7 +1,8 @@
 import React from "react";
-import * as prismicH from "@prismicio/helpers";
+import { HomepageDocumentDataServicesItem } from "@/prismicio-types";
+import { asText } from "@prismicio/client";
+
 import ServiceBox from "./ServiceBox";
-import { HomepageDocumentDataServicesItem } from "../../../../prismicio-types";
 
 const Services: React.FC<{ services: HomepageDocumentDataServicesItem[] }> = ({
   services,
@@ -20,7 +21,7 @@ const Services: React.FC<{ services: HomepageDocumentDataServicesItem[] }> = ({
         </div>
         <div className="row">
           {services?.map((service) => (
-            <ServiceBox key={prismicH.asText(service.title)} {...service} />
+            <ServiceBox key={asText(service.title)} {...service} />
           ))}
         </div>
       </div>

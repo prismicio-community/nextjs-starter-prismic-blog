@@ -11,7 +11,7 @@ const NavigationBar: React.FC = () => {
       className="fixed top-0 z-20 flex w-full flex-col bg-transparent py-7 transition-all duration-300
     group-[.on-scroll]:bg-white group-[.on-scroll]:py-3"
     >
-      <div className="container flex w-full items-center justify-between">
+      <div className="flex w-full items-center justify-between my-container">
         <NavigationItems target="desktop" />
         <div onClick={() => setIsOpen((isOpen) => !isOpen)}>
           <BurgerMenu />
