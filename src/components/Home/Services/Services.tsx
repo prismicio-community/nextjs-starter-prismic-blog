@@ -19,7 +19,7 @@ const Services: React.FC<{ services: HomepageDocumentDataServicesItem[] }> = ({
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {services?.map((service) => (
             <ServiceBox key={asText(service.title)} {...service} />
           ))}
