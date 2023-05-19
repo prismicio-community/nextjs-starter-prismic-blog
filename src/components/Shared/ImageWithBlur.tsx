@@ -12,8 +12,7 @@ const ImageWithBlur: React.FC<PrismicNextImageProps> = ({
       field={field}
       placeholder={blurImage ? "blur" : "empty"}
       blurDataURL={blurImage}
-      className="img-responsive"
-      tw="w-full"
+      className="h-auto w-full max-w-full"
       {...props}
     />
   );
