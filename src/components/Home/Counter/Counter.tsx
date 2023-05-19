@@ -3,33 +3,19 @@ import { asText } from "@prismicio/client";
 
 import { HomepageDocumentDataCountersItem } from "../../../../prismicio-types";
 import CounterBox from "./CounterBox";
-import { CountersSection, Overlay } from "./counterStyles";
 
 const Counter: React.FC<{
   counters: HomepageDocumentDataCountersItem[];
 }> = ({ counters }) => (
-  <CountersSection className="counter-section text-center">
-    <Overlay id="counter" className="overlay">
-      <div className="container">
-        <div className="row text-center">
-          <div className="col-md-12">
-            <div className="projects">
-              <div className="row">
-                {counters.map(({ counter, title }) => (
-                  <CounterBox
-                    border
-                    to={counter}
-                    text={title}
-                    key={asText(title)}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+  <div className="h-full w-full bg-black/90 py-8 text-center">
+    <div className="my-container">
+      <div className="grid grid-cols-1 place-content-between items-center px-10 sm:grid-cols-2 sm:flex-row md:grid-cols-4">
+        {counters.map(({ counter, title }) => (
+          <CounterBox to={counter} text={title} key={asText(title)} />
+        ))}
       </div>
-    </Overlay>
-  </CountersSection>
+    </div>
+  </div>
 );
 
 export default Counter;

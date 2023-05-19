@@ -24,6 +24,7 @@ module.exports = {
       montserrat: "Montserrat, sans-serif",
       hebrew: "Open Sans Hebrew, sans-serif",
       sans: ["var(--font-sans)", ...fontFamily.sans],
+      athiti: "Athiti, sans-serif",
     },
     extend: {
       colors: {
@@ -44,9 +45,7 @@ module.exports = {
           justifyContent: "center",
         },
         ".my-container": {
-          margin: "0 auto",
-          maxWidth: "1200px",
-          padding: "0 1rem",
+          "@apply mx-auto md:max-w-screen-xl px-4 max-w-screen-sm": {},
         },
       });
     }),

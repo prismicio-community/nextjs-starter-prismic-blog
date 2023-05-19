@@ -4,6 +4,7 @@ import { PrismicRichText } from "@prismicio/react";
 import { HomepageDocument } from "../../../../prismicio-types";
 import { PickFieldsStartingWith } from "../../../../types";
 import ImageWithBlur from "../../Shared/ImageWithBlur";
+import SectionTitle from "../../Shared/SectionTitle";
 import SlideWhenVisible from "../../Shared/SlideWhenVisible";
 
 const About: React.FC<
@@ -12,18 +13,14 @@ const About: React.FC<
   return (
     <section id="about" className="bg-white">
       <div className="my-container">
-        <div className="pb-12">
-          <h1 className="border-r-[5px] border-solid border-r-primary pr-2 text-2xl font-bold tracking-[0.5pt] text-gray-700 text-align-right">
-            אודות
-          </h1>
-        </div>
+        <SectionTitle>אודות</SectionTitle>
         <div className="flex flex-col md:flex-row">
-          <div className="flex-[1] pl-3">
+          <div className="flex-[1] md:pl-3">
             <div className="relative mx-auto">
               <ImageWithBlur field={about_image} />
             </div>
           </div>
-          <div className="mt-4 flex-[2] px-3 md:mt-0">
+          <div className="mt-4 flex-[2] md:mt-0 md:px-3">
             <div className="px-1">
               <SlideWhenVisible>
                 <PrismicRichText

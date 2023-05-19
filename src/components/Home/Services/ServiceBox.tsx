@@ -10,12 +10,12 @@ const ServiceBox: React.FC<HomepageDocumentDataServicesItem> = ({
   title,
 }) => {
   return (
-    <div className="thumbnail services-box-open">
+    <div className="mb-8 min-h-[420px] border border-solid border-gray-300 px-8 py-10 transition-colors hover:border-primary hover:bg-white">
       <PrismicNextImage field={icon} width={30} height={30} />
-      <h3>
+      <h3 className="mt-3 text-lg text-gray-800 text-align-right">
         <PrismicText field={title} />
       </h3>
-      <div tw="mt-3">
+      <div className="mt-3 text-gray-500">
         <PrismicRichText field={content} />
       </div>
     </div>
