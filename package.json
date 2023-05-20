@@ -49,8 +49,8 @@
     "zustand": "^4.3.8"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "prismic-next clear-cache && next dev",
+    "build": "prismic-next clear-cache && next build",
     "start": "next start",
     "slicemachine": "start-slicemachine",
     "format": "prettier --write .",

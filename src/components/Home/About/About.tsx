@@ -27,7 +27,7 @@ const About: React.FC<
                   field={about_title}
                   components={{
                     heading3: ({ children }) => (
-                      <h3 tw="text-2xl mb-2 text-primary">{children}</h3>
+                      <h3 className="mb-2 text-2xl text-primary">{children}</h3>
                     ),
                   }}
                 />
