@@ -1,14 +1,12 @@
 import React from "react";
-import "twin.macro";
 import { ImageField } from "@prismicio/types";
-import { PrismicNextImage, imgixLoader } from "@prismicio/next";
-import Image from "next/image";
+
 import ImageWithBlur from "../../Shared/ImageWithBlur";
 
 const PortfolioImage: React.FC<{ image: ImageField }> = ({ image }) => {
   return (
-    <div tw="cursor-pointer" className="group">
-      <div tw="overflow-hidden">
+    <div className="group cursor-pointer">
+      <div className="overflow-hidden">
         <ImageWithBlur
           field={image}
           width={424}

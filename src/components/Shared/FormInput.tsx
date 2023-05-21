@@ -1,6 +1,7 @@
 import React from "react";
-import { FieldError, FieldErrors } from "react-hook-form";
-import tw from "twin.macro";
+import cn from "@/src/lib/utils/cn";
+import { FieldErrors } from "react-hook-form";
+
 import { ValidationSchema } from "./Contact/validationSchema";
 
 type GenericFormInputProps = {
@@ -39,15 +40,12 @@ const GenericFormInput = React.forwardRef<
         onChange={onChange}
         onBlur={onBlur}
         ref={ref}
-        className="without-ring"
-        css={[
-          tw`bg-transparent border-white border text-white h-12 text-right w-full py-1.5 px-3 outline-none
-            transition-all duration-150 ease-in-out
-            font-montserrat
-            placeholder:text-gray-500
-            `,
-          errors?.[name] && tw`border-red-500`,
-        ]}
+        className={cn(
+          `h-12 w-full border border-white bg-transparent px-3 py-1.5 text-right font-hebrew text-white
+        outline-none transition-all duration-150 ease-in-out
+        placeholder:font-hebrew placeholder:text-gray-500`,
+          errors?.[name] && `border-red-500`
+        )}
       />
       {/* {errors[name] && <p>{(errors[name] as FieldError).message}</p>} */}
     </div>

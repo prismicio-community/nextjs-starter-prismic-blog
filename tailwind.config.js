@@ -33,7 +33,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities, theme }) {
+    plugin(function ({ addUtilities }) {
       addUtilities({
         ".text-align-right": {
           "text-align": "right",

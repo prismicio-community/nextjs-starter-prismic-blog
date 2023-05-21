@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import cn from "@/src/lib/utils/cn";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import tw from "twin.macro";
 
 import { HomepageDocumentDataTestimonialsItem } from "../../../../prismicio-types";
 import useInterval from "../../../hooks/useInterval";
@@ -16,10 +15,10 @@ const Testimonials: React.FC<{
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
 
-  // const { setRestart } = useInterval(() => onArrowClick("right"), 5000);
+  const { setRestart } = useInterval(() => onArrowClick("right"), 5000);
 
   const onArrowClick = (direction: "left" | "right") => {
-    // setRestart(true);
+    setRestart(true);
     setPrevIndex(activeIndex);
     let newIndex = direction === "left" ? activeIndex - 1 : activeIndex + 1;
     if (newIndex < 0) newIndex = testimonials.length - 1;
@@ -28,7 +27,7 @@ const Testimonials: React.FC<{
   };
 
   const onIndicatorClick = (index: number) => {
-    // setRestart(true);
+    setRestart(true);
     setPrevIndex(activeIndex);
     setActiveIndex(index);
   };
