@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import styled from "styled-components";
-import { SidebarItem, SidebarTitle } from "./sidebarSharedStyles";
+
 import { latestPosts } from "./SidebarData/latestData";
-import { AlignRight } from "../../../styles/sharedStyles";
+import { SidebarItem, SidebarTitle } from "./sidebarSharedStyles";
 
 const Media = styled.div`
   border-bottom: 1px solid #ececec;
@@ -12,7 +12,6 @@ const Media = styled.div`
   margin-top: 0;
   transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
-  ${AlignRight};
 
   img {
     width: 70px;

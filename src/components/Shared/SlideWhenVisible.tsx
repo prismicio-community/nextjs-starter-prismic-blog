@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
-import tw from "twin.macro";
+import cn from "@/src/lib/utils/cn";
+
 import useOnScreen from "../../hooks/useOnScreen";
 
 const SlideWhenVisible: React.FC<PropsWithChildren> = ({ children }) => {
@@ -7,10 +8,10 @@ const SlideWhenVisible: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div
       ref={ref}
-      css={[
-        tw`transition-all ease-in duration-700 opacity-0 translate-y-6`,
-        isIntersecting && tw`opacity-100 translate-y-0`,
-      ]}
+      className={cn(
+        `translate-y-6 opacity-0 transition-all duration-700 ease-in`,
+        isIntersecting && "translate-y-0 opacity-100"
+      )}
     >
       {children}
     </div>

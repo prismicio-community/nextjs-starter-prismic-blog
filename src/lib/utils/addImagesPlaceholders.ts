@@ -1,5 +1,6 @@
 import { getPlaiceholder } from "plaiceholder";
-import { findImages } from ".";
+
+import findImages from "./findImages";
 
 export default async function addImagesPlaceholders(obj: unknown) {
   const images = findImages(obj);

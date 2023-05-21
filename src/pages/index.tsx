@@ -1,14 +1,14 @@
 import React from "react";
+import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import { createClient } from "../../prismicio";
-
-import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import Header from "../components/Home/Header/Header";
 import { SetupRepo } from "../components/SetupRepo";
-import dynamic from "next/dynamic";
 import { useImageStore } from "../lib/stores";
-import { addImagesPlaceholders } from "../lib/utils";
+
+// import { addImagesPlaceholders } from "../lib/utils";
 
 const DynamicAbout = dynamic(() => import("../components/Home/About/About"));
 const DynamicCounter = dynamic(
@@ -46,7 +46,8 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     }
   `,
   });
-  const images = await addImagesPlaceholders({ result, posts });
+  // const images = await addImagesPlaceholders({ result, posts });
+  const images = {};
 
   return {
     props: {

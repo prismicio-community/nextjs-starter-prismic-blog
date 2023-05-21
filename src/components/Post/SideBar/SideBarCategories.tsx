@@ -1,16 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import styled from "styled-components";
-import { SidebarTitle, SidebarItem } from "./sidebarSharedStyles";
-import { AlignRight } from "../../../styles/sharedStyles";
 import Link from "next/link";
+import styled from "styled-components";
 
-const CATEGORIES_END_POINT = "/api/posts/genericData/categories";
+import { SidebarTitle } from "./sidebarSharedStyles";
+
 const SEARCH_END_POINT = "/search?section=category&query=";
 
-const CategoriesContainer = styled(SidebarItem)`
-  ${AlignRight};
-`;
 const CategoryListItem = styled.li`
   border-bottom: 1px solid #ececec;
   &:last-child {
@@ -79,7 +75,7 @@ const SideBarCategories = () => {
   const [categories, setCategories] = React.useState<string[]>([]);
 
   return (
-    <CategoriesContainer>
+    <div className="text-align-right">
       <SidebarTitle>קטגוריות</SidebarTitle>
       <ul className="nav navbar-stacked">
         {/* {categories.length > 0 && (
@@ -89,7 +85,7 @@ const SideBarCategories = () => {
           />
         )} */}
       </ul>
-    </CategoriesContainer>
+    </div>
   );
 };
 

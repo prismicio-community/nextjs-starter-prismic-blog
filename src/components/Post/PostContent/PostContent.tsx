@@ -1,9 +1,11 @@
 import React from "react";
-import PostText from "./PostText";
 // import PostComments from './Comments/PostComments';
 import { PostDocumentData } from "@/prismicio-types";
 import dayjs from "dayjs";
+
+import PostText from "./PostText";
 import "dayjs/locale/he";
+
 dayjs.locale("he");
 
 const PostContent: React.FC<
@@ -11,9 +13,9 @@ const PostContent: React.FC<
 > = ({ publish_date, slices, title }) => (
   <>
     <div className="py-5 text-align-right">
-      <div className="text-2xl mb-2">{title}</div>
+      <div className="mb-2 text-2xl">{title}</div>
       {publish_date && (
-        <div className="text-sm text-gray-500 mb-3">
+        <div className="mb-3 text-sm text-gray-500">
           <div>{dayjs(new Date(publish_date)).format("MMMM D, YYYY")}</div>
         </div>
       )}

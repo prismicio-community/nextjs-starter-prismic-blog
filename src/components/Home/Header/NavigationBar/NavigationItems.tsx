@@ -1,8 +1,9 @@
 import React from "react";
+import cn from "@/src/lib/utils/cn";
+
 import FacebookNav from "./FacebookNav";
 import ItemNav from "./ItemNav";
 import { navArray } from "./navArray";
-import tw from "twin.macro";
 
 const NavigationItems: React.FC<{
   target: "mobile" | "desktop";
@@ -21,14 +22,17 @@ const NavigationItems: React.FC<{
   });
   return (
     <ul
-      css={[
-        tw`text-white text-xl font-hebrew md:space-x-4 md:space-x-reverse items-center flex-col md:flex-row transition-all duration-700`,
-        target === "mobile" &&
-          tw`flex md:hidden top-20 bg-white text-gray-800 items-start w-full space-y-3 h-[285px] opacity-100 pr-8`,
-        target === "mobile" && !isOpen && tw`h-0 opacity-0 `,
-        isOpen && tw`pt-4 mt-4`,
-        target === "desktop" && tw`hidden md:flex`,
-      ]}
+      className={cn(
+        "flex-col items-center font-hebrew text-xl text-white transition-all duration-700 md:flex-row md:space-x-4 md:space-x-reverse",
+        "group-[.on-scroll]:text-black",
+        {
+          "top-20 flex h-[285px] w-full items-start space-y-3 bg-white pr-8 text-gray-800 opacity-100 md:hidden":
+            target === "mobile",
+        },
+        { "h-0 opacity-0": target === "mobile" && !isOpen },
+        { "mt-4 pt-4": isOpen },
+        { "hidden md:flex": target === "desktop" }
+      )}
     >
       {items}
     </ul>

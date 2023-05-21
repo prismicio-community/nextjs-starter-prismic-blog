@@ -1,11 +1,12 @@
 import React from "react";
+import Link from "next/link";
+import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
+import { PrismicText } from "@prismicio/react";
+import { ImageField, RichTextField } from "@prismicio/types";
 // @ts-ignore
 import { Image, Transformation } from "cloudinary-react";
-import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
+
 import ImageWithBlur from "../../Shared/ImageWithBlur";
-import { ImageField, RichTextField } from "@prismicio/types";
-import Link from "next/link";
-import { PrismicText } from "@prismicio/react";
 
 type BlogBoxProps = {
   href: string;
@@ -20,27 +21,27 @@ const BlogBox: React.FC<BlogBoxProps> = ({
   title,
   description,
 }: BlogBoxProps) => (
-  <div className="blog-item" tw="flex flex-col">
-    <div className="blog-img">
-      <Link href={href}>
-        <ImageWithBlur field={img} />
-      </Link>
-    </div>
-    <div className="blog-content" tw="flex-1 flex flex-col">
-      <div className="blog-content-head" tw="mb-3">
-        <h3 className="blog-content-title">
-          <a href={`/blog/${href}`}>{title}</a>
+  <div className="flex flex-col">
+    <Link href={href}>
+      <ImageWithBlur field={img} />
+    </Link>
+    <div className="relative flex flex-1 flex-col bg-white p-6 shadow-md">
+      <div className="mb-3">
+        <h3 className="text-xl">
+          <a className="text-gray-800" href={`/blog/${href}`}>
+            {title}
+          </a>
         </h3>
       </div>
-      <div className="blog-content-desc" tw="flex-1">
-        <p>
+      <div className="mb-4 flex-1">
+        <p className="text-sm text-gray-600">
           <PrismicText field={description} />
         </p>
       </div>
-      <div className="blog-content-footer">
+      <div className="tracking-[0.5pt] text-gray-800">
         <Link href={href}>
-          <span>קרא עוד</span>
-          <KeyboardBackspaceIcon />
+          <span className="pl-[6px]">קרא עוד</span>
+          <KeyboardBackspaceIcon className="text-primary" />
         </Link>
       </div>
     </div>

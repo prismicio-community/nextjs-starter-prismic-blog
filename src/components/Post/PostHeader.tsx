@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const PostHeader = () => (
   <div
-    className="bg-cover bg-no-repeat bg-fixed relative h-[350px] min-h-[0] overflow-y-hidden"
+    className="relative h-[350px] min-h-[0] overflow-y-hidden bg-cover bg-fixed bg-no-repeat"
     style={{ backgroundPosition: "50% 0px" }}
   >
     <div className="h-full bg-black/95">
@@ -12,18 +12,18 @@ const PostHeader = () => (
           <div className="flex flex-wrap text-align-right">
             <div className="w-full">
               <div
-                className="text-white text-4xl font-bold"
+                className="text-4xl font-bold text-white"
                 id="blog-top-header"
               >
                 דהדהבום בלוג
               </div>
-              <p className="text-white text-base mt-3">
+              <p className="mt-3 text-base text-white">
                 הבלוג של צפריר ליכטנשטיין על תופים, חינוך ומה שביניהם
               </p>
             </div>
-            <div className="w-full mt-4 text-sm">
+            <div className="mt-4 w-full text-sm">
               <nav className="w-full rounded-md text-align-right">
-                <ol className="list-none p-0 flex">
+                <ol className="flex list-none p-0">
                   <li>
                     <Link
                       href="/"

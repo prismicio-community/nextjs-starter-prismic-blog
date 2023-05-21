@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { AlignRight } from "../../../styles/sharedStyles";
 
 export const SidebarTitle = styled.h3`
   color: #222222;
@@ -16,5 +15,4 @@ export const SidebarTitle = styled.h3`
 
 export const SidebarItem = styled.div<{ right?: boolean }>`
   margin-bottom: 48px;
-  ${(props) => props.right && `${AlignRight}`}
 `;

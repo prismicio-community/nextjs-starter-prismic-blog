@@ -1,14 +1,12 @@
 import React from "react";
-import { CounterText, SingleProject, Number } from "./counterStyles";
-import { useCountUp } from "use-count-up";
-import { NumberField, RichTextField } from "@prismicio/types";
 import { PrismicText } from "@prismicio/react";
+import { NumberField, RichTextField } from "@prismicio/types";
+import { useCountUp } from "use-count-up";
 
 const CounterBox: React.FC<{
   to: NumberField;
   text: RichTextField;
-  border?: boolean;
-}> = ({ to, text, border = false }) => {
+}> = ({ to, text }) => {
   const { value } = useCountUp({
     end: to ?? 0,
     duration: 6,
@@ -16,13 +14,11 @@ const CounterBox: React.FC<{
     thousandsSeparator: ",",
   });
   return (
-    <div className="col-md-3 col-sm-6 col-xs-6">
-      <SingleProject border={border}>
-        <Number>{value}</Number>
-        <CounterText>
-          <PrismicText field={text} />
-        </CounterText>
-      </SingleProject>
+    <div className="my-8 last:border-none sm:border-white/20 sm:odd:border-l md:border-l">
+      <div className="font-athiti text-2xl text-primary">{value}</div>
+      <div className="font-hebrew text-white">
+        <PrismicText field={text} />
+      </div>
     </div>
   );
 };
