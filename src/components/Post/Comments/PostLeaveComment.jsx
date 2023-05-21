@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import axios from 'axios';
-import { AlignRight, FormInput, FormTextArea } from '../../../styles/sharedStyles';
+import React, { Component } from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+
+import { FormInput, FormTextArea } from "../../../styles/sharedStyles";
 
 const LeaveCommentArea = styled.div`
   margin-top: 48px;
   border-bottom: 0;
-  ${AlignRight}
 `;
 const FormBorder = styled.form`
   padding: 20px 0;
@@ -23,10 +23,10 @@ const LeaveCommentHeader = styled.h2`
   padding-bottom: 20px;
 `;
 const SubmitButton = styled.button`
-  &&{
+  && {
     background-color: #d6b161;
     color: #ffffff;
-    font-family: 'Open Sans Hebrew', sans-serif;
+    font-family: "Open Sans Hebrew", sans-serif;
     font-weight: 400;
     font-size: 10px;
     border: 1px solid #eeeeee;
@@ -43,9 +43,9 @@ const SubmitButton = styled.button`
 
 class PostLeaveComment extends Component {
   state = {
-    email: '',
-    name: '',
-    text: '',
+    email: "",
+    name: "",
+    text: "",
   };
 
   handleSubmit = async (e) => {
@@ -53,7 +53,7 @@ class PostLeaveComment extends Component {
     try {
       const { email, name, text } = this.state;
       const { parent, post, onClose } = this.props;
-      await axios.post('/api/comments/addComment', {
+      await axios.post("/api/comments/addComment", {
         email,
         name,
         text,
@@ -62,9 +62,9 @@ class PostLeaveComment extends Component {
       });
       if (onClose) onClose(true);
       this.setState({
-        email: '',
-        name: '',
-        text: '',
+        email: "",
+        name: "",
+        text: "",
       });
     } catch (error) {
       console.log(`Error in adding comment: ${error}`);
@@ -153,8 +153,8 @@ PostLeaveComment.propTypes = {
 };
 
 PostLeaveComment.defaultProps = {
-  header: 'השאירו תגובה',
-  parent: 'top',
+  header: "השאירו תגובה",
+  parent: "top",
   onClose: null,
 };
 

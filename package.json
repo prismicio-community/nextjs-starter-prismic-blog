@@ -81,7 +81,6 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^2.1.1",
-    "babel-plugin-twin": "^1.1.0",
     "eslint": "8.17.0",
     "eslint-config-next": "13.4.2",
     "eslint-config-prettier": "^8.8.0",
@@ -95,12 +94,6 @@
     "tailwindcss": "^3.3.2",
     "ts-essentials": "^9.3.1",
     "tsconfig-paths": "^4.2.0",
-    "twin.macro": "^3.3.1",
     "typescript": "^5.0.4"
-  },
-  "babelMacros": {
-    "twin": {
-      "preset": "styled-components"
-    }
   }
 }

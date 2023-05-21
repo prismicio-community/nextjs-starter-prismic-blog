@@ -2,7 +2,6 @@
 
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 
-import "@/src/styles/GlobalStyles";
 import "@/src/styles/tailwind.scss";
 import openSans from "@/src/styles/fontLoad";
 
