@@ -36,6 +36,7 @@
     "react-google-maps": "^9.4.5",
     "react-hook-form": "^7.43.9",
     "react-images": "^1.2.0-beta.7",
+    "react-lite-youtube-embed": "^2.3.52",
     "react-typed": "^1.2.0",
     "react-youtube": "^10.1.0",
     "recompose": "^0.30.0",

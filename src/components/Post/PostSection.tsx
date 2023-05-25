@@ -21,17 +21,15 @@ const PostSection: React.FC<
         <div className="flex flex-wrap">
           <div className="sm:w-full md:w-9/12">
             <div className="flex flex-wrap">
-              <div className="col-sm-12 col-md-12">
-                <div className="pb-8">
-                  <div className="relative overflow-hidden">
-                    <PrismicNextImage field={header_image} width={850} />
-                  </div>
-                  <PostContent
-                    slices={slices}
-                    title={title}
-                    publish_date={publish_date}
-                  />
+              <div className="pb-8">
+                <div className="relative overflow-hidden">
+                  <PrismicNextImage field={header_image} width={850} />
                 </div>
+                <PostContent
+                  slices={slices}
+                  title={title}
+                  publish_date={publish_date}
+                />
               </div>
             </div>
           </div>

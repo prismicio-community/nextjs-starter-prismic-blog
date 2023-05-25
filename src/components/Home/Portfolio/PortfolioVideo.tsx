@@ -1,12 +1,12 @@
 import React from "react";
-import YouTube from "react-youtube";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
 
 const PortfolioVideo: React.FC<{ videoId: string }> = ({ videoId }) => {
   return (
-    <YouTube
-      videoId={videoId}
-      className="h-full"
-      iframeClassName="h-full w-full"
+    <LiteYouTubeEmbed
+      id={videoId}
+      title="YouTube Embed"
+      iframeClass="h-full w-full"
     />
   );
 };

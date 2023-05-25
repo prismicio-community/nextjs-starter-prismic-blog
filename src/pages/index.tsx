@@ -7,8 +7,7 @@ import { createClient } from "../../prismicio";
 import Header from "../components/Home/Header/Header";
 import { SetupRepo } from "../components/SetupRepo";
 import { useImageStore } from "../lib/stores";
-
-// import { addImagesPlaceholders } from "../lib/utils";
+import addImagesPlaceholders from "../lib/utils/addImagesPlaceholders";
 
 const DynamicAbout = dynamic(() => import("../components/Home/About/About"));
 const DynamicCounter = dynamic(
@@ -46,8 +45,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     }
   `,
   });
-  // const images = await addImagesPlaceholders({ result, posts });
-  const images = {};
+  const images = await addImagesPlaceholders({ result, posts });
 
   return {
     props: {
