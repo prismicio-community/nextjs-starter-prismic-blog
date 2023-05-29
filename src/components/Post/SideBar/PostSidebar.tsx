@@ -6,13 +6,11 @@ import SideBarSearch from "./SideBarSearch";
 import SideBarTagCloud from "./SideBarTagCloud";
 
 const PostSidebar = () => (
-  <div className="col-md-3 col-sm-12">
-    <div className="sidebar">
-      <SideBarSearch />
-      {/* <SideBarLatest />
+  <div className="flex flex-col items-end justify-start sm:w-full md:flex-[1]">
+    <SideBarSearch />
+    {/* <SideBarLatest />
       <SideBarCategories />
       <SideBarTagCloud tags={[]} /> */}
-    </div>
   </div>
 );
 

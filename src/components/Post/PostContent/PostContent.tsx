@@ -28,12 +28,4 @@ const PostContent: React.FC<
   </>
 );
 
-// PostContent.propTypes = {
-//   _id: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   date: PropTypes.string.isRequired,
-//   content: PropTypes.string.isRequired,
-//   isAdmin: PropTypes.bool,
-// };
-
 export default PostContent;

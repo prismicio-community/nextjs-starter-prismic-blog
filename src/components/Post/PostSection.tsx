@@ -17,10 +17,10 @@ const PostSection: React.FC<
 > = ({ header_image, publish_date, slices, title }) => {
   return (
     <div className="mt-24">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap">
-          <div className="sm:w-full md:w-9/12">
-            <div className="flex flex-wrap">
+      <div className="mx-auto px-4 my-container">
+        <div className="flex justify-between gap-4">
+          <div className="sm:w-full md:flex-[4]">
+            <div className="flex">
               <div className="pb-8">
                 <div className="relative overflow-hidden">
                   <PrismicNextImage field={header_image} width={850} />
