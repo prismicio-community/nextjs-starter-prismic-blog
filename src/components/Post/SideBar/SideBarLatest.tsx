@@ -45,7 +45,6 @@ const SideBarLatestItem = ({ id, data, url }: PostDocument<string>) => (
 
 const SideBarLatest = async () => {
   const latestPosts = await getLatestPosts();
-  console.log("@@@ ~ latestPosts:", latestPosts);
   return (
     <SideBarItemWrapper>
       <SideBarTitle title="פוסטים אחרונים" />
