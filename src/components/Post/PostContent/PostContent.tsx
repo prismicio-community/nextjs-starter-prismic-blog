@@ -2,7 +2,9 @@ import React from "react";
 // import PostComments from './Comments/PostComments';
 import { PostDocumentData } from "@/prismicio-types";
 import dayjs from "@/src/lib/dayjs";
+import { ReactCusdis } from "react-cusdis";
 
+import Comments from "../Comments";
 import PostText from "./PostText";
 
 const PostContent: React.FC<
@@ -17,10 +19,7 @@ const PostContent: React.FC<
         </div>
       )}
       <PostText slices={slices} />
-      {/* <PostComments
-        postId={_id}
-        isAdmin={isAdmin}
-      /> */}
+      <Comments title={title ?? ""} />
     </div>
   </>
 );

@@ -1,6 +1,8 @@
 import { createClient } from "@/prismicio";
 import Post from "@/src/components/Post/Post";
 import PostHeader from "@/src/components/Post/PostHeader";
+import { useImageStore } from "@/src/lib/stores";
+import addImagesPlaceholders from "@/src/lib/utils/addImagesPlaceholders";
 
 export const dynamic = "force-static";
 
@@ -20,12 +22,14 @@ export async function generateStaticParams() {
 async function getPostData(postUID: string) {
   const client = createClient();
 
-  const posts = await client.getByUID("post", postUID);
-  return posts.data;
+  const post = await client.getByUID("post", postUID);
+  const images = await addImagesPlaceholders({ post });
+  return { postData: post.data, images };
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const postData = await getPostData(params.postId);
+  const { postData, images } = await getPostData(params.postId);
+  useImageStore.setState({ images });
 
   /* @ts-expect-error Async Server Component */
   return <Post {...postData} />;

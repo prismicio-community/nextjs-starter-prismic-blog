@@ -1,13 +1,11 @@
-"use client";
-
-import useBlurImage from "@/src/hooks/useBlurImage";
+import { useImageStore } from "@/src/lib/stores";
 import { PrismicNextImage, PrismicNextImageProps } from "@prismicio/next";
 
-const ImageWithBlur: React.FC<PrismicNextImageProps> = ({
+const ImageWithBlurSSR: React.FC<PrismicNextImageProps> = ({
   field,
   ...props
 }) => {
-  const blurImage = useBlurImage(field);
+  const blurImage = useImageStore.getState().getImage(field?.url ?? "");
   return (
     <PrismicNextImage
       field={field}
@@ -19,4 +17,4 @@ const ImageWithBlur: React.FC<PrismicNextImageProps> = ({
   );
 };
 
-export default ImageWithBlur;
+export default ImageWithBlurSSR;

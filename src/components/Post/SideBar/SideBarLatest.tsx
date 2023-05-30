@@ -16,12 +16,9 @@ const getLatestPosts = async () => {
 };
 
 const SideBarLatestItem = ({ id, data, url }: PostDocument<string>) => (
-  <div className="">
-    <Link key={id} href={url ?? ""}>
-      <div
-        key={id}
-        className="group flex cursor-pointer py-3 transition-all text-align-right"
-      >
+  <div key={id}>
+    <Link href={url ?? ""}>
+      <div className="group flex cursor-pointer py-3 transition-all text-align-right">
         <PrismicNextImage
           field={data.header_image}
           width={70}
