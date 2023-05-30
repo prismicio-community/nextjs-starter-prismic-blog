@@ -1,83 +1,60 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import styled from "styled-components";
+import Link from "next/link";
+import { createClient } from "@/prismicio";
+import { PostDocument } from "@/prismicio-types";
+import dayjs from "@/src/lib/dayjs";
+import { PrismicNextImage } from "@prismicio/next";
 
-import { latestPosts } from "./SidebarData/latestData";
-import { SidebarItem, SidebarTitle } from "./sidebarSharedStyles";
+import SideBarItemWrapper from "./Shared/SideBarItem";
+import SideBarTitle from "./Shared/SideBarTitle";
 
-const Media = styled.div`
-  border-bottom: 1px solid #ececec;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-top: 0;
-  transition: all 0.3s ease 0s;
-  -webkit-transition: all 0.3s ease 0s;
+const getLatestPosts = async () => {
+  const client = createClient();
+  return client.getAllByType("post", {
+    orderings: [{ field: "my.post.publish_date", direction: "desc" }],
+  });
+};
 
-  img {
-    width: 70px;
-    height: 60px;
-  }
-
-  &:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
-`;
-
-const MediaBody = styled.div`
-  display: table-cell;
-  vertical-align: top;
-`;
-
-const MediaTitle = styled.h4`
-  margin-top: 0;
-  margin-bottom: 10px;
-`;
-
-const MediaLink = styled.a`
-  text-decoration: none;
-  color: #222222;
-  font-size: 13px;
-  font-weight: 400;
-
-  ${Media}:hover & {
-    color: #d6b161;
-    transition: all 0.6s ease 0s;
-    -webkit-transition: all 0.6s ease 0s;
-    text-decoration: none;
-  }
-`;
-
-const MediaText = styled.p`
-  color: #666666;
-  font-size: 12px;
-`;
-
-const imageUrlPrefix = "https://res.cloudinary.com/dadaboom/image/upload";
-
-const Latest = (post: any) => (
-  <Media key={post.alt} className="media">
-    <div className="image pull-right">
-      <a href={post.href}>
-        <img src={`${imageUrlPrefix}/${post.image}`} alt={post.alt} />
-      </a>
-    </div>
-    <MediaBody>
-      <MediaTitle>
-        <MediaLink href={post.href}>{post.text}</MediaLink>
-      </MediaTitle>
-      <MediaText>{post.date}</MediaText>
-    </MediaBody>
-  </Media>
+const SideBarLatestItem = ({ id, data, url }: PostDocument<string>) => (
+  <div className="">
+    <Link key={id} href={url ?? ""}>
+      <div
+        key={id}
+        className="group flex cursor-pointer py-3 transition-all text-align-right"
+      >
+        <PrismicNextImage
+          field={data.header_image}
+          width={70}
+          height={83}
+          imgixParams={{ fit: "crop", ar: "70:83" }}
+        />
+        <div className="mr-3 flex flex-col gap-2">
+          <h4 className="text-[13px] text-gray-800 transition-all group-hover:text-primary">
+            {data.title}
+          </h4>
+          <p className="text-xs text-gray-600">
+            {dayjs(new Date(data.publish_date ?? new Date())).format(
+              "MMMM D, YYYY"
+            )}
+          </p>
+        </div>
+      </div>
+    </Link>
+  </div>
 );
 
-const SideBarLatest = () => (
-  <SidebarItem>
-    <SidebarTitle>פוסטים אחרונים</SidebarTitle>
-    {latestPosts.map((post: any) => (
-      <Latest key={post} />
-    ))}
-  </SidebarItem>
-);
+const SideBarLatest = async () => {
+  const latestPosts = await getLatestPosts();
+  return (
+    <SideBarItemWrapper>
+      <SideBarTitle title="פוסטים אחרונים" />
+      <div className="divide-y divide-gray-200">
+        {latestPosts.map((post) => (
+          <SideBarLatestItem {...post} />
+        ))}
+      </div>
+    </SideBarItemWrapper>
+  );
+};
 
 export default SideBarLatest;

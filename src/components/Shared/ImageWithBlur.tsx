@@ -1,6 +1,5 @@
 import useBlurImage from "@/src/hooks/useBlurImage";
 import { PrismicNextImage, PrismicNextImageProps } from "@prismicio/next";
-import { ImageField } from "@prismicio/types";
 
 const ImageWithBlur: React.FC<PrismicNextImageProps> = ({
   field,

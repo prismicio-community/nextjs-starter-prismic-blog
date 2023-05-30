@@ -17,25 +17,23 @@ const PostSection: React.FC<
 > = ({ header_image, publish_date, slices, title }) => {
   return (
     <div className="mt-24">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap">
-          <div className="sm:w-full md:w-9/12">
-            <div className="flex flex-wrap">
-              <div className="col-sm-12 col-md-12">
-                <div className="pb-8">
-                  <div className="relative overflow-hidden">
-                    <PrismicNextImage field={header_image} width={850} />
-                  </div>
-                  <PostContent
-                    slices={slices}
-                    title={title}
-                    publish_date={publish_date}
-                  />
-                </div>
+      <div className="mx-auto px-4 my-container">
+        <div className="flex flex-col justify-between gap-4 md:flex-row">
+          <div className="sm:w-full md:flex-[4]">
+            <div className="flex flex-col">
+              <div className="overflow-hidden flex-center">
+                <PrismicNextImage field={header_image} width={905} />
               </div>
+              <PostContent
+                slices={slices}
+                title={title}
+                publish_date={publish_date}
+              />
             </div>
           </div>
-          <PostSidebar />
+          <div className="flex flex-col items-end justify-start sm:w-full md:flex-[1]">
+            <PostSidebar />
+          </div>
         </div>
       </div>
     </div>

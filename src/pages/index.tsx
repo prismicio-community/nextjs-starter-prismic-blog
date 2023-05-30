@@ -5,10 +5,10 @@ import Head from "next/head";
 
 import { createClient } from "../../prismicio";
 import Header from "../components/Home/Header/Header";
+import SideBarSearch from "../components/Post/SideBar/SideBarSearch";
 import { SetupRepo } from "../components/SetupRepo";
 import { useImageStore } from "../lib/stores";
-
-// import { addImagesPlaceholders } from "../lib/utils";
+import addImagesPlaceholders from "../lib/utils/addImagesPlaceholders";
 
 const DynamicAbout = dynamic(() => import("../components/Home/About/About"));
 const DynamicCounter = dynamic(
@@ -46,8 +46,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     }
   `,
   });
-  // const images = await addImagesPlaceholders({ result, posts });
-  const images = {};
+  const images = await addImagesPlaceholders({ result, posts });
 
   return {
     props: {
@@ -91,6 +90,7 @@ const Home = ({
         map_lat={homepage.map_lat}
         map_lng={homepage.map_lng}
       />
+      <SideBarSearch />
       <DynamicFooter />
     </>
   );
