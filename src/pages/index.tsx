@@ -5,7 +5,6 @@ import Head from "next/head";
 
 import { createClient } from "../../prismicio";
 import Header from "../components/Home/Header/Header";
-import SideBarSearch from "../components/Post/SideBar/SideBarSearch";
 import { SetupRepo } from "../components/SetupRepo";
 import { useImageStore } from "../lib/stores";
 import addImagesPlaceholders from "../lib/utils/addImagesPlaceholders";
