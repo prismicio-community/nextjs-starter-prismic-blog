@@ -1,6 +1,7 @@
 {
   "id": "article",
   "label": "Article",
+  "format": "page",
   "repeatable": true,
   "status": true,
   "json": {
