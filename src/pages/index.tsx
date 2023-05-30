@@ -90,7 +90,6 @@ const Home = ({
         map_lat={homepage.map_lat}
         map_lng={homepage.map_lng}
       />
-      <SideBarSearch />
       <DynamicFooter />
     </>
   );
