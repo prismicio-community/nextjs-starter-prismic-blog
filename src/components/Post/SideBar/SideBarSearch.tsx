@@ -25,7 +25,7 @@ const SideBarSearch = () => {
   // };
 
   return (
-    <div className="flex">
+    <div className="mb-12 flex">
       <button
         className="h-11 w-11 border border-solid border-primary bg-primary text-white transition-all duration-500 flex-center hover:brightness-95"
         type="button"

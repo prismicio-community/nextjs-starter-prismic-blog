@@ -1,12 +1,9 @@
 import React from "react";
 // import PostComments from './Comments/PostComments';
 import { PostDocumentData } from "@/prismicio-types";
-import dayjs from "dayjs";
+import dayjs from "@/src/lib/dayjs";
 
 import PostText from "./PostText";
-import "dayjs/locale/he";
-
-dayjs.locale("he");
 
 const PostContent: React.FC<
   Pick<PostDocumentData, "publish_date" | "title" | "slices">

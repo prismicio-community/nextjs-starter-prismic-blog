@@ -18,22 +18,22 @@ const PostSection: React.FC<
   return (
     <div className="mt-24">
       <div className="mx-auto px-4 my-container">
-        <div className="flex justify-between gap-4">
+        <div className="flex flex-col justify-between gap-4 md:flex-row">
           <div className="sm:w-full md:flex-[4]">
-            <div className="flex">
-              <div className="pb-8">
-                <div className="relative overflow-hidden">
-                  <PrismicNextImage field={header_image} width={850} />
-                </div>
-                <PostContent
-                  slices={slices}
-                  title={title}
-                  publish_date={publish_date}
-                />
+            <div className="flex flex-col">
+              <div className="overflow-hidden flex-center">
+                <PrismicNextImage field={header_image} width={905} />
               </div>
+              <PostContent
+                slices={slices}
+                title={title}
+                publish_date={publish_date}
+              />
             </div>
           </div>
-          <PostSidebar />
+          <div className="flex flex-col items-end justify-start sm:w-full md:flex-[1]">
+            <PostSidebar />
+          </div>
         </div>
       </div>
     </div>
