@@ -6,7 +6,10 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
+import { montserrat, openSans } from "@/src/styles/fontLoad";
 import { ServerStyleSheet } from "styled-components";
+
+import cn from "../lib/utils/cn";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
