@@ -1,9 +1,9 @@
 import React from "react";
-import PostSection from "./PostSection";
-import PostHeader from "./PostHeader";
-import "../../styles/blog.scss";
 import { PostDocumentData } from "@/prismicio-types";
-// import TopButton from "./TopButton";
+
+import PostHeader from "./PostHeader";
+import PostSection from "./PostSection";
+
 // import Footer from "../Shared/Footer/Footer";
 // import Contact from "../Shared/Contact/Contact";
 
@@ -24,7 +24,6 @@ export default async function Post({
       />
       {/* <Contact /> */}
       {/* <Footer /> */}
-      {/* <TopButton /> */}
     </>
   );
 }

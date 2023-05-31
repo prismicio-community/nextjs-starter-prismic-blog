@@ -21,7 +21,7 @@ module.exports = {
     fontFamily: {
       serif: "'Libre Baskerville', sans-serif",
       secular: "'Secular One', sans-serif",
-      montserrat: "Montserrat, sans-serif",
+      montserrat: "var(--font-montserrat), sans-serif",
       hebrew: "Open Sans Hebrew, sans-serif",
       sans: ["var(--font-sans)", ...fontFamily.sans],
       athiti: "Athiti, sans-serif",
