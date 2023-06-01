@@ -26,7 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       >
         <ThemeProvider theme={{}}>
           <PrismicPreview repositoryName={repositoryName}>
-            <main className={cn(montserrat.className, secularOne.className)}>
+            <main className={cn(montserrat.className, secularOne.variable)}>
               <Component {...pageProps} />
             </main>
           </PrismicPreview>
