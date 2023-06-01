@@ -1,7 +1,6 @@
 import React from "react";
 import { PostDocumentData } from "@/prismicio-types";
 
-import Footer from "../Shared/Footer/Footer";
 import ImageWithBlurSSR from "../Shared/ImageWithBlurSSR";
 import PostContent from "./PostContent/PostContent";
 
@@ -26,7 +25,6 @@ const PostSection: React.FC<
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
