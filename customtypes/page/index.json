@@ -8,10 +8,7 @@
     "Main": {
       "uid": {
         "type": "UID",
-        "config": {
-          "label": "UID",
-          "placeholder": "URL slug for the page"
-        }
+        "config": { "label": "UID", "placeholder": "URL slug for the page" }
       },
       "title": {
         "type": "StructuredText",
@@ -27,18 +24,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "image": {
-              "type": "SharedSlice"
-            },
-            "quote": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            },
-            "contact_form": {
-              "type": "SharedSlice"
-            }
+            "image": { "type": "SharedSlice" },
+            "quote": { "type": "SharedSlice" },
+            "text": { "type": "SharedSlice" },
+            "contact_form": { "type": "SharedSlice" }
           }
         }
       }

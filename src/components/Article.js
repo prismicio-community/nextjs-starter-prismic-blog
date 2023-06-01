@@ -1,27 +1,28 @@
-import { PrismicLink, PrismicText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
-import * as prismicH from "@prismicio/helpers";
+import { PrismicText } from "@prismicio/react";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import * as prismic from "@prismicio/client";
 
-import { getExcerpt } from "../lib/getExcerpt";
-import { findFirstImage } from "../lib/findFirstImage";
-import { dateFormatter } from "../lib/dateFormatter";
-import { Heading } from "../components/Heading";
+import { getExcerpt } from "@/lib/getExcerpt";
+import { findFirstImage } from "@/lib/findFirstImage";
+import { dateFormatter } from "@/lib/dateFormatter";
 
-export const Article = ({ article }) => {
+import { Heading } from "./Heading";
+
+export function Article({ article }) {
   const featuredImage =
-    (prismicH.isFilled.image(article.data.featuredImage) &&
+    (prismic.isFilled.image(article.data.featuredImage) &&
       article.data.featuredImage) ||
     findFirstImage(article.data.slices);
-  const date = prismicH.asDate(
+  const date = prismic.asDate(
     article.data.publishDate || article.first_publication_date
   );
   const excerpt = getExcerpt(article.data.slices);
 
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
-      <PrismicLink document={article} tabIndex="-1">
-        <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
-          {prismicH.isFilled.image(featuredImage) && (
+      <PrismicNextLink document={article} tabIndex="-1">
+        <div className="aspect-h-3 aspect-w-4 relative bg-gray-100">
+          {prismic.isFilled.image(featuredImage) && (
             <PrismicNextImage
               field={featuredImage}
               fill={true}
@@ -29,12 +30,12 @@ export const Article = ({ article }) => {
             />
           )}
         </div>
-      </PrismicLink>
+      </PrismicNextLink>
       <div className="grid grid-cols-1 gap-3 md:col-span-2">
         <Heading as="h2">
-          <PrismicLink document={article}>
+          <PrismicNextLink document={article}>
             <PrismicText field={article.data.title} />
-          </PrismicLink>
+          </PrismicNextLink>
         </Heading>
         <p className="font-serif italic tracking-tighter text-slate-500">
           {dateFormatter.format(date)}
@@ -47,4 +48,4 @@ export const Article = ({ article }) => {
       </div>
     </li>
   );
-};
+}

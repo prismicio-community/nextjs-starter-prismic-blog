@@ -1,7 +1,7 @@
 import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 
-import sm from "./slicemachine.config.json";
+import sm from "../slicemachine.config.json";
 
 /**
  * The project's Prismic repository name.

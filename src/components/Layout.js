@@ -1,14 +1,14 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
-export const Layout = ({
+export function Layout({
   navigation,
   settings,
   withHeaderDivider,
   withProfile,
   withSignUpForm,
   children,
-}) => {
+}) {
   return (
     <div className="text-slate-700">
       <Header
@@ -21,4 +21,4 @@ export const Layout = ({
       <Footer withSignUpForm={withSignUpForm} settings={settings} />
     </div>
   );
-};
+}

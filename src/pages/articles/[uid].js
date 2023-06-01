@@ -1,13 +1,15 @@
+import Link from "next/link";
 import Head from "next/head";
-import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
+import { PrismicText, SliceZone } from "@prismicio/react";
+import { PrismicNextLink } from "@prismicio/next";
+import * as prismic from "@prismicio/client";
 
-import { createClient } from "../../prismicio";
-import { components } from "../../slices";
-import { Layout } from "../../components/Layout";
-import { Bounded } from "../../components/Bounded";
-import { Heading } from "../../components/Heading";
-import { HorizontalDivider } from "../../components/HorizontalDivider";
+import { createClient } from "@/prismicio";
+import { components } from "@/slices";
+import { Layout } from "@/components/Layout";
+import { Bounded } from "@/components/Bounded";
+import { Heading } from "@/components/Heading";
+import { HorizontalDivider } from "@/components/HorizontalDivider";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -15,27 +17,32 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-const LatestArticle = ({ article }) => {
-  const date = prismicH.asDate(
+function LatestArticle({ article }) {
+  const date = prismic.asDate(
     article.data.publishDate || article.first_publication_date
   );
 
   return (
     <li>
       <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-        <PrismicLink document={article}>
+        <PrismicNextLink document={article}>
           <PrismicText field={article.data.title} />
-        </PrismicLink>
+        </PrismicNextLink>
       </h1>
       <p className="font-serif italic tracking-tighter text-slate-500">
         {dateFormatter.format(date)}
       </p>
     </li>
   );
-};
+}
 
-const Article = ({ article, latestArticles, navigation, settings }) => {
-  const date = prismicH.asDate(
+export default function Article({
+  article,
+  latestArticles,
+  navigation,
+  settings,
+}) {
+  const date = prismic.asDate(
     article.data.publishDate || article.first_publication_date
   );
 
@@ -48,17 +55,14 @@ const Article = ({ article, latestArticles, navigation, settings }) => {
     >
       <Head>
         <title>
-          {prismicH.asText(article.data.title)} |{" "}
-          {prismicH.asText(settings.data.name)}
+          {prismic.asText(article.data.title)} |{" "}
+          {prismic.asText(settings.data.name)}
         </title>
       </Head>
       <Bounded>
-        <PrismicLink
-          href="/"
-          className="font-semibold tracking-tight text-slate-400"
-        >
+        <Link href="/" className="font-semibold tracking-tight text-slate-400">
           &larr; Back to articles
-        </PrismicLink>
+        </Link>
       </Bounded>
       <article>
         <Bounded className="pb-0">
@@ -90,9 +94,7 @@ const Article = ({ article, latestArticles, navigation, settings }) => {
       )}
     </Layout>
   );
-};
-
-export default Article;
+}
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
@@ -124,7 +126,7 @@ export async function getStaticPaths() {
   const articles = await client.getAllByType("article");
 
   return {
-    paths: articles.map((article) => prismicH.asLink(article)),
+    paths: articles.map((article) => prismic.asLink(article)),
     fallback: false,
   };
 }
