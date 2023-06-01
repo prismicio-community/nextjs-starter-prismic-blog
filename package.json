@@ -16,17 +16,14 @@
   },
   "dependencies": {
     "@prismicio/client": "^7.0.1",
-    "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.2.1",
     "@prismicio/react": "^2.6.2",
-    "@prismicio/slice-simulator-react": "^0.2.3",
     "clsx": "^1.2.1",
     "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@prismicio/types": "^0.2.8",
     "@slicemachine/adapter-next": "^0.2.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/react": "18.2.8",
