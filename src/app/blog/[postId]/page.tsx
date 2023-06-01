@@ -24,13 +24,13 @@ async function getPostData(postUID: string) {
 
   const post = await client.getByUID("post", postUID);
   const images = await addImagesPlaceholders({ post });
-  return { postData: post.data, images };
+  return { post: post, images };
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const { postData, images } = await getPostData(params.postId);
+  const { post, images } = await getPostData(params.postId);
   useImageStore.setState({ images });
 
   /* @ts-expect-error Async Server Component */
-  return <Post {...postData} />;
+  return <Post {...post} />;
 }

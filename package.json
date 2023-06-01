@@ -23,6 +23,7 @@
     "dotenv": "^16.0.1",
     "eslint-plugin-tailwindcss": "^3.12.0",
     "graphql": "^16.5.0",
+    "lucide-react": "^0.233.0",
     "next": "^13.4.2",
     "next-slicezone": "^0.2.6",
     "photoswipe": "^5.3.7",

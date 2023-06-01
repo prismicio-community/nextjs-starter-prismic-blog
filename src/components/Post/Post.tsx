@@ -1,18 +1,15 @@
 import React from "react";
-import { PostDocumentData } from "@/prismicio-types";
+import { PostDocument, PostDocumentData } from "@/prismicio-types";
 
+import Footer from "../Shared/Footer/Footer";
 import PostHeader from "./PostHeader";
+import PostNavigation from "./PostNavigation";
 import PostSection from "./PostSection";
 
-// import Footer from "../Shared/Footer/Footer";
-// import Contact from "../Shared/Contact/Contact";
-
 export default async function Post({
-  header_image,
-  publish_date,
-  slices,
-  title,
-}: PostDocumentData) {
+  data: { header_image, publish_date, slices, title },
+  id,
+}: PostDocument<string>) {
   return (
     <>
       <PostHeader />
@@ -22,8 +19,9 @@ export default async function Post({
         slices={slices}
         title={title}
       />
-      {/* <Contact /> */}
-      {/* <Footer /> */}
+      {/*  @ts-expect-error Async Server Component */}
+      <PostNavigation currentPostId={id} />
+      <Footer />
     </>
   );
 }
