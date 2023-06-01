@@ -20,7 +20,7 @@ module.exports = {
     },
     fontFamily: {
       serif: "'Libre Baskerville', sans-serif",
-      secular: "'Secular One', sans-serif",
+      secular: "var(--font-secular), 'Secular One', sans-serif",
       montserrat: "var(--font-montserrat), Montserrat, sans-serif",
       hebrew: "Open Sans Hebrew, sans-serif",
       sans: ["var(--font-sans)", ...fontFamily.sans],
