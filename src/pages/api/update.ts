@@ -8,12 +8,12 @@ const update = async function handler(
   const { body } = req;
   console.log("Body:");
   console.dir(body, { depth: null });
-  // if (!body) return res.json({ revalidated: false });
+  if (!body) return res.json({ revalidated: false });
 
-  // if (req.body.secret !== process.env.REVALIDATE_SECRET_KEY) {
-  //   console.log("Invalid secret key");
-  //   return res.status(401).json({ message: "Invalid token" });
-  // }
+  if (req.body.secret !== process.env.REVALIDATE_SECRET_KEY) {
+    console.log("Invalid secret key");
+    return res.status(401).json({ message: "Invalid token" });
+  }
 
   console.log("before revalidate");
   const client = createClient();
