@@ -8,7 +8,8 @@ import { repositoryName } from "../../prismicio";
 import "../styles/styles.scss";
 import { AppProps } from "next/app";
 
-import { montserrat, openSans } from "../styles/fontLoad";
+import cn from "../lib/utils/cn";
+import { montserrat, openSans, secularOne } from "../styles/fontLoad";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -25,7 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       >
         <ThemeProvider theme={{}}>
           <PrismicPreview repositoryName={repositoryName}>
-            <main className={montserrat.className}>
+            <main className={cn(montserrat.className, secularOne.variable)}>
               <Component {...pageProps} />
             </main>
           </PrismicPreview>

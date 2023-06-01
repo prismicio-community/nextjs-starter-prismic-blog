@@ -1,14 +1,13 @@
 import React from "react";
-
-import { compose, withStateHandlers } from "recompose";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-  InfoWindow,
-} from "react-google-maps";
 import { KeyTextField, LinkField, NumberField } from "@prismicio/types";
+import {
+  GoogleMap,
+  InfoWindow,
+  Marker,
+  withGoogleMap,
+  withScriptjs,
+} from "react-google-maps";
+import { compose, withStateHandlers } from "recompose";
 
 const coordinates = {
   lat: 32.0723871,
@@ -29,9 +28,7 @@ const MapLabel: React.FC<
       target="_blank"
       rel="noopener noreferrer"
     >
-      <h4 id="firstHeading" className="firstHeading">
-        {map_label_text}
-      </h4>
+      <h4 id="firstHeading">{map_label_text}</h4>
     </a>
   </div>
 );
