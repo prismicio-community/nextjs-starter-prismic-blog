@@ -1,5 +1,4 @@
 import React from "react";
-// import PostComments from './Comments/PostComments';
 import { PostDocumentData } from "@/prismicio-types";
 import dayjs from "@/src/lib/dayjs";
 
@@ -17,10 +16,6 @@ const PostContent: React.FC<
         </div>
       )}
       <PostText slices={slices} />
-      {/* <PostComments
-        postId={_id}
-        isAdmin={isAdmin}
-      /> */}
     </div>
   </>
 );

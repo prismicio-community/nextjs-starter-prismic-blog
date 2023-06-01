@@ -3,7 +3,7 @@
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 
 import "@/src/styles/tailwind.scss";
-import openSans from "@/src/styles/fontLoad";
+import { montserrat, openSans } from "@/src/styles/fontLoad";
 
 import cn from "../lib/utils/cn";
 
@@ -16,7 +16,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={cn("min-h-screen font-sans antialiased", openSans.variable)}
+        className={cn(
+          "min-h-screen font-sans antialiased",
+          openSans.variable,
+          montserrat.variable
+        )}
       >
         {children}
         <VercelAnalytics />

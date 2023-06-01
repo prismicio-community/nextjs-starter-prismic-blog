@@ -6,7 +6,10 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
+import { montserrat, openSans } from "@/src/styles/fontLoad";
 import { ServerStyleSheet } from "styled-components";
+
+import cn from "../lib/utils/cn";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -51,12 +54,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/earlyaccess/opensanshebrew.css?display=swap"
             rel="stylesheet"
           />
-          {/* <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-            crossOrigin="anonymous"
-          /> */}
           <meta
             property="og:image"
             content="https://res.cloudinary.com/dadaboom/image/upload/q_auto/v1521616799/Cover/zafrir-b_w_20_950KB_Flip.jpg"
