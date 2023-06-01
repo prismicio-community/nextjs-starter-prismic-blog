@@ -1,12 +1,12 @@
 import Head from "next/head";
-import * as prismicH from "@prismicio/helpers";
+import * as prismic from "@prismicio/client";
 
-import { createClient } from "../prismicio";
-import { Layout } from "../components/Layout";
-import { Bounded } from "../components/Bounded";
-import { Article } from "../components/Article";
+import { createClient } from "@/prismicio";
+import { Layout } from "@/components/Layout";
+import { Bounded } from "@/components/Bounded";
+import { Article } from "@/components/Article";
 
-const Index = ({ articles, navigation, settings }) => {
+export default function Index({ articles, navigation, settings }) {
   return (
     <Layout
       withHeaderDivider={false}
@@ -14,7 +14,7 @@ const Index = ({ articles, navigation, settings }) => {
       settings={settings}
     >
       <Head>
-        <title>{prismicH.asText(settings.data.name)}</title>
+        <title>{prismic.asText(settings.data.name)}</title>
       </Head>
       <Bounded size="widest">
         <ul className="grid grid-cols-1 gap-16">
@@ -25,9 +25,7 @@ const Index = ({ articles, navigation, settings }) => {
       </Bounded>
     </Layout>
   );
-};
-
-export default Index;
+}
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });

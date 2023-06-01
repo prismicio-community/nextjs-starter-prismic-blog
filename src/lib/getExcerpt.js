@@ -1,9 +1,9 @@
-import * as prismicH from "@prismicio/helpers";
+import * as prismic from "@prismicio/client";
 
-export const getExcerpt = (slices) => {
+export function getExcerpt(slices) {
   const text = slices
     .filter((slice) => slice.slice_type === "text")
-    .map((slice) => prismicH.asText(slice.primary.text))
+    .map((slice) => prismic.asText(slice.primary.text))
     .join(" ");
 
   const excerpt = text.substring(0, 300);
@@ -13,4 +13,4 @@ export const getExcerpt = (slices) => {
   } else {
     return excerpt;
   }
-};
+}
