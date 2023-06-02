@@ -8,14 +8,6 @@ const revalidateSchema = z.object({
   documents: z.array(z.string()),
 });
 
-export async function GET(req: NextRequest) {
-  console.log("This is a get request!");
-  const body = req.body;
-  console.dir({ body, url: req.url }, { depth: null });
-  // console.dir({ req }, { depth: null });
-  return NextResponse.json({ message: "GETTTTT" }, { status: 200 });
-}
-
 export async function POST(req: NextRequest) {
   const body = await req.json();
 
@@ -38,7 +30,7 @@ export async function POST(req: NextRequest) {
     await Promise.all(
       parsedBody.documents.map(async (documentId) => {
         const doc = await client.getByID(documentId);
-        revalidatePath(doc.url ?? "/");
+        revalidatePath(doc.url?.includes("blog") ? "/blog/[postId]" : "/");
       })
     );
 
