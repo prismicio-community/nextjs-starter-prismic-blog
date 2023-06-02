@@ -10,6 +10,9 @@ const revalidateSchema = z.object({
 
 export async function GET(req: NextRequest) {
   console.log("This is a get request!");
+  const body = req.json();
+  console.log("@@@ ~ body:", body);
+  console.dir({ req }, { depth: null });
   return NextResponse.json({ message: "GETTTTT" }, { status: 200 });
 }
 
