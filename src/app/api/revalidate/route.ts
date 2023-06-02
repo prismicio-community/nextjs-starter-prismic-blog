@@ -9,6 +9,11 @@ const revalidateSchema = z.object({
 });
 
 export async function GET(req: NextRequest) {
+  console.log("This is a get request!");
+  return NextResponse.json({ message: "GETTTTT" }, { status: 200 });
+}
+
+export async function POST(req: NextRequest) {
   const body = await req.json();
 
   console.log("Body:");
