@@ -8,7 +8,7 @@ const revalidateSchema = z.object({
   documents: z.array(z.string()),
 });
 
-export async function POST(req: NextRequest) {
+export async function GET(req: NextRequest) {
   const body = await req.json();
 
   console.log("Body:");
