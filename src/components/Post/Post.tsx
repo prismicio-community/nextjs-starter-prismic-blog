@@ -2,6 +2,7 @@ import React from "react";
 import { PostDocument, PostDocumentData } from "@/prismicio-types";
 
 import Footer from "../Shared/Footer/Footer";
+import ContactSSR from "./ContactSSR";
 import PostHeader from "./PostHeader";
 import PostNavigation from "./PostNavigation";
 import PostSection from "./PostSection";
@@ -21,6 +22,8 @@ export default async function Post({
       />
       {/*  @ts-expect-error Async Server Component */}
       <PostNavigation currentPostId={id} />
+      {/*  @ts-expect-error Async Server Component */}
+      <ContactSSR />
       <Footer />
     </>
   );

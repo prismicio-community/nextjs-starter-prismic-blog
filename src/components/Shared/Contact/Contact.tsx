@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+import cn from "@/src/lib/utils/cn";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
@@ -12,8 +15,8 @@ const Contact: React.FC<
   Pick<
     HomepageDocumentData,
     "map_label_link" | "map_label_text" | "map_lat" | "map_lng"
-  >
-> = ({ map_label_link, map_label_text, map_lat, map_lng }) => {
+  > & { source: "homepage" | "blog" }
+> = ({ map_label_link, map_label_text, map_lat, map_lng, source }) => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const {
@@ -44,9 +47,17 @@ const Contact: React.FC<
 
   return (
     <section id="contact-section-id">
-      <div id="contact" className="h-full w-full bg-black/90">
+      <div
+        id="contact"
+        className={cn(
+          "h-full w-full bg-black/90",
+          source === "blog" && "py-10"
+        )}
+      >
         <div className="my-container">
-          <SectionTitle className="text-white">צור קשר</SectionTitle>
+          <SectionTitle className="flex justify-end text-white">
+            צור קשר
+          </SectionTitle>
           <div className="h-[410px] w-full">
             <MapWithAMakredInfoWindow
               // @ts-ignore
@@ -80,17 +91,30 @@ const Contact: React.FC<
           )}
           {!showError && !showSuccess && (
             <form onSubmit={onSubmit}>
-              <div className="flex flex-col gap-4 md:flex-row md:gap-8">
+              <div
+                className={cn(
+                  "flex flex-col gap-4 md:flex-row md:gap-8",
+                  source === "blog" && "md:flex-row-reverse"
+                )}
+              >
                 <div className="w-full">
                   <GenericFormInput
                     placeholder="שם"
                     errors={errors}
+                    className={cn(
+                      source === "blog" &&
+                        "font-sans align-right placeholder:font-sans"
+                    )}
                     {...register("name")}
                   />
                   <div className="mt-4" style={{ marginBottom: 0 }}>
                     <GenericFormInput
                       {...register("phone", { required: true })}
                       placeholder="טלפון"
+                      className={cn(
+                        source === "blog" &&
+                          "font-sans align-right placeholder:font-sans"
+                      )}
                       errors={errors}
                     />
                   </div>
@@ -98,18 +122,28 @@ const Contact: React.FC<
                     <GenericFormInput
                       {...register("email")}
                       placeholder="אימייל (אופציונאלי)"
+                      className={cn(
+                        source === "blog" &&
+                          "font-sans align-right placeholder:font-sans"
+                      )}
                       errors={errors}
                     />
                   </div>
                 </div>
                 <textarea
                   {...register("message")}
-                  className="mb-4 h-[180px] w-full resize-none border border-gray-300 bg-transparent p-3 font-hebrew text-white outline-none placeholder:font-hebrew placeholder:text-gray-500"
+                  className={cn(
+                    "mb-4 h-[180px] w-full resize-none border border-gray-300 bg-transparent p-3 font-hebrew text-white outline-none align-right placeholder:font-hebrew placeholder:text-gray-500",
+                    source === "blog" && "font-sans placeholder:font-sans"
+                  )}
                   placeholder="תוכן ההודעה (אופציונאלי)"
                 />
               </div>
               <button
-                className="w-full border border-white py-4 font-hebrew text-sm tracking-widest text-primary transition-colors duration-300 hover:bg-white"
+                className={cn(
+                  "w-full border border-white py-4 font-hebrew text-sm tracking-widest text-primary transition-colors duration-300 hover:bg-white",
+                  source === "blog" && "font-sans"
+                )}
                 type="submit"
               >
                 שלח

@@ -84,6 +84,7 @@ const Home = ({
       <DynamicTestimonials testimonials={homepage.testimonials} />
       <DynamicBlog posts={posts} />
       <DynamicContact
+        source="homepage"
         map_label_link={homepage.map_label_link}
         map_label_text={homepage.map_label_text}
         map_lat={homepage.map_lat}
