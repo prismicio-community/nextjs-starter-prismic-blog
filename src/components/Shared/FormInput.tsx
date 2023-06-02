@@ -12,6 +12,7 @@ type GenericFormInputProps = {
   errors: FieldErrors<ValidationSchema>;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  className?: string;
 };
 
 const GenericFormInput = React.forwardRef<
@@ -26,6 +27,7 @@ const GenericFormInput = React.forwardRef<
     errors,
     onChange,
     onBlur,
+    className,
   },
   ref
 ) {
@@ -44,6 +46,7 @@ const GenericFormInput = React.forwardRef<
           `h-12 w-full border border-white bg-transparent px-3 py-1.5 text-right font-hebrew text-white
         outline-none transition-all duration-150 ease-in-out
         placeholder:font-hebrew placeholder:text-gray-500`,
+          className,
           errors?.[name] && `border-red-500`
         )}
       />

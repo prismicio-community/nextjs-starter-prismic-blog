@@ -21,14 +21,14 @@ export default async function PostNavigation({
   return (
     <div
       className={cn(
-        "flex justify-between my-container",
+        "mb-8 flex justify-between my-container",
         previousPost && !nextPost && "justify-end",
         !previousPost && nextPost && "justify-start"
       )}
     >
       {nextPost && (
         <Link href={`/blog/${nextPost.uid}`}>
-          <div className="group flex cursor-pointer">
+          <div className="group flex cursor-pointer items-center text-lg font-bold">
             <ChevronLeft className="transition-colors group-hover:text-primary" />
             לפוסט הבא
           </div>
@@ -36,7 +36,7 @@ export default async function PostNavigation({
       )}
       {previousPost && (
         <Link href={`/blog/${previousPost.uid}`}>
-          <div className="group flex cursor-pointer">
+          <div className="group flex cursor-pointer items-center text-lg font-bold">
             לפוסט הקודם
             <ChevronRight className="transition-colors group-hover:text-primary" />
           </div>

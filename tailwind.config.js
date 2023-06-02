@@ -39,6 +39,10 @@ module.exports = {
           "text-align": "right",
           direction: "rtl",
         },
+        ".align-right": {
+          "text-align": "right",
+          direction: "rtl",
+        },
         ".flex-center": {
           display: "flex",
           alignItems: "center",
