@@ -16,7 +16,7 @@ const update = async function handler(
     }
 
     console.log("before revalidate");
-    await res.revalidate("/");
+    res.revalidate("/");
     console.log("after revalidate");
     return res.json({ revalidated: true });
   } catch (e: unknown) {
