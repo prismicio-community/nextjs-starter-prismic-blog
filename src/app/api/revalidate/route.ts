@@ -9,18 +9,13 @@ const revalidateSchema = z.object({
 });
 
 export async function POST(req: NextRequest) {
-  const { body } = req;
+  const body = await req.json();
 
   console.log("Body:");
   console.dir(body, { depth: null });
 
   try {
     const parsedBody = revalidateSchema.parse(body);
-
-    // if (!body)
-    //   return NextResponse.json({ revalidated: false }, { status: 401 });
-    // if (!("documents" in body))
-    //   return NextResponse.json({ revalidated: false }, { status: 401 });
 
     if (parsedBody.secret !== process.env.REVALIDATE_SECRET_KEY) {
       console.log("Invalid secret key");
@@ -31,6 +26,7 @@ export async function POST(req: NextRequest) {
     }
 
     const client = createClient();
+
     await Promise.all(
       parsedBody.documents.map(async (documentId) => {
         const doc = await client.getByID(documentId);
