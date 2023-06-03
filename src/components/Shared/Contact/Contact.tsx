@@ -55,9 +55,7 @@ const Contact: React.FC<
         )}
       >
         <div className="my-container">
-          <SectionTitle className="flex justify-end text-white">
-            צור קשר
-          </SectionTitle>
+          <SectionTitle className="flex text-white">צור קשר</SectionTitle>
           <div className="h-[410px] w-full">
             <MapWithAMakredInfoWindow
               // @ts-ignore

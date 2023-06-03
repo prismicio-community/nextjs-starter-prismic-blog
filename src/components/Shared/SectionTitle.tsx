@@ -9,7 +9,7 @@ const SectionTitle: React.FC<WithClassName<PropsWithChildren>> = ({
   <div className="pb-12">
     <h1
       className={cn(
-        "border-r-[5px] border-solid border-r-primary pr-2 text-2xl font-bold tracking-[0.5pt] text-gray-700 text-align-right",
+        "border-r-[5px] border-solid border-r-primary pr-2 text-2xl font-bold tracking-[0.5pt] text-gray-700 align-right",
         className
       )}
     >
