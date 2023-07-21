@@ -39,13 +39,6 @@ export async function generateMetadata({ params }) {
   const client = createClient();
   const settings = await client.getSingle("settings");
   const article = await client.getByUID("article", params.uid);
-  const latestArticles = await client.getAllByType("article", {
-    limit: 3,
-    orderings: [
-      { field: "my.article.publishDate", direction: "desc" },
-      { field: "document.first_publication_date", direction: "desc" },
-    ],
-  });
 
   return {
     title: `${prismic.asText(article.data.title)} | ${prismic.asText(settings.data.name)}`,
