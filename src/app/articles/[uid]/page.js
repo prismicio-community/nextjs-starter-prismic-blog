@@ -1,8 +1,7 @@
 import Link from "next/link";
-import Head from "next/head";
-import { PrismicText, SliceZone } from "@prismicio/react";
-import { PrismicNextLink } from "@prismicio/next";
 import * as prismic from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
+import { PrismicText, SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
@@ -36,29 +35,47 @@ function LatestArticle({ article }) {
   );
 }
 
-export default function Article({
-  article,
-  latestArticles,
-  navigation,
-  settings,
-}) {
+export async function generateMetadata({ params }) {
+  const client = createClient();
+  const settings = await client.getSingle("settings");
+  const article = await client.getByUID("article", params.uid);
+  const latestArticles = await client.getAllByType("article", {
+    limit: 3,
+    orderings: [
+      { field: "my.article.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
+
+  return {
+    title: `${prismic.asText(article.data.title)} | ${prismic.asText(settings.data.name)}`,
+  };
+}
+
+export default async function Page({ params }) {
+  const client = createClient();
+
+  const article = await client.getByUID("article", params.uid);
+  const latestArticles = await client.getAllByType("article", {
+    limit: 3,
+    orderings: [
+      { field: "my.article.publishDate", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
+  const navigation = await client.getSingle("navigation");
+  const settings = await client.getSingle("settings");
+
   const date = prismic.asDate(
     article.data.publishDate || article.first_publication_date
   );
 
   return (
-    <Layout
+    <Layout navigation={navigation}
       withHeaderDivider={false}
       withProfile={false}
-      navigation={navigation}
       settings={settings}
     >
-      <Head>
-        <title>
-          {prismic.asText(article.data.title)} |{" "}
-          {prismic.asText(settings.data.name)}
-        </title>
-      </Head>
       <Bounded>
         <Link href="/" className="font-semibold tracking-tight text-slate-400">
           &larr; Back to articles
@@ -96,37 +113,12 @@ export default function Article({
   );
 }
 
-export async function getStaticProps({ params, previewData }) {
-  const client = createClient({ previewData });
-
-  const article = await client.getByUID("article", params.uid);
-  const latestArticles = await client.getAllByType("article", {
-    limit: 3,
-    orderings: [
-      { field: "my.article.publishDate", direction: "desc" },
-      { field: "document.first_publication_date", direction: "desc" },
-    ],
-  });
-  const navigation = await client.getSingle("navigation");
-  const settings = await client.getSingle("settings");
-
-  return {
-    props: {
-      article,
-      latestArticles,
-      navigation,
-      settings,
-    },
-  };
-}
-
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const client = createClient();
 
-  const articles = await client.getAllByType("article");
+  const articles = await client.getAllByType("page");
 
-  return {
-    paths: articles.map((article) => prismic.asLink(article)),
-    fallback: false,
-  };
+  return articles.map((article) => {
+    return { uid: article.uid };
+  });
 }
