@@ -109,7 +109,7 @@ export default async function Page({ params }) {
 export async function generateStaticParams() {
   const client = createClient();
 
-  const articles = await client.getAllByType("page");
+  const articles = await client.getAllByType("article");
 
   return articles.map((article) => {
     return { uid: article.uid };
