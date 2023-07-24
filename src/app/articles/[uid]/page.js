@@ -42,6 +42,15 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${prismic.asText(article.data.title)} | ${prismic.asText(settings.data.name)}`,
+    description: article.data.meta_description,
+    openGraph: {
+      title: article.data.meta_title,
+      images: [
+        {
+          url: article.data.meta_image.url
+        }
+      ]
+    }
   };
 }
 
