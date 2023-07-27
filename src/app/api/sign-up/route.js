@@ -21,6 +21,6 @@ export async function POST(request) {
   // the homepage.
   return new Response("Homepage redirect", {
     status: 302,
-    headers: { "Location": "/" },
+    headers: { Location: "/" },
   });
 }

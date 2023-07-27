@@ -10,9 +10,12 @@ export async function POST(request) {
   // Guard clause checks for email and returns early if it is not found.
   if (!formData.name || !formData.email || !formData.message) {
     // Sends a HTTP bad request error code.
-    return new Response("One or more of the following not found: name, email, message", {
-      status: 400,
-    });
+    return new Response(
+      "One or more of the following not found: name, email, message",
+      {
+        status: 400,
+      },
+    );
   }
   // Here, you could send the message to a service like Supabase to read later.
   //
@@ -20,6 +23,6 @@ export async function POST(request) {
   // the homepage.
   return new Response("Homepage redirect", {
     status: 302,
-    headers: { "Location": "/" },
+    headers: { Location: "/" },
   });
 }

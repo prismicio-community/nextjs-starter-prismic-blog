@@ -14,7 +14,7 @@ export function Bounded({
           size === "small" && "max-w-xl",
           size === "base" && "max-w-3xl",
           size === "wide" && "max-w-4xl",
-          size === "widest" && "max-w-6xl"
+          size === "widest" && "max-w-6xl",
         )}
       >
         {children}

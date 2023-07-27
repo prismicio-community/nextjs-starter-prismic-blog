@@ -15,7 +15,6 @@ export async function generateMetadata() {
 }
 
 export default async function Index() {
-
   const client = createClient();
 
   const articles = await client.getAllByType("article", {
@@ -29,17 +28,17 @@ export default async function Index() {
 
   return (
     <Layout
-    withHeaderDivider={false}
-    navigation={navigation}
-    settings={settings}
-  >
-    <Bounded size="widest">
-      <ul className="grid grid-cols-1 gap-16">
-        {articles.map((article) => (
-          <Article key={article.id} article={article} />
-        ))}
-      </ul>
-    </Bounded>
-  </Layout>
+      withHeaderDivider={false}
+      navigation={navigation}
+      settings={settings}
+    >
+      <Bounded size="widest">
+        <ul className="grid grid-cols-1 gap-16">
+          {articles.map((article) => (
+            <Article key={article.id} article={article} />
+          ))}
+        </ul>
+      </Bounded>
+    </Layout>
   );
 }

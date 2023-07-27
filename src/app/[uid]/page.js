@@ -11,12 +11,13 @@ export async function generateMetadata({ params }) {
   const page = await client.getByUID("page", params.uid);
 
   return {
-    title: `${prismic.asText(page.data.title)} | ${prismic.asText(settings.data.name)}`,
+    title: `${prismic.asText(page.data.title)} | ${prismic.asText(
+      settings.data.name,
+    )}`,
   };
 }
 
 export default async function Page({ params }) {
-
   const client = createClient();
 
   const page = await client.getByUID("page", params.uid);
@@ -25,8 +26,8 @@ export default async function Page({ params }) {
 
   return (
     <Layout navigation={navigation} settings={settings}>
-    <SliceZone slices={page.data.slices} components={components} />
-  </Layout>
+      <SliceZone slices={page.data.slices} components={components} />
+    </Layout>
   );
 }
 

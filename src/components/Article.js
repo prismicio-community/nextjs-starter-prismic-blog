@@ -14,7 +14,7 @@ export function Article({ article }) {
       article.data.featuredImage) ||
     findFirstImage(article.data.slices);
   const date = prismic.asDate(
-    article.data.publishDate || article.first_publication_date
+    article.data.publishDate || article.first_publication_date,
   );
   const excerpt = getExcerpt(article.data.slices);
 
