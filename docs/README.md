@@ -87,18 +87,18 @@ There are two steps to rendering content from Prismic in your Next.js project:
 Here are some of the files in your project that you can edit:
 
 - `prismicio.js` - This file includes configuration for `@prismicio/client` and exports useful API helpers.
-- `pages/\_app.js` - This is your app component, which includes configuration for `@prismicio/react` and `@prismicio/next`.
-- `pages/index.js` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
-- `pages/[uid].js` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
-- `pages/api/contact.js` - This is the API endpoint for your contact form. To use the contact form, send a POST request to a back end from this endpoint.
-- `pages/api/sign-up.js` - This is the API endpoint for your newsletter form. To allow signups, send a POST request to a newsletter service like Mailchimp.
+- `app/\_layout.js` - This is your layout component, which includes configuration for `@prismicio/react` and `@prismicio/next`.
+- `app/page.js` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
+- `app/[uid]/page.js` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
+- `app/api/contact/route.js` - This is the API endpoint for your contact form. To use the contact form, send a POST request to a back end from this endpoint.
+- `app/api/sign-up/route.js` - This is the API endpoint for your newsletter form. To allow signups, send a POST request to a newsletter service like Mailchimp.
 - `slices/\*/index.js` - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.
 
 These are important files that you should leave as-is:
 
-- `pages/api/exit-preview.js` - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.
-- `pages/api/preview.js` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
-- `pages/slice-simulator.js` - Do not edit or delete this file. This file simulates your Slice components in development.
+- `app/api/exit-preview/route.js` - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.
+- `app/api/preview/route.js` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
+- `app/slice-simulator/page.js` - Do not edit or delete this file. This file simulates your Slice components in development.
 - `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.js file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
 
 Learn more about how to edit your components with [Fetch Data in Next.js](https://prismic.io/docs/technologies/fetch-data-nextjs) and [Template Content in Next.js](https://prismic.io/docs/technologies/template-content-nextjs).
