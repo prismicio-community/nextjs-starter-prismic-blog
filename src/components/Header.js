@@ -17,6 +17,7 @@ const Profile = ({ name, description, profilePicture }) => {
               <PrismicNextImage
                 field={profilePicture}
                 fill={true}
+                sizes="100vw"
                 className="object-cover"
               />
             )}
