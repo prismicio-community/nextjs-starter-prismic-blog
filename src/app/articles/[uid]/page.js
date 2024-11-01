@@ -36,11 +36,10 @@ function LatestArticle({ article }) {
 }
 
 export async function generateMetadata({ params }) {
+  const { uid } = await params;
   const client = createClient();
   const settings = await client.getSingle("settings");
-  const article = await client
-    .getByUID("article", params.uid)
-    .catch(() => notFound());
+  const article = await client.getByUID("article", uid).catch(() => notFound());
 
   return {
     title: `${prismic.asText(article.data.title)} | ${prismic.asText(
@@ -59,10 +58,11 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
+  const { uid } = await params;
   const client = createClient();
 
   const article = await client
-    .getByUID("article", params.uid)
+    .getByUID("article", uid)
     .catch(() => notFound());
   const latestArticles = await client.getAllByType("article", {
     limit: 3,

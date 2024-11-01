@@ -7,10 +7,11 @@ import { components } from "@/slices";
 import { Layout } from "@/components/Layout";
 
 export async function generateMetadata({ params }) {
+  const { uid } = await params;
   const client = createClient();
   const settings = await client.getSingle("settings");
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID("page", uid)
     .catch(() => notFound());
 
   return {
@@ -30,10 +31,11 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
+  const { uid } = await params;
   const client = createClient();
 
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID("page", uid)
     .catch(() => notFound());
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
